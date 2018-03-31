@@ -1,0 +1,474 @@
+Test date: 06/28/16  16:03:15 
+The number of times you used the grading program is 11 
+In the business world, your customer replaces the grading program. 
+The goal is a correct program with the fewest grading attempts. 
+PI Grading System Version 4.0
+Student: Last=Marks                First=Collin               Type=Individual          
+Grading and testing history log
+       User Test.    Date: 06/24/16  11:50:54  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  12:45:59  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  12:47:57  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  12:53:06  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  12:53:21  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  12:59:03  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  13:25:06  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  13:29:41  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  13:38:32  testaddx.in  TESTOUT      
+       User Test.    Date: 06/24/16  13:50:32  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  17:26:35  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  17:27:11  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  17:33:01  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  19:18:55  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  20:05:50  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  20:08:32  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  20:09:10  testaddx.in  TESTOUT      
+       User Test.    Date: 06/26/16  20:09:28  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:30:54  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:40:09  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:41:24  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:42:24  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:43:06  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:43:45  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:50:48  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:51:25  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:54:31  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:55:52  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:56:31  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:59:27  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  10:59:47  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:00:30  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:01:22  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:02:06  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:34:47  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:35:46  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:42:46  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  11:43:07  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  12:05:01  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  12:05:09  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:33:37  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:36:14  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:36:51  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:42:48  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:44:02  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  13:45:28  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:00:22  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:26:53  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:27:53  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:55:38  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:57:32  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  14:58:26  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:18:52  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:20:48  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:21:12  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:21:55  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:23:33  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:24:24  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:24:46  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  15:36:08  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  17:55:32  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:18:27  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:18:59  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:20:10  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:21:26  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:22:46  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:26:32  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:27:37  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:28:21  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:31:17  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:39:45  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:41:41  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:42:43  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:43:01  testdivx.in  TESTOUT      
+   *** Grading Run.  Date: 06/27/16  18:44:40 
+       User Test.    Date: 06/27/16  18:46:01  testdivx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:46:12  testaddx.in  TESTOUT      
+   *** Grading Run.  Date: 06/27/16  18:46:36 
+       User Test.    Date: 06/27/16  18:50:24  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  18:50:41  testdivx.in  TESTOUT      
+   *** Grading Run.  Date: 06/27/16  18:51:29 
+       User Test.    Date: 06/27/16  19:04:39  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  19:05:23  testdivx.in  TESTOUT      
+   *** Grading Run.  Date: 06/27/16  19:07:14 
+       User Test.    Date: 06/27/16  19:59:20  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:00:06  testdivx.in  TESTOUT      
+   *** Grading Run.  Date: 06/27/16  20:00:28 
+   ************************************************** 
+   *** Program works correctly.                       
+   *** Additional runs are to improve efficiency.     
+   *** Completion -- Date: 06/27/16  20:05:51                     
+   ************************************************** 
+   *** Grading Run.  Date: 06/27/16  20:06:14 
+   ************************************************** 
+   *** Program works correctly.                       
+   *** Additional runs are to improve efficiency.     
+   *** Completion -- Date: 06/27/16  20:06:43                     
+   ************************************************** 
+   *** Grading Run.  Date: 06/27/16  20:07:05 
+       User Test.    Date: 06/27/16  20:24:14  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:31:45  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:34:19  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:36:47  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:42:20  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:47:16  testaddx.in  TESTOUT      
+       User Test.    Date: 06/27/16  20:52:33  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  12:15:20  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  12:17:14  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  12:17:51  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  12:42:52  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  12:44:06  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  13:46:38  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  13:49:48  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  13:52:10  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:05:53  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:10:19  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:13:21  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:22:03  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:28:07  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:30:49  testaddx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:31:38  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:33:01  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  14:33:06  testaddx.in  TESTOUT      
+   *** Grading Run.  Date: 06/28/16  14:33:29 
+       User Test.    Date: 06/28/16  15:22:59  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:23:05  testaddx.in  TESTOUT      
+   *** Grading Run.  Date: 06/28/16  15:23:31 
+       User Test.    Date: 06/28/16  15:35:09  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:37:32  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:39:38  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:40:21  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:40:50  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:43:14  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:44:09  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:44:37  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:55:09  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:55:40  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  15:55:45  testaddx.in  TESTOUT      
+   *** Grading Run.  Date: 06/28/16  15:56:00 
+       User Test.    Date: 06/28/16  16:03:06  testdivx.in  TESTOUT      
+       User Test.    Date: 06/28/16  16:03:09  testaddx.in  TESTOUT      
+   *** Grading Run.  Date: 06/28/16  16:03:15 
+
+PI has been calculated to be ...
+
+3.14159265358979323846264338327950288419716939937510
+  58209749445923078164062862089986280348253421170679
+  82148086513282306647093844609550582231725359408128
+  48111745028410270193852110555964462294895493038196
+  44288109756659334461284756482337867831652712019091
+  45648566923460348610454326648213393607260249141273
+  
+++ Grade ++   50 = Points earned for correct answers.
+
+ADDX was called this number of times: 00226
+DIVX was called this number of times: 00904
+The list being used has 151 data words.
+
+Your executed instruction count = 00544886
+
+++ Grade ++   30 = Points earned for code written efficiency.
+
+The target for executed instructions is:
+30 = 0,000,000 - 0,600,000 
+25 = 0,600,001 - 0,700,000 
+20 = 0,700,001 - 0,800,000 
+15 = 0,800,001 - 0,900,000 
+10 = 0,900,001 - 1,000,000 
+ 5 = 1,000,001 - 1,100,000 
+ 0 = 1,100,001 +           
+
+
+-> Analyzing program documentation. 
+The heuristic algorithms used may have problems with your specific code. 
+Contact the instructor if you detect a problem with your grade. 
+DOCPH-0022 The program header format is adequate. 
+DOCHB-0.57 Use of code block headers is adequate. 
+DOCLC-0.98 Use of line comments is adequate. 
+++ Grade ++   20 = Points earned for correct documentation.    
+
+-> Calculating the total grade for the program.                  
+This grade is subject to adjustment by the instructor.           
+This grade will be reduced by any late submission penalty.       
+++ Grade ++  100 = Total grade generated by the Grading System.  
+
+-> Statistics on testing and grading                             
+   121  = Number of user tests.                                  
+     5  = Number of grading runs to get the program working.     
+     6  = Number of grading runs to improve efficiency or documentation. 
+
++- atyC;6&}xC96&k~C6&juiC86&zuzC766&Zkyz&jgzk@&6<58>57<&&7<@69@7;&
+
+Building the file pi.ans for electronic submission...
+
+;---------------------------------------------------------------------
+;   Program:     **MASM** version of extend.asm (which is used to calculate PI)
+;
+;   Function:    This file contains subroutines that perform
+;                extended precision arithmetic.
+;                addx - extended precision addition
+;                divx - extended precision division
+; 				for addx: start the addx subroutine
+; 				will initally save all registers on the stack
+; 				then it will store the count of the specified list
+; 				into the ax register for processing
+; 				we move the source index and the
+; 				destination index to the end of the list
+; 				the LSW and move towards the MSW as per the 
+;				specifications of the projlct
+;--------------------------------------
+;
+;   Owner:		Collin Marks
+;
+;   Last Update: Date            Reason
+;                06/27/2016      Finished Product
+;---------------------------------------------------------------------
+         .model    small            ; 64k code and 64k data
+         .8086                      ; only allow 8086 instructions
+         public    addx             ; allow linker to access addx
+         public    divx             ; allow linker to access divx
+;--------------------------------------
+
+
+;--------------------------------------
+;   ADDX Subroutine
+;--------------------------------------
+         .data						; start the data segment
+;--------------------------------------
+		ten 	dw 10				; constant for the number 10
+		two		dw 2				; constant for the number 2
+		quot 	dw ?				; will store the quotient for unrooled loop
+		rem 	dw ?				; will store the reminader for unrolled loop
+;--------------------------------------
+         .code						; start the code segment
+;--------------------------------------
+; start the addx subroutine
+; will initally save all registers on the stack
+; then it will store the count of the specified list
+; into the ax register for processing
+; we move the source index and the
+; destination index to the end of the list
+; the LSW and move towards the MSW as per the 
+; specifications of the projlct
+;--------------------------------------
+addx:
+		push ax						; save registers
+		push cx						; save registers
+		push si						; save registers
+		push di						; save registers
+		push dx						; save registers
+		mov ax, [si]				; store count in ax reg
+		mov dx, 0
+		div ten						; we divide for efficiency
+		mov quot, ax				; store the quotient for looping
+		mov rem, dx					; store the remainder for remaining elements
+		mov cx, quot				; move the count to cx reg for loop inst
+		mov ax, [si]				; store count in ax reg
+		mul two						; convert count of dw's to db's
+		add si, ax					; point si to the end of source list
+		add di, ax					; point si to the end of dest list
+;--------------------------------------
+; handles adding the source word and the
+; destination word and then storing that
+; summed value to the destination 
+; list for output as per the projlct specs
+; calc will loop for each dw in the list
+; as specified in the cx register
+; after calc has looped through
+; we pop the registers from the stack
+; aka we restore the registers
+;--------------------------------------
+		cmp cx, 0							; see if the quotient is zero if so dont go into calcq
+		clc									; clear any carry flags that could have happend with the previous cmp
+		jne calcq							; if the quotient is not zero then jump to calcq
+		mov cx, rem							; go ahead and set up for calculating the remaining elements
+		jmp calcr							; jump past calcq
+calcq:
+		mov ax, [si]				; store source elem in ax	
+		adc [di], ax				; add source and destination elements
+		mov ax, [si-2]				; store source elem in ax	
+		adc [di-2], ax				; add source and destination elements
+		mov ax, [si-4]				; store source elem in ax	
+		adc [di-4], ax				; add source and destination elements
+		mov ax, [si-6]				; store source elem in ax	
+		adc [di-6], ax				; add source and destination elements
+		mov ax, [si-8]				; store source elem in ax	
+		adc [di-8], ax				; add source and destination elements
+		mov ax, [si-10]				; store source elem in ax	
+		adc [di-10], ax				; add source and destination elements
+		mov ax, [si-12]				; store source elem in ax	
+		adc [di-12], ax				; add source and destination elements
+		mov ax, [si-14]				; store source elem in ax	
+		adc [di-14], ax				; add source and destination elements
+		mov ax, [si-16]				; store source elem in ax	
+		adc [di-16], ax				; add source and destination elements
+		mov ax, [si-18]				; store source elem in ax	
+		adc [di-18], ax				; add source and destination elements
+		lea si, [si - 20]			; update the source index
+		lea di, [di - 20]			; update the destination index
+		loop calcq					; loop back until cx returns to 0
+mov cx, rem							; this instruction only occurs if calcq was used.  set the rem for the remaining elements
+;--------------------------------------
+; will do the same as above but handles remaining words
+; handles adding the source word and the
+; destination word and then storing that
+; summed value to the destination 
+; list for output as per the projlct specs
+; calc will loop for each dw in the list
+; as specified in the cx register
+; after calc has looped through
+; we pop the registers from the stack
+; aka we restore the registers
+;--------------------------------------
+calcr:
+		mov ax, [si]				; store source elem in ax					
+		adc [di], ax				; add source and destination elements	
+		lea si, [si-2]				; update the source index
+		lea di, [di -2]				; update the destination index
+		loop calcr
+		
+		
+		pop dx						; restore registers
+		pop di						; restore registers
+		pop si						; restore registers
+		pop cx						; restore registers
+		pop ax						; restore registers
+		ret							; return
+stop:
+		
+		pop dx
+		pop di						; restore registers
+		pop si						; restore registers
+		pop cx						; restore registers
+		pop ax						; restore registers
+		ret							; return
+;--------------------------------------
+
+
+
+;--------------------------------------
+;   DIVX Subroutine
+;--------------------------------------
+         .data						; start the data segment
+;--------------------------------------
+		divisor dw ?				; global divisor
+;--------------------------------------
+         .code						; start the code segment
+;--------------------------------------
+; Initially we push all the registers of use
+; onto the stack
+; We store the count dw from the source list
+; into the ax register
+; we store this variable into divisor
+; which will stay constant across all iterations
+;--------------------------------------
+divx:
+		push ax						; save registers
+		push cx						; save registers
+		push si						; save registers
+		push dx						; save registers
+		mov ax, [si]				; store the count variable to ax
+		mov divisor, dx				; set the global divisor
+		mov dx, 0					; reset dx to avoid divide overflow
+		div ten						; divide by 10
+		mov quot, ax				; store quotient
+		mov rem, dx					; store remainder
+		mov cx, quot				; store into cx reg for looping
+		mov dx, 0					; set the high word to zero
+		lea si, [si+2]				; advance past count 
+cmp cx, 0							; see if the quotient is zero if so dont go into calcq
+clc									; clear any carry flags that could have happend with the previous cmp
+jne calcdq							; if the quotient is not zero then jump to calcq
+mov cx, rem							; go ahead and set up for calculating the remaining elements
+jmp calcdr							; jump past calcq
+;--------------------------------------
+; will handle dividing dw's from the source
+; list by the specified divisor
+; since we are dividing by a word
+; the dividend is stored in the dx:ax pair
+; with dx initially set to 0000 to guarentee
+; that no overflow will occur
+; calcd will continue to loop for every word in the source
+; list
+; after calcd has iterated through every word in the list
+; we restore all registers back to their default value
+;--------------------------------------
+calcdq:
+		mov ax, [si]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si], ax				; store quot at spot in 
+		
+		mov ax, [si+2]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+2], ax				; store quot at spot in 
+		
+		mov ax, [si+4]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+4], ax				; store quot at spot in 
+		
+		mov ax, [si+6]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+6], ax				; store quot at spot in 
+		
+		mov ax, [si+8]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+8], ax				; store quot at spot in 
+		
+		mov ax, [si+10]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+10], ax				; store quot at spot in 
+		
+		mov ax, [si+12]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+12], ax				; store quot at spot in 
+		
+		mov ax, [si+14]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+14], ax				; store quot at spot in 
+		
+		mov ax, [si+16]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+16], ax				; store quot at spot in 
+		
+		mov ax, [si+18]				; place source dw into ax reg
+		div divisor					; ax will have quot dx will have rem
+		mov [si+18], ax				; store quot at spot in 
+		
+		lea si, [si +20]			; advance si pointer to next element
+		loop calcdq					; loop back around
+		
+		mov cx, rem					; set remainder in cx var for next loop
+		cmp cx, 0					; if remainder was zero exit
+		je exit						; exit
+;--------------------------------------
+; will do the same as above but will handle remaining words
+; will handle dividing dw's from the source
+; list by the specified divisor
+; since we are dividing by a word
+; the dividend is stored in the dx:ax pair
+; with dx initially set to 0000 to guarentee
+; that no overflow will occur
+; calcd will continue to loop for every word in the source
+; list
+; after calcd has iterated through every word in the list
+; we restore all registers back to their default value
+;--------------------------------------
+calcdr:
+		mov ax, [si]				; place source dw into ax reg
+		div divisor					; division
+		mov [si], ax				; store the quotient into source list
+		lea si, [si+2]				; advance pointer
+		loop calcdr					; loop back around
+;--------------------------------------
+; will effectively 
+; end the divx subroutine
+; will also restore registers
+;--------------------------------------
+		
+exit:
+		pop dx						; restore registers
+		pop si						; restore registers
+		pop cx						; restore registers
+		pop ax						; restore registers
+		ret                         ; return
+;--------------------------------------
+end									; effectively end extend.asm
+

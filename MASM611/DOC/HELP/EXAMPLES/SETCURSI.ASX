@@ -1,0 +1,21 @@
+;* SetCurSize - Sets cursor size.
+;*
+;* Shows:   BIOS Interrupt - 10h, Function 1 (Set Cursor Type)
+;*
+;* Params:  Scan1 - Starting scan line
+;*          Scan2 - Ending scan line
+;*
+;* Return:  None
+
+SetCurSize PROC,
+        Scan1:WORD, Scan2:WORD
+
+        mov     cx, Scan2               ; CL = ending scan line
+        mov     ch, BYTE PTR Scan1      ; CH = starting scan line
+        mov     ah, 1                   ; Function 1
+        int     10h                     ; Set Cursor Type
+        ret
+
+SetCurSize ENDP
+
+

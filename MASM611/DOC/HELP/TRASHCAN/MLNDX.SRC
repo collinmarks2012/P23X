@@ -1,0 +1,422 @@
+.context @index
+.context @ml.index
+.context ml.index
+.context @a
+.freeze 7
+.topic ML Index [1]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\bA\pЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /A option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+                              \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  /AT option                  \i\p\aTiny Model Support\vtinyopt\v\i\p
+
+  assembling without 
+     linking                  \i\p\aAssembling Without Linking\vassembnolink\v\i\p
+
+.context @b
+.freeze 7
+.topic ML Index [2]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\bB\pЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /B option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /Bd option                  \i\p\aDisplaying ML Options\vdispswitch\v\i\p
+  /Bz 
+
+  browser                     \i\p\aSource Browser Files\vbrowser\v\i\p
+
+.context @c
+.freeze 7
+.topic ML Index [3]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\bC\pЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /c option                   \i\p\aAssembling Without Linking\vassembnolink\v\i\p
+                              \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /C<n> option                \i\p\aCase Sensitivity\vcaseopt\v\i\p
+
+  /Cl option                  \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  case sensitivity            \i\p\aCase Sensitivity\vcaseopt\v\i\p
+                              \i\p\aML Command-Line Syntax\v@comline\v\i\p
+
+  CodeView, MASM.EXE 
+     options for              \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  command-line syntax         \i\p\aML Command-Line Syntax\v@comline\v\i\p
+                              \i\p\aML Overview\v@overview\v\i\p
+
+.context @d
+.freeze 7
+.topic ML Index [4]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\bD\pЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /D option                   \i\p\aDefining Macros\vdefmacro\v\i\p
+
+  displaying ML options       \i\p\aDisplaying ML Options\vdispswitch\v\i\p
+
+.context @e
+.freeze 7
+.topic ML Index [5]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\bE\pЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /E option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /Ez option                  \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  environment variable        \i\p\aML Environment Variable\v@mlenv\v\i\p
+
+.context @f
+.freeze 7
+.topic ML Index [6]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\bF\pЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  F<x> option                 \i\p\aOutput Files\voutputfiles\v\i\p
+
+  /Frd (/FRD) option          \i\p\aSource Browser Files\vbrowser\v\i\p
+
+  filename                    \i\p\aML Command-Line Syntax\v@comline\v\i\p
+
+  files                       \i\p\aOutput Files\voutputfiles\v\i\p
+                              \i\p\aListing Files\vlistingfiles\v\i\p
+                              \i\p\aObject Files\vobjectfil\v\i\p
+
+.context @g
+.freeze 7
+.topic ML Index [7]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\bG\pЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @h
+.freeze 7
+.topic ML Index [8]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\bH\pЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /H option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /HELP                       \i\p\a/Help\v/help\v\i\p
+
+.context @i
+.freeze 7
+.topic ML Index [9]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\bI\pЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /I option                   \i\p\aMASM.EXE\vMASM.EXE\v\i\p
+                              \i\p\aInclude File Options\v/I\v\i\p
+
+  in-line 80x87 
+     instructions             \i\p\aIn-Line Emulation\vinlineem\v\i\p
+
+  INCLUDE environment         \i\p\aInclude File Options\v/I\v\i\p
+
+.context @j
+.freeze 7
+.topic ML Index [10]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\bJ\pЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @k
+.freeze 7
+.topic ML Index [11]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\bK\pЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @l
+.freeze 7
+.topic ML Index [12]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\bL\pЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /L option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+  /LA 
+
+  libraries                   \i\p\aOverriding the Default Library\v@link\v\i\p
+
+  library, default            \i\p\aOverriding the Default Library\v@link\v\i\p
+
+  library information         \i\p\aML Command-Line Syntax\v@comline\v\i\p
+                              \i\p\aLinker Options\v@linkingml\v\i\p
+
+  /link libname               \i\p\aOverriding the Default Library\v@link\v\i\p
+
+  /link link-libinfo          \i\p\aLinker Options\v@linkingml\v\i\p
+                              \i\p\aML Command-Line Syntax\v@comline\v\i\p
+
+  linking                     \i\p\aLinker Options\v@linkingml\v\i\p
+
+  listing files               \i\p\aListing Files\vlistingfiles\v\i\p
+
+.context @m
+.freeze 7
+.topic ML Index [13]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\bM\pЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /ML option                  \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+  /MU 
+  /MX 
+
+  macros, defining            \i\p\aDefining Macros\vdefmacro\v\i\p
+
+  MASM 5.10 compatibility     \i\p\aMASM 5.10 Compatibility\vmasm510\v\i\p
+
+  MASM driver                 \i\p\aMASM.EXE\vMASM.EXE\v\i\p
+
+  memory model, tiny          \i\p\aTiny Model Support\vtinyopt\v\i\p
+
+  messages, suppressing       \i\p\aSuppress Assembly Message\vsupmess\v\i\p
+
+  ML, overview                \i\p\aML Overview\v@overview\v\i\p
+
+.context @n
+.freeze 7
+.topic ML Index [14]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\bN\pЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /N option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+.context @o
+.freeze 7
+.topic ML Index [15]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\bO\pЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  object files                \i\p\aObject Files\vobjectfil\v\i\p
+
+  options                     \i\p\aML Command-Line Syntax\v@comline\v\i\p
+                              \i\p\aDisplaying ML Options\vdispswitch\v\i\p
+                              \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+                              \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  output files                \i\p\aOutput Files\voutputfiles\v\i\p
+                              \i\p\aListing Files\vlistingfiles\v\i\p
+
+.context @p
+.freeze 7
+.topic ML Index [16]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\bP\pЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /P option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /P1 option                  \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+  /P2        
+
+  public symbols               \i\p\aPublic Symbols\vsympub\v\i\p
+
+.context @q
+.freeze 7
+.topic ML Index [17]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\bQ\pЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  QA options                  \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  QuickHelp                   \i\p\a/Help\v/help\v\i\p
+
+.context @r
+.freeze 7
+.topic ML Index [18]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\bR\pЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @s
+.freeze 7
+.topic ML Index [19]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\bS\pЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /S option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+                              \i\p\aQuick Assembler Options\vQuickAssmb\v\i\p
+
+  /S<z> option                \i\p\aListing Files\vlistingfiles\v\i\p
+
+  source browser              \i\p\aSource Browser Files\vbrowser\v\i\p
+
+  source files                \i\p\aOutput Files\voutputfiles\v\i\p
+
+  symbols, public             \i\p\aPublic Symbols\vsympub\v\i\p
+
+.context @t
+.freeze 7
+.topic ML Index [20]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\bT\pЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /T option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+                              \i\p\aSuppress Assembly Message\vsupmess\v\i\p
+
+.context @u
+.freeze 7
+.topic ML Index [21]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\bU\pЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @v
+.freeze 7
+.topic ML Index [22]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\bV\pЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /V option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+                              \i\p\aSuppress Assembly Message\vsupmess\v\i\p
+
+  variable, environment       \i\p\aML Environment Variable\v@mlenv\v\i\p
+
+.context @w
+.freeze 7
+.topic ML Index [23]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\bW\pЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /W<x> option                \i\p\aWarning Levels\vmwarnings\v\i\p
+
+  warning levels              \i\p\aWarning Levels\vmwarnings\v\i\p
+
+.context @x
+.freeze 7
+.topic ML Index [24]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\bX-Z\pЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  /X option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+
+  /Z option                   \i\p\aMASM.EXE Options\vmasm510opts\v\i\p
+  /ZD 
+  /Zl 
+
+  /Z<x> option                \i\p\aObject Files\vobjectfil\v\i\p
+
+  /Zg option                  \i\p\aPublic Symbols\vsympub\v\i\p
+
+  /Zm option                  \i\p\aMASM.EXE\vMASM.EXE\v\i\p
+                              \i\p\aMASM 5.10 Compatibility\vmasm510\v\i\p
+
+.context @!
+.freeze 7
+.topic ML Index [25]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддML INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\b*\pЁ
+  юдададададададададададададададададададададададададады
+
+  80x87 coprocessor           \i\p\aIn-Line Emulation\vinlineem\v\i\p
+

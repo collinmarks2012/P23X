@@ -1,0 +1,51 @@
+
+
+//addx             N = 1   no carries
+//s     1111
+//d     2222
+expect:
+list = 0001 3333
+/*
+
+
+//addx             N = 4   no carries
+//s     1111 2222 3333 4444
+//d     7777 8888 9999 AAAA
+expect:
+list = 0004 8888 AAAA CCCC EEEE
+/*
+
+
+//addx             N = 4   caries inside words
+//s     7008 71FF 148C 0FFF
+//d     7008 71FF C841 0001
+expect:
+list = 0004 E010 E3FE DCCD 1000
+/*
+
+
+//addx             N = 5   carries between data words
+//s     0000 EEEE DDDD CCCC BBBB
+//d     0000 1111 2222 3333 4445
+expect:
+list = 0005 0001 0000 0000 0000 0000
+/*
+
+
+//addx             N = 3   result = 0
+//s     0000 0000 0000
+//d     0000 0000 0000
+expect:
+list = 0003 0000 0000 0000
+/*
+
+
+//addx             N = 255 largest valid buffer length
+//s 255 755A
+//d 255 7AA6
+expect:
+list = 00FF F000 .....
+/*
+
+
+

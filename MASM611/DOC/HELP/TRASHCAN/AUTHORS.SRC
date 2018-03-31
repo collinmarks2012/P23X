@@ -1,0 +1,39 @@
+.context @jck
+                         \uThe MASM 6.0 Online Team\p                     \i\p\aBack\v!B\v\i\p
+
+         \bWriters:\p             \bEditors:\p              \bSpecial Thanks to:\p
+         дддддддд             дддддддд              дддддддддддддддддд
+         Jonathan Kagle       Chris Crandall        Steve Zeck
+         Bonita Sargeant      Laura Bennett         Michael Hobbs
+         Bruce McKinney       Rod Wilkinson         Michael Woolf
+                              Kathleen Gurnard      Dave Weil
+         \bWith additional\p                            Bill Brisky
+         \bmaterial by:\p         \bProduction:\p           Steve Ross
+         ддддддддддддддд      ддддддддддд           John Browne
+         Beck Zaratian        David Donovan         Ken Requa
+         Brian Overland       Patrick Adams         Richard Gold
+         Phyllis Levy         David Paul            Diana Ryesky
+.context @KeyChart83
+.freeze 3
+.topic Keyboard Scan Codes
+ \i\p\a84-key\v@KeyChart84\v\i\p \i\p\a101/102-key\v@KeyChart101\v\i\p                      \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+             \bScan codes for 83-keyboard [in hexadecimal]\p
+
+здддбддд© зддддбддбддбддбддбддбддбддбддбддбддбддбддбдддддбдддддддбддддддд©
+Ё F1Ё F2Ё Ё EscЁ 1Ё 2Ё 3Ё 4Ё 5Ё 6Ё 7Ё 8Ё 9Ё 0Ё -Ё =Ё дд ЁNumLockЁScrLockЁ
+Ё 3BЁ 3CЁ Ё  01Ё02Ё03Ё04Ё05Ё06Ё07Ё08Ё09Ё0AЁ0BЁ0CЁ0DЁ  0E Ё   45  Ё   46  Ё
+цдддеддд╢ цддддабдабдабдабдабдабдабдабдабдабдабдабдадбдддедддбдддедддбддд╢
+Ё F3Ё F4Ё Ё Tab Ё QЁ WЁ EЁ RЁ TЁ YЁ UЁ IЁ OЁ PЁ [Ё ] ЁдыЁ 7 Ё 8 Ё 9 Ё - Ё
+Ё 3DЁ 3EЁ Ё  0F Ё10Ё11Ё12Ё13Ё14Ё15Ё16Ё17Ё18Ё19Ё1AЁ1B Ё   Ё 47Ё 48Ё 49Ё 4AЁ
+цдддеддд╢ цдддддабдабдабдабдабдабдабдабдабдабдабдабдд╢ 1Cцдддедддедддеддд╢
+Ё F5Ё F6Ё Ё Ctrl Ё AЁ SЁ DЁ FЁ GЁ HЁ JЁ KЁ LЁ ;Ё 'Ё `Ё   Ё 4 Ё 5 Ё 6 Ё   Ё
+Ё 3FЁ 40Ё Ё  1D  Ё1EЁ1FЁ20Ё21Ё22Ё23Ё24Ё25Ё26Ё27Ё28Ё29Ё   Ё 4BЁ 4CЁ4D Ё   Ё
+цдддеддд╢ цддддбдабдабдабдабдабдабдабдабдабдабдабдаддедддедддедддеддд╢   Ё
+Ё F7Ё F8Ё ЁShftЁ \\Ё ZЁ XЁ CЁ VЁ BЁ NЁ \aM\v@jck\vЁ ,Ё .Ё /ЁShftЁ * Ё 1 Ё 2 Ё 3 Ё + Ё
+Ё 41Ё 42Ё Ё 2A Ё2BЁ2CЁ2DЁ2EЁ2FЁ30Ё31Ё32Ё33Ё34Ё35Ё 36 Ё 37Ё 4FЁ 50Ё 51Ё 4EЁ
+цдддеддд╢ цддддабдаддаддаддаддаддаддаддаддаддабдаддддедддадддедддаддд╢   Ё
+Ё F9ЁF10Ё Ё Alt Ё          Space Bar          ЁCpsLckЁ  Ins  Ё  Del  Ё   Ё
+Ё 43Ё 44Ё Ё 38  Ё             39              Ё  3A  Ё   52  Ё   53  Ё   Ё
+юдддаддды юдддддадддддддддддддддддддддддддддддаддддддадддддддадддддддаддды

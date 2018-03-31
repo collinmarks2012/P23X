@@ -1,0 +1,25 @@
+;* VeriPrint - Checks if LPT1 (PRN) is available.
+;*
+;* Shows:   BIOS Interrupt - 17h (Parallel Port Printer Driver)
+;*
+;* Params:  None
+;*
+;* Return:  Short integer, 1 for yes or 0 for no
+
+VeriPrint PROC
+
+        mov     ah, 2                   ; Check printer status for
+        sub     dx, dx                  ;   parallel printer (port 0)
+        int     17h
+        xchg    dx, ax                  ; Put 0 (for error) in AX
+
+; If all error bits are off and both operation bits are on, return 1
+
+        .IF     !(dh & 00101001y) && (dh & 10010000y)
+        inc     ax                      ; Return 1
+        .ENDIF
+        ret
+
+VeriPrint ENDP
+
+

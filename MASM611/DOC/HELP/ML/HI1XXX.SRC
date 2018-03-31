@@ -1,0 +1,479 @@
+..| File name in SLM      : \masm60\help\ml\HI1XXX.SRC
+..| Help file destination : ML.HLP
+..| 
+..| Contents of this file : H2INC fatal error help
+..| Product and version   : H2INC version 1.00???
+..| Released with         : MASM 6.0
+..| 
+..| Number of errors      : 29
+..| Number of topics      : 30
+..| Number of contexts    : 31
+..| First context         : errHI1XXX
+..| Last context          : HI1800
+..|
+..| HISTORY (start)
+..| 90 05 07 OWNERSHIP: MarciM
+..| 90 05 07 Created from C1XXX.SRC shipped with C 6.0
+..| 90 05 16 Converted text, codes, and comments to work with H2INC
+..| 90 10 08 <Up>=>localTOC; C to H2INC everywhere
+..| 90 10 08 MASM Beta 1
+..| 90 10 24 OWNERSHIP: WillieS
+..| 90 10 31 OWNERSHIP: JonKa
+..| 90 12 03 Incorporated BobAl review comments
+..| 91 02 12 Added new error &TOC
+..| 91 02 12 removed os/2 refs - acb
+..| HISTORY (end)
+..| 
+..| Doubled backslashes : none
+..| 
+.context errHI1XXX
+.context @errHI1XXX
+.freeze 3
+.topic H2INC Fatal Errors
+                                             \i\p\aUp\v@errtoc.masm\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bH2INC Fatal Errors\p
+
+     To find out about a specific error, click on the error number
+     with the right mouse button.
+
+     See: \i\p\aHow to View Errors Help\vadvisor.hlp!errorview\v\i\p
+
+     HI1003    HI1011    HI1019    HI1024    HI1040    HI1052
+     HI1004    HI1012    HI1020    HI1026    HI1047    HI1053
+     HI1007    HI1016    HI1021    HI1033    HI1048    HI1090
+     HI1008    HI1017    HI1022    HI1036    HI1049    HI1800
+     HI1009    HI1018    HI1023    HI1039    HI1050    HI1801
+.context HI1003
+..*.STRING error count exceeds %d; stopping compilation
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1003
+
+     error count exceeds n; stopping compilation
+
+     Errors in the program were too numerous or too severe to allow
+     recovery, and the compiler must terminate.
+.context HI1004
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1004
+
+     unexpected end-of-file found
+
+     The default disk drive did not contain sufficient space for the
+     compiler to create temporary files. The space required is
+     approximately two times the size of the source file.
+
+     This message also appears when the #if directive occurs without a
+     corresponding closing #endif directive while the #if test directs
+     the compiler to skip the section.
+.context HI1007
+..*.STRING unrecognized flag '%s' in '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1007
+
+     unrecognized flag 'string' in 'option'
+
+     The <string> in the command-line <option> was not a valid option.
+.context HI1008
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1008
+
+     no input file specified
+
+     The compiler was not given a file to compile.
+.context HI1009
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1009
+
+     compiler limit : macros nested too deeply
+
+     Too many macros were being expanded at the same time.
+
+     This error occurs when a macro definition contains macros to be
+     expanded and those macros contain other macros.
+
+     Try to split the nested macros into simpler macros.
+.context HI1011
+..*.STRING compiler limit : '%s': macro definition too big
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1011
+
+     compiler limit : 'identifier' : macro definition too big
+
+     The macro definition was longer than allowed.
+
+     Split the definition into shorter definitions.
+.context HI1012
+..*.STRING unmatched parenthesis nesting - missing '%c'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1012
+
+     unmatched parenthesis nesting - missing 'character'
+
+     The parentheses in a preprocessor directive were not matched.
+     The missing character is either a left, (, or right, ),
+     parenthesis.
+.context HI1016
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1016
+
+     #if[n]def expected an identifier
+
+     An identifier must be specified with the #ifdef and #ifndef
+     directives.
+.context HI1017
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1017
+
+     invalid integer constant expression
+
+     The expression in an #if directive either did not exist or did not
+     evaluate to a constant.
+.context HI1018
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1018
+
+     unexpected '#elif'
+
+     The #elif directive is legal only when it appears within an #if,
+     #ifdef, or #ifndef construct.
+.context HI1019
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1019
+
+     unexpected '#else'
+
+     The #else directive is legal only when it appears within an #if,
+     #ifdef, or #ifndef construct.
+.context HI1020
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1020
+
+     unexpected '#endif'
+
+     An #endif directive appeared without a matching #if, #ifdef, or
+     #ifndef directive.
+.context HI1021
+..*.STRING invalid preprocessor command '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1021
+
+     invalid preprocessor command 'string'
+
+     The characters following the number sign (#) did not form a valid
+     preprocessor directive.
+.context HI1022
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1022
+
+     expected '#endif'
+
+     An #if, #ifdef, or #ifndef directive was not terminated with an
+     #endif directive.
+.context HI1023
+..*.STRING cannot open source file '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1023
+
+     cannot open source file 'filename'
+
+     The given file either did not exist, could not be opened, or was
+     not found.
+
+     Make sure the environment settings are valid and that the correct
+     path name for the file is specified.
+
+     If this error appears without an error message, the compiler has
+     run out of file handles. If in DOS, increase the number of file
+     handles by changing the FILES setting CONFIG.SYS to allow a larger
+     number of open files. FILES=20 is the recommended setting.
+.context HI1024
+..*.STRING cannot open include file '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1024
+
+     cannot open include file 'filename'
+
+     The specified file in an #include preprocessor directive could not
+     be found.
+
+     Make sure settings for the INCLUDE and TMP environment variables
+     are valid and that the correct path name for the file is
+     specified.
+
+     If this error appears without an error message, the compiler has
+     run out of file handles. If in DOS, increase the number of file
+     handles by changing the FILES setting in CONFIG.SYS to allow a
+     larger number of open files. FILES=20 is the recommended setting.
+..|| C1025 occurs only in the QC environment
+.context HI1026
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1026
+
+     parser stack overflow, please simplify your program
+
+     The program cannot be processed because the space required to
+     parse the program causes a stack overflow in the compiler.
+
+     Simplify the program by decreasing the complexity of expressions.
+     Decrease the level of nesting in for and switch statements by
+     putting some of the more deeply nested statements in separate
+     functions. Break up very long expressions involving ',' operators
+     or function calls.
+..|| C1029 and C1030 are obsolete in C6
+.context HI1033
+..*.STRING cannot open assembly language output file '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1033
+
+     cannot open assembly language output file 'filename'
+
+     There are several possible causes for this error:
+
+        ş The given name is not valid.
+
+        ş The file cannot be opened for lack of space.
+
+        ş A read-only file with the given name already exists.
+..|| C1034 is deleted, per binhn
+.context HI1036
+..*.STRING cannot open source listing file '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1036
+
+     cannot open source listing file 'filename'
+
+     There are several possible causes for this error:
+
+        ş The given name is not valid.
+
+        ş The file cannot be opened for lack of space.
+
+        ş A read-only file with the given name already exists.
+..|| C1038 is obsolete in C6
+.context HI1039
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1039
+
+     unrecoverable heap overflow in Pass 3
+
+     The post-optimizer compiler pass overflowed the heap and could not
+     continue.
+
+     One of the following may be a solution:
+
+        ş Break up the function containing the line that caused the
+          error.
+
+        ş Recompile with the /Od option, removing optimization.
+
+.comment        ş In OS/2, recompile using the /B3 C3L option to invoke the
+.comment          large-model version of the third pass of the compiler.
+.comment
+.comment        ş In DOS, remove other programs or drivers running in the
+        ş Remove other programs or drivers running in the system
+          which could be consuming significant amounts of memory.
+
+.comment        ş In DOS, if using NMAKE, compile without using NMAKE.
+        ş If using NMAKE, compile without using NMAKE.
+.context HI1040
+..*.STRING unexpected end-of-file in source file '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1040
+
+     unexpected end-of-file in source file 'filename'
+
+     The compiler detected an unexpected end-of-file condition while
+     creating a source listing or mingled source/object listing.
+
+.comment     This occurs under OS/2 if the source file is deleted or
+.comment     overwritten while it is being read.
+..|| C1046 is obsolete in C6
+.context HI1047
+..*.STRING limit of %s exceeded at '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1047
+
+     limit of 'option' exceeded at 'string'
+
+     The given option was specified too many times. The given string is
+     the argument to the option that caused the error.
+
+     If the CL or H2INC environment variables have been set, options in
+     these variables are read before options specified on the command
+     line. The CL environment variable is read before the H2INC
+     environment variable.
+
+.context HI1048
+..*.STRING unknown option '%c' in '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1048
+
+     This error existed in previous version of H2INC as "Unknown
+     option 'character' in 'option'." This condition now generates
+     H2INC warning H14799.
+
+.context HI1049
+..*.STRING invalid numerical argument '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1049
+
+     This error existed in previous version of H2INC as "Invalid
+     numerical argument 'string'." This condition now generates
+     H2INC warning H14052.
+
+.context HI1050
+..*.STRING '%s%' : code segment too large
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1050
+
+     'segment' : code segment too large
+
+     A code segment grew to within 36 bytes of 64K during compilation.
+
+     A 36-byte pad is used because of a bug in some 80286 chips that
+     can cause programs to exhibit strange behavior when, among other
+     conditions, the size of a code segment is within 36 bytes of 64K.
+..|| C1051 is obsolete in C6
+.context HI1052
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1052
+
+     compiler limit :  #if/#ifdef nested too deeply
+
+     The program exceeded the maximum of 32 nesting levels for #if and
+     #ifdef directives.
+.context HI1053
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1053
+
+     compiler limit : struct/union nested too deeply
+
+     A structure or union definition was nested to more than 15 levels.
+
+     Break the structure or union into two parts by defining one or
+     more of the nested structures using typedef.
+..|| C1058 is obsolete in C6
+.context HI1090
+..*.STRING '%s%' data allocation exceeds 64K
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1090
+
+     'segment' data allocation exceeds 64K
+
+     The size of the named segment exceeds 64K.
+
+     This error occurs with _based allocation.
+.context HI1800
+..*.STRING '%s' : unrecognized option
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1800
+
+     This error existed in previous version of H2INC as "Option:
+     unrecognized option." This condition now generates H2INC
+     warning H14799.
+..*.STRING '%s' : unrecognized option
+.context HI1801
+.freeze 3
+                                             \i\p\aUp\v@errHI1XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC fatal error HI1801
+
+     incomplete model specification
+
+     Only part of a custom memory-model specification was specified on
+     the command line.
+
+     When you specify a custom memory model with the /A command-line option,
+     you must specify code pointer distance, data pointer distance, and
+     DS register setup. This error is equivalent to the D2013 error
+     message for CL.

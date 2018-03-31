@@ -1,0 +1,1215 @@
+.context asmcontents
+.context contents
+.context h.contents
+.freeze 3
+.topic Contents (ASM)
+   \i\p\aHelp on Help\vh.default\v\i\p  \bContents\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p  \i\p\aC Contents\vQC.HLP!h.contents\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ş \aUsing Help\vh.default\v                          ş \aDOS and BIOS Functions\vcon.dos\v
+                                        ş \aDOS Interrupt 21H\v21h\v
+ş Using QuickC/QuickAssembler                         ş \aOther DOS interrupts\vdos.int\v
+                                                      ş \aBIOS interrupts\vbios.int\v
+                    
+                                                  ş \aUseful Tables\vcon.asmtab\v
+                                        ş \aRegular Expressions\vregexp\v
+ş \aAssembly Language\vcon.asm\v                     ş \aAssembly Operator Precedence\vprecedence.tab\v
+  ş \ainstructions, list of\vinstr.alpha\v               ş \aData Types and Specifiers\vtab.data\v
+  ş \ainstructions, by category\vinstr.topic\v           ş \aRegister and Flag Summary\vtab.regs\v
+  ş \adirectives\vdirectives\v                          ş \aASCII Chart\vascii.tab\v
+  ş \aoperators\voperators\v                           ş \aKey Scan Chart\vkeyscan.tab\v
+  ş \apredefined equates\vpredefined\v                  ş \aProgram Segment Prefix\vtab.psp\v
+  ş \ausing radixes\vsetradix\v                       ş \aColor Display Attributes\vtab.color\v
+
+.context con.asm
+.freeze 3
+.topic Assembly Language Topics
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ş \ainstructions, list of\vinstr.alpha\v
+  ş \ainstructions, by category\vinstr.topic\v
+  ş \adirectives\vdirectives\v
+  ş \aoperators\voperators\v
+  ş \apredefined equates\vpredefined\v
+  ş \ausing radixes\vsetradix\v
+
+.context con.dos
+.freeze 3
+.topic DOS and BIOS Functions
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ş \aDOS Interrupt 21H\v21h\v
+  ş \aOther DOS interrupts\vdos.int\v
+  ş \aBIOS interrupts\vbios.int\v
+
+.context con.asmtab
+.freeze 3
+.topic Useful Tables
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ş \aRegular Expressions\vregexp\v
+  ş \aAssembly Operator Precedence\vprecedence.tab\v
+  ş \aData Types and Specifiers\vtab.data\v
+  ş \aRegister and Flag Summary\vtab.regs\v
+  ş \aASCII Chart\vascii.tab\v
+  ş \aKey Scan Chart\vkeyscan.tab\v
+  ş \aProgram Segment Prefix\vtab.psp\v
+  ş \aColor Display Attributes\vtab.color\v
+
+.context instr.alpha
+.freeze 3
+.topic Instruction List
+   \bInstruction List\p  \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+AAA        CMP        INS        LOOP           PUSH         SCAS
+AAD        CMPS       INT        LOOPE/LOOPZ    PUSHA        SHL
+AAM        CWD        INTO       MOV            PUSHF        SHR
+AAS        DAA        IRET       MOVS           RCL          STC
+ADC        DAS        Jcond      MUL            RCR          STD
+ADD        DEC        JCXZ       NEG            REP          STI
+AND        DIV        JMP        NOP            REPE/REPZ    STOS
+BOUND      ENTER      LAHF       NOT            RET          SUB
+CALL       ESC        LDS        OR             ROL          TEST
+CBW        HLT        LEA        OUT            ROR          WAIT
+CLC        IDIV       LEAVE      OUTS           SAHF         XCHG
+CLD        IMUL       LES        POP            SAL          XLAT
+CLI        IN         LOCK       POPA           SAR          XOR
+CMC        INC        LODS       POPF           SBB
+
+.context instr.topic
+.freeze 3
+.topic Instructions by Topic
+   \bInstruction Summary\p  \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bCategory\p                  \bDescription\p
+\aArithmetic                Arithmetic calculations: add, subtract, etc.\vinstr.arithmetic\v
+\aBCD Conversion            Adjust result of Binary Coded Decimal operation\vinstr.bcd\v
+\aBit Shifting              Shift or rotate bits left or right\vinstr.shift\v
+\aCompare                   Compare or test, for upcoming conditional jump\vinstr.cmp\v
+\aControl Flow              Jump or execute procedure\vinstr.flow\v
+\aData Transfer             Load or store values in registers\vinstr.trans\v
+\aFlags                     Clear or set processor flags\vinstr.flags\v
+\aLogic                     Logical operations: AND, OR, etc.\vinstr.logic\v
+\aPort Input/Output         Read or write data to hardware ports\vinstr.port\v
+\aProcessor Control         Control basic operation of the processor\vinstr.process\v
+\aStack Operations          Push or pop values from stack\vinstr.stack\v
+\aString Operations         Perform block operation (move, store, load)\vinstr.string\v
+\aType Conversion           Cast data to new size while preserving sign\vinstr.type\v
+
+.context directives
+.freeze 3
+.topic Directive Summary
+   \bDirectives\p  \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bCategory\p                  \bDescription\p
+\aConditional Assembly      Assemble blocks of code on certain conditions\vdir.conda\v
+\aConditional Error         Generate assemble-time error on certain conditions\vdir.conde\v
+\aCode Labels               Define code addresses and alignment\vdir.label\v
+\aData Allocation           Define global data items of various sizes\vdir.data\v
+\aListing Control           Control what is included in listing file\vdir.list\v
+\aMacro                     Define macros, equates, and repeat blocks\vdir.macro\v
+\aMiscellaneous             Comment, output, radix, and include directives\vdir.misc\v
+\aMultimodule               Declare items public for other modules\vdir.module\v
+\aProcessor                 Enable instruction set of another processor\vdir.process\v
+\aSegment                   Give full segment definitions\vdir.seg\v
+\aSimplified Segment        Define segments using Microsoft conventions\vdir.simp\v
+\aStructure and Record      Define structure or record data types\vdir.struct\v
+
+.context operators
+.freeze 3
+.topic Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bCategory\p                  \bDescription\p
+\aArithmetic                Perform arithmetic calculations at assemble time\vop.arithmetic\v
+\aMacro                     Alter evaluation within a macro definition\vop.macro\v
+\aLogical and shift         Perform logic calculations at assemble time\vop.logical\v
+\aRecord                    Generate bit mask or determine size of record\vop.record\v
+\aType                      Specify or analyze type of a variable\vop.type\v
+\aAddress                   Extract segment or offset address\vop.address\v
+\aRelational                Compare two values at assemble time\vop.relational\v
+\aMiscellaneous             Comment and DUP (repeated initial values)\vop.misc\v
+
+.context op.arithmetic
+.freeze 3
+.topic Arithmetic Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\a+               Addition\vplus\v
+\a-               Subtraction\v-\v
+\a*               Multiplication\vasterisk\v
+\a/               Division\v/\v
+\aMOD             Modular division\vMOD\v
+\a.               Field operator\vperiod\v
+\a[]              Index operator\vbrackets\v
+
+.context op.macro
+.freeze 3
+.topic Macro Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\a<>              Literal-text operator\v<>\v
+\a!               Literal-character operator\vexclamation\v
+\a;;              Macro comment (is not expanded in macro call)\v;;\v
+\a%               Expression operator\v%\v
+\a&               Substitute operator\v&\v
+
+.context op.logical
+.freeze 3
+.topic Logic/Shift Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\aAND             Bitwise AND\vAND\v
+\aOR              Bitwise inclusive OR\vOR\v
+\aXOR             Bitwise exclusive OR\vXOR\v
+\aNOT             Logical negation of each bit\vNOT\v
+\aSHL             Shift bits left\vSHL\v
+\aSHR             Shift bits right\vSHR\v
+
+.context op.record
+.freeze 3
+.topic Record Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\aMASK            Constructs bit mask\vMASK\v
+\aWIDTH           Returns width of record\vWIDTH\v
+
+.context op.type
+.freeze 3
+.topic Type Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\aHIGH            Returns high byte\vHIGH\v
+\aLOW             Returns low byte\vLOW\v
+\aPTR             Temporarily alters type of data\vPTR\v
+\aSHORT           Specifies SHORT (ñ 128 bytes)\vSHORT\v
+\aSIZE            Returns size of type\vSIZE\v
+\aTHIS            Creates symbol of specified type\vTHIS\v
+\aTYPE            Returns number of bytes in variable\vTYPE\v
+\a\.TYPE           Returns a byte giving information on variable\v.TYPE\v
+
+.context op.address
+.freeze 3
+.topic Address Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\a:               Segment override\v:\v
+\aSEG             Returns segment of object in memory\vSEG\v
+\aOFFSET          Returns offset of object in memory\vOFFSET\v
+
+.context op.relational
+.freeze 3
+.topic Relational Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+These operators are typically used with the conditional-assembly IF
+statement and return Boolean results.
+
+\aEQ             Equal\vEQ\v
+\aNE             Not Equal\vNE\v
+\aGT             Greater Than\vGT\v
+\aGE             Greater Than or Equal to\vGE\v
+\aLT             Less Than\vLT\v
+\aLE             Less Than or Equal to\vLE\v
+
+.context op.misc
+.freeze 3
+.topic Miscellaneous Operator Summary
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+\a;                Comment (not assembled)\v;\v
+\aDUP              Repeat initialization values\vDUP\v
+\a?                Uninitialized value\vquestionmark\v
+\a\\                Line continuation\vbackslash\v
+\a$                Current location indicator\vquestionmark\v
+
+.context predefined
+.freeze 3
+.topic Predefined Equates
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Each of the following predefined equates has its own help topic:
+
+       \a@code\vat_code\v              \a@CodeSize\vat_codesize\v            \a@Cpu\vat_Cpu\v
+       \a@CurSeg\vat_curseg\v            \a@data\vat_data\v                \a@DataSize\vat_datasize\v
+       \a@FileName\vat_filename\v          \a@Model\vat_Model\v               \a@Version\vat_Version\v
+       \a@WordSize\vat_wordsize\v
+
+  In addition to these equates, each of the other simplified segment
+  directives (.CONST, .STACK, .DATA?, .FARDATA, and .FARDATA?) has a
+  corresponding equate. For example, @fardata is an equate giving the
+  segment address generated by the .FARDATA directive.
+
+.context setradix
+.freeze 3
+.topic Specifying Radixes
+   \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\a.RADIX directive\v.RADIX\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bName\p         \b  Base\p  \b Specifier\p       \bDigits\p
+Binary           2      B             0 1
+Octal            8      Q or O        0 1 2 3 4 5 6 7
+Decimal         10      D             0 1 2 3 4 5 6 7 8 9
+Hexadecimal     16      H             0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+To indicate the radix of a constant, place the specifier at the end of
+the number. Specifiers and hexadecimal digits can be uppercase or
+lowercase. Hexadecimal numbers must always start with a decimal digit (0
+to 9). If the first digit is one of the letters A to F, prefix the
+number with a leading 0 to distinguish it from a symbolic name.
+
+.context 21h
+.context 33
+.freeze 3
+.topic Interrupt 21H Summary (DOS)
+   \bINT 21H Summary\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bCategory\p                  \bDescription\p
+\aCharacter I/O             Old-style (DOS1) read and write to devices\v21.char\v
+\aDirectory Operations      Get, set, create, and delete directory\v21.dir\v
+\aDisk Management           Select drive and get drive status\v21.disk\v
+\aFile Operations           Open, close, and manage files\v21.file\v
+\aFile Operations (FCB)     Functions use File Control Block--not recommended\v21.filefcb\v
+\aMemory Management         Allocate or resize memory block\v21.mem\v
+\aMiscellaneous             Miscellaneous system functions\v21.misc\v
+\aProcess Management        Execute or terminate process\v21.process\v
+\aRecord Operations         Read and write to file\v21.rec\v
+\aRecord Operations (FCB)   Functions use File Control Block--not recommended\v21.recfcb\v
+\aTime and Date             Get or set date and time\v21.time\v
+
+.context instr.arithmetic
+.freeze 3
+.topic Arithmetic Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aADD           Add\vADD\v
+\aADC           Add with Carry (add values in multiple registers)\vADC\v
+\aINC           Increment (add 1)\vINC\v
+\aSUB           Subtract\vSUB\v
+\aSBB           Subtract with Borrow (subtract values in multiple registers)\vSBB\v
+\aDEC           Decrement (subtract 1)\vDEC\v
+\aNEG           Two's Complement Negation\vNEG\v
+\aIMUL          Signed Multiply\vIMUL\v
+\aMUL           Unsigned Multiply\vMUL\v
+\aIDIV          Signed Division\vIDIV\v
+\aDIV           Unsigned Division\vDIV\v
+
+.context instr.bcd
+.freeze 3
+.topic BCD Adjust Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The ASCII instructions assume unpacked BCD values--one value per word.
+The DECIMAL instructions assume packed BCD values--one value per byte.
+
+\bMnemonic\p      \bName\p
+\aAAA           ASCII Adjust After Addition\vAAA\v
+\aAAS           ASCII Adjust After Subtraction\vAAS\v
+\aAAM           ASCII Adjust After Multiply\vAAM\v
+\aAAD           ASCII Adjust Before Division\vAAD\v
+\aDAA           Decimal Adjust After Division\vDAA\v
+\aDAS           Decimal Adjust After Subtraction\vDAS\v
+
+.context instr.shift
+.freeze 3
+.topic Bit Shifting Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The ROTATE instructions cycle bit values through a register if done
+repeatedly. The SHIFT instructions do not recycle bits shifted out.
+
+\bMnemonic\p      \bName\p
+\aRCL           Rotate Through Carry Left\vRCL\v
+\aRCR           Rotate Through Carry Right\vRCR\v
+\aROL           Rotate Left\vROL\v
+\aROR           Rotate Right\vROR\v
+\aSAL           Shift Arithmetic Left (identical to SHL)\vSAL\v
+\aSAR           Shift Arithmetic Right (preserves sign)\vSAR\v
+\aSHL           Shift Left\vSHL\v
+\aSHR           Shift Right (does not preserve sign)\vSHR\v
+
+.context instr.cmp
+.freeze 3
+.topic Compare Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The compare instructions are similar to arithmetic and logic instructions,
+except that the result is not stored in the destination operand. Like
+arithmetic instructions, these instructions set processor flags and can
+set up a test for a subsequent conditional jump.
+
+\bMnemonic\p      \bName\p
+\aCMP           Compare (same as SUB but result is ignored)\vCMP\v
+\aCMPS          Compare String\vCMPS\v
+\aTEST          Logical Compare (same as AND but result is ignored)\vTEST\v
+
+.context instr.flow
+.freeze 3
+.topic Control-Flow Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aJMP           Jump Unconditionally\vJMP\v
+\aJCXZ/JECXZ    Jump If CX is Zero\vJCXZ\v
+\aJcond         Jump conditionally\vJcond\v
+\aLOOP          Loop (decrement CX, then jump if CX is not 0)\vLOOP\v
+\aLOOPE/LOOPZ   Loop If (loop while condition is met and CX is not 0)\vLOOPE\v
+\aCALL          Call Procedure\vCALL\v
+\aRET           Return from Procedure\vRET\v
+\aRETN/RETF     Return from Procedure (near or far)\vRETN\v
+\aINT           Interrupt (call interrupt procedure)\vINT\v
+\aIRET          Interrupt Return\vIRET\v
+\aENTER         Make Stack Frame (80186/286/386 Only)\vENTER\v
+\aLEAVE         High Level Procedure Exit (80186/286/386 Only)\vLEAVE\v
+
+.context instr.trans
+.freeze 3
+.topic Data Transfer Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aMOV           Move Data\vMOV\v
+\aMOVS          Move String Data\vMOVS\v
+\aXCHG          Exchange (switch values between two operands)\vXCHG\v
+\aLODS          Load String Data\vLODS\v
+\aSTOS          Store String Data\vSTOS\v
+\aLEA           Load Effective Address (calculate address of memory operand)\vLEA\v
+\aLES           Load Far Pointer to Extra Segment (ES)\vLES\v
+\aLDS           Load Far Pointer to Data Segment (DS)\vLDS\v
+\aXLAT/XLATB    Translate (translate a value by using a table in memory)\vXLAT\v
+
+.context instr.flags
+.freeze 3
+.topic Flag-Setting Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aCLC           Clear Carry Flag\vCLC\v
+\aCLD           Clear Direction Flag\vCLD\v
+\aCLI           Clear Interrupt Flag (disable maskable interrupts)\vCLI\v
+\aCMC           Complement Carry Flag\vCMC\v
+\aSTC           Set Carry Flag\vSTC\v
+\aSTD           Set Direction Flag\vSTD\v
+\aSTI           Set Interrupt Flag (recognize interrupts again)\vSTI\v
+\aPOPF          Pop Flags (pop value at top of stack into flags register)\vPOPF\v
+\aPUSHF         Push Flags (push value of entire flags register onto stack)\vPUSHF\v
+\aLAHF          Load Flags into AH Register\vLAHF\v
+\aSAHF          Store AH into Flags (does not include all flags)\vSAHF\v
+
+.context instr.logic
+.freeze 3
+.topic Logic Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The logic operations all perform bitwise operations between each bit in
+the source operand and the corresponding bit in the destination operand.
+
+\bMnemonic\p      \bName\p
+\aAND           And\vAND\v
+\aOR            Inclusive OR\vOR\v
+\aXOR           Exclusive OR\vXOR\v
+\aNOT           One's Complement Negation\vNOT\v
+
+.context instr.port
+.freeze 3
+.topic Port I/O Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aIN            Input from Port\vIN\v
+\aINS           Input from Port to String (80186/286/386 Only)\vINS\v
+\aOUT           Output to Port\vOUT\v
+\aOUTS          Output String to Port (80186/286/386 Only)\vOUTS\v
+
+.context instr.process
+.freeze 3
+.topic Processor-Control Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+This group of instructions (except for NOP) generally deals with
+interactions in multiprocessor situations.
+
+\bMnemonic\p      \bName\p
+\aNOP           No Operation\vNOP\v
+\aESC           Escape (sends an instruction to the coprocessor)\vESC\v
+\aWAIT          Wait (stops and waits for coprocessor signal)\vWAIT\v
+\aLOCK          Lock the Bus (locks out other processors)\vLOCK\v
+\aHLT           Halt (stops execution until interrupt received)\vHLT\v
+
+.context instr.stack
+.freeze 3
+.topic Stack-Oriented Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bName\p
+\aPUSH          Push\vPUSH\v
+\aPUSHF         Push Flags\vPUSHF\v
+\aPUSHA         Push All (80186/286/386 Only)\vPUSHA\v
+\aPOP           Pop\vPOP\v
+\aPOPF          Pop Flags\vPOPF\v
+\aPOPA          Pop All (80186/286/386 Only)\vPOPA\v
+
+.context instr.string
+.freeze 3
+.topic String Operations
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+In all the string instructions, DS:SI points to the source operand and
+ES:DI points to the destination operand.
+
+\bMnemonic\p      \bName\p
+\aMOVS          Move String Data\vMOVS\v
+\aLODS          Load String Operand\vLODS\v
+\aSTOS          Store String Data\vSTOS\v
+\aSCAS          Scan String (compares to accumulator)\vSCAS\v
+\aCMPS          Compare Strings\vCMPS\v
+\aINS           Input to String from Port (80186/286/386 only)\vINS\v
+\aOUTS          Input String to Port (80186/286/386 only)\vOUTS\v
+\aREP           Repeat String (instruction prefix)\vREP\v
+\aREPE/REPZ     Repeat While Equal\vREPE\v
+\aREPNE/REPNZ   Repeat While Not Equal\vREPNE\v
+
+.context instr.type
+.freeze 3
+.topic Type-Conversion Instructions
+   \i\p\aInstruction Summary\vinstr.topic\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+These instructions offer a fast way to convert from one data type to
+another, while preserving the sign. Use only with signed integer values.
+These instructions always use a value in the accumulator (AL or AX).
+
+\bMnemonic\p      \bName\p
+\aCBW           Convert Byte to Word\vCBW\v
+\aCWD           Convert Word to Double\vCWD\v
+
+.context dir.conda
+.freeze 3
+.topic Conditional-Assembly Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aDescription of IF blocks\vif_block\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p     \bDescription\p
+\aIF           Assembles block if expression is nonzero\vIF\v
+\aIF1          Assembles block on pass 1\vIF1\v
+\aIF2          Assembles block on pass 2\vIF2\v
+\aIFE          Assembles block if expression is false\vIFE\v
+\aIFB          Assembles block if expression is blank\vIFB\v
+\aIFNB         Assembles block if expression is not blank\vIFNB\v
+\aIFDEF        Assembles block if expression is defined\vIFDEF\v
+\aIFNDEF       Assembles block if expression is not defined\vIFNDEF\v
+\aIFDIF[I]     Assembles block if arguments are different\vIFDIF\v
+\aIFIDN[I]     Assembles block if arguments are identical\vIFIDN\v
+\aELSE         Marks beginning of alternate conditional block\vELSE\v
+\aELSEIF       Marks alternate block with a new condition\vELSE\v
+\aENDIF        Terminates conditional block\vENDIF\v
+
+.context dir.conde
+.freeze 3
+.topic  Conditional-Error Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+These directives generate error messages at run time and are typically
+used for error checking within macro calls and for debugging.
+
+\bMnemonic\p     \bGenerates error:\p
+\a.ERR         If expression evaluates to nonzero\v.ERR\v
+\a.ERR1        On pass 1\v.ERR1\v
+\a.ERR2        On pass 2\v.ERR2\v
+\a.ERRE        If expression is false\v.ERRE\v
+\a.ERRB        If expression is blank\v.ERRB\v
+\a.ERRNB       If expression is not blank\v.ERRNB\v
+\a.ERRDEF      If expression is defined\v.ERRDEF\v
+\a\.ERRNDEF     If expression is not defined\v.ERRNDEF\v
+\a.ERRDIF[I]   If arguments are different\v.ERRDIF\v
+\a.ERRIDN[I]   If arguments are identical\v.ERRIDN\v
+
+.context dir.label
+.freeze 3
+.topic Code-Label Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p     \bDescription\p
+\aPROC         Declares start of procedure\vPROC\v
+\aENDP         Declares end of procedure\vENDP\v
+\aLABEL        Declares a label of specified type at current location\vLABEL\v
+\aALIGN        Starts location counter at next multiple of number given\vALIGN\v
+\aEVEN         Starts location counter at next even address\vEVEN\v
+\aORG          Sets location counter to a specific offset address\vORG\v
+
+.context dir.data
+.freeze 3
+.topic Data-Allocation Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p     \bDefines objects of type:\p
+\aDB           Byte\vDB\v
+\aDW           Word (2 bytes)\vDW\v
+\aDD           Doubleword (4 bytes)\vDD\v
+\aDQ           Quadword (8 bytes)\vDQ\v
+\aDT           Ten-Byte\vDT\v
+
+.context dir.list
+.freeze 3
+.topic Listing-File Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p     \bDescription\p
+\a.LIST        Turns on listing of statements\v.LIST\v
+\a.LISTIF      Turns on listing of statements in false conditional blocks\v.LISTIF\v
+\a.XLIST       Turns on macro expansion statements in listings\v.XLIST\v
+\a.LFCOND      Turns on listing of statements in false conditional blocks\v.LFCOND\v
+\a.SFCOND      Suppresses listing of false conditional blocks\v.SFCOND\v
+\a.TFCOND      Toggles listing of false conditional blocks\v.TFCOND\v
+\a.LALL        Turns on listing of all statements in macros\v.LALL\v
+\a.SALL        Suppresses listing of all macro expansions\v.SALL\v
+\a.XALL        Lists macro statements that generate code or data\v.XALL\v
+\aTITLE        Defines program listing title\vTITLE\v
+\aSUBTTL       Defines program listing subtitle\vSUBTTL\v
+\aPAGE         Increments page number (printer-oriented LST files only)\vPAGE\v
+
+.context dir.macro
+.freeze 3
+.topic Macro Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p     \bDescription\p
+\aMACRO        Marks beginning of macro, specifying name and parameters\vMACRO\v
+\aENDM         Ends macro definition or repeat block\vENDM\v
+\aEXITM        Terminates expansion of the macro\vEXITM\v
+\aLOCAL        Declares name to be local to macro\vLOCAL\v
+\aPURGE        Purges macro definitions from memory\vPURGE\v
+\aREPT         Starts a block repeated n times\vREPT\v
+\aIRP          Starts a block repeated once for each argument given\vIRP\v
+\aIRPC         Starts a block repeated once for each character in a string\vIRPC\v
+
+.context dir.misc
+.freeze 3
+.topic Miscellaneous Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p      \bDescription\p
+\aCOMMENT       Marks beginning of a comment block\vCOMMENT\v
+\aEND           Marks end of source file and optionally sets start address\vEND\v
+\aINCLUDE       Includes contents of another source file\vINCLUDE\v
+\aINCLUDELIB    Declares default library to be searched by linker\vINCLUDELIB\v
+\a%OUT          Displays a message during assembly\v%OUT\v
+\a.RADIX        Sets default radix for constants\v.RADIX\v
+
+.context dir.module
+.freeze 3
+.topic Multimodule Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+To share variables between modules, declare the variable PUBLIC in
+the module where it is defined and EXTRN in other modules.
+
+\bMnemonic\p       \bDescription\p
+\aPUBLIC         Makes each variable specified public to other modules\vPUBLIC\v
+\aEXTRN          Defines one or more external variables\vEXTRN\v
+\aCOMM           Declares one or more communal variables\vCOMM\v
+\aINCLUDELIB     Declares default library to be searched by linker\vINCLUDELIB\v
+
+.context dir.process
+.freeze 3
+.topic Processor Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p       \bDescription\p
+\a.186           Enables instruction set of 80186 processor\v.186\v
+\a.286           Enables instruction set of 80286 processor\v.286\v
+\a.287           Enables instruction set of 80287 math coprocessor\v.287\v
+\a.8086          Disables processor instructions except for 8086 set\v.8086\v
+\a.8087          Disables coprocessor instructions except for 8087 set\v.8087\v
+
+.context dir.seg
+.freeze 3
+.topic Segment Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p       \bDescription\p
+\aSEGMENT        Marks beginning of a segment and defines attributes\vSEGMENT\v
+\aENDS           Marks end of a segment\vENDS\v
+\aGROUP          Groups one or more segments into a single physical segment\vGROUP\v
+\aASSUME         Informs assembler where a segment register will point to\vASSUME\v
+\aDOSSEG         Orders segments according to DOS segment convention\vDOSSEG\v
+\a.ALPHA         Orders segments alphabetically by name\v.ALPHA\v
+\a.SEQ           Orders segments according to source-code sequence\v.SEQ\v
+
+.context dir.simp
+.freeze 3
+.topic Simplified Segment Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bMnemonic\p       \bDescription\p
+\a.MODEL         Defines basic attributes of the module, such as memory model\v.MODEL\v
+\a.STARTUP       Declares start address and initializes registers\v.STARTUP\v
+\a.EXIT          Generates code to exit from program\v.EXIT\v
+\a.CODE          Starts a code segment\v.CODE\v
+\a.STACK         Defines stack and optionally gives size of stack\v.STACK\v
+\a.DATA          Starts a near-data segment\v.DATA\v
+\a.DATA?         Starts a near-data segment for uninitialized data\v.DATA?\v
+\a.CONST         Starts a near-data segment for constant data\v.CONST\v
+\a.FARDATA       Starts a far-data segment\v.FARDATA\v
+\a.FARDATA?      Starts a far-data segment for uninitialized data\v.FARDATA?\v
+
+.context dir.struct
+.freeze 3
+.topic Record and Structure Directives
+   \i\p\aDirectives\vdirectives\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+A record consists of bit fields. A structure is a collection of any
+series of data types and can include other structures.
+
+\bMnemonic\p       \bDescription\p
+\aRECORD         Declares a record type consisting of specified fields\vRECORD\v
+\aSTRUC          Declares a structure type having specified fields\vSTRUC\v
+\aENDS           Ends a structure definition\vENDS\v
+
+.context 21.char
+.freeze 3
+.topic Interrupt 21H, Character-Oriented Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a01H     1        Character Input with Echo\v21h.01h\v
+\a02H     2        Character Output\v21h.02h\v
+\a03H     3        Auxiliary Input\v21h.03h\v
+\a04H     4        Auxiliary Output\v21h.04h\v
+\a05H     5        Printer Output\v21h.05h\v
+\a06H     6        Direct Console I/O\v21h.06h\v
+\a07H     7        Unfiltered Character Input without Echo\v21h.07h\v
+\a08H     8        Character Input without Echo\v21h.08h\v
+\a09H     9        Display String\v21h.09h\v
+\a0AH    10        Buffered Keyboard Input\v21h.0Ah\v
+\a0BH    11        Check Input Status\v21h.0Bh\v
+\a0CH    12        Flush Input Buffer, Then Input\v21h.0Ch\v
+
+.context 21.dir
+.freeze 3
+.topic Interrupt 21H, Directory-Control Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a39H     57       Create Directory\v21h.39h\v
+\a3AH     58       Delete Directory\v21h.3Ah\v
+\a3BH     59       Set Current Directory\v21h.3Bh\v
+\a47H     71       Get Current Directory\v21h.47h\v
+
+.context 21.disk
+.freeze 3
+.topic Interrupt 21H, Disk-Management Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a0DH     13       Disk Reset\v21h.0Dh\v
+\a0EH     14       Select Disk\v21h.0Eh\v
+\a19H     25       Get Current Disk\v21h.19h\v
+\a1BH     27       Get Default Drive Data\v21h.1Bh\v
+\a1CH     28       Get Drive Data\v21h.1Ch\v
+\a2EH     46       Set Verify Flag\v21h.2Eh\v
+\a36H     54       Get Drive Allocation Information\v21h.36h\v
+\a54H     84       Get Verify Flag\v21h.54h\v
+
+.context 21.file
+.freeze 3
+.topic Interrupt 21H, File Operations
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a3CH     60       Create File\v21h.3Ch\v
+\a3DH     61       Open File\v21h.3Dh\v
+\a3EH     62       Close File\v21h.3Eh\v
+\a41H     65       Delete File\v21h.41h\v
+\a43H     67       Get or Set File Attributes\v21h.43h\v
+\a45H     69       Duplicate Handle\v21h.45h\v
+\a46H     70       Redirect Handle\v21h.46h\v
+\a4EH     78       Find First File\v21h.4Eh\v
+\a4FH     79       Find Next File\v21h.4Fh\v
+\a56H     86       Rename File\v21h.56h\v
+\a57H     87       Get or Set File Date and Time\v21h.57h\v
+\a5AH     90       Create Temporary File\v21h.5Ah\v
+\a5BH     91       Create New File\v21h.5Bh\v
+\a67H    103       Set Handle Count (sets maximum number of files)\v21h.67h\v
+
+.context 21.filefcb
+.freeze 3
+.topic Interrupt 21H, File Operations, FCB
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+You can perform all the functions below more easily with DOS2 functions.
+The services below are documented so you can analyze code written for DOS1.
+
+\bHex #\p  \bDec #\p     \bName\p
+\a0FH     15       Open File\v21h.0Fh\v
+\a10H     16       Close File\v21h.10h\v
+\a11H     17       Find First File\v21h.11h\v
+\a12H     18       Find Next File\v21h.12h\v
+\a13H     19       Delete File\v21h.13h\v
+\a16H     22       Create File\v21h.16h\v
+\a17H     23       Rename File\v21h.17h\v
+\a23H     35       Get File Size\v21h.23h\v
+\a29H     41       Parse Filename\v21h.29h\v
+
+.context 21.mem
+.freeze 3
+.topic Interrupt 21H, Memory-Allocation Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a48H     72       Allocate Memory Block\v21h.48h\v
+\a49H     73       Release Memory Block\v21h.49h\v
+\a4AH     74       Resize Memory Block\v21h.4Ah\v
+\a58H     88       Get or Set Allocation Strategy\v21h.58h\v
+
+.context 21.misc
+.freeze 3
+.topic Interrupt 21H, Miscellaneous System Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a25H     37       Set Interrupt Vector\v21h.25h\v
+\a30H     48       Get MS-DOS Version Number\v21h.30h\v
+\a33H     51       Get or Set Break Flag\v21h.33h\v
+\a35H     53       Get Interrupt Vector\v21h.35h\v
+\a38H     56       Get or Set Country Information\v21h.38h\v
+\a44H     68       IOCTL (I/O Control)\v21h.44h\v
+\a59H     89       Get Extended Error Information\v21h.59h\v
+\a5EH     94       Get Machine Name, Get or Set Printer Setup\v21h.5Eh\v
+\a5FH     95       Device Reallocation\v21h.5Fh\v
+\a63H     99       Get Lead Byte Table\v21h.63h\v
+\a65H    101       Get Extended Country Information\v21h.65h\v
+\a66H    102       Get or Set Code Page\v21h.66h\v
+
+.context 21.process
+.freeze 3
+.topic Interrupt 21H, Process-Control Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p\b  Dec #\p     \bName\p
+\a00H      0       Terminate Process\v21h.00h\v
+\a26H     38       Create New Program Segment Prefix (PSP)\v21h.26h\v
+\a31H     49       Terminate and Stay Resident\v21h.31h\v
+\a4BH     75       Execute Program (EXEC)\v21h.4Bh\v
+\a4CH     76       Terminate Process with Return Code\v21h.4Ch\v
+\a4DH     77       Get Return Code\v21h.4Dh\v
+\a62H     98       Get PSP Address\v21h.62h\v
+
+.context 21.rec
+.freeze 3
+.topic Interrupt 21H, Record Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p  \bDec #\p     \bName\p
+\a1AH      26      Set Data Transfer Area (DTA) Address\v21h.1Ah\v
+\a2FH      47      Get DTA Address\v21h.2Fh\v
+\a3FH      63      Read File or Device\v21h.3Fh\v
+\a40H      64      Write to File or Device\v21h.40h\v
+\a42H      66      Set File Pointer (current location in file)\v21h.42h\v
+\a5CH      92      Lock or Unlock Region of File\v21h.5Ch\v
+\a68H     104      Commit File (forces buffer to be written out)\v21h.68h\v
+
+.context 21.recfcb
+.freeze 3
+.topic Interrupt 21H, Record Functions, FCB
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+You can perform all the functions below more easily with DOS2 functions.
+The services below are documented so you can analyze code written for DOS1.
+
+\bHex #\p  \bDec #\p     \bName\p
+\a14H     20       Sequential Read\v21h.14h\v
+\a15H     21       Sequential Write\v21h.15h\v
+\a21H     33       Random Read\v21h.21h\v
+\a22H     34       Random Write\v21h.22h\v
+\a24H     36       Set Relative Record Number\v21h.24h\v
+\a27H     39       Random Block Read\v21h.27h\v
+\a28H     40       Random Block Write\v21h.28h\v
+
+.context 21.time
+.freeze 3
+.topic Interrupt 21H, Time and Date Functions
+   \i\p\aINT 21H Summary\v21h\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aINT Instruction\vINT\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p  \bDec #\p     \bName\p
+\a2AH     42       Get Date\v21h.2Ah\v
+\a2BH     43       Set Date\v21h.2Bh\v
+\a2CH     44       Get Time\v21h.2Ch\v
+\a2DH     45       Set Time\v21h.2Dh\v
+
+.context dos.int
+.freeze 3
+.topic Miscellaneous DOS Interrupts
+   \i\p\aINT 21H Summary\v21h\v\i\p  \bDOS Interrupts\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bHex #\p  \bDec #\p     \bName\p
+\a20H     32       Terminate Program\v20h\v
+\a25H     37       Read Disk Sector (ignore logical structure)\v25h\v
+\a26H     38       Write Disk Sector (ignore logical structure)\v26h\v
+\a27H     39       Terminate but Stay Resident\v27h\v
+\a2FH     47       Print Spool Control (DOS3 only)\v2Fh\v
+
+.context bios.int
+.context 10h
+.context 16
+.freeze 3
+.topic BIOS Interrupts
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p    \bFunction\p        \bDescription\p
+\a10H                          Video driver, all monitors\v10h.all\v
+\a10H                          Video driver, graphics monitors\v10h.graph\v
+\a10H          10H             Video driver, colors\v10h.10h\v
+\a10H          11H             Video driver, fonts\v10h.11h\v
+\a10H          12H             Video configuration\v10h.12h\v
+\a13H                          Disk driver (input/output)\v13h\v
+\a13H                          Disk driver (diagnostics)\v13h.d\v
+\a14H                          Serial communications port driver\v14h\v
+\a15H                          I/O subsystem\v15h\v
+\a15H          C2H             I/O subsystem, mouse pointer (PS/2)\v15h.C2h\v
+\a16H                          Keyboard driver\v16h\v
+\a17H                          Parallel port printer driver\v17h\v
+\a1AH                          Clock\v1Ah\v
+\amiscellaneous\vbios.misc\v
+
+.context 10h.graph
+.freeze 3
+.topic Interrupt 10H (Graphics Monitors)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aAll Monitors\v10h.all\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a10H        0BH              Set Palette, Background, or Border\v10H.0BH\v
+\a10H        0CH              Write Graphics Pixel\v10H.0CH\v
+\a10H        0DH              Read Graphics Pixel\v10H.0DH\v
+\a10H        10H              Color (summary screen)\v10H.10H\v
+\a10H        11H              Fonts (summary screen)\v10H.11H\v
+\a10H        12H              Video Configuration (summary screen)\v10H.12H\v
+\a10H        1AH              Get or Set Display Combination Code\v10H.1AH\v
+\a10H        1BH              Get Functionality/State Information\v10H.1BH\v
+\a10H        1CH              Save or Restore Video State\v10H.1CH\v
+
+.context 10h.all
+.freeze 3
+.topic Interrupt 10H (All Monitors)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aGraphics Monitors\v10h.graph\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a10H        00H              Set Video Mode\v10H.00H\v
+\a10H        01H              Set Cursor Type\v10H.01H\v
+\a10H        02H              Set Cursor Position\v10H.02H\v
+\a10H        03H              Get Cursor Position\v10H.03H\v
+\a10H        04H              Get Light Pen Position\v10H.04H\v
+\a10H        05H              Set Display Page\v10H.05H\v
+\a10H        06H              Initialize or Scroll Up Window\v10H.06H\v
+\a10H        07H              Initialize or Scroll Down Window\v10H.07H\v
+\a10H        08H              Read Character and Attribute at Cursor\v10H.08H\v
+\a10H        09H              Write Character and Attribute at Cursor\v10H.09H\v
+\a10H        0AH              Write Character at Cursor\v10H.0AH\v
+\a10H        0EH              Write Character in Teletype Mode\v10H.0EH\v
+\a10H        0FH              Get Video Mode\v10H.0FH\v
+\a10H        13H              Write String in Teletype Mode\v10H.13H\v
+
+.context 10h.10h
+.freeze 3
+.topic Interrupt 10H, Function 10H (Colors)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a10H        10H   00H        Set Palette Register\v10H.10H.00H\v
+\a10H        10H   01H        Set Border Color\v10H.10H.01H\v
+\a10H        10H   02H        Set Palette and Border\v10H.10H.02H\v
+\a10H        10H   03H        Toggle Blink/Intensity Bit\v10H.10H.03H\v
+\a10H        10H   07H        Get Palette Register\v10H.10H.07H\v
+\a10H        10H   08H        Get Border Color\v10H.10H.08H\v
+\a10H        10H   09H        Get Palette and Border\v10H.10H.09H\v
+\a10H        10H   10H        Set Color Register\v10H.10H.10H\v
+\a10H        10H   12H        Set Block of Color Registers\v10H.10H.12H\v
+\a10H        10H   13H        Set Color Page State\v10H.10H.13H\v
+\a10H        10H   15H        Get Color Register\v10H.10H.15H\v
+\a10H        10H   17H        Get Block of Color Registers\v10H.10H.17H\v
+\a10H        10H   1AH        Get Color Page State\v10H.10H.1AH\v
+\a10H        10H   1BH        Set Gray-Scale Values\v10H.10H.1BH\v
+
+.context 10h.11h
+.freeze 3
+.topic Interrupt 10H, Function 11H (Fonts)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p     \bName\p
+\a10H        11H   00H         Load User Font and Reprogram Controller\v10H.11H.00H\v
+\a10H        11H   10H         Load User Font and Reprogram Controller\v10H.11H.10H\v
+\a10H        11H   01H         Load ROM 8-by-14 Font and Reprogram Controller\v10H.11H.01H\v
+\a10H        11H   11H         Load ROM 8-by-14 Font and Reprogram Controller\v10H.11H.11H\v
+\a10H        11H   02H         Load ROM 8-by-8 Font and Reprogram Controller\v10H.11H.02H\v
+\a10H        11H   12H         Load ROM 8-by-8 Font and Reprogram Controller\v10H.11H.12H\v
+\a10H        11H   03H         Set Block Specifier\v10H.11H.03H\v
+\a10H        11H   04H         Load ROM 8-by-16 Font and Reprogram Controller\v10H.11H.04H\v
+\a10H        11H   14H         Load ROM 8-by-16 Font and Reprogram Controller\v10H.11H.14H\v
+\a10H        11H   20H         Set Int 1FH Font Pointer\v10H.11H.20H\v
+\a10H        11H   21H         Set Int 43H for User's Font\v10H.11H.21H\v
+\a10H        11H   22H         Set Int 43H for ROM 8-by-14 Font\v10H.11H.22H\v
+\a10H        11H   23H         Set Int 43H for ROM 8-by-8 Font\v10H.11H.23H\v
+\a10H        11H   24H         Set Int 43H for ROM 8-by-16 Font\v10H.11H.24H\v
+\a10H        11H   30H         Get Font Information\v10H.11H.30H\v
+
+.context 10h.12h
+.freeze 3
+.topic Interrupt 10H, Function 12H (Video Config.)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a10H        12H   10H        Get Configuration Information\v10H.12H.10H\v
+\a10H        12H   20H        Select Alternate PrintScreen\v10H.12H.20H\v
+\a10H        12H   30H        Set Scan Lines\v10H.12H.30H\v
+\a10H        12H   31H        Enable/Disable Default Palette Loading\v10H.12H.31H\v
+\a10H        12H   32H        Enable/Disable Video\v10H.12H.32H\v
+\a10H        12H   33H        Enable/Disable Gray-Scale Summing\v10H.12H.33H\v
+\a10H        12H   34H        Enable/Disable Cursor Emulation\v10H.12H.34H\v
+\a10H        12H   35H        Switch Active Display\v10H.12H.35H\v
+\a10H        12H   36H        Enable/Disable Screen Refresh\v10H.12H.36H\v
+
+.context 13h
+.context 19
+.freeze 3
+.topic Function 13H (Disk I/O)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a13H        00H              Reset Disk System\v13H.00H\v
+\a13H        01H              Get Disk System Status\v13H.01H\v
+\a13H        02H              Read Sector\v13H.02H\v
+\a13H        03H              Write Sector\v13H.03H\v
+\a13H        04H              Verify Sector\v13H.04H\v
+\a13H        05H              Format Track\v13H.05H\v
+\a13H        06H              Format Bad Track\v13H.06H\v
+\a13H        07H              Format Drive\v13H.07H\v
+\a13H        08H              Get Drive Parameters\v13H.08H\v
+\a13H        09H              Initialize Fixed Disk Characteristics\v13H.09H\v
+\a13H        0AH              Read Sector Long\v13H.0AH\v
+\a13H        0BH              Write Sector Long\v13H.0BH\v
+\a13H        0CH              Seek\v13H.0CH\v
+\a13H        0DH              Reset Fixed Disk System\v13H.0DH\v
+\a13H        0EH              Read Sector Buffer\v13H.0EH\v
+\a13H        0FH              Write Sector Buffer\v13H.0FH\v
+
+.context 13h.d
+.freeze 3
+.topic Interrupt 13H (Disk Diagnostics)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a13H        10H              Get Drive Status\v13H.10H\v
+\a13H        11H              Recalibrate Drive\v13H.11H\v
+\a13H        12H              Controller RAM Diagnostic\v13H.12H\v
+\a13H        13H              Controller Drive Diagnostic\v13H.13H\v
+\a13H        14H              Controller Internal Diagnostic\v13H.14H\v
+\a13H        15H              Get Disk Type\v13H.15H\v
+\a13H        16H              Get Disk Change Status\v13H.16H\v
+\a13H        17H              Set Disk Type\v13H.17H\v
+\a13H        18H              Set Media Type for Format\v13H.18H\v
+\a13H        19H              Park Heads\v13H.19H\v
+\a13H        1AH              Format ESDI Drive\v13H.1AH\v
+
+.context 14h
+.freeze 3
+.topic Interrupt 14H (COM Port)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a14H        00H              Initialize Communications Port\v14h.00H\v
+\a14H        01H              Write Character to Communications Port\v14H.01H\v
+\a14H        02H              Read Character from Communications Port\v14H.02H\v
+\a14H        03H              Get Communications Port Status\v14H.03H\v
+\a14H        04H              Extended Initialize Communications Port\v14H.04H\v
+\a14H        05H              Extended Communications Port Control\v14H.05H\v
+
+.context 15h
+.freeze 3
+.topic Interrupt 15H (I/O Subsystem)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a15H        00H              Turn On Cassette Motor\v15H.00H\v
+\a15H        01H              Turn Off Cassette Motor\v15H.01H\v
+\a15H        02H              Read Cassette\v15H.02H\v
+\a15H        03H              Write Cassette\v15H.03H\v
+\a15H        0FH              Format ESDI Drive Periodic Interrupt\v15H.0FH\v
+\a15H        21H   00H        Read POST Error Log\v15H.21H.00H\v
+\a15H        21H   01H        Write POST Error Log\v15H.21H.01H\v
+\a15H        4FH              Keyboard Intercept\v15H.4FH\v
+\a15H        80H              Device Open\v15H.80H\v
+\a15H        81H              Device Close\v15H.81H\v
+\a15H        82H              Process Termination\v15H.82H\v
+\a15H        83H              Event Wait\v15H.83H\v
+\a15H        84H              Read Joystick\v15H.84H\v
+\a15H        85H              SysReq Key\v15H.85H\v
+\a15H        86H              Delay\v15H.86H\v
+\a15H        87H              Move Extended Memory Block\v15H.87H\v
+\a15H        88H              Get Extended Memory Size\v15H.88H\v
+\a15H        89H              Enter Protected Mode\v15H.89H\v
+\a15H        90H              Device Wait\v15H.90H\v
+\a15H        91H              Device Post\v15H.91H\v
+\a15H        C0H              Get System Environment\v15H.C0H\v
+\a15H        C1H              Get Address of Extended BIOS Data Area\v15H.C1H\v
+\a15H        C2H              Mouse Pointer (summary screen)\v15H.C2H\v
+\a15H        C3H              Set Watchdog Time-Out\v15H.C3H\v
+\a15H        C4H              Programmable Option Select\v15H.C4H\v
+
+.context 15h.C2h
+.freeze 3
+.topic Interrupt 15H (Mouse Pointer)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a15H        C2H   00H        Enable/Disable Pointing Device\v15H.C2H.00H\v
+\a15H        C2H   01H        Reset Pointing Device\v15H.C2H.01H\v
+\a15H        C2H   02H        Set Sample Rate\v15H.C2H.02H\v
+\a15H        C2H   03H        Set Resolution\v15H.C2H.03H\v
+\a15H        C2H   04H        Get Pointing Device Type\v15H.C2H.04H\v
+\a15H        C2H   05H        Initialize Pointing Device Interface\v15H.C2H.05H\v
+\a15H        C2H   06H        Set Scaling or Get Status\v15H.C2H.06H\v
+\a15H        C2H   07H        Set Pointing Device Handler Address\v15H.C2H.07H\v
+
+.context 16h
+.context 22
+.freeze 3
+.topic Interrupt 16H (Keyboard)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a16H        00H              Read Character from Keyboard\v16H.00H\v
+\a16H        01H              Get Keyboard Status\v16H.01H\v
+\a16H        02H              Get Keyboard Flags\v16H.02H\v
+\a16H        03H              Set Repeat Rate\v16H.03H\v
+\a16H        04H              Set Keyclick\v16H.04H\v
+\a16H        05H              Push Character and Scan Code\v16H.05H\v
+\a16H        10H              Read Character from Enhanced Keyboard\v16H.10H\v
+\a16H        11H              Get Enhanced Keyboard Status\v16H.11H\v
+\a16H        12H              Get Enhanced Keyboard Flags\v16H.12H\v
+
+.context 17h
+.context 23
+.freeze 3
+.topic Interrupt 17H (Parallel Printer Port)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p      \b   Name\p
+\a17H        00H              Write Character to Printer\v17H.00H\v
+\a17H        01H              Initialize Printer Port\v17H.01H\v
+\a17H        02H              Get Printer Status\v17H.02H\v
+
+.context 1Ah
+.freeze 3
+.topic Interrupt 1AH (Clock)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFunction\p         \bName\p
+\a1AH        00H              Get Tick Count\v1AH.00H\v
+\a1AH        01H              Set Tick Count\v1AH.01H\v
+\a1AH        02H              Get Time\v1AH.02H\v
+\a1AH        03H              Set Time\v1AH.03H\v
+\a1AH        04H              Get Date\v1AH.04H\v
+\a1AH        05H              Set Date\v1AH.05H\v
+\a1AH        06H              Set Alarm\v1AH.06H\v
+\a1AH        07H              Reset Alarm\v1AH.07H\v
+\a1AH        0AH              Get Day Count\v1AH.0AH\v
+\a1AH        0BH              Set Day Count\v1AH.0BH\v
+\a1AH        80H              Set Sound Source\v1AH.80H\v
+
+.context bios.misc
+.freeze 3
+.topic Miscellaneous BIOS
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p                 \bName\p
+\a11H                       Get Equipment Configuration\v11H\v
+\a12H                       Get Conventional Memory Size\v12H\v
+\a18H                       ROM BASIC\v18H\v
+\a19H                       Reboot System\v19H\v
+.context 21h.5Eh
+.freeze 3
+.topic Interrupt 21H, Function 5EH (Machine/Printer)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a21H        5EH   00H        Get Machine Name\v21h.5Eh.00h\v
+\a21H        5EH   02H        Set Printer Setup String\v21h.5Eh.02h\v
+\a21H        5EH   03H        Get Printer Setup String\v21h.5Eh.03h\v
+.context 21h.5Fh
+.freeze 3
+.topic Interrupt 21H, Function 5FH (Device Redirection)
+   \i\p\aHelp on Help\vh.default\v\i\p  \i\p\aContents\vh.contents\v\i\p  \i\p\aIndex\vh.index\v\i\p  \i\p\aNotes\vNOTES.HLP!contents\v\i\p  \i\p\aREADME.DOC\vREADME.DOC!\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+\bInterrupt\p  \bFnct\p  \bSubfnct\p    \bName\p
+\a21H        5FH   02H        Get Redirection List Entry\v21h.5Fh.02h\v
+\a21H        5FH   03H        Redirect Device\v21h.5Fh.03h\v
+\a21H        5FH   04H        Cancel Device Redirection\v21h.5Fh.04h\v

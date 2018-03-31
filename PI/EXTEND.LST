@@ -1,0 +1,321 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/28/16 16:03:02
+extend.asm						     Page 1 - 1
+
+
+				;---------------------------------------------------------------------
+				;   Program:     **MASM** version of extend.asm (which is used to calculate PI)
+				;
+				;   Function:    This file contains subroutines that perform
+				;                extended precision arithmetic.
+				;                addx - extended precision addition
+				;                divx - extended precision division
+				; 				for addx: start the addx subroutine
+				; 				will initally save all registers on the stack
+				; 				then it will store the count of the specified list
+				; 				into the ax register for processing
+				; 				we move the source index and the
+				; 				destination index to the end of the list
+				; 				the LSW and move towards the MSW as per the 
+				;				specifications of the projlct
+				;--------------------------------------
+				;
+				;   Owner:		Collin Marks
+				;
+				;   Last Update: Date            Reason
+				;                06/27/2016      Finished Product
+				;---------------------------------------------------------------------
+				         .model    small            ; 64k code and 64k data
+				         .8086                      ; only allow 8086 instructions
+				         public    addx             ; allow linker to access addx
+				         public    divx             ; allow linker to access divx
+				;--------------------------------------
+
+
+				;--------------------------------------
+				;   ADDX Subroutine
+				;--------------------------------------
+ 0000				         .data						; start the data segment
+				;--------------------------------------
+ 0000 000A					ten 	dw 10				; constant for the number 10
+ 0002 0002					two		dw 2				; constant for the number 2
+ 0004 0000					quot 	dw ?				; will store the quotient for unrooled loop
+ 0006 0000					rem 	dw ?				; will store the reminader for unrolled loop
+				;--------------------------------------
+ 0000				         .code						; start the code segment
+				;--------------------------------------
+				; start the addx subroutine
+				; will initally save all registers on the stack
+				; then it will store the count of the specified list
+				; into the ax register for processing
+				; we move the source index and the
+				; destination index to the end of the list
+				; the LSW and move towards the MSW as per the 
+				; specifications of the projlct
+				;--------------------------------------
+ 0000				addx:
+ 0000  50					push ax						; save registers
+ 0001  51					push cx						; save registers
+ 0002  56					push si						; save registers
+ 0003  57					push di						; save registers
+ 0004  52					push dx						; save registers
+ 0005  8B 04					mov ax, [si]				; store count in ax reg
+ 0007  BA 0000					mov dx, 0
+ 000A  F7 36 0000 R				div ten						; we divide for efficiency
+ 000E  A3 0004 R				mov quot, ax				; store the quotient for looping
+ 0011  89 16 0006 R				mov rem, dx					; store the remainder for remaining elements
+ 0015  8B 0E 0004 R				mov cx, quot				; move the count to cx reg for loop inst
+ 0019  8B 04					mov ax, [si]				; store count in ax reg
+ 001B  F7 26 0002 R				mul two						; convert count of dw's to db's
+ 001F  03 F0					add si, ax					; point si to the end of source list
+ 0021  03 F8					add di, ax					; point si to the end of dest list
+				;--------------------------------------
+				; handles adding the source word and the
+				; destination word and then storing that
+				; summed value to the destination 
+				; list for output as per the projlct specs
+				; calc will loop for each dw in the list
+				; as specified in the cx register
+				; after calc has looped through
+				; we pop the registers from the stack
+				; aka we restore the registers
+				;--------------------------------------
+ 0023  83 F9 00					cmp cx, 0							; see if the quotient is zero if so dont go into calcq
+ 0026  F8					clc									; clear any carry flags that could have happend with the previous cmp
+ 0027  75 06					jne calcq							; if the quotient is not zero then jump to calcq
+ 0029  8B 0E 0006 R				mov cx, rem							; go ahead and set up for calculating the remaining elements
+ 002D  EB 46					jmp calcr							; jump past calcq
+ 002F				calcq:
+ 002F  8B 04					mov ax, [si]				; store source elem in ax	
+ 0031  11 05					adc [di], ax				; add source and destination elements
+ 0033  8B 44 FE					mov ax, [si-2]				; store source elem in ax	
+ 0036  11 45 FE					adc [di-2], ax				; add source and destination elements
+ 0039  8B 44 FC					mov ax, [si-4]				; store source elem in ax	
+ 003C  11 45 FC					adc [di-4], ax				; add source and destination elements
+ 003F  8B 44 FA					mov ax, [si-6]				; store source elem in ax	
+ 0042  11 45 FA					adc [di-6], ax				; add source and destination elements
+ 0045  8B 44 F8					mov ax, [si-8]				; store source elem in ax	
+ 0048  11 45 F8					adc [di-8], ax				; add source and destination elements
+ 004B  8B 44 F6					mov ax, [si-10]				; store source elem in ax	
+ 004E  11 45 F6					adc [di-10], ax				; add source and destination elements
+ 0051  8B 44 F4					mov ax, [si-12]				; store source elem in ax	
+ 0054  11 45 F4					adc [di-12], ax				; add source and destination elements
+ 0057  8B 44 F2					mov ax, [si-14]				; store source elem in ax	
+ 005A  11 45 F2					adc [di-14], ax				; add source and destination elements
+ 005D  8B 44 F0					mov ax, [si-16]				; store source elem in ax	
+ 0060  11 45 F0					adc [di-16], ax				; add source and destination elements
+ 0063  8B 44 EE					mov ax, [si-18]				; store source elem in ax	
+ 0066  11 45 EE					adc [di-18], ax				; add source and destination elements
+ 0069  8D 74 EC					lea si, [si - 20]			; update the source index
+ 006C  8D 7D EC					lea di, [di - 20]			; update the destination index
+ 006F  E2 BE					loop calcq					; loop back until cx returns to 0
+ 0071  8B 0E 0006 R		mov cx, rem							; this instruction only occurs if calcq was used.  set the rem for the remaining elements
+				;--------------------------------------
+				; will do the same as above but handles remaining words
+				; handles adding the source word and the
+				; destination word and then storing that
+				; summed value to the destination 
+				; list for output as per the projlct specs
+				; calc will loop for each dw in the list
+				; as specified in the cx register
+				; after calc has looped through
+				; we pop the registers from the stack
+				; aka we restore the registers
+				;--------------------------------------
+ 0075				calcr:
+ 0075  8B 04					mov ax, [si]				; store source elem in ax					
+ 0077  11 05					adc [di], ax				; add source and destination elements	
+ 0079  8D 74 FE					lea si, [si-2]				; update the source index
+ 007C  8D 7D FE					lea di, [di -2]				; update the destination index
+ 007F  E2 F4					loop calcr
+						
+						
+ 0081  5A					pop dx						; restore registers
+ 0082  5F					pop di						; restore registers
+ 0083  5E					pop si						; restore registers
+ 0084  59					pop cx						; restore registers
+ 0085  58					pop ax						; restore registers
+ 0086  C3					ret							; return
+ 0087				stop:
+						
+ 0087  5A					pop dx
+ 0088  5F					pop di						; restore registers
+ 0089  5E					pop si						; restore registers
+ 008A  59					pop cx						; restore registers
+ 008B  58					pop ax						; restore registers
+ 008C  C3					ret							; return
+				;--------------------------------------
+
+
+
+				;--------------------------------------
+				;   DIVX Subroutine
+				;--------------------------------------
+ 0008				         .data						; start the data segment
+				;--------------------------------------
+ 0008 0000					divisor dw ?				; global divisor
+				;--------------------------------------
+ 008D				         .code						; start the code segment
+				;--------------------------------------
+				; Initially we push all the registers of use
+				; onto the stack
+				; We store the count dw from the source list
+				; into the ax register
+				; we store this variable into divisor
+				; which will stay constant across all iterations
+				;--------------------------------------
+ 008D				divx:
+ 008D  50					push ax						; save registers
+ 008E  51					push cx						; save registers
+ 008F  56					push si						; save registers
+ 0090  52					push dx						; save registers
+ 0091  8B 04					mov ax, [si]				; store the count variable to ax
+ 0093  89 16 0008 R				mov divisor, dx				; set the global divisor
+ 0097  BA 0000					mov dx, 0					; reset dx to avoid divide overflow
+ 009A  F7 36 0000 R				div ten						; divide by 10
+ 009E  A3 0004 R				mov quot, ax				; store quotient
+ 00A1  89 16 0006 R				mov rem, dx					; store remainder
+ 00A5  8B 0E 0004 R				mov cx, quot				; store into cx reg for looping
+ 00A9  BA 0000					mov dx, 0					; set the high word to zero
+ 00AC  8D 74 02					lea si, [si+2]				; advance past count 
+ 00AF  83 F9 00			cmp cx, 0							; see if the quotient is zero if so dont go into calcq
+ 00B2  F8			clc									; clear any carry flags that could have happend with the previous cmp
+ 00B3  75 06			jne calcdq							; if the quotient is not zero then jump to calcq
+ 00B5  8B 0E 0006 R		mov cx, rem							; go ahead and set up for calculating the remaining elements
+ 00B9  EB 70			jmp calcdr							; jump past calcq
+				;--------------------------------------
+				; will handle dividing dw's from the source
+				; list by the specified divisor
+				; since we are dividing by a word
+				; the dividend is stored in the dx:ax pair
+				; with dx initially set to 0000 to guarentee
+				; that no overflow will occur
+				; calcd will continue to loop for every word in the source
+				; list
+				; after calcd has iterated through every word in the list
+				; we restore all registers back to their default value
+				;--------------------------------------
+ 00BB				calcdq:
+ 00BB  8B 04					mov ax, [si]				; place source dw into ax reg
+ 00BD  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00C1  89 04					mov [si], ax				; store quot at spot in 
+						
+ 00C3  8B 44 02					mov ax, [si+2]				; place source dw into ax reg
+ 00C6  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00CA  89 44 02					mov [si+2], ax				; store quot at spot in 
+						
+ 00CD  8B 44 04					mov ax, [si+4]				; place source dw into ax reg
+ 00D0  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00D4  89 44 04					mov [si+4], ax				; store quot at spot in 
+						
+ 00D7  8B 44 06					mov ax, [si+6]				; place source dw into ax reg
+ 00DA  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00DE  89 44 06					mov [si+6], ax				; store quot at spot in 
+						
+ 00E1  8B 44 08					mov ax, [si+8]				; place source dw into ax reg
+ 00E4  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00E8  89 44 08					mov [si+8], ax				; store quot at spot in 
+						
+ 00EB  8B 44 0A					mov ax, [si+10]				; place source dw into ax reg
+ 00EE  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00F2  89 44 0A					mov [si+10], ax				; store quot at spot in 
+						
+ 00F5  8B 44 0C					mov ax, [si+12]				; place source dw into ax reg
+ 00F8  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 00FC  89 44 0C					mov [si+12], ax				; store quot at spot in 
+						
+ 00FF  8B 44 0E					mov ax, [si+14]				; place source dw into ax reg
+ 0102  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 0106  89 44 0E					mov [si+14], ax				; store quot at spot in 
+						
+ 0109  8B 44 10					mov ax, [si+16]				; place source dw into ax reg
+ 010C  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 0110  89 44 10					mov [si+16], ax				; store quot at spot in 
+						
+ 0113  8B 44 12					mov ax, [si+18]				; place source dw into ax reg
+ 0116  F7 36 0008 R				div divisor					; ax will have quot dx will have rem
+ 011A  89 44 12					mov [si+18], ax				; store quot at spot in 
+						
+ 011D  8D 74 14					lea si, [si +20]			; advance si pointer to next element
+ 0120  E2 99					loop calcdq					; loop back around
+						
+ 0122  8B 0E 0006 R				mov cx, rem					; set remainder in cx var for next loop
+ 0126  83 F9 00					cmp cx, 0					; if remainder was zero exit
+ 0129  74 0D					je exit						; exit
+				;--------------------------------------
+				; will do the same as above but will handle remaining words
+				; will handle dividing dw's from the source
+				; list by the specified divisor
+				; since we are dividing by a word
+				; the dividend is stored in the dx:ax pair
+				; with dx initially set to 0000 to guarentee
+				; that no overflow will occur
+				; calcd will continue to loop for every word in the source
+				; list
+				; after calcd has iterated through every word in the list
+				; we restore all registers back to their default value
+				;--------------------------------------
+ 012B				calcdr:
+ 012B  8B 04					mov ax, [si]				; place source dw into ax reg
+ 012D  F7 36 0008 R				div divisor					; division
+ 0131  89 04					mov [si], ax				; store the quotient into source list
+ 0133  8D 74 02					lea si, [si+2]				; advance pointer
+ 0136  E2 F3					loop calcdr					; loop back around
+				;--------------------------------------
+				; will effectively 
+				; end the divx subroutine
+				; will also restore registers
+				;--------------------------------------
+						
+ 0138				exit:
+ 0138  5A					pop dx						; restore registers
+ 0139  5E					pop si						; restore registers
+ 013A  59					pop cx						; restore registers
+ 013B  58					pop ax						; restore registers
+ 013C  C3					ret                         ; return
+				;--------------------------------------
+				end									; effectively end extend.asm
+ 
+Microsoft (R) Macro Assembler Version 6.11		    06/28/16 16:03:02
+extend.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 000A	  Word	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	16 Bit	 013D	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+addx . . . . . . . . . . . . . .	L Near	 0000	  _TEXT	Public
+calcdq . . . . . . . . . . . . .	L Near	 00BB	  _TEXT	
+calcdr . . . . . . . . . . . . .	L Near	 012B	  _TEXT	
+calcq  . . . . . . . . . . . . .	L Near	 002F	  _TEXT	
+calcr  . . . . . . . . . . . . .	L Near	 0075	  _TEXT	
+divisor  . . . . . . . . . . . .	Word	 0008	  _DATA	
+divx . . . . . . . . . . . . . .	L Near	 008D	  _TEXT	Public
+exit . . . . . . . . . . . . . .	L Near	 0138	  _TEXT	
+quot . . . . . . . . . . . . . .	Word	 0004	  _DATA	
+rem  . . . . . . . . . . . . . .	Word	 0006	  _DATA	
+stop . . . . . . . . . . . . . .	L Near	 0087	  _TEXT	
+ten  . . . . . . . . . . . . . .	Word	 0000	  _DATA	
+two  . . . . . . . . . . . . . .	Word	 0002	  _DATA	
+
+	   0 Warnings
+	   0 Errors

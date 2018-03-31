@@ -1,0 +1,313 @@
+.context h2inc
+.context @contents
+.context @h2inc.contents
+.topic Contents for H2INC Utility
+.freeze 3
+                                             \i\p\aUp\vml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    \i\p\aTransferring Data from C to MASM\v@transferring\v\i\p
+    \i\p\aConverting Data Structures\v@converting\v\i\p
+          \i\p\aConstants\v@constants\v\i\p
+          \i\p\aVariables\v@variables\v\i\p
+          \i\p\aPointers\v@pointers\v\i\p
+          \i\p\aStructures, Unions, Bit Fields, and Enumerations\v@strucetc\v\i\p
+          \i\p\aArrays\v@arrays\v\i\p
+
+    \i\p\aConverting Function Prototypes\v@convfunc\v\i\p
+          \i\p\aStatic Functions\v@statfunc\v\i\p
+          \i\p\aReturn Values and Language Types\v@retval\v\i\p
+          \i\p\aFunction Pointer Distance\v@funcptr\v\i\p
+          \i\p\aFormal Parameter List\v@formalparm\v\i\p
+.context @transferring
+.topic Transferring Data from C to MASM
+.freeze 3
+                                             \i\p\aUp\vml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The H2INC program translates C include files into MASM-compatible
+     include files. C include files (also called header files) normally
+     have the extension .H; MASM include files normally have the
+     extension .INC. Thus the name H2INC.
+
+     H2INC makes it easy to port data structures from C programs to
+     MASM programs. You will find it useful when you have:
+
+        ş A program that mixes C code, MASM code, and globally
+          accessible data structures.
+
+        ş A program that is prototyped in C, but later translated to
+          MASM for maximum speed and minimum size.
+
+        ş A program that calls library functions from OS/2, Windows, or
+          other libraries that are accompanied by C header files.
+
+     The H2INC program translates data declarations and function
+     prototypes. It does not translate C code into MASM code. When
+     H2INC encounters a C statement that would compile into executable
+     code, the program ignores the statement and prints a warning to
+     the standard output.
+
+     For example, H2INC would translate the C statement
+
+          #define MAX_EMPLOYEES 400
+
+     into this MASM statement:
+
+          MAX_EMPLOYEES EQU 400
+
+     But it would be unable to translate a statement such as this:
+
+          printf( "This is an executable statement.\\n" );
+
+     H2INC produces a single .INC file. If the C header file happens to
+     include other header files, the statements from the original and
+     nested files are translated and combined into one .INC file.
+
+     The program also preprocesses some statements. For example, given
+     these statements,
+
+          #if defined(VERSION)
+          #define BOX_VALUE 4
+          #endif
+
+     H2INC checks to see if \bVERSION\p is defined. If not, it skips
+     over the \b#if\p block. If \bVERSION\p is defined, H2INC
+     translates the statements inside the block from C syntax to MASM
+     syntax.
+
+.context @converting
+.topic Converting Data Structures
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The primary value of H2INC is that it quickly converts data from C
+     format into MASM format. This section shows how it converts
+     constants, variables, pointers, and other C data structures to
+     MASM format.
+
+    See:    \i\p\aConstants\v@constants\v\i\p
+            \i\p\aVariables\v@variables\v\i\p
+            \i\p\aPointers\v@pointers\v\i\p
+            \i\p\aStructures, Unions, Bit Fields, and Enumerations\v@strucetc\v\i\p
+            \i\p\aArrays\v@arrays\v\i\p
+.context @constants
+.topic Constants
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     C symbolic constants of the form
+
+          #define CORNERS 4
+
+     are translated to MASM constants of the form
+
+          CORNERS EQU 4
+
+     in cases where CORNERS is an integral constant or where it
+     preprocesses to an integral constant.
+
+     When the defined expression evaluates to a nonintegral value, such
+     as a floating-point number or a string, H2INC adds angle brackets
+     to create a string equate:
+
+          PI EQU <3.1415>
+
+     This form is used when the expression is anything other than an
+     integer. H2INC does not check the constant or the string for
+     validity. For example, although the following C definitions are
+     invalid, H2INC would create string equates without generating an
+     error:
+
+          #define INT (unsigned int)
+          #define FOREVER (for(;;))
+
+     The definition of INT is incorrect because INT is an 80\ix\p86
+     instruction for generating an interrupt. The use of a \bfor\p loop
+     is invalid because it is C code that would not assemble under
+     MASM.
+
+.context @variables
+.topic Variables
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC also translates variables from C to MASM format. For
+     example, it translates the C declaration
+
+          int my_var;
+
+     into the MASM declaration
+
+          EXTERNDEF my_var:SWORD
+
+     H2INC converts C variable types to MASM types as follows:
+
+        \bC\p                \bMASM\p
+        char             SBYTE/BYTE (depending on /J option)
+        signed char      SBYTE
+        unsigned char    BYTE
+        int              SWORD
+        unsigned int     WORD
+        long             SDWORD
+        unsigned long    DWORD
+        float            FWORD
+        double           QWORD
+        long double      TBYTE
+
+     A variable is assumed to be \bEXTERN\p unless it is explicitly
+     declared as \bSTATIC\p. When the .H file contains static variable
+     declarations, H2INC generates a .DATA directive to ensure that the
+     variable is placed in a data segment. In addition, static
+     variables are not permitted if the H2INC /Mn option is set.
+
+     For example, the C declaration
+
+          static unsigned int xyz;
+
+     converts to this MASM declaration
+
+          xyz WORD 0
+
+.context @pointers
+.topic Pointers
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC also translates C pointer variables into the MASM
+     equivalent. The C declaration
+
+          int *ptr_variable;
+
+     would translate into this MASM statement:
+
+          EXTERNDEF ptr_variable:PTR SWORD
+
+     If you run H2INC with the /Mn option set, all distances are
+     specified explicitly (for example, \bNEAR PTR\p instead of
+     \bPTR\p). If /Mn is not set, the distances are specified only when
+     they are given in the .H file.
+
+.context @strucetc
+.topic Structures, Unions, Bit Fields, and Enumerations
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC translates C structures and unions into MASM structures and
+     unions. Because structure tags are optional in C but are required
+     in MASM, H2INC generates new tag names when necessary. In
+     addition, the H2INC /Zu option guarantees that all tag names are
+     unique.
+
+     A bit field from C becomes a MASM RECORD, which cannot exceed a
+     total of 16 bits (32 bits if the /G3 or /G4 option is set).
+
+     Enumeration declarations in the C header file are assigned values
+     and treated as standard integer constants.
+
+.context @arrays
+.topic Arrays
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Since H2INC assumes that all variables are external, it does not
+     provide the size of an array. For example, the C declaration
+
+          int i[10][10];
+
+     translates to
+
+          EXTERNDEF i:SWORD
+
+     When an array is declared as static, the size of the array is
+     included. For example,
+
+          static int i[15];
+          static int j[12][50];
+
+     becomes
+
+          i SWORD 15 DUP(0)
+          j SWORD 12 DUP (15 DUP (0))
+
+.context @convfunc
+.topic Converting Function Prototypes
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     In addition to converting data structures from C to MASM, H2INC
+     can translate C function prototypes into the equivalent MASM
+     prototypes.
+
+     For example, H2INC would change this C prototype
+
+          char my_func(int);
+
+     into this MASM prototype
+
+          my_func PROTO C NEAR:SWORD
+
+     H2INC defaults to near functions that use C calling conventions.
+     The function prototype for my_func lists a single parameter \bint\p,
+     which is translated to MASM's \bSWORD\p. The return value of \bchar\p is
+     not translated.
+
+    See:    \i\p\aStatic Functions\v@statfunc\v\i\p
+            \i\p\aReturn Values and Language Types\v@retval\v\i\p
+            \i\p\aFunction Pointer Distance\v@funcptr\v\i\p
+            \i\p\aFormal Parameter List\v@formalparm\v\i\p
+.context @statfunc
+.topic Static Functions
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC ignores functions declared as static because static
+     functions are visible only within the current source module.
+     Standard include files contain no executable code.
+
+     All other function prototypes are declared as \bEXTERNDEF\p.
+
+.context @retval
+.topic Return Values and Language Types
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Because the MASM directive \bPROTO\p does not specify how to handle
+     return values, H2INC does not translate the return type. However,
+     H2INC checks the type to determine how the individual languages
+     return the value, via the stack or registers.
+
+     H2INC explicitly names the language type in every function
+     prototype. If no language type was included in the C prototype,
+     the default is C. The /Gc option changes the default language to
+     Pascal.
+
+.context @funcptr
+.topic Function Pointer Distance
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     If the /Mn option is set, H2INC includes the distance of the
+     function (near or far), whether or not the C prototype specifies
+     the distance. If /Mn is not set, H2INC includes the distance only
+     when the .H file specifies the distance.
+
+.context @formalparm
+.topic Formal Parameter List
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Every argument in the formal parameter list is translated into its
+     appropriate form in the MASM function prototype. Both the variable
+     names and their types placed in the .INC file.

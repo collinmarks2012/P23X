@@ -1,0 +1,741 @@
+.context @os2calls
+.topic OS/2 Include Files
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ÚÄÄOS/2 Include FilesÄÄÄÄÄÄÄÄÄÄ¿
+     ³                              ³
+     ³ \i\p\aIncluding OS/2 Definitions\v@os2incl\v\i\p ³
+     ³ \i\p\aMaking System Calls\v@os2callmake\v\i\p        ³
+     ³ \i\p\aUsing OS/2 Types\v@os2type\v\i\p           ³
+     ³ \i\p\aOS/2 Naming Conventions\v@os2hungary\v\i\p    ³
+     ³ \i\p\aLimitations\v@os2limits\v\i\p                ³
+     ³ \i\p\aOS/2 Documentation\v@os2docs\v\i\p         ³
+     ³ \i\p\aFile Organization\v@os2files\v\i\p          ³
+     ³ \i\p\aCategory Summary\v@os2sum\v\i\p           ³
+     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+     You can simplify calls to OS/2 system services by using the OS/2
+     include files provided with the Microsoft Macro Assembler. These
+     include files use features such as TYPEDEF, INVOKE, PROTO, UNION,
+     and STRUCT to provide a flexible interface to OS/2 routines.
+.context @os2incl
+.topic Including OS/2 Definitions
+..index using OS/2 definitions, Include OS/2 Files
+.freeze 3
+ \i\p\aExample\v@Hellos2.asm\v\i\p                                   \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     To use the OS/2 definitions, include the file OS2.INC in your
+     source file. The OS/2 types, prototypes, and constants are
+     organized into categories within the include files. You must
+     define symbols for each category you want to use.
+
+     For example, to use VIO (Character-based Video) functions,
+     constants, and types, put the following lines in your source file:
+
+       INCL_VIO      EQU     1           ; Enable video definitions
+                     INCLUDE os2.inc
+
+     The constant INCL_VIO must be defined before the INCLUDE
+     statement. Some of the most commonly used functions (DosExit,
+     DosBeep, file management) are defined automatically. As a result,
+     the statements above actually include many additional default
+     functions. You can disable inclusion of common data by defining
+     INCL_NOCOMMON.
+
+     For example:
+
+       INCL_NOCOMMON EQU     1           ; Disable common definitions
+       INCL_VIO      EQU     1           ; Enable video definitions
+                     INCLUDE os2.inc
+
+     Other categories are enabled and disabled in the same way.
+
+     See also: \aCategory Summary\v@os2sum\v
+.context @os2callmake
+..index OS/2 system functions, Using the INVOKE Directive
+.topic Making OS/2 System Calls
+.freeze 3
+ \i\p\aExample\v@Hellos2.asm\v\i\p                                   \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     You can call OS/2 system functions with the INVOKE directive. Give
+     the name of the function followed by the arguments. No attributes
+     are needed, since they are provided by the prototypes in the
+     include files.
+
+     For example, assume you want to write text to the screen using
+     VioWrtCharStrAtt. This function displays a string with a specified
+     attribute at a given row and column. The prototype is:
+
+       VioWrtCharStrAtt PROTO PASCAL FAR \\
+                        pch:PBYTE, cb:WORD, usRow:WORD, usColumn:WORD,
+                        pAttr:PBYTE, hv:HVIO
+
+     You might have some data for it declared as follows:
+
+       hello    BYTE    "Hello, world", 13, 10
+       attrib   WORD    0                 ; Attribute (green on white)
+
+     You could then call the functions with the following statement:
+
+                INVOKE DosWrite,          ; Function name
+                        1,                ; Handle of standard output
+                        ADDR hello,       ; Address of string
+                        LENGTH hello,     ; Length of string
+                        ADDR result       ; Address of result variable
+
+     See PROTO and INVOKE for more information about valid types and
+     operators used for passing arguments.
+
+     \bSee also:\p \aIncluding OS/2 Data\v@os2incl\v, \aCategory Summary\v@os2sum\v
+.context @os2type
+.topic Using OS/2 Types
+..index common types (include files)
+..index far pointers (include files)
+..index handles (include files)
+.freeze 3
+ \i\p\aExample\v@Hellos2.asm\v\i\p                                   \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Since many sources of documentation on OS/2 system calls use the C
+     language type definitions, similar types are provided in the
+     assembler include files. However, MASM-style types are also
+     available. Two C type names have been renamed so that they do not
+     conflict with assembler reserved words; INT has been renamed to
+     INTEGER and SHORT has been renamed to SSHORT.
+
+     Some of the more common types used in OS/2 include files are
+     listed below:
+
+     \bIntegral Types\p
+
+     \bC            Asm         Description\p
+
+     UCHAR        BYTE        Byte
+     CHAR         SBYTE       Signed byte
+     USHORT       WORD        Word
+     SSHORT       SWORD       Signed word
+     ULONG        DWORD       Doubleword
+     LONG         SDWORD      Signed doubleword
+     UINTEGER     ÄÄ          Unsigned integer (size depends on mode)
+     INTEGER      ÄÄ          Integer (size depends on mode)
+     BOOL         ÄÄ          Boolean
+     SEL          ÄÄ          Selector (segment)
+     PID          ÄÄ          Process identifier
+
+     \bCommon Pointers\p
+
+     \bC           Asm          Description\p
+
+     PSZ          ÄÄ          Pointer to zero-terminated string
+     PCH          PBYTE       Pointer to bytes
+     PCHAR        PSBYTE      Pointer to signed bytes
+     PUSHORT      PWORD       Pointer to word
+     PSHORT       PSWORD      Pointer to signed word
+     PULONG       PDWORD      Pointer to doubleword
+     PLONG        PSDWORD     Pointer to unsigned doubleword
+     PFN          ÄÄ          Pointer to function
+     PPFN         ÄÄ          Pointer to pointer to function
+     PSEL         ÄÄ          Pointer to selector (segment)
+     PVOID        ÄÄ          Pointer to any type
+
+     NOTE: All pointers are far.
+
+     \bCommon Handles\p
+
+     \bC           Asm          Description\p
+
+     HFILE        ÄÄ          Handle to file
+     HVIO         ÄÄ          Handle to video screen
+     HKBD         ÄÄ          Handle to keyboard
+     HMOU         ÄÄ          Handle to mouse
+     HDIR         ÄÄ          Handle to directory
+     HSEM         ÄÄ          Handle to semaphore
+     HQUEUE       ÄÄ          Handle to queue
+     HPIPE        ÄÄ          Handle to pipe
+
+     For each structure, there is a corresponding pointer type. For
+     example, the FILEFINDBUF structure has a PFILEFINDBUF pointer
+     type. Note that field names may be the same for different
+     structures.
+
+     \bSee also:\p \aOS/2 Naming Conventions\v@os2hungary\v
+.context @os2hungary
+.topic OS/2 Naming Conventions
+..index OS/2 variable names
+.freeze 3
+ \i\p\aExample\v@Hellos2.asm\v\i\p                                   \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     OS/2 include files use a naming convention for variable names.
+     Each name consists of three parts:
+
+        ş The first character of an identifier may be a lowercase
+          letter called a prefix. Common prefixes include p (pointer),
+          a (array), i (index), and c (count).
+
+        ş After the prefix, there may be an additional lowercase tag,
+          usually indicating type. Common tags include ch (char),
+          f (flag), sz (zero-terminated string, also called ASCIIZ),
+          l (long), and x or y (x or y coordinate).
+
+        ş At the end of the identifier, there may be one or more
+          qualifiers, each beginning with an uppercase letter.
+
+     For example, an identifier called achFileName is an array (a) of
+     characters (ch) containing a filename (FileName).
+
+     Common prefixes and tags include the following:
+
+     \bName    Meaning\p
+
+     ch      Character (SBYTE)
+     us      Unsigned short (WORD)
+     s       Short (SWORD)
+     ul      Unsigned long (DWORD)
+     l       Long (SDWORD)
+     b       Byte
+     c       Count
+     cb      Count of bytes
+     h       Handle
+     f       Flag (Boolean)
+     fs      Short of flags (word bitfield)
+     fb      Byte of flags (byte bitfield)
+     p       Pointer
+     a       Array
+     sel     Selector
+     ach     Array of characters
+     pch     Pointer to characters
+     psz     Pointer to zero-terminated string (ASCIIZ)
+     pus     Pointer to unsigned
+     pfn     Pointer to functions
+
+     \bSee also:\p \aUsing OS/2 Types\v@os2callmake\v
+.context @os2limits
+.topic Limitations of OS/2 Include Files
+..index M510 compatibility
+.freeze 3
+                                             \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The following limitations apply when using OS/2 include files:
+
+        ş The include files cover the OS/2 base functions but not the
+          Presentation Manager functions. If you have the Microsoft C
+          Compiler, Presentation Manager Softset, or PM Toolkit, you can
+          use the \aH2INC\vml.hlp!H2INC\v utility to create partial or complete assembler-
+          compatible include files from the C include files for PM.
+
+        ş The include files use many new features of MASM 6.0.
+          Therefore, you cannot use them with M510 compatibility mode.
+
+        ş Most constants are given in the default decimal radix.
+          Therefore, you cannot use .RADIX to change the default radix
+          when using OS/2 include files.
+
+.context @os2docs
+.topic OS/2 Documentation Bibliography
+.freeze 3
+                                             \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     MASM 6.0 does not include documentation for the individual OS/2
+     systems calls. However, the calls are described in the Microsoft
+     Operating System/2 Programmer's Toolkit (published separately) and
+     in various third-party books.
+
+     Some documentation describes the functions using C type names.
+     Synonyms matching these names are provided whenever possible. Two
+     C type names cannot be used because they are MASM keywords.
+     Therefore, INT has been renamed to INTEGER and SHORT has been
+     renamed to SSHORT.
+
+     \bSee also:\p \aUsing OS/2 Types\v@os2type\v
+.context @os2files
+.topic File Organization
+..index OS/2 include files
+.freeze 3
+                                             \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The OS/2 include files are arranged hierarchically. Click a
+     filename to view source code.
+
+     \i\p\b\aOS2.INC\v$INCLUDE:OS2.INC!\v\p\i\p ÄÄÂÄÄÄÄ \i\p\b\aOS2DEF.INC\v$INCLUDE:OS2DEF.INC!\v\p\i\p
+     OS/2        ³     Common definitions and macros
+     parent      ³
+                 ÃÄÄÄÄ \i\p\b\aBSE.INC\v$INCLUDE:BSE.INC!\v\p\i\p ÄÄÄÄÂÄÄÄÄÄ \i\p\b\aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v\p\i\p
+                 ³     Base parent   ³      Dos functions
+                 ³                   ³
+                 ³                   ÃÄÄÄÄÄ \i\p\b\aBSESUB.INC\v$INCLUDE:BSESUB.INC!\v\p\i\p
+                 ³                   ³      Kbd, Vio, and Mou functions
+                 ³                   ³
+                 ³                   ÃÄÄÄÄÄ \i\p\b\aBSEDEV.INC\v$INCLUDE:BSEDEV.INC!\v\p\i\p
+                 ³                   ³      Device driver functions
+                 ³                   ³
+                 ³                   ÀÄÄÄÄÄ \i\p\b\aBSEERR.INC\v$INCLUDE:BSEERR.INC!\v\p\i\p
+                 ÀÄÄÄÄ Presentation         Error constants
+                       Manager tree
+                       (not included
+                       with MASM)
+
+     You can use the OS/2 include files by defining the appropriate
+     symbols and including OS2.INC. Understanding this organization
+     is useful if you need to examine the include files.
+
+     \bSee also:\p \aIncluding OS/2 Data\v@os2incl\v
+
+.context @os2sum
+.topic OS/2 Category Summary
+..index OS/2 symbols
+.freeze 3
+ \i\p\aExample\v@Hellos2.asm\v\i\p                                   \i\p\aUp\v@os2calls\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The following symbols can be defined to get each category
+     of OS/2 systems calls:
+
+     \bSymbol\p                    \bDescription\p
+
+     INCL_SUB                  Keyboard (Kbd), character-mode video
+                               (Vio), and mouse (Mou)
+         INCL_KBD              \i\p\aKeyboard\v@os2kbd\v\i\p
+         INCL_VIO              \i\p\aVideo (character mode)\v@os2vio\v\i\p
+         INCL_MOU              \i\p\aMouse\v@os2mou\v\i\p
+
+     INCL_DOS                  All DOS functions
+         INCL_DOSPROCESS       \i\p\aProcesses and threads\v@os2proc\v\i\p
+         INCL_DOSFILEMGR       \i\p\aFile management\v@os2fileman\v\i\p
+         INCL_DOSMEMMGR        \i\p\aMemory management\v@os2memman\v\i\p
+         INCL_DOSDATETIME      \i\p\aDate, time, and timers\v@os2date\v\i\p
+         INCL_DOSSEMAPHORES    \i\p\aSemaphores\v@os2sem\v\i\p
+         INCL_DOSQUEUES        \i\p\aQueues\v@os2queue\v\i\p
+         INCL_DOSNMPIPES       \i\p\aNamed pipes\v@os2nmpipe\v\i\p
+         INCL_DOSINFOSEG       \i\p\aInformation segments\v@os2infoseg\v\i\p
+         INCL_DOSMONITORS      \i\p\aMonitors\v@os2mon\v\i\p
+         INCL_DOSSIGNALS       \i\p\aSignals\v@os2sig\v\i\p
+         INCL_DOSRESOURCES     \i\p\aResources\v@os2resource\v\i\p
+         INCL_DOSNLS           \i\p\aNational language support\v@os2nls\v\i\p
+         INCL_DOSMISC          \i\p\aMiscellaneous\v@os2misc\v\i\p
+         INCL_DOSSESMGR        \i\p\aSession manager\v@os2session\v\i\p
+         INCL_DOSDEVICES       \i\p\aDevice and IOCTL\v@os2device\v\i\p
+         INCL_DOSDEVIOCTL      \i\p\aIOCTL\v@os2device\v\i\p
+         INCL_DOSMODULEMGR     \i\p\aDynamic link modules\v@os2dynlink\v\i\p
+         INCL_DOSTRACE         \i\p\aTrace support\v@os2trace\v\i\p
+
+     INCL_DOSERRORS            \i\p\aError constants\v@os2err\v\i\p
+
+     INCL_NOCOMMON             \i\p\aDisable default categories\v@os2common\v\i\p
+
+     \bSee also:\p \aIncluding OS/2 Files\v@os2incl\v
+.context @os2common
+.context INCL_NOCOMMON
+.topic INCL_NOCOMMON
+..index default categories, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_NOCOMMON
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+     Defining this symbol gives only those categories you specifically
+     request. If you don't enable this symbol, you automatically get
+     the following:
+
+        ş DosBeep
+        ş DosExit
+        ş DosGetDateTime
+        ş DosSetDateTime
+        ş All file and directory functions
+        ş Basic memory allocation functions
+        ş Basic semaphore functions
+.context @os2err
+.context INCL_DOSERRORS
+.topic INCL_DOSERRORS
+..index DOS error constants, Defining OS/2 Symbols
+..index enabling DOS error constants, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSERRORS
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+     This symbol enables error constants for all OS/2 functions.
+.context @os2proc
+.context INCL_DOSPROCESS
+.topic Processes and Threads
+..index processes and threads, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSPROCESS
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosBeep              DosSleep            DosGetPPid
+     DosExit              DosEnterCritSec     DosGetPrty
+     DosCreateThread      DosExitCritSec      DosSetPrty
+     DosResumeThread      DosExitList         DosKillProcess
+     DosSuspendThread     DosExecPgm
+     DosCWait             DosGetPid
+.context @os2fileman
+.context INCL_DOSFILEMGR
+.topic File Management
+..index managing DOS files, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSFILEMGR
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosOpen              DosNewSize        DosSetFSInfo
+     DosOpen2             DosBufReset       DosQVerify
+     DosClose             DosChgFilePtr     DosSetVerify
+     DosRead              DosFileLocks      DosSetMaxFH
+     DosWrite             DosMove           DosQFileInfo
+     DosReadAsync         DosCopy           DosSetFileInfo
+     DosWriteAsync        DosEditName       DosQPathInfo
+     DosDelete            DosFileIO         DosSetPathInfo
+     DosDupHandle         DosMkdir          DosQFileMode
+     DosQFHandState       DosMkdir2         DosSetFileMode
+     DosSetFHandState     DosRmdir          DosEnumAttribute
+     DosQHandType         DosSelectDisk     DosOplockRelease
+     DosFindFirst         DosQCurDisk       DosShutdown
+     DosFindFirst2        DosChDir          DosFSAttach
+     DosFindNext          DosQCurDir        DosQFSAttach
+     DosFindClose         DosQFSInfo        DosFSCtl
+.context @os2memman
+.context INCL_DOSMEMMGR
+.topic Memory Management
+..index managing memory, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSMEMMGR
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosAllocSeg       DosAllocHuge        DosLockSeg
+     DosReallocSeg     DosReallocHuge      DosUnlockSeg
+     DosFreeSeg        DosGetHugeShift     DosCreateCSAlias
+     DosGiveSeg        DosAllocShrSeg      DosSubAlloc
+     DosGetSeg         DosGetShrSeg        DosSubFree
+     DosSizeSeg        DosMemAvail         DosSubSet
+.context @os2date
+.context INCL_DOSDATETIME
+.topic Date/Time Management
+..index date/time management, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSDATETIME
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosGetDateTime     DosTimerAsync     DosTimerStop
+     DosSetDateTime     DosTimerStart
+.context @os2sem
+.context INCL_DOSSEMAPHORES
+.topic Semaphores
+..index semaphores, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSSEMAPHORES
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosSemClear       DosSemRequest     DosMuxSemWait
+     DosSemSet         DosCreateSem      DosFSRamSemRequest
+     DosSemWait        DosOpenSem        DosFSRamSemClear
+     DosSemSetWait     DosCloseSem
+.context @os2queue
+.context INCL_DOSQUEUES
+.topic Queues
+..index queues, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSQUEUES
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosCreateQueue     DosReadQueue      DosMakePipe
+     DosOpenQueue       DosWriteQueue     DosPurgeQueue
+     DosCloseQueue      DosPeekQueue      DosQueryQueue
+.context @os2nmpipe
+.context INCL_DOSNMPIPES
+.topic Named Pipes
+..index pipes, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSNMPIPES
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosConnectNmPipe        DosCallNmPipe         DosQNmPHandState
+     DosDisConnectNmPipe     DosTransactNmPipe     DosSetNmPHandState
+     DosMakeNmPipe           DosPeekNmPipe         DosQNmPipeInfo
+     DosSetNmPipeSem         DosWaitNmPipe         DosQNmPipeSemState
+.context @os2infoseg
+.context INCL_DOSINFOSEG
+.topic Information Segment
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSINFOSEG
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunction enabled:\p
+
+     DosGetInfoSeg
+.context @os2mon
+.context INCL_DOSMONITORS
+.topic Monitors
+..DOS monitors, Defining OS/2 Symbols
+..index enabling DOS monitors, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSMONITORS
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosMonOpen      DosMonRead      DosMonReg
+     DosMonClose     DosMonWrite
+.context @os2sig
+.context INCL_DOSSIGNALS
+.topic Signals
+..index DOS signals, Defining OS/2 Symbols
+..index enabling DOS signals, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSSIGNALS
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosSetSigHandler     DosHoldSignal     DosSendSignal
+     DosFlagProcess
+.context @os2resource
+.context INCL_DOSRESOURCES
+.topic Resource Management
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSRESOURCES
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosGetResource     DosGetResource2     DosFreeResource
+.context @os2nls
+.context INCL_DOSNLS
+.topic National Language Support
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSNLS
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosGetCtryInfo     DosGetCp     DosGetCollate
+     DosGetDBCSEv       DosSetCp     DosSetProcCp
+     DosCaseMap
+.context @os2misc
+.context INCL_DOSMISC
+.topic Miscellaneous
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSMISC
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosError        DosGetMessage     DosGetEnv
+     DosSetVec       DosInsMessage     DosScanEnv
+     DosErrClass     DosPutMessage     DosSearchPath
+     DosQSysInfo     DosGetVersion     DosGetMachineMode
+.context @os2session
+.context INCL_DOSSESMGR
+.topic Session management
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSSESMGR
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosStartSession     DosSelectSession     DosQAppType
+     DosSetSession       DosStopSession
+.context @os2device
+.context INCL_DOSDEVIOCTL
+.context INCL_DOSDEVICES
+.topic Devices and Device Drivers
+..index device drivers, Defining OS/2 Symbols
+..index enabling device drivers, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSDEVICES
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v, \aBSEDEV.INC\v$INCLUDE:BSEDEV.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosDevConfig     DosCLIAccess        DosR2StackRealloc
+     DosDevIOCtl      DosPortAccess       DosCallBack
+     DosDevIOCtl2     DosPhysicalDisk
+.context @os2dynlink
+.context INCL_DOSMODULEMGR
+.topic Dynamic Link Modules
+..index dynamic linking, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSMODULEMGR
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosLoadModule     DosGetProcAddr      DosGetModName
+     DosFreeModule     DosGetModHandle
+.context @os2trace
+.context INCL_DOSTRACE
+.topic Debugging Support
+..index trace support, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_DOSTRACE
+
+  \bFile:\p     \aBSEDOS.INC\v$INCLUDE:BSEDOS.INC!\v
+
+  \bFunctions enabled:\p
+
+     DosPTrace
+.context @os2kbd
+.context INCL_KBD
+.topic Keyboard Input
+..index keyboard input, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_KBD
+
+  \bFile:\p     \aBSESUB.INC\v$INCLUDE:BSESUB.INC!\v
+
+  \bFunctions enabled:\p
+
+     KbdCharIn          KbdRegister       KbdGetStatus
+     KbdPeek            KbdDeRegister     KbdSetStatus
+     KbdStringIn        KbdOpen           KbdGetCp
+     KbdFlushBuffer     KbdClose          KbdSetCp
+     KbdXlate           KbdGetFocus       KbdSynch
+     KbdSetCustXt       KbdFreeFocus      KbdGetHWID
+                        KbdSetFgnd
+.context @os2vio
+.context INCL_VIO
+.topic Video
+..index video functions, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_VIO
+
+  \bFile:\p     \aBSESUB.INC\v$INCLUDE:BSESUB.INC!\v
+
+  \bFunctions enabled:\p
+
+     VioWrtCellStr        VioGetMode        VioGetBuf
+     VioWrtCharStr        VioSetMode        VioGetPhysBuf
+     VioWrtCharStrAtt     VioGetConfig      VioShowBuf
+     VioWrtNAttr          VioGetCurPos      VioPrtSc
+     VioWrtNCell          VioSetCurPos      VioPrtScToggle
+     VioWrtNChar          VioGetCurType     VioSavRedrawWait
+     VioWrtTTy            VioSetCurType     VioSavRedrawUndo
+     VioReadCellStr       VioGetState       VioModeWait
+     VioReadCharStr       VioSetState       VioModeUndo
+     VioScrollDn          VioGetFont        VioScrLock
+     VioScrollUp          VioSetFont        VioScrUnLock
+     VioScrollLf          VioSetAnsi        VioRegister
+     VioScrollRt          VioGetAnsi        VioDeRegister
+     VioPopUp             VioGetCp
+     VioEndPopUp          VioSetCp
+.context @os2mou
+.context INCL_MOU
+.topic Mouse
+..index mouse functions, Defining OS/2 Symbols
+..index enabling mouse functions, Defining OS/2 Symbols
+.freeze 3
+                                             \i\p\aUp\v@os2sum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSymbol:\p   INCL_MOU
+
+  \bFile:\p     \aBSESUB.INC\v$INCLUDE:BSESUB.INC!\v
+
+  \bFunctions enabled:\p
+
+     MouReadEventQue     MouGetNumButtons     MouOpen
+     MouGetNumQueEl      MouGetNumMickeys     MouClose
+     MouFlushQue         MouGetEventMask      MouGetDevStatus
+     MouGetPtrPos        MouSetEventMask      MouSetDevStatus
+     MouSetPtrPos        MouGetScaleFact      MouInitReal
+     MouSetPtrShape      MouSetScaleFact      MouRegister
+     MouGetPtrShape      MouRemovePtr         MouDeRegister

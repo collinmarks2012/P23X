@@ -1,0 +1,25 @@
+;* MakeDir - Creates a specified subdirectory.
+;*
+;* Shows:   DOS Function - 39h (Create Directory)
+;*
+;* Params:  Pspec - Pointer to ASCIIZ pathname of new subdirectory
+;*
+;* Return:  Short integer with error code
+;*          0 if successful
+;*          1 if create error
+
+MakeDir PROC USES ds,
+        Pspec:PBYTE
+
+        LoadPtr ds, dx, Pspec           ; Point DS:DX to path spec
+        mov     ah, 39h                 ; DOS Function 39h
+        int     21h                     ; Create Directory
+        mov     ax, 0                   ; Set error code, keep flags
+        .IF     carry?
+        inc     ax                      ; Set error code to 1
+        .ENDIF
+        ret
+
+MakeDir ENDP
+
+

@@ -1,0 +1,21 @@
+;* @ArgRev - Macro function returns a reversed order version of a
+;* VARARG list.
+;*
+;* Shows:   Operators           - <>         !        %
+;*          String directive    - SUBSTR
+;*          Predefined function - @SizeStr
+;*
+;* Params:  arglist - arguments to be reversed
+
+@ArgRev MACRO arglist
+    LOCAL txt, arg
+    txt TEXTEQU <>
+%   FOR arg, arglist
+        txt CATSTR <arg>, <!,>, txt
+    ENDM
+
+    txt SUBSTR  txt, 1, @SizeStr( %txt ) - 1
+    txt CATSTR  <!<>, txt, <!>>
+    EXITM txt
+ENDM
+

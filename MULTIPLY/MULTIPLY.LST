@@ -1,0 +1,308 @@
+Microsoft (R) Macro Assembler Version 6.11		    07/06/16 16:31:27
+multiply.asm						     Page 1 - 1
+
+
+				;-----------------------------------------------------------
+				;
+				; Program:  MULTIPLY
+				;
+				; Function: Multiplies two 16 bit unsigned values ...
+				;           .... duplicating the MUL instruction
+				;
+				; Input:    The two values to be multiplied are passed on the stack
+				;           The code conforms to the C/C++ calling sequence
+				;
+				; Output:   The 32 bit result is returned in the dx:ax pair
+				;           Registers required by C/C++ need to be saved and restored
+				;
+				; Owner:	Collin Marks
+				;
+				; Changes:  Date        Reason
+				;           ------------------
+				;           07/01/2016  Original version
+				;
+				;
+				;---------------------------------------
+				         .model    small
+				         .8086
+				         public    _multiply
+ 0000				         .data
+				;---------------------------------------
+				; Multiply data
+				;---------------------------------------
+ 0000				         .code
+				;---------------------------------------
+				; Multiply code 
+				; will push registers
+				; load multiplicand
+				; load multiplier
+				; check for multiplication by zero if so exit
+				; else begin constructing mul operand
+				;---------------------------------------
+ 0000				_multiply:
+ 0000  55			        push bp                  		; save bp
+ 0001  8B EC			        mov  bp, sp               		; anchor bp into the stack
+ 0003  57					push di							; save di register
+ 0004  8B 4E 04			        mov  cx, [bp+4]           		; load multiplicand from the stack
+ 0007  8B 5E 06			        mov  bx, [bp+6]           		; load multiplier   from the stack
+ 000A  33 C0					xor ax, ax 						; check for mul by zero cheap way to zero out reg
+ 000C  8B D0					mov dx, ax						; clear out ax and dx
+ 000E  8B F9					mov di, cx						; di contains multiplicand
+ 0010  0B FB					or di, bx						; test for zero on both regs
+														; if all zero then will 
+ 0012  75 03 E9 00CC				jz exit							; exit/returing dx:ax which 
+														; is both zero at this point
+ 0017  8B F8					mov di, ax						; we will use di for reg, reg adc
+				;---------------------------------------
+				; Handles multiplication of 1st bit
+				; and handles carries from previous bit
+				; then it will handle the next add with carry for next bit
+				;---------------------------------------	
+ 0019				A:		
+ 0019  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 001B  73 04					jnc B							; if no carry go ahead an add else handle the CF
+ 001D  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 001F  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 2nd bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0021				B:
+ 0021  03 DB					add bx, bx						; will multiply bx by 2
+ 0023  13 FF					adc di, di						; carry into di portion of word
+ 0025  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0027  73 04					jnc C1							; if no carry go ahead and add else handle the CF
+ 0029  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 002B  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 3rd bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 002D				C1:
+ 002D  03 DB					add bx, bx						; will multiply bx by 2
+ 002F  13 FF					adc di, di						; carry into di portion of word
+ 0031  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0033  73 04					jnc D							; if no carry go ahead and add else handle the CF
+ 0035  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 0037  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 4th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0039				D:
+ 0039  03 DB					add bx, bx						; will multiply bx by 2
+ 003B  13 FF					adc di, di						; carry into di portion of word
+ 003D  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 003F  73 04					jnc E							; if no carry go ahead and add else handle the CF
+ 0041  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 0043  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 5th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0045				E:
+ 0045  03 DB					add bx, bx						; will multiply bx by 2
+ 0047  13 FF					adc di, di						; carry into di portion of word
+ 0049  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 004B  73 04					jnc F							; if no carry go ahead and add else handle the CF
+ 004D  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 004F  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 6th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0051				F:
+ 0051  03 DB					add bx, bx						; will multiply bx by 2
+ 0053  13 FF					adc di, di						; carry into di portion of word
+ 0055  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0057  73 04					jnc G							; if no carry go ahead and add else handle the CF
+ 0059  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 005B  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 7th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 005D				G:
+ 005D  03 DB					add bx, bx						; will multiply bx by 2
+ 005F  13 FF					adc di, di						; carry into di portion of word
+ 0061  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0063  73 04					jnc H							; if no carry go ahead and add else handle the CF
+ 0065  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 0067  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 8th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0069				H:
+ 0069  03 DB					add bx, bx						; will multiply bx by 2
+ 006B  13 FF					adc di, di						; carry into di portion of word
+ 006D  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 006F  73 04					jnc I							; if no carry go ahead and add else handle the CF
+ 0071  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 0073  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 9th bit
+				; and handles carries from previous bit
+				;---------------------------------------			
+ 0075				I:
+ 0075  03 DB					add bx, bx						; will multiply bx by 2
+ 0077  13 FF					adc di, di						; carry into di portion of word
+ 0079  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 007B  73 04					jnc J							; if no carry go ahead and add else handle the CF
+ 007D  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 007F  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 10th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0081				J:
+ 0081  03 DB					add bx, bx						; will multiply bx by 2
+ 0083  13 FF					adc di, di						; carry into di portion of word
+ 0085  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0087  73 04					jnc K							; if no carry go ahead and add else handle the CF
+ 0089  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 008B  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 11th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 008D				K:
+ 008D  03 DB					add bx, bx						; will multiply bx by 2
+ 008F  13 FF					adc di, di						; carry into di portion of word
+ 0091  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 0093  73 04					jnc L							; if no carry go ahead and add else handle the CF
+ 0095  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 0097  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 12th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 0099				L:
+ 0099  03 DB					add bx, bx						; will multiply bx by 2
+ 009B  13 FF					adc di, di						; carry into di portion of word
+ 009D  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 009F  73 04					jnc M							; if no carry go ahead and add else handle the CF
+ 00A1  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 00A3  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 13th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 00A5				M:
+ 00A5  03 DB					add bx, bx						; will multiply bx by 2
+ 00A7  13 FF					adc di, di						; carry into di portion of word
+ 00A9  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 00AB  73 04					jnc N							; if no carry go ahead and add else handle the CF
+ 00AD  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 00AF  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 14th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 00B1				N:
+ 00B1  03 DB					add bx, bx						; will multiply bx by 2
+ 00B3  13 FF					adc di, di						; carry into di portion of word
+ 00B5  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 00B7  73 04					jnc O							; if no carry go ahead and add else handle the CF
+ 00B9  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 00BB  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 15th bit
+				; and handles carries from previous bit
+				;---------------------------------------	
+ 00BD				O:
+ 00BD  03 DB					add bx, bx						; will multiply bx by 2
+ 00BF  13 FF					adc di, di						; carry into di portion of word
+ 00C1  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 00C3  73 04					jnc P							; if no carry go ahead and add else handle the CF
+ 00C5  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 00C7  13 D7					adc dx, di						; reg, reg is faster than reg, imm16	
+				;---------------------------------------
+				; Handles multiplication of 16th and last bit
+				; and handles carries from previous bit
+				;---------------------------------------
+ 00C9				P:
+ 00C9  03 DB					add bx, bx						; will multiply bx by 2
+ 00CB  13 FF					adc di, di						; carry into di portion of word
+ 00CD  D1 E9					shr cx, 1						; divide by two, bottom bit moved to CF
+ 00CF  73 04					jnc Q							; if no carry go ahead and add else handle the CF
+ 00D1  03 C3					add ax, bx						; add element in bx reg to ax reg
+ 00D3  13 D7					adc dx, di						; reg, reg is faster than reg, imm16
+				;---------------------------------------
+				; Handles multiplication of 1st bit
+				; and handles carries from previous bit
+				; then it will handle the next add with carry for next bit
+				;---------------------------------------			
+ 00D5				Q:
+ 00D5  03 DB					add bx, bx						; will multiply bx by 2
+ 00D7  13 FF					adc di, di						; carry into di portion of word
+				;---------------------------------------
+				; will effectively
+				; end the program
+				; ending the multiply subroutine
+				;---------------------------------------	
+
+ 00D9  BA 0005			mov dx, 5
+ 00DC  B9 0002			mov cx, 2
+ 00DF  2B D1			add1: sub dx, cx
+ 00E1  E2 FC				loop add1
+					
+ 00E3				exit: 
+ 00E3  5F					pop di
+ 00E4  5D			        pop bp               			; restore bp
+ 00E5  C3			        ret                           	; return with result in dx:ax
+				        end                           	; end source code
+				;---------------------------------------
+
+ 
+Microsoft (R) Macro Assembler Version 6.11		    07/06/16 16:31:27
+multiply.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0000	  Word	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	16 Bit	 00E6	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+A  . . . . . . . . . . . . . . .	L Near	 0019	  _TEXT	
+B  . . . . . . . . . . . . . . .	L Near	 0021	  _TEXT	
+C1 . . . . . . . . . . . . . . .	L Near	 002D	  _TEXT	
+D  . . . . . . . . . . . . . . .	L Near	 0039	  _TEXT	
+E  . . . . . . . . . . . . . . .	L Near	 0045	  _TEXT	
+F  . . . . . . . . . . . . . . .	L Near	 0051	  _TEXT	
+G  . . . . . . . . . . . . . . .	L Near	 005D	  _TEXT	
+H  . . . . . . . . . . . . . . .	L Near	 0069	  _TEXT	
+I  . . . . . . . . . . . . . . .	L Near	 0075	  _TEXT	
+J  . . . . . . . . . . . . . . .	L Near	 0081	  _TEXT	
+K  . . . . . . . . . . . . . . .	L Near	 008D	  _TEXT	
+L  . . . . . . . . . . . . . . .	L Near	 0099	  _TEXT	
+M  . . . . . . . . . . . . . . .	L Near	 00A5	  _TEXT	
+N  . . . . . . . . . . . . . . .	L Near	 00B1	  _TEXT	
+O  . . . . . . . . . . . . . . .	L Near	 00BD	  _TEXT	
+P  . . . . . . . . . . . . . . .	L Near	 00C9	  _TEXT	
+Q  . . . . . . . . . . . . . . .	L Near	 00D5	  _TEXT	
+_multiply  . . . . . . . . . . .	L Near	 0000	  _TEXT	Public
+add1 . . . . . . . . . . . . . .	L Near	 00DF	  _TEXT	
+exit . . . . . . . . . . . . . .	L Near	 00E3	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

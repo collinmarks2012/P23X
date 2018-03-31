@@ -1,0 +1,225 @@
+.context @510out
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@echo\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \a% (Macro Substitution)\v@percent\v, \aOPTION NOKEYWORD:\v@nokeyword\v
+
+     You cannot make \a%OUT\v@echo\v into a legal identifier with the
+     \aNOKEYWORD option\v@nokeyword\v, although it is a reserved word. You can make
+     the OUT instruction into a legal identifier. If you use the
+     \a% operator\v@percent\v with OUT to do substitution, you must put a space
+     between the % and OUT.
+.context @510radix
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@.radix\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     At the end of an integer constant, B and D are ambiguous when the
+     current default radix is large enough for B or D to be legal
+     digits. In this case, use of B or D causes a radix override.
+     Therefore, even if the current default radix is 16, the constant
+     123D is interpreted as decimal 123.
+
+     The assembler treats an initializer as a binary coded decimal
+     number only if the current default radix is 10.
+.context @510questionmark
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@questionmark\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \a.DATA?\v@.data\v, \a.FARDATA?\v@.fardata\v
+
+     Bytes allocated with the \aquestion mark (?) initializer\v@questionmark\v appear as
+     zeros in the object file.
+.context @510commoff
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@comm\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aLanguage Type\v@langtype\v
+
+     Names declared with the PASCAL, BASIC, or FORTRAN \alanguage types\v@langtype\v
+     are not mapped to uppercase.
+.context @510offoff
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@offset\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aOPTION OFFSET:\v@offset:\v \aOPTION SCOPED\v@scoped\v
+
+     The \a.MODEL directive\v@.model\v automatically generates an \aOPTION\v@option\v
+     \aOFFSET:GROUP,\v@offset:\v \aSCOPED\v@scoped\v, overriding the \aM510 option\v@M510\v default \aOPTION\v@option\v
+     \aOFFSET:SEGMENT,\v@offset:\v \aNOSCOPED\v@scoped\v. This causes the \aOFFSET operator\v@offset\v to
+     return a segment-relative offset and causes labels defined with
+     the \alabel:\v@colon\v syntax to be local.
+
+     The OPTION SCOPED and OPTION NOSCOPED directives will override this
+     scoping behavior.
+.context @510procoff
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@proc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aLanguage Type\v@langtype\v
+
+     If you specify a \alanguage type\v@langtype\v with the .MODEL directive, the
+     assembler makes the procedure name PUBLIC, unless you explicitly
+     declare the procedure name to be \aPRIVATE\v@proc\v. Without a specified
+     \alanguage type\v@langtype\v, procedures are always PRIVATE.
+
+     Names declared with the PASCAL, BASIC, or FORTRAN \alanguage types\v@langtype\v
+     are not mapped to uppercase.
+.context @510modoffset
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@.model\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The \a.MODEL directive\v@.model\v automatically generates an \aOPTION\v@option\v
+     \aOFFSET:GROUP,\v@offset:\v \aSCOPED\v@scoped\v, overriding the \aM510 option\v@M510\v default \aOPTION\v@option\v
+     \aOFFSET:SEGMENT,\v@offset:\v \aNOSCOPED\v@scoped\v. This causes the \aOFFSET operator\v@offset\v to
+     return a segment-relative offset and causes labels defined with
+     the \alabel:\v@colon\v syntax to be local.
+
+     If you specify a \alanguage type\v@langtype\v, the assembler makes the procedure
+     name PUBLIC, unless you explicitly declare the procedure name to
+     be \aPRIVATE\v@proc\v. Without a \alanguage type\v@langtype\v, procedures are always
+     PRIVATE.
+
+     Names declared with the PASCAL, BASIC, or FORTRAN \alanguage types\v@langtype\v
+     are not mapped to uppercase.
+.context @510struct
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@struct\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p OPTION OLDSTRUCTS
+
+     Member names in unions and structures can begin with a period (.).
+     This is the same as using \aOPTION DOTNAME\v@dotname\v.
+
+     A declared structure can be accessed as a single unit. For
+     example, a four-byte structure can be treated as if it were
+     declared by a DWORD directive.
+
+
+.context @510union
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@union\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Member names in unions and structures can begin with a period (.).
+     This is the same as using \aOPTION DOTNAME\v@dotname\v.
+
+     A declared structure can be accessed as a single unit. For
+     example, a four-byte structure can be treated as if it were
+     declared by a DWORD directive.
+.context @510period
+.freeze 3
+                                             \i\p\aUp\v@period\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Member names in unions and structures can begin with a period (.).
+     This is the same as using \aOPTION DOTNAME\v@dotname\v.
+.context @510extern
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@externdef\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Names declared with the PASCAL, BASIC, or FORTRAN \alanguage types\v@langtype\v
+     are not mapped to uppercase.
+.context @510public
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@public\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Code labels created locally in a PROC block can be made PUBLIC.
+.context @510equtype
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     If the right-hand side of the EQU directive is a single identifier,
+     the statement is treated as a text equate.
+.context @510segment
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@seg\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Under OPTION OFFSET:SEGMENT (part of the MASM 5.1 compatibility
+     option), the SEG operator returns:
+
+       ş The label's group, if there is a valid group in effect
+       ş The label's segment, if there is no valid group but there is a
+         valid segment
+       ş The value of label, if there is neither a valid group nor a
+         valid segment
+.context @510lensiz
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@size\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The SIZE and LENGTH operators can be applied to any label.
+
+     If you apply SIZE to a code label, it returns the NEAR or FAR
+     attribute.
+
+     The LENGTH operator always returns 1, since it is impossible to
+     declare a code label with the DUP operator.
+
+     The SIZE and LENGTH operators return 1 for strings.
+.context @510ampers
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@ampersand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     You can separate macro arguments with white space or with commas.
+     This is the same as using \aOPTION OLDMACROS\v@oldmacros\v.
+
+     The assembler uses the following rules to handle ampersands:
+
+       1. If a sequence of ampersands is found, the first ampersand is
+          removed.
+
+       2. If a macro parameter is found, it is replaced by the actual
+          parameter string.
+
+       3. Inside quoted strings and text literals, the string is
+          scanned from left to right for ampersands. For each
+          ampersand:
+
+             ş If the ampersand is preceded or followed by a parameter,
+               the parameter is substituted and the ampersand removed.
+
+             ş If the ampersand is preceded by a previously substituted
+               parameter, the ampersand is removed.
+
+             ş In all other cases, the ampersand is ignored.
+
+     The assembler performs parameter substitution at each level of
+     nesting. Therefore, you must add an extra ampersand before or
+     after a macro parameter for each level of MACRO nesting or
+     FOR/FORC/REPEAT/WHILE nesting.
+.context @510langtype
+.topic MASM 5.1 Compatibility
+.freeze 3
+                                             \i\p\aUp\v@langtype\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The Pascal language type does not cause names to be mapped to
+     uppercase.

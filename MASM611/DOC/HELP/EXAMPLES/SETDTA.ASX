@@ -1,0 +1,19 @@
+;* SetDTA - Sets address for new Disk Transfer Area.
+;*
+;* Shows:   DOS Function - 1Ah (Set DTA Address)
+;*
+;* Params:  Dta - Far pointer to new transfer address
+;*
+;* Return:  None
+
+SetDTA  PROC USES ds,
+        Dta:FPBYTE
+
+        lds     dx, [Dta]               ; Point DS:DX to DTA
+        mov     ah, 1Ah                 ; DOS Function 1Ah
+        int     21h                     ; Set DTA Address
+        ret
+
+SetDTA  ENDP
+
+

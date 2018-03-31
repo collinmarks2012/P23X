@@ -1,0 +1,85 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/16 17:06:11
+demo.asm						     Page 1 - 1
+
+
+				; Programmed By: 		Collin Marks
+
+				; Purpose : Just Display a String and a Character "A"
+
+				.model small			;code and data segment separetly of 64k
+
+				.stack 100h			;size in paragraph boundry
+
+ 0000				.data
+
+						
+						; where str is the variable name, db is the keywrod 
+						; remember any thing in the string writen is double coutes must write 
+						; the dollar sign $ before closing it
+						
+ 0000 41					chr db 65	; where chr is the variable name and 65 
+									; is the ASCII code for A
+									
+ 0000				.code
+ 0000				main_:
+
+				;your main code or main methods go here
+
+ 0000  B8 ---- R		mov ax, @data		;obtain segment address of data
+
+ 0003  8E D8			mov ds, ax			; initilize data segment
+
+
+ 0005  B4 09			mov ah, 9			; service no. to display a string
+
+ 0007  CD 21			int 21h				; call operating system to do the job
+
+				; no dispaly the character A
+
+ 0009  8A 16 0000 R		mov dl, chr			; get AScII code of 'A'
+
+ 000D  B4 21			mov ah, 21h			; service no. to display a character
+
+ 000F  CD 21			int 21h				; call operating system to do the job
+
+				;now terminate the program
+
+ 0011  B4 4C			mov ah, 4ch			; service no. to terminate the program
+
+ 0013  CD 21			int 21h
+
+				end main_
+Microsoft (R) Macro Assembler Version 6.11		    06/08/16 17:06:11
+demo.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0001	  Word	  Public  'DATA'	
+STACK  . . . . . . . . . . . . .	16 Bit	 0100	  Para	  Stack	  'STACK'	 
+_TEXT  . . . . . . . . . . . . .	16 Bit	 0015	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+chr  . . . . . . . . . . . . . .	Byte	 0000	  _DATA	
+main_  . . . . . . . . . . . . .	L Near	 0000	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

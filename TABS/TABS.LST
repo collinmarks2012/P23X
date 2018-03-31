@@ -1,0 +1,146 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/12/16 19:13:58
+tabs.asm						     Page 1 - 1
+
+
+				;--------------------------------------------------------------------
+				;	program: 	TABS
+				;
+				;	function: 	TABS reads lines fron a ASCII text file whic is 
+				;				redirected to the standard input, converts a tab 
+				;				character to the correct number of space to obtain 
+				;				"column" formmatting.  
+				;				If the character of interest is a tab we need to 
+				;				input the correct number of spaces so that each word 
+				;				is "columnar" formatting.  
+				;				If the character is not a tab just input that specific 
+				;				character 
+				;
+				;	owner: 		Collin Marks
+				;
+				;	date: 		06/10/2016
+				;---------------------------------------
+				    .model     small 				; 64k code and 64k data
+					.8086 							; only allow 8086 instructions
+					.stack 		256					; reserve 256 bytes for the stack
+				;---------------------------------------
+
+				;---------------------------------------
+ 0000					.data 							; start the data segment
+				;---------------------------------------
+ 0000 0000				lineCount 	dw 	0				; lineCount will count the number of
+				;---------------------------------------
+
+				;---------------------------------------
+ 0000					.code 							;start the code segment
+				;---------------------------------------
+
+				;---------------------------------------
+				; start the program
+				;---------------------------------------
+ 0000				start:
+ 0000  B8 ---- R			mov ax,@data 				; establish addressability to the
+ 0003  8E D8				mov ds,ax 					; data segment
+					
+				;---------------------------------------
+				; handle commmand line parameter
+				;---------------------------------------
+ 0005  B1 0A				mov cl, 10					; initalize the spacing to default 10
+ 0007  26: 80 3E 0080 00		cmp byte ptr es:[80h], 0	; Compare the clp to 0 aka no clp
+ 000D  74 08				je 	whileP					; jump to default setting of 10
+ 000F  26: 8A 0E 0082			mov cl, byte ptr es:[82h]	; if there was a clp move to cl reg
+ 0014  80 E9 30				sub cl, 48					; subtract 48 due to ASCII hex conv
+				;---------------------------------------
+
+				;---------------------------------------
+				; loop for each char in the text file
+				; it will initially read in a character
+				; if the character is a tab
+				; input enough spaces for proper column spacing
+				; else we will go ahead and print the char to standard output
+				; if the char printed was the LF character then we handle conditions
+				; for termintating the line and reseting the line counter
+				;---------------------------------------
+ 0017					whileP:
+ 0017  B4 08					mov ah, 8 				; code to read from DOS
+ 0019  CD 21					int 21h					; read a char
+ 001B  3C 09					cmp al, 09h				; check to see if tab is present
+ 001D  74 1C					je inputSpace			; if a tab is present insert correct tabs
+ 001F  FF 06 0000 R				inc lineCount			; increase the line counter
+ 0023  B4 02					mov ah, 2				; code to write the char
+ 0025  8A D0					mov dl, al				; move the char to dl
+ 0027  CD 21					int 21h					; write the character
+ 0029  80 FA 1A					cmp dl, 1Ah				; check to see if char is END OF FILE CHAR
+												; aka SUB char
+ 002C  74 23					je endProgram			; if period is present end the program
+ 002E  80 FA 0A					cmp dl, 0Ah				; Look for Line Feed if so reset lineCount
+ 0031  75 E4					jne whileP				; termination of a line has been reached
+ 0033  C7 06 0000 R 0000			mov lineCount, 0		; original spacing
+ 0039  EB DC					jmp whileP				; then continue processing chars
+				;---------------------------------------
+					
+				;---------------------------------------
+				; input the correct number of spaces
+				; we take in the lineCount to determine the correct
+				; number of spaces to go to standard output
+				; for each space inputted we continue to increase the 
+				; lineCounter.  If lineCount mod spacing is 0 then we stop
+				; in other words if the linecount is divisible by the spacing
+				; with a remainder of 0 we stop and return to the while loop
+				;---------------------------------------
+ 003B					inputSpace:					; will input enough space	
+ 003B  B4 02					mov ah, 2				; to maintain "column" spacing
+ 003D  B2 20					mov dl, ' '				; input space to dl reg
+ 003F  CD 21					int 21h					; interupt
+ 0041  FF 06 0000 R				inc lineCount			; increase the line counter
+ 0045  A1 0000 R				mov ax, lineCount		; set the current lineCount for division
+ 0048  F6 F1					div cl					; divide ax reg by the lineCount
+ 004A  80 FC 00					cmp ah, 0				; if remainder = 0 stop, else continue
+ 004D  74 C8					je whileP				; if rem =0 jump back to next char
+ 004F  EB EA					jmp inputSpace			; else continue with spaces
+				;---------------------------------------
+
+				;---------------------------------------
+				; effectively end the program
+				;---------------------------------------
+ 0051					endProgram:					; Will effectively end the program
+ 0051  B8 4C00					mov ax, 4c00h			; normal step to end program
+ 0054  CD 21					int 21h					; interupt
+						end start				; end the program...
+				;---------------------------------------
+Microsoft (R) Macro Assembler Version 6.11		    06/12/16 19:13:58
+tabs.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0002	  Word	  Public  'DATA'	
+STACK  . . . . . . . . . . . . .	16 Bit	 0100	  Para	  Stack	  'STACK'	 
+_TEXT  . . . . . . . . . . . . .	16 Bit	 0056	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+endProgram . . . . . . . . . . .	L Near	 0051	  _TEXT	
+inputSpace . . . . . . . . . . .	L Near	 003B	  _TEXT	
+lineCount  . . . . . . . . . . .	Word	 0000	  _DATA	
+start  . . . . . . . . . . . . .	L Near	 0000	  _TEXT	
+whileP . . . . . . . . . . . . .	L Near	 0017	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

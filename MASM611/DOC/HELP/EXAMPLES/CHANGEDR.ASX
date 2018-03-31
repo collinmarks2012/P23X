@@ -1,0 +1,20 @@
+;* ChangeDrive - Changes default drive.
+;*
+;* Shows:   DOS Function - 0Eh (Select Disk)
+;*
+;* Params:  Drive - Uppercase letter designation for new drive
+;*
+;* Return:  None
+
+ChangeDrive PROC,
+        Drive:WORD
+
+        mov     ah, 0Eh                 ; DOS Function 0Eh
+        mov     dx, Drive               ; Drive designation in DL,
+        sub     dl, 'A'                 ;   0=A, 1=B, 2=C, etc
+        int     21h                     ; Select Disk
+        ret
+
+ChangeDrive ENDP
+
+

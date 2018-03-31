@@ -1,0 +1,1669 @@
+.context @StateFormat
+..index formatting source code, Statement Format
+..index assembly-language syntax, Statement Format
+.freeze 3
+.topic Assembly Language Statement Format
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bFormat:\p [Name] [Operation] [Operands] [;Comment]
+
+     Each line of source code consists of a single statement, of up to
+     512 characters. Statements can be entered in either uppercase or
+     lowercase letters. Each field (except the comment field) must be
+     separated from other fields by a space or tab character.
+
+     \bSee also:\p \aLabeling (:/::)\v@colon\v, \aStrings (")\v@quotes\v, \aComments (;)\v@semicolon\v
+
+     \bField\p        \bPurpose\p
+
+     Name          Defines a label that can be accessed from elsewhere
+                   in the program. If the statement is a data
+                   directive, this field is a variable name. If the
+                   statement is an instruction, this field is a code
+                   label.
+
+     Operation     States the action of the statement. This field
+                   contains either an instruction or a directive.
+
+     Operands      Lists the item(s) to be operated on.
+
+     Comment       Provides a comment for the user. This field is for
+                   documentation purposes only and is ignored by the
+                   assembler.
+.context AH
+.context AL
+.context AX
+.context EAX
+.context BH
+.context BL
+.context BX
+.context EBX
+.context CH
+.context CL
+.context CX
+.context ECX
+.context DH
+.context DL
+.context DX
+.context EDX
+.context SI
+.context ESI
+.context DI
+.context EDI
+.context BP
+.context EBP
+.context SP
+.context ESP
+.context CS
+.context DS
+.context SS
+.context ES
+.context FS
+.context GS
+.context IP
+.context EIP
+.context CR0
+.context CR1
+.context CR2
+.context CR3
+.context DR0
+.context DR1
+.context DR2
+.context DR3
+.context DR4
+.context DR5
+.context DR6
+.context DR7
+.context TR4
+.context TR6
+.context TR7
+.context GDTR
+.context IDTR
+.context LDTR
+.context TR
+.context @RegSummary
+..index segmented addressing
+..index segment registers
+.freeze 3
+.topic Register Summary
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Accumulator           [E]AX (AH/AL)  Multiply, divide, I/O, fast
+                                       arithmetic
+  Base                  [E]BX (BH/BL)  Pointer to base address (data
+                                       segment)
+  Count                 [E]CX (CH/CL)  Count for loops, repeats, and shifts
+  Data                  [E]DX (DH/DL)  Multiply, divide, and I/O
+
+  Source Index          [E]SI          Source string and index pointer
+  Destination Index     [E]DI          Destination string and index pointer
+  Base Pointer          [E]BP          Pointer to stack base address
+  Stack Pointer         [E]SP          Pointer to top of stack
+
+  Flags                 [E]<Flags>     Processor flags
+  Instruction Pointer   [E]IP          Memory location of current
+                                       instruction
+
+  Code Segment          CS             Segment containing program code
+  Data Segment          DS             Segment containing program data
+  Stack Segment         SS             Segment for stack operations
+  Extra Segment         ES             Extra program data segment
+    "                   FS             Extra program data segment (386+)
+    "                   GS             Extra program data segment (386+)
+
+  Control Registers     CR(0-3)        Paging, caching, and
+                                       protection (386+)
+  Debug Registers       DR(0-7)        Data and instruction
+                                       breakpoints (386+)
+  Test Registers        TR(3-7)        Testing the TLB and cache (386+)
+
+  Global Descriptor     GDTR           Address and limit of GDT (286+)
+  Local Descriptor      LDTR           Address, limit, and selector of
+                                       LDT (286+)
+  Interrupt Descriptor  IDTR           Address and limit of IDT (286+)
+  Task Register         TR             Address, limit, selector, and
+                                       attributes of current task
+
+  The E register prefix refers to the full 32-bit register (386+).
+
+  \bSee also:\p \aFlag Summary\v@FlagSummary\v
+.context @FlagSummary
+.context flags
+..index flags,, 8086-family
+.freeze 3
+.topic Processor Flag Summary
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     1     1
+     8     5               7             0
+    ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+    ³A³V³R³0³N³IO-³O³D³I³T³S³Z³0³A³0³P³1³C³ÄÄ Layout of flags register
+    ³C³M³F³ ³F³PL ³F³F³F³F³F³F³ ³F³ ³F³ ³F³
+    ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+     \bFlag\p                  \bIf set:\p
+
+     CF    Carry           Carry or borrow to destination operand
+     PF    Parity          Even parity in low-order byte of result
+     AF    Aux. Carry      Carry or borrow to low four-order bits
+     ZF    Zero            Result equal to 0
+     SF    Sign            Result has negative sign
+     TF    Trap            Switches to single-step mode
+     IF    Interrupt       Enables interrupts (disables if cleared)
+     DF    Direction       String operations process down rather than up
+     OF    Overflow        Result too large or small for destination
+     IOPL  I/O             I/O Privilege Level for IN, INS, OUT, OUTS,
+           Priv                CLI, STI (286+)
+     NF    Nested Task     Instruction caused nested task switch (286+)
+     RF    Resume          Debug faults disabled during instruction
+                           execution (386+)
+     VM    Virtual 8086    Currently executing 8086 code on virtual
+                           processor (386+)
+     AC    Alignment       Data aligned to four-byte boundary (486+)
+           Check
+
+     \bSee also:\p \aProcessor Registers Summary\v@RegSummary\v, \aCoprocessor Status Word\v@StatusW\v,
+               \aCoprocessor Control Word\v@ControlW\v, \aCoprocessor Environment\v@CoprocEnv\v
+.context @statusw
+.freeze 3
+..index status word,, coprocessor
+..index control registers
+.topic Numeric Coprocessor Status Word
+                                             \i\p\aUp\v@FPInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     15                     8   7                    0
+     ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+     ³  ³  ³        ³  ³  ³  ³³  ³  ³  ³  ³  ³  ³  ³  ³
+     ³B ³C3³   ST   ³C2³C1³C0³³ES³SF³PE³UE³OE³ZE³DE³IE³ÄÄ Status word
+     ³  ³  ³        ³  ³  ³  ³³IR³  ³  ³  ³  ³  ³  ³  ³
+     ÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙ
+
+     BÄÄBusy
+       1 if exception control unit active
+
+     C3, C2, C1, and C0ÄÄCondition codes
+       The high byte can be loaded into processor flags with
+       SAHF instruction. Coprocessor flags line up with
+       processor flags as shown below:
+
+        15                    8
+       ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+       ³  ³C3³  ³  ³  ³C2³C1³C0³ÄÄ Coprocessor
+       ÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙ
+
+         7                    0
+       ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+       ³SF³ZF³  ³AF³  ³PF³  ³CF³ÄÄ Processor
+       ÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙ
+
+     STÄÄStack Top Pointer
+       Number (0 to 7) of register at current top of stack.
+
+     ES/IRÄÄInterrupt Request or Error Summary
+       On 8087 1 if interrupt request
+       On 80287, 80387, or 80486, 1 if any exception
+
+     SFÄÄStack Flag
+       On 80387 or 80486, 1 if stack overflow or underflow
+       On 8087 and 80287, undefined
+
+     Exception Flags
+       PE = 1 if precision exception
+       UE = 1 if underflow exception
+       OE = 1 if overflow exception
+       ZE = 1 if zero divide exception
+       IE = 1 if invalid operation exception
+
+     \bSee also:\p \aCoprocessor Control Word\v@ControlW\v, \aCoprocessor Environment\v@CoprocEnv\v
+.context @controlw
+.freeze 3
+..index control registers
+..index control word,, coprocessor
+.topic Numeric Coprocessor Control Word
+                                             \i\p\aUp\v@FPInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     15                     8    7                    0
+     ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+     ³  ³  ³  ³  ³     ³     ³³  ³  ³  ³  ³  ³  ³  ³  ³
+     ³  ³  ³  ³IC³ RC  ³ PC  ³³IE³  ³PM³UM³OM³ZM³DM³IM³ÄÄ Control word
+     ³  ³  ³  ³  ³     ³     ³³  ³  ³  ³  ³  ³  ³  ³  ³
+     ÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙ
+
+     ICÄÄInfinity Control
+       0 = Projective (default on 8087 and 80287)
+       1 = Affine
+       On 80387 and 80486, affine closure (distinguishing between positive
+       and negative infinity) is used regardless of setting.
+
+     RCÄÄRounding Control
+       00 = Round to nearest or even (default)
+       01 = Round down toward -infinity
+       10 = Round up toward +infinity
+       11 = Chop by truncating toward 0
+
+     PCÄÄPrecision control
+       00 = 24-bit mantissa (single precision)
+       10 = 53-bit mantissa (double precision)
+       11 = 64-bit mantissa (extended precision)
+
+     IE - Interrupt Enable Mask
+       Only on 8087; undefined on 80287, 80387, and 80486.
+
+     Exception Masks
+       PM = 1 to mask precision
+       UM = 1 to mask underflow
+       OM = 1 to mask overflow
+       ZM = 1 to mask zero divide
+       DM = 1 to mask denormalized operand
+       IM = 1 to mask invalid operation
+
+     \bSee also:\p \aCoprocessor Status Word\v@StatusW\v, \aCoprocessor Environment\v@CoprocEnv\v
+.context @coprocenv
+.freeze 3
+..index coprocessor tag word
+..index data register stack
+..index environment,, coprocessor
+.topic Numeric Coprocessor Environment
+                                             \i\p\aUp\v@FPInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                  \bStack of 80-bit Data Registers\p
+
+            79 78     63 62                                    0
+            ÚÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+     ST     ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(1)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(2)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(3)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(4)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(5)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(6)  ÃÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ST(7)  ÀÄÁÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+             ³    ³          ÀÄ Mantissa
+             ³    ÀÄ Exponent
+             ÀÄ Sign
+
+                         \bTag Word Format\p
+
+        15                     8  7                     0
+        ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+        ³TAG7 ³TAG6 ³TAG5 ³TAG4 ³³TAG3 ³TAG2 ³TAG1 ³TAG0 ³
+        ÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙÀÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÙ
+
+      TAGÄÄTag values of Data Register Stack
+         00 = Valid
+         01 = Zero
+         10 = Invalid, infinity, or denormalized
+         11 = Empty
+
+                        \bControl Registers\p
+
+                           ÚÄÄÄÄÄÄÄÄÄÄ¿
+     Control Word          ÃÄÄÄÄÄÄÄÄÄÄ´   Each word is 16 or 32
+     Status Word           ÃÄÄÄÄÄÄÄÄÄÄ´   bits, depending on
+     Tag Word              ÃÄÄÄÄÄÄÄÄÄÄ´   segment mode. Total
+     Instruction Pointer   Ã          ´   size of state is 14
+                           ÃÄÄÄÄÄÄÄÄÄÄ´   bytes in 16-bit mode
+     Operand Pointer       Ã          ´   or 28 bytes in 32-bit
+                           ÀÄÄÄÄÄÄÄÄÄÄÙ   mode.
+
+     Total size of environment is 94 bytes in 16-bit mode or
+     108 bytes in 32-bit mode.
+
+     \bSee also:\p \aCoprocessor Status Word\v@StatusW\v, \aCoprocessor Control Word\v@ControlW\v
+.context @reg.setup
+.freeze 3
+..index setting segment registers
+.topic Register Setup
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     When DOS loads an .EXE program, it sets registers as follows:
+
+     \bRegister     Points to\p
+
+     ES           Segment of Program Segment Prefix (PSP)
+     DS           Segment of PSP
+     CS:IP        CS:IP address in EXE header
+     SS:SP        SS:SP address in EXE header
+
+     When DOS loads a COM program, it sets all segment registers to the
+     beginning of the program, and IP to 100H.
+
+     \bSee also:\p \aProcessor Flags Summary\v@FlagSummary\v, \aProcessor Registers Summary\v@RegSummary\v
+.context @SegmentPrefix
+.context psp
+.freeze 3
+..index storing DOS programs on disk
+.topic Program Segment Prefix (PSP)
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+       0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+     ÚÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿
+  00 ³ int20 ³  mem  ³rsv³      calldisp     ³     adr22     ³adr23ùù³
+     ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄ´
+  10 ³ ùùù   ³     adr24     ³                                       ³
+     ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                       ÚÄÄÄÄÄÄÄ¿       ´
+  20 ³                                               ³  env  ³       ³
+     Ã                                               ÀÄÄÄÄÄÄÄÙ       ´
+  30 ³                             rsv                               ³
+     Ã                                                               ´
+  40 ³                                                               ³
+     ÃÄÄÄÄÄÄÄÂÄÄÄ¿                                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  50 ³ int21 ³far³                                   ³      fcb1ùùù  ³
+     ÃÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  60 ³ ùùù                                           ³      fcb2ùùù  ³
+     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  70 ³ ùùù                                           ³      rsv      ³
+     ÃÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  80 ³num³                                                           ³
+     ÃÄÄÄÙ                                                           ´
+  90 ³                                                               ³
+     ù                                                               ù
+     ù                            command                            ù
+     ù                                                               ù
+  F0 ³                                                               ³
+     ÀÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙ
+
+  \bField\p      \bDescription\p
+
+  int20      Opcode for Int 20h (CDh 20h).
+  mem        Segment address of next free memory block.
+  rsv        Reserved.
+  calldisp   Opcode for far call to DOS function dispatcher.
+  adr22      Far address of terminate routine (interrupt 22h).*
+  adr23      Far address of Ctrl+C Handler routine (interrupt 23h).*
+  adr24      Far address of Critical Error Handler routine (interrupt 24h).*
+  env        Segment address of program's environment table.
+  int21      Opcode for Int 21h (CDh 21h).
+  far        Opcode for RETF (CBh).
+  fcb1       Initial 16 bytes of first file control block (FCB #1).œ
+  fcb2       Initial 20 bytes of second file control block (FCB #2).œ
+  num        Number of characters in command line. Also begins default
+             128-byte disk transfer area (DTA).
+  command    Command-line arguments as entered from keyboard.
+
+  *  DOS copies these addresses from the interrupt vector table to the PSP
+     when the program is loaded. When the program terminates, DOS restores
+     the addresses (or "vectors") from the program's PSP back to the
+     interrupt vector table.
+
+  œ  Each FCB is 37 bytes wide, but can be preceded by a 7-byte extension.
+     The FCBs cannot be open at the same time, since each overwrites the
+     other.
+
+  \bSee also:\p \aInterrupt 20h (Program Terminate)\v@20h\v,
+            \aInterrupt 22h (Terminate Address)\v@22h\v,
+            \aInterrupt 23h (Ctrl+C Handler)\v@23h\v,
+            \aInterrupt 24h (Critical Error Handler)\v@24h\v, \aFCB Diagram\v@FCB\v
+.context @ColorAttr
+.freeze 3
+..index color display,, video, Display Attributes
+.topic Color Display Attributes
+ \i\p\aMonochrome\v@MonoAttr\v\i\p                                \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Each attribute byte in the video buffer corresponds to a specific
+     character position on the screen. Bits 4-7 determine the
+     character's background color and blink state. Bits 0-3 determine
+     the foreground color and brightness.
+
+      7        6        5        4           3        2        1        0
+ ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿ ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿
+ ³ Blink  ³  Red   ³  Green ³  Blue  ³ ³ Bright ³  Red   ³  Green ³  Blue  ³
+ ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ
+
+              \bBackground\p                              \bForeground\p
+
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  ÄÄ Bits ÄÄ    Hex                    ³ ÄÄ Bits ÄÄ    Hex
+  7  6  5  4   Value    Color          ³ 3  2  1  0   Value    Color
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  0  0  0  0     0      Black          ³ 0  0  0  0     0      Black
+  0  0  0  1     1      Blue           ³ 0  0  0  1     1      Blue
+  0  0  1  0     2      Green          ³ 0  0  1  0     2      Green
+  0  0  1  1     3      Cyan           ³ 0  0  1  1     3      Cyan
+  0  1  0  0     4      Red            ³ 0  1  0  0     4      Red
+  0  1  0  1     5      Magenta        ³ 0  1  0  1     5      Magenta
+  0  1  1  0     6      Brown          ³ 0  1  1  0     6      Brown
+  0  1  1  1     7      White          ³ 0  1  1  1     7      White
+  1  0  0  0     8      Black blink    ³ 1  0  0  0     8      Dark gray
+  1  0  0  1     9      Blue blink     ³ 1  0  0  1     9      Light blue
+  1  0  1  0     A      Green blink    ³ 1  0  1  0     A      Light green
+  1  0  1  1     B      Cyan blink     ³ 1  0  1  1     B      Light cyan
+  1  1  0  0     C      Red blink      ³ 1  1  0  0     C      Light red
+  1  1  0  1     D      Magenta blink  ³ 1  1  0  1     D      Light magenta
+  1  1  1  0     E      Brown blink    ³ 1  1  1  0     E      Yellow
+  1  1  1  1     F      White blink    ³ 1  1  1  1     F      Bright white
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSee also:\p \aVideo Buffers\v@VideoBuffer\v
+.context @MonoAttr
+..index monochrome display, Display Attributes
+.freeze 3
+.topic Monochrome Display Attributes
+ \i\p\aColor\v@ColorAttr\v\i\p                                     \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Monochrome attribute bytes correspond to specific screen positions in the
+  same way as color attribute bytes. Bits 4-7 determine a character's
+  background appearance and blink state. Bits 0-3 determine foreground
+  appearance and brightness.
+
+      7        6        5        4           3        2        1        0
+ ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿  ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿
+ ³ Blink  ³        ³        ³        ³  ³ Bright ³        ³        ³        ³
+ ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ
+
+              \bBackground\p                              \bForeground\p
+
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  ÄÄ Bits ÄÄ    Hex                  ³ ÄÄ Bits ÄÄ    Hex
+  7  6  5  4   Value  Color          ³ 3  2  1  0   Value  Color
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  0  0  0  0   0      Black          ³ 0  0  0  0   0      Black
+  0  1  1  1   7      Reverse        ³ 0  0  0  1   1      Underlined
+  1  0  0  0   8      Blink          ³ 0  1  1  1   7      Normal
+  1  1  1  1   F      Reverse blink  ³ 1  0  0  1   9      Bright Underlined
+                                     ³ 1  1  1  1   F      Bright
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSee also:\p \aVideo Buffers\v@VideoBuffer\v
+.context @KeyChart83
+.freeze 3
+..index key codes
+.topic Keyboard Scan Codes
+ \i\p\a84-Key\v@KeyChart84\v\i\p \i\p\a101/102-Key\v@KeyChart101\v\i\p                      \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             \bScan Codes for 83-Key Keyboard (in Hexadecimal)\p
+
+ÚÄÄÄÂÄÄÄ¿ ÚÄÄÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+³ F1³ F2³ ³ Esc³ 1³ 2³ 3³ 4³ 5³ 6³ 7³ 8³ 9³ 0³ -³ =³ ÄÄ ³NumLock³ScrLock³
+³ 3B³ 3C³ ³  01³02³03³04³05³06³07³08³09³0A³0B³0C³0D³  0E ³   45  ³   46  ³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÄÂÄÄÄÅÄÄÄÂÄÄÄÅÄÄÄÂÄÄÄ´
+³ F3³ F4³ ³ Tab ³ Q³ W³ E³ R³ T³ Y³ U³ I³ O³ P³ [³ ] ³ÄÙ³ 7 ³ 8 ³ 9 ³ - ³
+³ 3D³ 3E³ ³  0F ³10³11³12³13³14³15³16³17³18³19³1A³1B ³   ³ 47³ 48³ 49³ 4A³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÄ´ 1CÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³ F5³ F6³ ³ Ctrl ³ A³ S³ D³ F³ G³ H³ J³ K³ L³ ;³ '³ `³   ³ 4 ³ 5 ³ 6 ³   ³
+³ 3F³ 40³ ³  1D  ³1E³1F³20³21³22³23³24³25³26³27³28³29³   ³ 4B³ 4C³4D ³   ³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´   ³
+³ F7³ F8³ ³Shft³ \\³ Z³ X³ C³ V³ B³ N³ M³ ,³ .³ /³Shft³ * ³ 1 ³ 2 ³ 3 ³ + ³
+³ 41³ 42³ ³ 2A ³2B³2C³2D³2E³2F³30³31³32³33³34³35³ 36 ³ 37³ 4F³ 50³ 51³ 4E³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÁÂÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÂÄÁÄÄÄÄÅÄÄÄÁÄÄÄÅÄÄÄÁÄÄÄ´   ³
+³ F9³F10³ ³ Alt ³          Space Bar          ³CpsLck³  Ins  ³  Del  ³   ³
+³ 43³ 44³ ³ 38  ³             39              ³  3A  ³   52  ³   53  ³   ³
+ÀÄÄÄÁÄÄÄÙ ÀÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÙ
+.context @KeyChart84
+.freeze 3
+.topic Keyboard Scan Codes 84
+ \i\p\a83-Key\v@KeyChart83\v\i\p \i\p\a101/102-Key\v@KeyChart101\v\i\p                      \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             \bScan Codes for 84-Key Keyboard (in Hexadecimal)\p
+
+ÚÄÄÄÂÄÄÄ¿ ÚÄÄÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿ ÚÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿
+³ F1³ F2³ ³ `  ³ 1³ 2³ 3³ 4³ 5³ 6³ 7³ 8³ 9³ 0³ -³ =³ \\³Ä³ ³Esc³Num³Scr³Sys³
+³ 3B³ 3C³ ³ 29 ³02³03³04³05³06³07³08³09³0A³0B³0C³0D³2B³0E³ ³ 01³ 45³ 46³ 54³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÄÂÁÄÄ´ ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³ F3³ F4³ ³ Tab ³ Q³ W³ E³ R³ T³ Y³ U³ I³ O³ P³ [³ ] ³ÄÙ³ ³ 7 ³ 8 ³ 9 ³ * ³
+³ 3D³ 3E³ ³  0F ³10³11³12³13³14³15³16³17³18³19³1A³1B ³   ³ ³ 47³ 48³ 49³ 37³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÄÙ 1C³ ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³ F5³ F6³ ³ Ctrl ³ A³ S³ D³ F³ G³ H³ J³ K³ L³ ;³ '³      ³ ³ 4 ³ 5 ³ 6 ³ - ³
+³ 3F³ 40³ ³  1D  ³1E³1F³20³21³22³23³24³25³26³27³28³      ³ ³ 4B³ 4C³4D ³ 4A³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÄÄÄÄÄÄ´ ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³ F7³ F8³ ³ Shift ³ Z³ X³ C³ V³ B³ N³ M³ ,³ .³ /³  Shift ³ ³ 1 ³ 2 ³ 3 ³ + ³
+³ 41³ 42³ ³   2A  ³2C³2D³2E³2F³30³31³32³33³34³35³    36  ³ ³ 4F³ 50³ 51³ 4E³
+ÃÄÄÄÅÄÄÄ´ ÃÄÄÄÄÄÂÄÁÄÂÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÂÄÄÄÂÄÄÄÄ´ ÃÄÄÄÁÄÄÄÅÄÄÄ´   ³
+³ F9³F10³ ³ Alt ³   ³      Space Bar            ³   ³Caps³ ³  Ins  ³Del³   ³
+³ 43³ 44³ ³ 38  ³   ³         39                ³   ³ 3A ³ ³   52  ³ 53³   ³
+ÀÄÄÄÁÄÄÄÙ ÀÄÄÄÄÄÙ   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ   ÀÄÄÄÄÙ ÀÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÙ
+.context @KeyChart101
+.freeze 3
+.topic Keyboard Scan Codes
+ \i\p\a83-Key\v@KeyChart83\v\i\p \i\p\a84-Key\v@KeyChart84\v\i\p                           \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             \bScan Codes for 101/102-Key Keyboard (in hexadecimal)\p
+
+ÚÄÄÄ¿ÚÄÄÂÄÄÂÄÄÂÄÄ¿ÚÄÄÂÄÄÂÄÄÂÄÄ¿ÚÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿ÚÄÄÄÂÄÄÄÂÄÄÄ¿
+³Esc³³F1³F2³F3³F4³³F5³F6³F7³F8³³F9³F10³F11³F12³³Prt³Scr³Pse³
+³ 01³³3B³3C³3D³3E³³3F³40³41³42³³43³ 44³ 57³ 58³³  ³ 57³  ³
+ÀÄÄÄÙÀÄÄÁÄÄÁÄÄÁÄÄÙÀÄÄÁÄÄÁÄÄÁÄÄÙÀÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙÀÄÄÄÁÄÄÄÁÄÄÄÙ
+ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÄÄ¿ÚÄÄÄÂÄÄÄÂÄÄÄ¿ÚÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿
+³` ³ 1³ 2³ 3³ 4³ 5³ 6³ 7³ 8³ 9³ 0³ -³ =³ ÄÄ³³Ins³Hom³PgU³³Num³ / ³ * ³ - ³
+³29³02³03³04³05³06³07³08³09³0A³0B³0C³0D³  0E³³52³47³49³³ 45³36³ 37³ 4A³
+ÃÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÄÄ´ÃÄÄÄÅÄÄÄÅÄÄÄ´ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³Tab³ Q³ W³ E³ R³ T³ Y³ U³ I³ O³ P³ [³ ]³ \\ ³³Del³End³PgD³³ 7 ³ 8 ³ 9 ³   ³
+³ 0F³10³11³12³13³14³15³16³17³18³19³1A³1B³ 2B³³53³4F³51³³ 47³ 48³ 49³ + ³
+ÃÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÄÄÄ´ÀÄÄÄÁÄÄÄÁÄÄÄÙÃÄÄÄÅÄÄÄÅÄÄÄ´ 4E³
+³Caps³ A³ S³ D³ F³ G³ H³ J³ K³ L³ ;³ '³  ÄÙ³             ³ 4 ³ 5 ³ 6 ³   ³
+³ 3A ³1E³1F³20³21³22³23³24³25³26³27³28³   1C³             ³ 4B³ 4C³4D ³   ³
+ÃÄÄÄÄÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÄÄÄÄ´    ÚÄÄÄ¿    ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+³Shift ³ Z³ X³ C³ V³ B³ N³ M³ ,³ .³ /³ Shift³    ³  ³    ³ 1 ³ 2 ³ 3 ³   ³
+³  2A  ³2C³2D³2E³2F³30³31³32³33³34³35³   36 ³    ³48³    ³ 4F³ 50³ 51³ÄÙ³
+ÃÄÄÄÄÂÄÅÄÄÁÂÄÅÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÅÄÂÁÄÄÅÄÂÄÄÄÄ´ÚÄÄÄÅÄÄÄÅÄÄÄ¿ÃÄÄÄÁÄÄÄÅÄÄÄ´1C³
+³Ctrl³ ³Alt³ ³    Space Bar    ³ ³Alt³ ³Ctrl³³  ³  ³  ³³  Ins  ³Del³   ³
+³ 1D ³ ³ 38³ ³        39       ³ ³38³ ³10 ³³4B³50³40³³   52  ³ 53³   ³
+ÀÄÄÄÄÙ ÀÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÙ ÀÄÄÄÄÙÀÄÄÄÁÄÄÄÁÄÄÄÙÀÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÙ
+
+   = E0
+   = E0 2A E0 37
+   = E0 10 45
+.context @XKeyChart
+..index extended key codes
+.freeze 11
+.topic Extended Key Codes
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                                \bKey Scan Codes\p
+ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³Key    ³  Scan  ³ ASCII or     ³ ASCII or     ³ ASCII or     ³ ASCII or    ³
+³       ³  Code  ³ Extended ş   ³ Extended     ³ Extended     ³ Extended    ³
+³       ³        ³              ³ with SHIFT ş ³ with CTRL ş  ³ with ALT ş  ³
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ ÄÄ    ³ Dec Hex³ Dec Hex Char ³ Dec Hex Char ³ Dec Hex Char ³ Dec Hex Char³
+ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ESC    ³ 1   01 ³  27  1B  ESC ³  27  1B  ESC ³  27  1B  ESC ³   1  01 NULø³
+³1 !    ³ 2   02 ³  49  31  '1' ³  33  21  '!' ³              ³ 120  78 NUL ³
+³2 @    ³ 3   03 ³  50  32  '2' ³  64  40  '@' ³   3  03  NUL ³ 121  79 NUL ³
+³3 #    ³ 4   04 ³  51  33  '3' ³  35  23  '#' ³              ³ 122  7A NUL ³
+³4 $    ³ 5   05 ³  52  34  '4' ³  36  24  '$' ³              ³ 123  7B NUL ³
+³5 %    ³ 6   06 ³  53  35  '5' ³  37  25  '%' ³              ³ 124  7C NUL ³
+³6 ^    ³ 7   07 ³  54  36  '6' ³  94  5E  '^' ³  30  1E   RS ³ 125  7D NUL ³
+³7 &    ³ 8   08 ³  55  37  '7' ³  38  26  '&' ³              ³ 126  7E NUL ³
+³8 *    ³ 9   09 ³  56  38  '8' ³  42  2A  '*' ³              ³ 127  7F NUL ³
+³9 (    ³ 10  0A ³  57  39  '9' ³  40  28  '(' ³              ³ 128  80 NUL ³
+³0 )    ³ 11  0B ³  48  30  '0' ³  41  29  ')' ³              ³ 129  81 NUL ³
+³- _    ³ 12  0C ³  45  2D  '-' ³  95  5F  '-' ³  31  1F   US ³ 130  82 NUL ³
+³= +    ³ 13  0D ³  61  3D  '=' ³  43  2B  '+' ³              ³ 131  83 NUL ³
+³       ³        ³              ³              ³              ³             ³
+³BKSP   ³ 14  0E ³   8  08      ³   8  08      ³ 127  7F      ³  14  0E NULø³
+³TAB    ³ 15  0F ³   9  09      ³  15  0F  NUL ³ 148  94  NULø³  15  A5 NULø³
+³Q      ³ 16  10 ³ 113  71  'q' ³  81  51  'Q' ³  17  11  DC1 ³  16  10 NUL ³
+³W      ³ 17  11 ³ 119  77  'w' ³  87  57  'W' ³  23  17  ETB ³  17  11 NUL ³
+³E      ³ 18  12 ³ 101  65  'e' ³  69  45  'E' ³   5  05  ENQ ³  18  12 NUL ³
+³R      ³ 19  13 ³ 114  72  'r' ³  82  52  'R' ³  18  12  DC2 ³  19  13 NUL ³
+³T      ³ 20  14 ³ 116  74  't' ³  84  54  'T' ³  20  14   SO ³  20  14 NUL ³
+³Y      ³ 21  15 ³ 121  79  'y' ³  89  59  'Y' ³  25  19   EM ³  21  15 NUL ³
+³U      ³ 22  16 ³ 117  75  'u' ³  85  55  'U' ³  21  15  NAK ³  22  16 NUL ³
+³I      ³ 23  17 ³ 105  69  'i' ³  73  49  'I' ³   9  09  TAB ³  23  17 NUL ³
+³O      ³ 24  18 ³ 111  6F  'o' ³  79  4F  'O' ³  15  0F   SI ³  24  18 NUL ³
+³P      ³ 25  19 ³ 112  70  'p' ³  80  50  'P' ³  16  10  DLE ³  25  19 NUL ³
+³[ {    ³ 26  1A ³  91  5B  '[' ³ 123  7B  '{' ³  27  1B  ESC ³  26  1A NULø³
+³] }    ³ 27  1B ³  93  5D  ']' ³ 125  7D  '}' ³  29  1D   GS ³  27  1B NULø³
+³       ³        ³              ³              ³              ³             ³
+³ENTER  ³ 28  1C ³  13  0D   CR ³  13  0D   CR ³  10  0A   LF ³  28  1C NULø³
+³ENTER ³ 28  1C ³  13  0D   CR ³  13  0D   CR ³  10  0A   LF ³ 166  A6 NULø³
+³L CTRL ³ 29  1D ³              ³              ³              ³             ³
+³R CTRL³ 29  1D ³              ³              ³              ³             ³
+³       ³        ³              ³              ³              ³             ³
+³A      ³ 30  1E ³  97  61  'a' ³  65  41  'A' ³   1  01  SOH ³  30  1E NUL ³
+³S      ³ 31  1F ³ 115  73  's' ³  83  53  'S' ³  19  13  DC3 ³  31  1F NUL ³
+³D      ³ 32  20 ³ 100  64  'd' ³  68  44  'D' ³   4  04  EOT ³  32  20 NUL ³
+³F      ³ 33  21 ³ 102  66  'f' ³  70  46  'F' ³   6  06  ACK ³  33  21 NUL ³
+³G      ³ 34  22 ³ 103  67  'g' ³  71  47  'G' ³   7  07  BEL ³  34  22 NUL ³
+³H      ³ 35  23 ³ 104  68  'h' ³  72  48  'H' ³   8  08   BS ³  35  23 NUL ³
+³J      ³ 36  24 ³ 106  6A  'j' ³  74  4A  'J' ³  10  0A   LF ³  36  24 NUL ³
+³K      ³ 37  25 ³ 107  6B  'k' ³  75  4B  'K' ³  11  0B   VT ³  37  25 NUL ³
+³L      ³ 38  26 ³ 108  6C  'l' ³  76  4C  'L' ³  12  0C   FF ³  38  26 NUL ³
+³; :    ³ 39  27 ³  59  3B  ';' ³  58  3A  ':' ³              ³  39  27 NULø³
+³' "    ³ 40  28 ³  39  27  ''' ³  34  22  '"' ³              ³  40  28 NULø³
+³` ~    ³ 41  29 ³  96  60  '`' ³ 126  7E  '~' ³              ³  41  29 NULø³
+³       ³        ³              ³              ³              ³             ³
+³L SHIFT³ 42  2A ³              ³              ³              ³             ³
+³\\ |    ³ 43  2B ³  92  5C  '\\' ³ 124  7C  '|' ³  28  1C   FS ³             ³
+³Z      ³ 44  2C ³ 122  7A  'z' ³  90  5A  'Z' ³  26  1A  SUB ³  44  2C NUL ³
+³X      ³ 45  2D ³ 120  78  'x' ³  88  58  'X' ³  24  18  CAN ³  45  2D NUL ³
+³C      ³ 46  2E ³  99  63  'c' ³  67  43  'C' ³   3  03  ETX ³  46  2E NUL ³
+³V      ³ 47  2F ³ 118  76  'v' ³  86  56  'V' ³  22  16  SYN ³  47  2F NUL ³
+³B      ³ 48  30 ³  98  62  'b' ³  66  42  'B' ³   2  02  STX ³  48  30 NUL ³
+³N      ³ 49  31 ³ 110  6E  'n' ³  78  4E  'N' ³  14  0E   SO ³  49  31 NUL ³
+³M      ³ 50  32 ³ 109  6D  'm' ³  77  4D  'M' ³  13  0D   CR ³  50  32 NUL ³
+³, <    ³ 51  33 ³  44  2C  ',' ³  60  3C  '<' ³              ³  51  33 NULø³
+³. >    ³ 52  34 ³  46  2E  '.' ³  62  3E  '>' ³              ³  52  34 NULø³
+³/ ?    ³ 53  35 ³  47  2F  '/' ³  63  3F  '?' ³              ³  53  35 NULø³
+³GRAY /³ 53  35 ³  47  2F  '/' ³  63  3F  '?' ³ 149  95  NUL ³ 164  A4 NUL ³
+³       ³        ³              ³              ³              ³             ³
+³R SHIFT³ 54  36 ³              ³              ³              ³             ³
+³* PRTSC³ 55  37 ³  42  2A  '*' ³ PRTSC       ³  114  72  0  ³             ³
+³L ALT  ³ 56  38 ³              ³              ³              ³             ³
+³R ALT ³ 56  38 ³              ³              ³              ³             ³
+³SPACE  ³ 57  39 ³  32  20  ' ' ³  32  20  ' ' ³   32  20 ' ' ³  32  20 ' ' ³
+³CAPS   ³ 58  3A ³              ³              ³              ³             ³
+³       ³        ³              ³              ³              ³             ³
+³F1     ³ 59  3B ³  59  3B  NUL ³  84  54  NUL ³   94  5E NUL ³ 104  68 NUL ³
+³F2     ³ 60  3C ³  60  3C  NUL ³  85  55  NUL ³   95  5F NUL ³ 105  69 NUL ³
+³F3     ³ 61  3D ³  61  3D  NUL ³  86  56  NUL ³   96  60 NUL ³ 106  6A NUL ³
+³F4     ³ 62  3E ³  62  3E  NUL ³  87  57  NUL ³   97  61 NUL ³ 107  6B NUL ³
+³F5     ³ 63  3F ³  63  3F  NUL ³  88  58  NUL ³   98  62 NUL ³ 108  6C NUL ³
+³F6     ³ 64  40 ³  64  40  NUL ³  89  59  NUL ³   99  63 NUL ³ 109  6D NUL ³
+³F7     ³ 65  41 ³  65  41  NUL ³  90  5A  NUL ³  100  64 NUL ³ 110  6E NUL ³
+³F8     ³ 66  42 ³  66  42  NUL ³  91  5B  NUL ³  101  65 NUL ³ 111  6F NUL ³
+³F9     ³ 67  43 ³  67  43  NUL ³  92  5C  NUL ³  102  66 NUL ³ 112  70 NUL ³
+³F10    ³ 68  44 ³  68  44  NUL ³  93  5D  NUL ³  103  67 NUL ³ 113  71 NUL ³
+³F11   ³ 87  57 ³ 133  85   E0 ³ 135  87   E0 ³  137  89  E0 ³ 139  8B  E0 ³
+³F12   ³ 88  58 ³ 134  86   E0 ³ 136  88   E0 ³  138  8A  E0 ³ 140  8C  E0 ³
+³       ³        ³              ³              ³              ³             ³
+³NUM    ³ 69  45 ³              ³              ³              ³             ³
+³SCROLL ³ 70  46 ³              ³              ³              ³             ³
+³       ³        ³              ³              ³              ³             ³
+³HOME   ³ 71  47 ³  71  47  NUL ³  55  37  '7' ³  119  77 NUL ³             ³
+³HOME  ³ 71  47 ³  71  47   E0 ³  71  47  E0  ³  119  77  E0 ³ 151  97 NUL ³
+³UP     ³ 72  48 ³  72  48  NUL ³  56  38  '8' ³  141  8D NULø³             ³
+³UP    ³ 72  48 ³  72  48   E0 ³  72  48  E0  ³  141  8D  E0 ³ 152  98 NUL ³
+³PGUP   ³ 73  49 ³  73  49  NUL ³  57  39  '9' ³  132  84 NUL ³             ³
+³PGUP  ³ 73  49 ³  73  49   E0 ³  73  49  E0  ³  132  84  E0 ³ 153  99 NUL ³
+³GRAY - ³ 74  4A ³              ³  45  2D  '-' ³              ³             ³
+³LEFT   ³ 75  4B ³  75  4B  NUL ³  52  34  '4' ³  115  73 NUL ³             ³
+³LEFT  ³ 75  4B ³  75  4B   E0 ³  75  4B  E0  ³  115  73  E0 ³ 155  9B NUL ³
+³CENTER ³ 76  4C ³              ³  53  35  '5' ³              ³             ³
+³RIGHT  ³ 77  4D ³  77  4D  NUL ³  54  36  '6' ³  116  74 NUL ³             ³
+³RIGHT ³ 77  4D ³  77  4D   E0 ³  77  4D  E0  ³  116  74  E0 ³ 157  9D NUL ³
+³GRAY + ³ 78  4E ³              ³  43  2B  '+' ³              ³             ³
+³END    ³ 79  4F ³  79  4F  NUL ³  49  31  '1' ³  117  75 NUL ³             ³
+³END   ³ 79  4F ³  79  4F   E0 ³  79  4F  E0  ³  117  75  E0 ³ 159  9F NUL ³
+³DOWN   ³ 80  50 ³  80  50  NUL ³  50  32  '2' ³  145  91 NULø³             ³
+³DOWN  ³ 80  50 ³  80  50   E0 ³  80  50  E0  ³  145  91  E0 ³ 160  A0 NUL ³
+³PGDN   ³ 81  51 ³  81  51  NUL ³  51  33  '3' ³  118  76 NUL ³             ³
+³PGDN  ³ 81  51 ³  81  51   E0 ³  81  51  E0  ³  118  76  E0 ³ 161  A1 NUL ³
+³       ³        ³              ³              ³              ³             ³
+³INS    ³ 82  52 ³  82  52  NUL ³  48  30  '0' ³  146  92 NULø³             ³
+³INS   ³ 82  52 ³  82  52   E0 ³  82  52  E0  ³  146  92  E0 ³ 162  A2 NUL ³
+³DEL    ³ 83  53 ³  83  53  NUL ³  46  2E  '.' ³  147  93 NULø³             ³
+³DEL   ³ 83  53 ³  83  53   E0 ³  83  53  E0  ³  147  93  E0 ³ 163  A3 NUL ³
+ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  ş Extended codes return 0 (NUL) or E0 (decimal 224) as the initial
+    character. This is a signal that a second (extended) code is available
+    in the keystroke buffer.
+
+   Under DOS, SHIFT+PRTSCR causes interrupt 5, which prints the screen.
+
+   These keys are available only on extended keyboards. Most of them are
+    in the Cursor/Control cluster, which does not exist on old keyboards. If
+    the raw scan code is read from the keyboard port (60h), it appears as
+    two bytesÄÄE0h followed by the normal scan code. However, when the
+    keypad ENTER and / keys are read through the BIOS interrupt 16h, only
+    E0h is seen, since the interrupt gives only one-byte scan codes.
+
+  ø These key combinations are recognized only on extended keyboards.
+
+    These codes are returned by \aInt 21h Functions\v@21h\v \a01h,\v@21h.01h\v \a06h,\v@21h.06h\v \a07h,\v@21h.01h\v and \a08h\v@21h.01h\v
+    under MS-DOS.
+.comment     Under OS/2, these keys are returned in \a_KEYBOARDKEYINFO.chScan,\vos2.hlp!KBDKEYINFO\v
+.comment     set by the KbdCharIn and KbdPeek functions.
+.context @OpPrecChart
+.freeze 3
+..index assembler operators
+.topic Assembler Operator Precedence
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+   \bSee also:\p \aArithmetic Operators\v@ArithOp\v
+
+     \bBit Order     Operator\p
+
+     1             LENGTH, SIZE, WIDTH, MASK
+     2             (), \a[]\v@brackets\v
+     3             \a. (structure-field-name operator)\v@period\v
+     4             \a: (segment override operator)\v@op.colon\v, PTR
+     5             THIS, OFFSET, SEG, TYPE
+     6             HIGH, LOW
+     7             \a+\v@ArithOp\v, \a- (unary)\v@ArithOp\v
+     8             \a*\v@ArithOp\v, \a/\v@ArithOp\v, MOD, SHL, SHR
+     9             \a+\v@ArithOp\v, \a- (binary)\v@ArithOp\v
+    10             EQ, NE, LT, LE, GT, GE
+    11             NOT
+    12             AND
+    13             OR, XOR
+    14             SHORT, OPATTR, .TYPE, ADDR
+.context @ccompare
+.context ==
+.context !=
+.context >=
+.context <=
+.context ||
+.context |
+.context zero
+.context zero?
+.context carry
+.context carry?
+.context overflow
+.context overflow?
+.context parity
+.context parity?
+.context sign
+.context sign?
+..index == operator
+..index != operator
+..index ! operator
+..index >= operator
+..index <= operator
+..index || operator
+..index ZERO? operator
+..index CARRY? operator
+..index OVERFLOW? operator
+..index PARITY? operator
+..index SIGN? operator
+.freeze 3
+.topic C-Style Comparison Operators
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p .IF, .UNTIL, .WHILE, \aRelational operators\v@RelationalOp\v
+
+     \bOperator\p      \bMeaning\p
+
+     ==            Equal
+     !=            Not equal
+     >             Greater than
+     >=            Greater than or equal to
+     <             Less than
+     <=            Less than or equal to
+     &             Bit test (format: expression & bitnumber)
+     !             Logical NOT
+     &&            Logical AND
+     ||            Logical OR
+
+     CARRY?        Carry bit set
+     OVERFLOW?     Overflow bit set
+     PARITY?       Parity bit set
+     SIGN?         Sign bit set
+     ZERO?         Zero bit set
+
+     The comparison run-time operators are used to make comparisons
+     between variables, registers, and constants as the program is
+     being executed. Use these operators to give conditions for
+     conditional-control directives (.IF, .UNTIL, .WHILE). These
+     operators can be combined with other run- time operators and
+     parentheses to form complex conditions.
+
+     The conditional-control directives (.IF, .UNTIL, .WHILE) can also
+     check the state of processor flags. The CARRY?, OVERFLOW?,
+     PARITY?, SIGN?, and ZERO? flags can be used directly in a C-style
+     expression.
+
+     For example:
+
+       .IF   !PARITY? || ( AX == 0 ) ;Execute body of block if parity
+             ù                       ;flag is clear or if the AX
+             ù                       ;register is zero
+             ù
+       .ENDIF
+
+     Note: The expression is evaluated from left to right, so in this
+           example, the state of the parity flag is checked before the
+           AX comparison.
+.context textitem
+.context @textitem
+.freeze 3
+.topic Definition of text item
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aAngle Brackets (<>)\v@anglebrackets\v, \aEscape Character (!)\v@exclamation\v,
+               \aExpression Operator (%)\v@percent\v
+
+     A text item is any string of characters enclosed in angle brackets
+     (<>), an expression preceded by the expression operator (%), or
+     the name of a text macro. The expression operator causes the
+     assembler to calculate the value of the expression during
+     assembly.
+.context qualtype
+.context qualifiedtype
+.context @qualifiedtype
+.freeze 3
+.topic Definition of Qualified Type
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p TYPEDEF, PTR, Distance
+
+     A qualified type can be any MASM type (such as structure types,
+     union types, record types, or an intrinsic type), or it can have the
+     form
+
+         [\adistance\v@nearfar1632\v] PTR [qualifiedtype]
+
+     where distance can be any distance (such as NEAR, FAR, or PROC).
+     See: \i\p\adistance\v@nearfar1632\v\i\p
+
+     A qualified type can also be any type previously defined with TYPEDEF.
+     For example, if you use TYPEDEF to create an alias for BYTE, as shown
+     below, you can use that CHAR type as a qualified type when defining
+     the pointer type PCHAR.
+
+         CHAR    TYPEDEF BYTE
+         PCHAR   TYPEDEF PTR CHAR
+
+     Since distance and qualifiedtype are optional syntax elements, you can
+     use variables of type PTR or FAR PTR.
+
+     Several rules govern the use of a qualified type:
+
+       1. The only component of a qualified type definition that can be
+          forward-referenced is a structure or union type identifier.
+
+       2. If distance is not specified, the right operand and current
+          memory model determine the type of the pointer. If the
+          operand following PTR is not a distance or a function
+          prototype, the operand is a pointer of the default data
+          pointer type in the current mode. Otherwise, the operand is
+          the default code pointer type.
+
+       3. If .MODEL is not specified, SMALL model (and therefore NEAR
+          pointers) is the default.
+
+     A qualified type can be used in six places:
+
+     \bUse\p                            \bExample\p
+
+     In procedure arguments         proc1 PROC pMsg: PTR BYTE
+
+     In prototype arguments         proc2 PROTO pMsg: FAR PTR WORD
+
+     With local variables           LOCAL pMsg: PTR
+     declared inside procedures
+
+     With the LABEL directive       TempMsg LABEL WORD
+
+     With the EXTERN and            EXTERN pMsg: FAR PTR PTR BYTE
+     EXTERNDEF directives
+
+     With the TYPEDEF directive     PPBYTE TYPEDEF PTR PBYTE
+.context @vararg.mac
+.freeze 3
+.topic Using VARARG in Macros
+ \i\p\aExample\v@argi.asx\v\i\p                                   \i\p\aUp\v@macro\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aUsing VARARG in Procedures\v@VARARG.proc\v, MACRO, FOR
+
+     The VARARG attribute allows you to pass a variable number of
+     arguments to a macro. The macro parameter will be passed a
+     comma-separated list of values (or a blank if no values are given)
+     when called. You can apply the VARARG attribute only to the last
+     parameter in a macro definition.
+
+     You can use the FOR directive to handle macro parameters with the
+     VARARG attribute. The following macro function calculates the
+     number of arguments in a VARARG parameter:
+
+       @ArgCount MACRO parmlist:VARARG
+           LOCAL count
+           count = 0
+           FOR parm, <parmlist>
+               count = count + 1               ; Count the parameters
+           ENDM
+           EXITM count
+       ENDM
+
+     This example button links to a macro that allows you to access an
+     argument by its number.
+.context @vararg.proc
+.freeze 3
+.topic Using VARARG in Procedures
+                                             \i\p\aUp\v@proc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aVARARG in Macros\v@VARARG.mac\v, PROC, PROTO, .MODEL, LanguageType
+
+     The VARARG attribute allows you to pass a variable number of
+     arguments to a procedure. The VARARG parameter receives a near
+     pointer to an array of WORD elements (DWORD if a far address is
+     passed). You can apply the VARARG attribute only to the last
+     parameter in a procedure definition. You can only use VARARG in
+     procedures when the C, SYSCALL, or STDCALL language types are in
+     effect.
+
+       addup   PROTO NEAR C, parmcount:WORD, parmvalues:VARARG
+
+               invoke  addup, 3, 5, 2, 4
+
+       addup   PROC NEAR C, parmcount:WORD, parmvalues:VARARG
+               xor     ax, ax
+               xor     bx, bx
+               mov     cx, parmcount
+
+               .REPEAT
+               add     ax, parmvalues[bx]
+               inc     bx
+               inc     bx
+               .UNTILCXZ
+
+               ret
+       addup   ENDP
+.context @nearfar1632
+.context NEAR16
+.context NEAR32
+.context FAR16
+.context FAR32
+.context NEAR
+.context FAR
+.context distance
+.freeze 3
+.topic Definition of NEAR/FAR
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The distance field tells the assembler whether an address is
+     inside (NEAR) or outside (FAR) the current segment. When referring
+     to program or data labels, these modifiers are optional.
+
+     The NEAR and FAR address modifiers use the current segment size.
+     NEAR16, FAR16, NEAR32, and FAR32 override the current segment size
+     and use 16- or 32-bit segments, respectively.
+.context C
+.context BASIC
+.context PASCAL
+.context FORTRAN
+.context SYSCALL
+.context STDCALL
+.context @langtype
+.context langtype
+..index language type
+..index calling conventions
+..index C calling convention
+..index BASIC calling convention
+..index PASCAL calling convention
+..index FORTRAN calling convention
+..index SYSCALL calling convention
+..index STDCALL calling convention
+.freeze 3
+.topic Definition of Language Type
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSee also:\p .MODEL, OPTION LANGTYPE:, INVOKE, PROTO, PROC,
+            OPTION PROLOGUE:, \a/G<x>\vml.hlp!/Gd\v, \a/H\vml.hlp!/H\v, \aMASM 5.1 Compatibility\v@510langtype\v
+
+                              \bC    SYSCALL STDCALL  BASIC  FORTRAN  PASCAL\p
+                          ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+  \bLeading Underscore\p      ³   X   ³       ³   X   ³       ³       ³       ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \bCapitalize All\p          ³       ³       ³       ³   X   ³   X   ³   X   ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \bArguments Left to Right\p ³       ³       ³       ³   X   ³   X   ³   X   ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \bArguments Right to Left\p ³   X   ³   X   ³   X   ³       ³       ³       ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \bCaller Stack Cleanup\p    ³   X   ³       ³   *   ³       ³       ³       ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \bBP Saved\p                ³       ³       ³       ³   X   ³   X   ³   X   ³
+                          ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+  \b:VARARG Allowed\p         ³   X   ³   X   ³   X   ³       ³       ³       ³
+                          ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÙ
+
+  * The STDCALL language type uses caller stack cleanup if the :VARARG
+    parameter is used. Otherwise, the called routine must clean up the
+    stack.
+
+  The language type (langtype) determines the naming and calling conventions
+  used by the assembler. This allows you to share code and data with
+  modules written with other languages. Set the language type with the
+  .MODEL or OPTION LANGTYPE: directives or with the \a/G<x> command-line\vml.hlp!/Gd\v
+  \aoption\vml.hlp!/Gd\v. Several directives allow you to specify a langtype
+  parameter to temporarily override the language type.
+
+  You can use the \a/H command-line option\vml.hlp!/H\v to limit the length of names
+  sent to the object file. Use this option to work with languages that
+  limit the maximum length of identifiers.
+.context @ASCIIZ
+.context ASCIIZ
+.freeze 3
+.topic Null-Terminated ASCII string
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ASCIIZ refers to a null-terminated ASCII string.
+
+     For example:
+
+       message  BYTE   "This is a null-terminated ASCII string.", 00h
+.context @SysMem
+.freeze 3
+..index segment map
+.topic MS-DOS Segment Map
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSegment\p                    \bDescription (Not to Scale)\p
+
+  FFFFh     ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+            ³                                                           ³
+            ³                         ROM BIOS                          ³
+            ³                                                           ³
+  E000h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                                                           ³
+            ³       Installable ROM, expanded memory paging area        ³
+            ³                                                           ³
+  C000h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³             Video buffer (color modes 0-6)                ³
+  B800h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³          Video buffer (monochrome text mode 7)            ³
+  B000h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                                                           ³
+            ³         Video buffer (graphics modes 0Dh-13h)             ³
+            ³                                                           ³
+  A000h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³             Transient portion of COMMAND.COM              ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ù                                                           ù
+            ù                Program load/execution area                ù
+            ù                                                           ù
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³              Memory-resident programs (TSRs)              ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                                                           ³
+            ³              Resident portion of COMMAND.COM              ³
+            ³                                                           ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                Installable device drivers                 ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                  Drive parameter blocks                   ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                        Disk buffer                        ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                     Directory buffer                      ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                                                           ³
+            ³                  DOS kernel (MSDOS.SYS)                   ³
+            ³                                                           ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³              DOS extensions to BIOS (IO.SYS)              ³
+            ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                    DOS/BIOS data area                     ³
+  0050h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                      BIOS data area                       ³
+  0040h     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+            ³                  Interrupt vector table                   ³
+  0000h     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  \bSee also:\p \aInterrupt Vector Table\v@IntVector\v, \aVideo Buffers\v@VideoBuffer\v
+.context @FCB
+.freeze 3
+..index file access, File Control Block (FCB)
+.topic File Control Block (FCB) and Extension
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                       ÚÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ¿
+           Extension  ³ -1³        rsv            ³att³
+                       ÀÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÙ
+ PSP                                                  
+ Offset
+ ÄÄÄÄÄÄ                                                ÚÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄ¿
+ 50h                                          FCB #1  ³drv³  nameùùù  ³
+       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÅÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄ´
+ 60h   ³ùùù                ³    ext    ³ block ³ recsz ³    filesz     ³
+       ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÅÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄ´
+ 70h   ³  date ³  time ³              rsv              ³rec³  randùùù  ³
+       ÃÄÄÄÂÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÙ
+ 80h   ³ùùù³
+       ÀÄÄÄÙ
+       ÀÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙ
+         0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+
+
+  \bField     Extension\p
+
+  -1         First byte = 0FFh.
+  rsv        Reserved.
+  att        File attribute.
+
+
+  \bField      FCB\p
+
+  drv        Drive code (0=default, 1=A, 2=B, etc).
+
+  name       8-character filename, left-justified with trailing blanks.
+
+  ext        3-character extension, left-justified with trailing blanks.
+
+  block      Current block number relative to beginning of file,
+             starting with 0. Each block comprises 128 records of the
+             size specified by the logical record size (below). Used
+             with current record for sequential file operations.
+
+  recsz      Logical record size in bytes (set to 128 when file is
+             opened).
+
+  filesz     File size in bytes (set by DOS).
+
+  date       Date file was created or last updated (set by DOS).
+
+  time       Time file was created or last updated (set by DOS). Date
+             and time fields are in standard file date/time formats
+             (see: \aDOS File Date/Time Formats\v@Datime\v).
+
+  rsv        Reserved.
+
+  rec        Current record number (beginning with 0) relative to
+             current block. Must be initialized before doing sequential
+             file operations.
+
+  rand       Record number (beginning with 0) relative to beginning of
+             file. Must be initialized before doing random file
+             operations.
+
+  NOTES:
+
+     ş The FCB is used by certain interrupt 21h functions called "FCB
+       functions," between 0Fh (Open File) and 29h (Parse Filename).
+       These functions provide a method of file access compatible with
+       CP/M. They are not recommended in DOS Versions 2.0 and higher,
+       which offer superior file handling.
+
+     ş The FCB extension is a 7-byte header used to create or access a
+       file with a read-only, hidden, system, subdirectory, and/or
+       volume-label attribute. To use the extension with any of the FCB
+       functions, set the pointer (usually DS:DX) to the first byte of
+       the extension header rather than to the FCB itself.
+
+     ş The program segment prefix (PSP) holds two FCBs, identified as
+       #1 (beginning at offset 5Ch) and #2 (beginning at offset 6Ch).
+       Each FCB uses the format shown in the Summary screen. Both FCBs
+       cannot be open at the same time, since each overwrites the
+       other.
+
+     ş The application program is responsible for initializing the
+       fields at FCB offsets 0-15 and 32-36. Offsets 16-31 (filesz,
+       date, time, and rsv) are set by DOS from information in the
+       file's directory entry and must not be altered.
+
+     \bSee also:\p \aProgram Segment Prefix (PSP)\v@SegmentPrefix\v, \aInterrupt 21h FCB Functions\v@DOSInt\v,
+               \aDOS File Date/Time Formats\v@Datime\v
+.context @Datime
+.freeze 3
+..index setting file date
+..index setting file time
+.topic DOS Time and Date Formats
+                                             \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                                      \bTime\p
+
+          F   E   D   C   B   A   9   8   7   6   5   4   3   2   1   0
+        ÃÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÅÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ´
+        ³       hours       ³        minutes        ³2-second increments³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  values:        0-23                 0-59                   0-29
+
+
+                                      \bDate\p
+
+          F   E   D   C   B   A   9   8   7   6   5   4   3   2   1   0
+        ÃÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÅÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ´
+        ³            year           ³     month     ³        day        ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+  values:  0-119 (relative to 1980)        1-12              1-31
+
+
+  \bSee also:\p \aInt 21h Function 57h (Get or Set File Date and Time)\v@21h.57h\v,
+            \aInt 21h Function 4Eh (Search for First Match)\v@21h.4Eh\v,
+            \aInt 21h Function 4Fh (Search for Next Match)\v@21h.4Fh\v,
+            \aFile Control Block (FCB)\v@FCB\v
+.context MemoryModels
+.context @MemoryModels
+.freeze 3
+..index memory-model attributes
+.topic Memory Model Selection
+                                             \i\p\aUp\v@.model\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data. The following table shows attributes of the
+     different memory models. Select a memory model for more information.
+
+.comment              \bCode      Data      Segment  Supported       Data and Code \p
+.comment              \bDistance  Distance  Width    Under           Combined?     \p
+.comment             ÚÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+.comment     \a\bTiny\p    ³ NEAR    ³ NEAR    ³ 16-bit ³ DOS only      ³ Yes         ³\v@Tiny\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bSmall\p   ³ NEAR    ³ NEAR    ³ 16-bit ³ DOS, OS/2     ³ No          ³\v@Small\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bCompact\p ³ NEAR    ³ FAR     ³ 16-bit ³ DOS, OS/2     ³ No          ³\v@Compact\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bMedium\p  ³ FAR     ³ NEAR    ³ 16-bit ³ DOS, OS/2     ³ No          ³\v@Medium\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bLarge\p   ³ FAR     ³ FAR     ³ 16-bit ³ DOS, OS/2     ³ No          ³\v@Large\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bHuge\p    ³ FAR     ³ FAR     ³ 16-bit ³ DOS, OS/2     ³ No          ³\v@Large\v
+.comment             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+.comment     \a\bFlat\p    ³ NEAR    ³ NEAR    ³ 32-bit ³ OS/2 2.0 only ³ Yes         ³\v@Flat\v
+.comment             ÀÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+.comment the following table replaced the previous table-column 4 removed
+              \bCode      Data      Segment  Data and Code \p
+              \bDistance  Distance  Width    Combined?     \p
+             ÚÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+     \a\bTiny\p    ³ NEAR    ³ NEAR    ³ 16-bit ³ Yes         ³\v@Tiny\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bSmall\p   ³ NEAR    ³ NEAR    ³ 16-bit ³ No          ³\v@Small\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bCompact\p ³ NEAR    ³ FAR     ³ 16-bit ³ No          ³\v@Compact\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bMedium\p  ³ FAR     ³ NEAR    ³ 16-bit ³ No          ³\v@Medium\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bLarge\p   ³ FAR     ³ FAR     ³ 16-bit ³ No          ³\v@Large\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bHuge\p    ³ FAR     ³ FAR     ³ 16-bit ³ No          ³\v@Large\v
+             ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     \a\bFlat\p    ³ NEAR    ³ NEAR    ³ 32-bit ³ Yes         ³\v@Flat\v
+             ÀÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+     The \aOPTION SEGMENT\v@optseg\v and \aSEGMENT\v@segment\v directives can override the default
+     segment width.
+
+     \bSee also:\p .MODEL, \a.386/.486 Differences\v@mem386\v, \a/AT Command-Line Option\vml.hlp!/AT\v,
+                \aSimplified Segment Control\v@SimpleSeg\v, \aComplete Segment Control\v@CompSeg\v,
+                \aOPTION SEGMENT:\v@optseg\v
+.context @mem386
+.freeze 3
+.topic Memory Model with .386/.486
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     If the .MODEL directive is preceded by the .386 or .486 directive
+     (or their privileged counterparts), the assembler uses 32-bit
+     segments. If the .386 or .486 directive follows the .MODEL
+     directive, the default 16-bit segments are used. The flat memory
+     model uses 32-bit segments and must be preceded by a .386 or .486
+     directive.
+
+     32-bit segments are available only on the 80386/486 processors.
+.comment     They are not supported by any version of MS-DOS or by OS/2 before
+.comment     version 2.0.
+
+     \bSee also:\p .386, .486, \aOPTION SEGMENT:\v@optseg\v
+.context @tiny
+.context tiny
+.freeze 3
+.topic Tiny Memory Model: Details
+ \i\p\aExample\v@helloc.asm\v\i\p                                   \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The tiny memory model allows you to create a program with the .COM
+     extension. Tiny-model programs execute only under DOS, are limited
+     to 16-bit segments, and cannot have relocatable addresses. You can
+     invoke the assembler with the /AT option to use this memory model.
+     This tells the assembler to check for relocatable addresses. The
+     /AT option also passes the /T option to the linker.
+
+     With the tiny-model option, code and data segments are combined
+     into a single 64K segment. Both code and data items are accessed
+     with NEAR addresses. The PROC distance is NEAR under the tiny-
+     model option. @CodeSize is 0, @DataSize is 0, and @Model is 1.
+
+     The .STARTUP directive automatically generates an ORG 0100h under
+     the tiny-model option. The .FARDATA and .FARDATA? directives are
+     not allowed with the tiny-model option. The \aFARSTACK option\v@.model\v of
+     the .MODEL directive is also not allowed.
+
+     \bSee also:\p \a/AT Assembler Option\vml.hlp!/AT\v, \aLinker Options\vutils.hlp!link.options\v, .MODEL, ORG
+.context @small
+.context small
+.freeze 3
+.topic Small Memory Model: Details
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The small memory model creates a program that contains two
+     segments, one for code and one for data. This memory model causes
+     the assembler to produce files with the .EXE extension.
+
+     Code and data are limited to one segment each. With 16-bit
+     segments, the total size of a small-model program cannot exceed
+     128K. The defaults in small-model programs are NEAR code
+     addressing and NEAR data addressing. The PROC distance is NEAR
+     under the small-model option. @CodeSize is 0, @DataSize is 0, and
+     @Model is 2.
+
+     \bSee also:\p .MODEL
+.context compact
+.context @compact
+.freeze 3
+.topic Compact Memory Model: Details
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The compact memory model allows a single segment for program code
+     and multiple segments for program data. This memory model causes
+     the assembler to produce files with the .EXE extension.
+
+     Compact-model programs are limited to one code segment but can have
+     several data segments. The defaults in compact-memory programs are
+     NEAR code addressing and FAR data addressing. The PROC distance is
+     FAR under the compact-model option. @CodeSize is 0, @DataSize is 1,
+     and @Model is 3.
+
+     \bSee also:\p .MODEL
+.context @medium
+.context medium
+.freeze 3
+.topic Medium Memory Model: Details
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The medium memory model allows multiple segments for program code
+     and a single segment for program data. This memory model causes
+     the assembler to produce files with the .EXE extension.
+
+     Medium-model programs can have several code segments but are
+     limited to one segment of data. The defaults in medium-memory
+     programs are FAR code addressing and NEAR data addressing. The
+     PROC distance is NEAR under the medium-model option. @CodeSize is
+     1, @DataSize is 0, and @Model is 4.
+
+     \bSee also:\p .MODEL
+.context huge
+.context large
+.context @large
+.freeze 3
+.topic Large Memory Model: Details
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The large memory model allows multiple segments for both program
+     code and program data. This memory model causes the assembler to
+     produce files with the .EXE extension.
+
+     The defaults in large-memory programs are FAR code addressing and
+     FAR data addressing. The PROC distance is FAR under the
+     large-model option. @CodeSize is 1, @DataSize is 1, and @Model is
+     5.
+
+     The huge model is identical to the large model for assembly
+     language programs, but @CodeSize is 1, @DataSize is 2, and @Model
+     is 6. It is provided for code documentation and consistency with
+     other languages. In other languages, the huge memory model allows
+     the compiler to control data items that span data segments. In
+     assembly language, this type of data must be handled by the user.
+
+     \bSee also:\p .MODEL
+.context @Flat
+.freeze 3
+.topic Flat Memory Model: Details
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The flat memory model creates a program that contains one 32-bit
+     segment for program data and program code. The code generated
+     with the flat-model option will run only on 80386/486 processors.
+     A .386 or .486 processor directive must precede the .MODEL directive
+     that specifies the flat memory model.
+
+     This memory model causes the assembler to produce files with the
+     .EXE extension.
+.comment     OS/2 version 2.0 supports the flat memory model.
+
+     All segment registers are automatically set to the same value
+     with this memory model. The defaults in flat-model programs are
+     NEAR code addressing and NEAR data addressing. The PROC distance
+     is NEAR under the flat-model option. @CodeSize is 0, @DataSize is
+     0, and @Model is 7.
+
+     The FS and GS segment registers are not needed for flat-model
+     programs. The .MODEL FLAT statement automatically generates this
+     assumption:
+
+       ASSUME  cs:FLAT, ds:FLAT, ss:FLAT, es:FLAT, fs:ERROR, gs:ERROR
+
+     When defining segments with the SEGMENT directive, you should use
+     this ASSUME in your code.
+
+     \bSee also:\p .MODEL, COMM, EXTERN, .386, .486
+.context @ProcSelect
+.context .186
+.context 186
+..index .186 directive, Enable 80186 Processor Instructions
+.context .286
+.context 286
+..index .286 directive, Enable 80286 Processor Instructions
+.context 286P
+.context .286P
+..index .286P directive, Enable Privileged 286 Processor Instructions
+.context 286C
+.context .286C
+.context .287
+.context 287
+..index .287 directive, Enable 80287 Coprocessor Instructions
+.context .386
+.context 386
+..index .386 directive, Enable 80386 Processor Instructions
+.context .386P
+.context 386P
+..index .386P directive, Enable Privileged 386 Processor Instructions
+.context .386C
+.context 386C
+.context .387
+.context 387
+..index .387 directive, Enable 80387 Coprocessor Instructions
+.context .486
+.context 486
+..index .486 directive, Enable 80486 Processor Instructions
+.context .486P
+.context 486P
+..index .486P directive, Enable Privileged 486 Processor Instructions
+.context .8086
+.context 8086
+..index .8086 directive, Enable 8086/88 Processor Instructions
+.context .8087
+.context 8087
+..index .8087 directive, Enable 8087 Coprocessor Instructions
+.context .NO87
+.context no87
+..index .NO87 directive, Disable Coprocessor Instructions
+.context @ProcSelect
+.freeze 3
+..index selecting instruction sets
+.topic Processor Selection Directives
+                                             \i\p\aUp\v@LangDirectives\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSee also:\p \a.MODEL with .386 and .486\v@mem386\v, OPTION M510, OPTION NOKEYWORD:
+
+  The processor selection directives determine which instructions may
+  be assembled. You can combine processor and coprocessor selection
+  directives to obtain the desired instruction set. The .8086 directive
+  is in effect by default. Select a processor selection directive for more
+  information.
+
+            \b8086 80186 80286 80386 80486  8087 80287 80387 Privileged\p
+          ÚÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿
+  \a\b.8086\p   ³  +  ³  -  ³  -  ³  -  ³  -  ³  +  ³  -  ³  -  ³    -     \v@86Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.186\p    ³  +  ³  +  ³  -  ³  -  ³  -  ³  +  ³  -  ³  -  ³    -     \v@186Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.286\p    ³  +  ³  +  ³  +  ³  -  ³  -  ³  +  ³  +  ³  -  ³    -     \v@286Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.286P\p   ³  +  ³  +  ³  +  ³  -  ³  -  ³  +  ³  +  ³  -  ³    +     \v@286PAdd\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.386\p    ³  +  ³  +  ³  +  ³  +  ³  -  ³  +  ³  +  ³  +  ³    -     \v@386Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.386P\p   ³  +  ³  +  ³  +  ³  +  ³  -  ³  +  ³  +  ³  +  ³    +     \v@386PAdd\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.486\p    ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³    -     \v@486Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.486P\p   ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³  +  ³    +     \v@486PAdd\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.8087\p   ³     ³     ³     ³     ³     ³  +  ³  -  ³  -  ³          \v@87Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.287\p    ³     ³     ³     ³     ³     ³  +  ³  +  ³  -  ³          \v@287Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.387\p    ³     ³     ³     ³     ³     ³  +  ³  +  ³  +  ³          \v@387Add\v³
+          ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄ´
+  \a\b.NO87\p   ³     ³     ³     ³     ³     ³  -  ³  -  ³  -  ³          \v@no87Add\v³
+          ÀÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÙ
+
+  The directives that enable privileged instructions do not cause the
+  processor to enter protected or privileged mode. You must write code
+  to perform this transition.
+
+  The .286C and .386C directives are equivalent to the .286 and .386
+  directives respectively. They are provided for compatibility with
+  previous versions of the assembler.
+.context @86Add
+.freeze 3
+.topic .8086 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     AAA     CMPSW   JB     JNG    LEA       MOVS    RETF    STOS
+     AAD     CWD     JBE    JNGE   LES       MOVSB   RETN    STOSB
+     AAM     DAA     JC     JNL    LODS      MOVSW   ROL     STOSW
+     AAS     DAS     JCXZ   JNLE   LODSB     MUL     ROR     SUB
+     ADC     DEC     JE     JNO    LODSW     NEG     SAHF    TEST
+     ADD     DIV     JG     JNP    LOOP      NOP     SAL     WAIT
+     AND     HLT     JGE    JNS    LOOPE     NOT     SAR     XCHG
+     CALL    IDIV    JL     JNZ    LOOPEW    OR      SBB     XLAT
+     CBW     IMUL    JLE    JO     LOOPNE    OUT     SCAS    XLATB
+     CLC     IN      JMP    JP     LOOPNEW   POP     SCASB   XOR
+     CLD     INC     JNA    JPE    LOOPNZ    POPF    SCASW
+     CLI     INT     JNAE   JPO    LOOPNZW   PUSH    SHL
+     CMC     INTO    JNB    JS     LOOPW     PUSHF   SHR
+     CMP     IRET    JNBE   JZ     LOOPZ     RCL     STC
+     CMPS    JA      JNC    LAHF   LOOPZW    RCR     STD
+     CMPSB   JAE     JNE    LDS    MOV       RET     STI
+.context @186Add
+.freeze 3
+.topic .186 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     BOUND     INSB      OUTS      POPA
+     ENTER     INSW      OUTSB     PUSHA
+     INS       LEAVE     OUTSW
+
+     \bAlso enables:\p \a8086 Instructions\v@86add\v
+.context @286Add
+.freeze 3
+.topic .286 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ARPL     SGDT     SMSW     VERW
+     LAR      SIDT     STR
+     LSL      SLDT     VERR
+
+     \bAlso enables:\p \a80186 Instructions\v@186add\v
+.context @386Add
+.freeze 3
+.topic .386 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     BSF   BTR     CWDE    JECXZ   LSS     OUTSD    PUSHFD    SHRD
+     BSR   BTS     INSD    LFS     MOVSD   POPAD    SCASD     STOSD
+     BT    CDQ     IRETD   LGS     MOVSX   POPFD    \aSETcond\v@setcond\v
+     BTC   CMPSD   \aJcond\v@jcond\v   LODSD   MOVZX   PUSHAD   SHLD
+
+     \bAlso enables:\p \a80286 Instructions\v@286add\v
+.context @486Add
+.freeze 3
+.topic .486 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     BSWAP       INVD       WBINVD
+     CMPXCHG     INVLPG     XADD
+
+     \bAlso enables:\p \a80386 Instructions\v@386add\v
+.context @286PAdd
+.freeze 3
+.topic .286P Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ARPL     LGDT     LMSW     SGDT     SMSW     VERW
+     CLTS     LIDT     LSL      SIDT     STR
+     LAR      LLDT     LTR      SLDT     VERR
+
+     The FSETPM coprocessor instruction is enabled when both .286P and
+     .287 (or greater) are in effect.
+
+     \bAlso enables:\p \a80186 Instructions\v@186add\v
+.context @386PAdd
+.freeze 3
+.topic .386P Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+     BSF   BTR     CWDE    JECXZ   LSS     OUTSD    PUSHFD    SHRD
+     BSR   BTS     INSD    LFS     MOVSD   POPAD    SCASD     STOSD
+     BT    CDQ     IRETD   LGS     MOVSX   POPFD    \aSETcond\v@setcond\v
+     BTC   CMPSD   \aJcond\v@jcond\v   LODSD   MOVZX   PUSHAD   SHLD
+
+     \bAlso enables:\p \a80286 Privileged Instructions\v@286Padd\v
+.context @486PAdd
+.freeze 3
+.topic .486P Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     BSWAP       INVD       WBINVD
+     CMPXCHG     INVLPG     XADD
+
+     \bAlso enables:\p \a80386 Privileged Instructions\v@386Padd\v, \a80387 Instructions\v@387add\v
+.context @87Add
+.freeze 3
+.topic .8087 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     F2XM1     FDIVP     FISUB     FMULP      FPTAN     FSUB
+     FABS      FDIVR     FISUBR    FNCLEX     FRNDINT   FSUBP
+     FADD      FDIVRP    FLD       FNDISI     FRSTOR    FSUBR
+     FADDP     FENI      FLD1      FNENI      FRSTORW   FSUBRP
+     FBLD      FFREE     FLDCW     FNINIT     FSAVE     FTST
+     FBSTP     FIADD     FLDENV    FNOP       FSAVEW    FWAIT
+     FCHS      FIDIV     FLDENVW   FNSAVE     FSCALE    FXAM
+     FCLEX     FIDIVR    FLDL2E    FNSAVEW    FSQRT     FXCH
+     FCOM      FILD      FLDL2T    FNSTCW     FST       FXTRACT
+     FCOMP     FIMUL     FLDLG2    FNSTENV    FSTCW     FYL2X
+     FCOMPP    FINCSTP   FLDLN2    FNSTENVW   FSTENV    FYL2XP1
+     FDECSTP   FINIT     FLDPI     FNSTSW     FSTENVW
+     FDISI     FIST      FLDZ      FPATAN     FSTP
+     FDIV      FISTP     FMUL      FPREM      FSTSW
+
+     The FDISI and FENI instructions are not available on the 80287 and
+     greater coprocessors.
+.context @287Add
+.freeze 3
+.topic .287 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     FSETPM
+
+     The FSETPM coprocessor instruction is enabled when both .286P and
+     .287 (or greater) are in effect.
+
+     \bAlso enables:\p \a8087 Instructions\v@87add\v
+.context @387Add
+.freeze 3
+.topic .387 Instructions Enabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     FCOS        FNSTENVD     FSAVED      FSTENVD     FUCOMPP
+     FLDENVD     FPREM1       FSIN        FUCOM
+     FNSAVED     FRSTORD      FSINCOS     FUCOMP
+
+     \bAlso enables:\p \a80287 Instructions\v@287add\v
+.context @no87Add
+.freeze 3
+.topic .no87 Instructions Disabled
+                                             \i\p\aUp\v@ProcSelect\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The .no87 directive disables all numeric coprocessor instructions.
+
+     \bDisables:\p \a8087 Instructions\v@87add\v, \a80287 Instructions\v@287add\v, \a80387 Instructions\v@387add\v

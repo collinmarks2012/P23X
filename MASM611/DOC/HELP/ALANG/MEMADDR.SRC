@@ -1,0 +1,445 @@
+.context @IntVector
+.freeze 3
+..index disabling interrupts (CLI)
+..index enabling interrupts (STI)
+.topic Interrupt Vector Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size   Description\p
+
+  0000:0000   1K     A series of double-word addresses that form the
+   through           interrupt vector table. These addresses occur
+  0000:03FF          at multiples of 4 bytes (0000h, 0004h,
+                     0008h...). Addresses in the table correspond
+                     sequentially with software interrupts컴0000h
+                     with interrupt 00h, 0004h with interrupt 01h,
+                     etc.
+
+                     Not all addresses in the table point to
+                     interrupt service routines. Some point to areas
+                     of nonexecutable data. Other addresses are
+                     null, indicating the interrupt is not used. Do
+                     not call interrupts that do not have table
+                     entries that point to valid interrupt routines.
+
+                     Always disable interrupts with CLI before
+                     changing the contents of these locations.
+                     Reenable interrupts with STI. \aThe Set Interrupt\v@21h.25h\v
+                     \aVector\v@21h.25h\v and \aGet Interrupt Vector DOS functions\v@21h.35h\v
+                     automate this task.
+
+  \bSee also:\p \aSet Interrupt Vector\v@21h.25h\v, \aGet Interrupt Vector\v@21h.35h\v,
+            \aDOS Segment Map\v@SysMem\v, INT, IRET
+.context @ConfigData
+..index memory data, System Operations
+.freeze 3
+.topic Configuration Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size      Description\p
+
+  0000:0400   4 words   Base addresses of serial ports COM1 to COM4.
+  
+  0000:0408   4 words   Base addresses of printer ports LPT1 to LPT4.
+  
+  0000:0410   1 word    List of system equipment in the following
+                        format:
+  
+                        \bBit     Meaning (if set)\p
+
+                        0       Disk drive installed
+                        1       Coprocessor installed
+                        2-3     PC: Amount of system board RAM
+                                    00 = 16 KB
+                                    01 = 32 KB
+                                    10 = 48 KB
+                                    11 = 64 KB
+                                AT: Not used
+                                PS/2:01 = Pointing device installed
+                        4-5     Initial video mode:
+                                11 = Monochrome text
+                                10 = 80-column text
+                                01 = 40-column text
+                        6-7     Number of disk drives, if bit 0 set
+                        8       Not used
+                        9-11    Number of serial ports installed
+                        12      Game adapter installed
+                        13      Not used
+                        14-15   Number of printers installed
+  
+  0000:0413   1 word    Amount of conventional memory in kilobytes.
+  
+  \bSee also:\p \aInterrupt 11h (Get Equipment Configuration)\v@11h\v,
+            \aInterrupt 12h (Get Conventional Memory Size)\v@12h\v
+.context @KeyData
+.freeze 3
+..index keyboard data, System Operations
+.topic Keyboard Data Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size       Description\p
+
+  0000:0417   1 word     Current keyboard shift status (not always
+                         related to the character at the top of the
+                         buffer) in the following format:
+
+                         \bBit   Meaning (if set)\p
+
+                         0     Right SHIFT key pressed
+                         1     Left SHIFT key pressed
+                         2     CTRL key pressed
+                         3     ALT key pressed
+                         4     SCROLL LOCK active
+                         5     NUM LOCK active
+                         6     CAPS LOCK active
+                         7     INSERT active
+                         8     Left CTRL key pressed
+                         9     Left ALT key pressed
+                         10    SYS REQ key pressed
+                         11    Hold active (CTRL+NUM LOCK or PAUSE)
+                         12    SCROLL LOCK key pressed
+                         13    NUM LOCK key pressed
+                         14    CAPS LOCK key pressed
+                         15    INS key pressed
+
+  0000:041A   1 word     Points to location of least recent keystroke at
+                         head of circular keyboard buffer. When keyboard
+                         service (\aInterrupt 16h\v@16h\v) receives a request for a
+                         request for a key, it retrieves the key codes
+                         from the buffer head, then changes the value in
+                         0000:041Ah to point to the next key code pair in
+                         buffer.
+
+  0000:041C   1 word     Points to tail of circular keyboard buffer. When
+                         the keyboard handler (\ainterrupt 09h\v@9h\v) detects a
+                         keystroke, it places a word identifying the key
+                         into the buffer at this position. The value at
+                         0000:041Ch is then reset to point to the next
+                         open position in the buffer.
+
+                         If no available space remains, the buffer is
+                         full, and the handler beeps the speaker to alert
+                         the user. Since the tail is not reset in this
+                         case, the most recent keystroke is effectively
+                         ignored.
+
+  0000:041E   16 words   Default circular keyboard buffer. Holds up to 15
+                         keystroke identifiers, each of which comprises a
+                         1-byte scan code and a 1-byte ASCII code. The
+                         keyboard handler (\ainterrupt 09h\v@9h\v) places the most
+                         recent key identifier at buffer tail; \ainterrupt 16h\v@16h\v
+                         reads the least recent key identifier from the
+                         buffer head. When head = tail, buffer is empty.
+
+  0000:0471   1 byte     Set to 80h when keyboard routine (\ainterrupt 09h\v@9h\v)
+                         detects CTRL+BREAK key combination.
+
+  0000:0480   1 word     Points to start of circular keyboard buffer.
+
+  0000:0482   1 word     Points to end of circular keyboard buffer.
+
+  0000:0496   1 word     If bit 4 set, indicates extended keyboard
+                         installed.
+
+  \bSee also:\p \aInterrupt 09h (Keyboard Interrupt)\v@9h\v,
+            \aInterrupt 16h (Keyboard Services)\v@16h\v,
+            \aInterrupt 1Bh (CTRL+BREAK Handler)\v@1Bh\v
+.context @DiskData
+.freeze 3
+..index disk data, System Operations
+.topic Disk Data Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size     Description\p
+
+  0000:043E   1 byte   Flags for disk drive recalibration. Bits 0-3
+                       correspond to disk drives A, B, C, and D,
+                       respectively. If bit = 0, corresponding drive (if
+                       it exists) requires recalibration. Determine number
+                       of disk drives attached to system by invoking
+                       \aInt 11h (Get Equipment Configuration)\v@11h\v.
+
+  0000:043F   1 byte   Flags for disk drive motor activity. Bits 0-3
+                       correspond to disk drives A, B, C, and D,
+                       respectively. If bit = 1, corresponding drive
+                       motor is running.
+
+                       After accessing a drive, the disk controller does
+                       not turn off the drive motor. Instead, the timer
+                       routine (\ainterrupt 08h\v@8h\v) turns off the active
+                       motor only after a certain time elapses, ensuring
+                       that the motor remains running during the brief
+                       intervals between rapid disk accesses. This reduces
+                       wear on the motor mechanism and eliminates time
+                       spent waiting for the motor to regain operating
+                       speed.
+
+  0000:0440   1 byte   Count for disk drive motor shut-off. Default is 37
+                       timer ticks, approximately 2 seconds. The disk
+                       routine (\ainterrupt 13h\v@13h\v) sets this value
+                       from second byte of the Disk Drive Parameter Table
+                       after accessing the disk drive.
+
+                       The timer routine (\ainterrupt 08h\v@8h\v) continually
+                       decrements the count at 0000:0440h. When the count
+                       reaches 0, the timer routine shuts off the motor
+                       and clears bits 0-3 at 0000:43Fh (see above).
+
+  0000:0441   1 byte   Status byte from most recent disk operation,
+                       indicated as follows:
+
+                       \bValue   Meaning\p
+
+                       0       No error
+                       1       Invalid command
+                       2       Address mark not found
+                       3       Attempt to write on write-protected
+                               disk
+                       4       Requested sector not found
+                       8       DMA overrun
+                       9       Attempt to use DMA across 64K
+                               boundary
+                       10h     Error in cyclical redundancy check on
+                               read
+                       20h     Disk controller failed
+                       40h     Seek operation failed
+                       80h     Drive failed to respond; not ready
+
+                       \aInterrupt 13h\v@13h\v disk functions except
+                       \a01h (Get\v@13h.01h\v \aDisk Status\v@13h.01h\v) update the disk status byte
+                       at completion. \aFunction 00h (Reset disk)\v@13h.00h\v
+                       reinitializes the status byte to 0. Other disk
+                       functions return the status in AH.
+
+  \bSee also:\p \aInterrupt 08h (Timer Interrupt)\v@8h\v,
+            \aInterrupt 13h (Disk Services)\v@13h\v,
+            \aInterrupt 1Eh (Pointer to Disk Drive Parameter Table)\v@1Eh\v,
+            \aSingle Drive Alias\v@MiscMem\v
+.context @VideoData
+..index video data, System Operations
+.freeze 3
+.topic Video Data Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size      Description\p
+
+  0000:0449   1 byte    Current video mode.
+
+  0000:044A   1 word    Number of screen columns (characters per row).
+
+  0000:044C   1 word    Size of video buffer in bytes.
+
+  0000:044E   1 word    Offset to buffer area used by current display page.
+
+  0000:0450   8 words   Cursor coordinates for 8 display pages, beginning
+                        with page 0. High byte of each coordinate = cursor
+                        row, low byte = cursor column.
+
+                        NOTE: top row = 0, leftmost column = 0.
+
+  0000:0460   1 word    Current cursor shape. High byte = scan line at
+                        top of cursor, low byte = scan line at bottom of
+                        cursor, relative to top of character box.
+
+                        For example, the normal MDA cursor shape uses
+                        lines 11-12 of the 14 scan lines (0-13) that form
+                        the character box. In this case, 0000:0460h
+                        contains the value 0B0Ch. Changing this value does
+                        not change cursor shape.
+
+  0000:0462   1 byte    Current display page number.
+
+  0000:0463   1 word    Port address of CRT controller index register
+                        (03B4h for monochrome, 03D4h for color).
+
+  0000:0465   1 byte    Current value in CRT controller mode register
+                        at port address 03B8h (monochrome) or 03D8h
+                        (color). Used only for MDA and CGA but emulated by
+                        other adapters.
+
+                        The MDA and CGA mode registers provide write-only
+                        access and cannot be read directly. To keep other
+                        processes (such as BIOS) informed of the
+                        register's contents, programs that reset the
+                        register should record the new value at 0000:0465.
+
+  0000:0466   1 byte    Current value in CRT controller's color register
+                        at port address 03D9h. Used only for CGA but
+                        emulated by EGA, MCGA, and VGA adapters.
+
+                        The color register, like the mode register
+                        described above, cannot be read directly. A program
+                        that resets the register should record the new
+                        value at 0000:0466.
+
+  \bSee also:\p \aInterrupt 10h (Video Services)\v@10h\v
+.context @TimerData
+..index setting timer data
+.freeze 3
+.topic Timer Memory
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size      Description\p
+
+  0000:046C   1 dword   Timer tick counter, incremented by one at each
+                        timer interrupt. Initialized at system startup to
+                        number of ticks since midnight. When count reaches
+                        equivalent of 24 hours (1800B0h), it is reset to 0
+                        and flag at 0000:0470h is set to 1.
+
+  0000:0470   1 byte    Set to 1 at midnight. Indicates whether timer tick
+                        count (see above) has been reset for another day.
+
+                        NOTE: This value is not cumulative and does not
+                        indicate the passage of successive 24-hour
+                        periods.
+
+  \bSee also:\p \aInterrupt 08h (Timer Interrupt)\v@8h\v
+.context @MiscMem
+..index memory areas
+.freeze 3
+.topic Miscellaneous Memory Locations
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size      Description\p
+
+  0000:0478   4 bytes   Loop counters for LPT1 and LPT2. These counters
+                        determine the number of times the printer
+                        service (\ainterrupt 17h\v@17h\v) attempts to poll the
+                        printer for a not-busy signal. If the signal is
+                        not received within the given number of tries,
+                        \ainterrupt 17h\v@17h\v returns AH=1, indicating a
+                        printer time-out error.
+  
+  0000:047C   4 bytes   Loop counters for serial ports COM1 to COM4.
+                        These counters determine the number of times
+                        the serial communications service (interrupt
+                        14h) attempts to read the modem or line status
+                        registers. If the desired status is not
+                        received within the given number of tries,
+                        \ainterrupt 14h\v@14h\v returns an appropriate error code
+                        in AH.
+  
+  0000:0500   1 byte    Indicates status of print-screen operation:
+  
+                        0    = Successful
+                        1    = Currently in progress
+                        0FFh = Failed
+  
+  0000:0504   1 byte    Indicates whether disk in single-disk system acts
+                        as drive A or B:
+  
+                        0 = Acts as drive A
+                        1 = Acts as drive B
+  
+  \bSee also:\p \aInterrupt 05h (Print Screen)\v@5h\v,
+            \aInterrupt 14h (Serial Communications Services)\v@14h\v,
+            \aInterrupt 17h (Printer Service)\v@17h\v
+.context @VideoBuffer
+..index graphics modes
+.freeze 3
+.topic Video Buffers
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size     Description\p
+
+  A000:0000   Varies   Video buffer for graphics modes 0Dh and higher.
+                       Used by MCGA, EGA, and VGA.
+
+  B000:0000   0800h    Video buffer for monochrome text display (mode 7).
+              words    Each word of the buffer corresponds to a single
+                       character box on the screen, beginning with the
+                       upper left corner.
+
+                       The high byte of each word contains the character's
+                       "display attribute," a value that specifies the
+                       character's video appearance, intensity, and blink
+                       state. The low byte contains the character's ASCII
+                       code.
+
+                       For example, a value of 0141h in the fourth word of
+                       the buffer produces an underlined "A" (ASCII 41h)
+                       at the fourth column of the screen's top row.
+
+                       In Hercules monochrome graphics mode, memory from
+                       address B000:0000h to B7FF:FFFFh holds graphics
+                       data for display page 0.
+
+  B800:0000   2000h    Video buffer for color display. Color text words
+                       display (modes 0-3) is mapped in attribute/ASCII
+                       word pairs as described above for monochrome text,
+                       except that each display attribute determines a
+                       character's background and foreground colors.
+
+                       The buffer provides space for four screen pages in
+                       80-column text mode, each page occupying 800h words
+                       of memory, or eight screen pages in 40-column text
+                       mode. Adapters such as the EGA and VGA provide more
+                       buffer area and can accommodate more screen text.
+
+                       In CGA graphics modes (modes 4-6), bit data in the
+                       buffer corresponds singly or in pairs to individual
+                       screen pixels. In Hercules monochrome graphics
+                       mode, memory from address B800:0000h to BFFF:FFFFh
+                       holds graphics data for display page 1.
+
+     \bSee also:\p \aColor Attribute Table\v@ColorAttr\v, \aMonochrome Attribute Table\v@MonoAttr\v,
+               \aDOS Segment Map\v@SysMem\v
+.context @ROMData
+..index read-only memory
+.freeze 3
+.topic ROM Locations
+                                             \i\p\aUp\v@ImpMem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  \bAddress\p
+  \b(hex)       Size     Description\p
+
+  F000:E000   Varies   BIOS copyright notice.
+
+  F000:FFFE   1 byte   System model code.
+
+  F000:FFFF   1 byte   System submodel code. The model/submodel
+                       codes identify system as follows:
+
+                                               \bModel   Submodel\p
+                       \bMachine                 Byte    Byte\p
+
+                       PC                      FFh
+                       PC/XT (11/08/82 BIOS)   FEh
+                       PCjr                    FDh
+                       PC/AT (6/10/85 BIOS)    FCh     00h
+                       PC/AT (11/15/85 BIOS)   FCh     01h
+                       PC/XT-286               FCh     02h
+                       PS/2 Model 50[Z]        FCh     04h
+                       PS/2 Model 60           FCh     05h
+                       PC/XT (1/10/86 and      FBh     00h
+                              5/9/86 BIOS)
+                       PS/2 Model 30           FAh     00h
+                       PC Convertible          F9h     00h
+                       PS/2 Model 80 (16MHz)   F8h     00h
+                       PS/2 Model 80 (20MHz)   F8h     01h
+                       PS/2 Model 70 (20MHz)   F8h     04h
+                       PS/2 Model 70 (16MHz)   F8h     09h
+                       PS/2 Model 55           F8h     0Ch
+                       PS/2 Model 70 (25MHz)   F8h     0Dh
+
+  NOTE: These bytes should be used with care, since they may not be
+        correct for alternate processor cards (such as Microsoft MACH20),
+        software emulators, or other nonstandard configurations.

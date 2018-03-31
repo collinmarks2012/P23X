@@ -1,0 +1,22 @@
+;* @ArgI - Macro function returns an argument specified by number
+;* from a VARARG list.
+;*
+;* Shows:   Directives - FOR       LOCAL    EXITM
+;*                       TEXTEQU   =
+;*          Operator   - EQ
+;*
+;* Params:  index - one-based number of the argument to be returned
+;*          arglist - argument list
+
+@ArgI MACRO index:REQ, arglist:VARARG
+    LOCAL count, retstr
+    count = 0
+    FOR arg, <arglist>
+        count = count + 1
+        IF count EQ index
+            retstr TEXTEQU <arg>
+        ENDIF
+    ENDM
+    EXITM retstr
+ENDM
+

@@ -1,0 +1,31 @@
+[shared-]
+	pmark=
+	version=3
+[debug-]
+	target="e:\hello\hellom.exe"
+	synonym=;E:\HELLO
+	genericbp='E "{,hellom.asm,E:\HELLO\hellom.EXE} exit"
+	memwin=vm1b DS:0 /lf8
+[cv]
+	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
+	wndstate=1 33 8 0 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=2 34 8 33 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=3 67 25 0 1 0 1 0 0 0 8 8 0 0 -1
+	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
+	wndstate=5 67 8 0 26 0 1 0 0 0 0 0 0 0 -1
+	wndstate=6 67 8 3 21 0 0 0 0 0 0 0 0 0 -1
+	wndstate=7 13 41 67 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=8 67 8 0 26 0 0 0 0 0 0 0 0 0 -1
+	wndstate=9 67 8 0 34 1 1 0 1 0 12 7 0 0 -1
+	command=use auto
+	command=n10
+	screensize=43
+	command=oh-
+	command=ov-
+	command=oa+
+	command=vs1&
+	command=oc+
+	command=of+
+	command=o3-
+	command=ollf   
+	tracespeed=250

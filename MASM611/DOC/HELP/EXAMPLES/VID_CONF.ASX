@@ -1,0 +1,14 @@
+;* vid_config - Structure for video configuration.
+;*
+;* Shows:   STRUC    ENDS    COMM
+
+vid_config      STRUC
+  mode		DB	?
+  dpage		DB	?
+  rows		DB	?
+  cols		DB	?
+  display	DB	?
+  adapter	DB	?
+  CGAvalue	DB	?
+  sgmnt		DW	?
+vid_config	ENDS

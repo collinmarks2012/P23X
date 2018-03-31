@@ -1,0 +1,180 @@
+.context @d.t
+.context tiny
+.freeze 3
+.topic Tiny Memory Model
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄTiny Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄ Definition ÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³                                     ³
+     \i\p\aSmall\v@d.s\v\i\p       ³                                     ³
+     \i\p\aMedium\v@d.m\v\i\p      ³                                     ³
+     \i\p\aCompact\v@d.c\v\i\p     ³                                     ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³                                     ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Tiny ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\b\aTiny\v@d.t\v\p\i\p        ³   Code and data are combined in one ³
+     \i\p\aSmall\v@d.s\v\i\p       ³   16-bit (64K) segment. Choose the  ³
+     \i\p\aMedium\v@d.m\v\i\p      ³   tiny model when you make .COM     ³
+     \i\p\aCompact\v@d.c\v\i\p     ³   files. The /AT option must be     ³
+     \i\p\aLarge\v@d.l\v\i\p       ³   passed to the assembler.          ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³             \i\p\aMore Info\v@tiny\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+.context @d.s
+.context small
+.freeze 3
+.topic Small Memory Model
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSmall Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Small ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³   Code and data fit into one        ³
+     \i\p\b\aSmall\v@d.s\v\p\i\p       ³   segment each. Code and data are   ³
+     \i\p\aMedium\v@d.m\v\i\p      ³   NEAR.                             ³
+     \i\p\aCompact\v@d.c\v\i\p     ³                                     ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³             \i\p\aMore Info\v@small\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+.context @d.m
+.context medium
+.freeze 3
+.topic Medium Memory Model
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄMedium Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Medium ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³   Code can span several segments    ³
+     \i\p\aSmall\v@d.s\v\i\p       ³   but data is limited to a single   ³
+     \i\p\b\aMedium\v@d.m\v\p\i\p      ³   segment. Code is FAR, and data    ³
+     \i\p\aCompact\v@d.c\v\i\p     ³   is NEAR.                          ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³             \i\p\aMore Info\v@medium\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+.context @d.c
+.context compact
+.freeze 3
+.topic Compact Memory Model
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄCompact Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ Compact ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³   Code is limited to a single       ³
+     \i\p\aSmall\v@d.s\v\i\p       ³   segment, but data can span        ³
+     \i\p\aMedium\v@d.m\v\i\p      ³   several segments. Code is NEAR,   ³
+     \i\p\b\aCompact\v@d.c\v\p\i\p     ³   and data is FAR.                  ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³             \i\p\aMore Info\v@compact\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+.context @d.l
+.context large
+.freeze 3
+.topic Large Memory Model
+                                             \i\p\aUp\v@memorymodels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄLarge Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Large ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³   Code and data can span several    ³
+     \i\p\aSmall\v@d.s\v\i\p       ³   segments. Code and data are FAR.  ³
+     \i\p\aMedium\v@d.m\v\i\p      ³                                     ³
+     \i\p\aCompact\v@d.c\v\i\p     ³                                     ³
+     \i\p\b\aLarge\v@d.l\v\p\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\i\p        ³             \i\p\aMore Info\v@large\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+.context @d.h
+.context huge
+.topic Huge Memory Model
+.freeze 3
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄHuge Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Huge ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³  Identical to large model for       ³
+     \i\p\aSmall\v@d.s\v\i\p       ³  assembly language programs.        ³
+     \i\p\aMedium\v@d.m\v\i\p      ³                                     ³
+     \i\p\aCompact\v@d.c\v\i\p     ³                                     ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\b\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\aFlat\v@d.f\v\p\i\p        ³             \i\p\aMore Info\v@huge\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+.context @d.f
+.context flat
+.topic Flat Memory Model
+.freeze 3
+                                             \i\p\aUp\v@MemoryModels\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄFlat Memory ModelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Your choice of a memory model determines how memory is set up for
+     program code and data.
+
+     The assembler offers seven models to choose from.
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Flat ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                                     ³
+     \i\p\aTiny\v@d.t\v\i\p        ³  Code and data are combined in one  ³
+     \i\p\aSmall\v@d.s\v\i\p       ³  32-bit (4 Gigabyte) segment. Code  ³
+     \i\p\aMedium\v@d.m\v\i\p      ³  and data are NEAR. Supported by    ³
+     \i\p\aCompact\v@d.c\v\i\p     ³  OS/2 2.0.                          ³
+     \i\p\aLarge\v@d.l\v\i\p       ³                                     ³
+     \i\p\aHuge\v@d.h\v\i\p        ³                                     ³
+     \i\p\b\aFlat\v@d.f\v\p\i\p        ³             \i\p\aMore Info\v@flat\v\i\p             ³
+                   ³                                     ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

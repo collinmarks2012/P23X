@@ -1,0 +1,125 @@
+HW1 - Unsigned Numbers 
+
+01. Add the following two 8 bit unsigned binary numbers
+    01101001
+  + 01101111
+    --------
+
+02. Did an unsigned overflow occur? (Y/N)
+
+03. Add the following two 8 bit unsigned binary numbers
+    01011110
+  + 00111001
+    --------
+
+04. Did an unsigned overflow occur? (Y/N)
+
+05. Add the following two 8 bit unsigned binary numbers
+    10100100
+  + 10011111
+    --------
+
+06. Did an unsigned overflow occur? (Y/N)
+
+07. Subtract the following two 8 bit unsigned binary numbers
+    01101111
+  - 01101100
+    --------
+
+08. Did an unsigned overflow occur? (Y/N)
+
+09. Subtract the following two 8 bit unsigned binary numbers
+    00011100
+  - 01000100
+    --------
+
+10. Did an unsigned overflow occur? (Y/N)
+
+11. Subtract the following two 8 bit unsigned binary numbers
+    10010101
+  - 11110010
+    --------
+
+12. Did an unsigned overflow occur? (Y/N)
+
+13. Add the following 2 digit unsigned hex numbers
+    DD
+  + 4B
+    --
+
+14. Did an unsigned overflow occur? (Y/N)
+
+15. Add the following 2 digit unsigned hex numbers
+    E1
+  + 2F
+    --
+
+16. Did an unsigned overflow occur? (Y/N)
+
+17. Add the following 2 digit unsigned hex numbers
+    09
+  + 5F
+    --
+
+18. Did an unsigned overflow occur? (Y/N)
+
+19. Subtract the following 2 digit unsigned hex numbers
+    1E
+  - 4A
+    --
+
+20. Did an unsigned overflow occur? (Y/N)
+
+21. Subtract the following 2 digit unsigned hex numbers
+    7A
+  - 00
+    --
+
+22. Did an unsigned overflow occur? (Y/N)
+
+23. Subtract the following 2 digit unsigned hex numbers
+    9F
+  - E1
+    --
+
+24. Did an unsigned overflow occur? (Y/N)
+
+25. Convert the following unsigned binary number to decimal.
+    10101001
+
+26. Convert the following unsigned binary number to hex (2 digits).
+    11010101
+
+27. Convert the following unsigned hex number to decimal.
+    3B
+
+28. Convert the following unsigned decimal number to binary (8 bits).
+    252
+
+29. Convert the following unsigned decimal number to hex (2 digits).
+    206
+
+30. You are working with the following base number system:
+    9
+    What are the digits in this number system?
+    (Answer in this format: S-H) 
+    (  S is the smallest digit ) 
+    (  H is the highest  digit ) 
+    (  For example, the answer for BASE 10 is 0-9) 
+
+31. Convert the following BASE 9 number to decimal.
+    41
+
+32. You are working with the following base number system:
+    6
+    What are the digits in this number system?
+    (Answer in this format: S-H) 
+    (  S is the smallest digit ) 
+    (  H is the highest  digit ) 
+    (  For example, the answer for BASE 10 is 0-9) 
+
+33. Convert the following BASE 6 number to decimal.
+    53
+
+End of file
+-

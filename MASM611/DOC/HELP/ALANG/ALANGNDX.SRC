@@ -1,0 +1,1192 @@
+
+.context @!
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\b*\p³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \a! operator               Literal Character Operator (!)\v@exclamation\v
+    \a                         C-Style Comparison Operators\v@ccompare\v
+    \a!= operator              C-Style Comparison Operators\v@ccompare\v
+    \a$ value                  Current Offset ($) Value\v@dollarsign\v
+    \a% operator               Expression Operator (%)\v@percent\v
+    \a& operator               Substitution Operator (&)\v@ampersand\v
+    \a* operator               Arithmetic Operators\v@ArithOp\v
+    \a+ operator               Arithmetic Operators\v@ArithOp\v
+    \a- operator               Arithmetic Operators\v@ArithOp\v
+    \a. operator               Structure Field Reference Operator (.)\v@period\v
+    \a/ operator               Arithmetic Operators\v@ArithOp\v
+    \a16-bit expressions       EXPR16\v@expr1632\v
+   .\a186 directive            Enable 80186 Processor Instructions\v@ProcSelect\v
+   .\a286 directive            Enable 80286 Processor Instructions\v@ProcSelect\v
+   .\a286P directive           Enable Privileged 286 Processor Instructions\v@ProcSelect\v
+   .\a287 directive            Enable 80287 Coprocessor Instructions\v@ProcSelect\v
+    \a32-bit expressions       EXPR32\v@expr1632\v
+   .\a386 directive            Enable 80386 Processor Instructions\v@ProcSelect\v
+   .\a386P directive           Enable Privileged 386 Processor Instructions\v@ProcSelect\v
+   .\a387 directive            Enable 80387 Coprocessor Instructions\v@ProcSelect\v
+   .\a486 directive            Enable 80486 Processor Instructions\v@ProcSelect\v
+   .\a486P directive           Enable Privileged 486 Processor Instructions\v@ProcSelect\v
+   .\a8086 directive           Enable 8086/88 Processor Instructions\v@ProcSelect\v
+   .\a8087 directive           Enable 8087 Coprocessor Instructions\v@ProcSelect\v
+    \a: operator               Segment Override Operator (:)\v@op.colon\v
+    \a:/:: punctuation         Labeling Punctuation (:/::)\v@colon\v
+    \a;/;; punctuation         Comment Delimiter (;/;;)\v@semicolon\v
+    \a<= operator              C-Style Comparison Operators\v@ccompare\v
+    \a<> punctuation           Literal Text Punctuation (<>)\v@anglebrackets\v
+    \a= directive              Redefinable Numeric Equate\v@equalSign\v
+    \a== operator              C-Style Comparison Operators\v@ccompare\v
+    \a>= operator              C-Style Comparison Operators\v@ccompare\v
+    \a? initializer            Uninitialized Value (?)\v@questionmark\v
+    \a@@ label                 Local Code Labels\v@at_F\v
+    \a[] punctuation           Index Punctuation ([])\v@brackets\v
+    \a\\punctuation             Line-Continuation (\\) Punctuation\v@backslash\v
+    \a{} punctuation           Declare Record ({}) Operator\v@RECORD\v
+    \a|| operator              C-Style Comparison Operators\v@ccompare\v
+
+.context @a
+.context @index
+.context alang.index
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\bA\p³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aAAA instruction          ASCII Adjust after Addition\v@AAA\v
+    \aAAD instruction          ASCII Adjust before Division\v@AAD\v
+    \aAAM instruction          ASCII Adjust after Multiply\v@AAM\v
+    \aAAS instruction          ASCII Adjust after Subtraction\v@AAS\v
+    \aABS                      Define External Variables, Labels, and Symbols\v@EXTERNDEF\v
+    \aADC instruction          Add with Carry\v@ADC\v
+    \aADD instruction          Add\v@ADD\v
+    \aadding                   Processor Arithmetic Instructions\v@ArithInst\v
+    \a                         Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \aALIGN directive          Align Data and Code\v@ALIGN\v
+   .\aALPHA directive          Define Segment Ordering\v@.ALPHA\v
+    \aAND instruction          Logical AND\v@AND\v
+    \aAND operator             Logical and Shift Operators\v@LogShiftOp\v
+    \aarctangent               FPATAN Instruction\v@FPATAN\v
+    \aARPL instruction         Adjust Requested Privilege Level\v@ARPL\v
+    \aassembler operators      Assembler Operator Precedence\v@OpPrecChart\v
+    \aassembler output         Listing Control\v@ListCtrl\v
+    \aassembler programs       Example Code (List)\v@prglist\v
+    \aassembly, conditional    Conditional Assembly\v@CondAssem\v
+    \aassembly-language syntax Statement Format\v@StateFormat\v
+    \aASSUME directive         Register Assumptions\v@ASSUME\v
+    \aasterisk                 Arithmetic Operators\v@ArithOp\v
+    \aAT                       Define Segment\v@SEGMENT\v
+    \aautomatic\v@LJMP\v
+       \aconditional jump      LJMP Option\v@LJMP\v
+
+.context @b
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\bB\p³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+   @\aB operand                Local Code Labels\v@at_F\v
+    \aBASIC calling convention Definition of Language Type\v@langtype\v
+    \aBCD arithmetic           Binary Coded Decimal Coprocessor Instructions\v@FPXferInst\v
+    \a                         Binary Coded Decimal Processor Instructions\v@BCDInst\v
+    \aBIOS interrupts          BIOS Function Calls\v@BIOSCalls\v
+    \abit operations           Processor Boolean and Shift Instructions\v@LogShiftInst\v
+    \abitwise\v@LogShiftOp\v
+       \alogical operators     Logical and Shift Operators\v@LogShiftOp\v
+    \aBOUND instruction        Check Array Bounds\v@BOUND\v
+    \abraces                   Declare Record ({}) Operator\v@RECORD\v
+   .\aBREAK directive          Exit Iterative Directives\v@.BREAK\v
+    \aBSF instruction          Bit Scan Forward\v@BSF\v
+    \aBSR instruction          Bit Scan Reverse\v@BSF\v
+    \aBSWAP instruction        Byte Swap\v@BSWAP\v
+    \aBT instruction           Bit Test\v@BT\v
+    \aBTC instruction          Bit Test (Complement)\v@BT\v
+    \aBTR instruction          Bit Test (Reset)\v@BT\v
+    \aBTS instruction          Bit Test (Set)\v@BT\v
+    \aBYTE directive           Declare Variables (Byte)\v@BYTE\v
+
+.context @c
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\bC\p³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aC calling convention     Definition of Language Type\v@langtype\v
+    \aCALL instruction         Call Subroutine\v@CALL\v
+    \acalling conventions      Definition of Language Type\v@langtype\v
+    \aCARRY? operator          C-Style Comparison Operators\v@ccompare\v
+    \aCASEMAP option           Control Case Mapping \v@CASEMAP\v
+    \aCATSTR directive         Concatenate Strings\v@CatStr\v
+   @\aCatStr macro function    Concatenate Strings\v@CatStr\v
+    \aCBW instruction          Convert Byte to Word\v@CBW\v
+    \aCDQ instruction          Convert Doubleword to Quadword\v@CBW\v
+    \acharacter I/O functions  Interrupt 21h\v@21.char\v
+    \aCLC instruction          Clear Carry Flag\v@CLC\v
+    \aCLD instruction          Clear Direction Flag\v@CLD\v
+    \aclearing flags           Flag Manipulation Instructions\v@FlagInst\v
+    \aCLI instruction          Clear Interrupt Flag\v@CLI\v
+    \aclock interrupts         Int 1Ah\v@1Ah\v
+    \aclock, accessing         @Date Text Macro\v@at_Date\v
+    \aCLTS instruction         Clear Task-Switched Flag\v@CLTS\v
+    \aCMC instruction          Complement Carry Flag\v@CLC\v
+    \aCMP instruction          Compare Two Operands\v@CMP\v
+    \aCMPS instruction         Compare String\v@CMPS\v
+    \aCMPSB instruction        Compare String (Bytes)\v@CMPS\v
+    \aCMPSD instruction        Compare String (Doublewords)\v@CMPS\v
+    \aCMPSW instruction        Compare String (Words)\v@CMPS\v
+    \aCMPXCHG instruction      Compare and Exchange\v@CMPXCHG\v
+   .\aCODE directive           Start Code Segment\v@.CODE\v
+   @\acode text macro          Code-Segment Name Text Macro\v@at_CODE\v
+   @\aCodeSize equate          Code Size Equate\v@at_CodeSize\v
+    \acolon                    Labeling Punctuation (:/::)\v@colon\v
+    \a                         Segment Override Operator (:)\v@op.colon\v
+    \acolor display, video     Display Attributes\v@ColorAttr\v
+    \aCOM port interrupts      Int 14h\v@14h\v
+    \acombining segments       GROUP Directive\v@GROUP\v
+    \aCOMM directive           Create Communal Variables\v@COMM\v
+    \aCOMMENT directive        Multiline Comments\v@COMMENT\v
+    \aCOMMON                   Define Segment\v@SEGMENT\v
+    \acomparing                CMP Instruction\v@CMP\v
+    \a                         Coprocessor Control-Flow Instructions\v@FPCFInst\v
+    \acomparison operators     Relational Operators\v@RelationalOp\v
+    \aconcatenating strings    CATSTR Directive\v@CatStr\v
+    \aconditional directives   Control-Flow Directives\v@DirectCF\v
+    \aconditional error\v@CondErr\v
+       \adirectives            .ERR group\v@CondErr\v
+    \aconditional jumps\v@JBtable\v
+       \a(table)               Jump Conditions\v@JBtable\v
+    \aconditional\v@LJMP\v
+       \alength jumping        LJMP Option\v@LJMP\v
+    \aconditional-\v@CondAssem\v
+       \aassembly directives   IF group\v@CondAssem\v
+    \aCONST directive          Start a Constant Data Block\v@.CONST\v
+    \aconstant,0.0             FLDZ Instruction\v@FLD1\v
+    \aconstant,1.0             FLD1 Instruction\v@FLD1\v
+    \aconstant,Ln(2)           FLDLN2 Instruction\v@FLD1\v
+    \aconstant,Log10(2)        FLDLG2 Instruction\v@FLD1\v
+    \aconstant,Log2(10)        FLDL2T Instruction\v@FLD1\v
+    \aconstant,Log2(e)         FLDL2E Instruction\v@FLD1\v
+    \aconstant,Pi              FLDPI Instruction\v@FLD1\v
+    \aconstants                loading\v@FLD1\v
+   .\aCONTINUE directive       Evaluate Loop Condition\v@.CONTINUE\v
+    \acontrol registers        Numeric Coprocessor Status Word\v@statusw\v
+    \a                         Numeric Coprocessor Control Word\v@controlw\v
+    \acontrol word,\v@controlw\v
+       \acoprocessor           Numeric Coprocessor Control Word\v@controlw\v
+    \acontrolling\v@DirectCF\v
+       \aprogram flow          Control-Flow Directives\v@DirectCF\v
+    \acontrolling the\v@FPSysInst\v
+       \acoprocessor           System Control Instructions\v@FPSysInst\v
+    \acoprocessor tag word     Numeric Coprocessor Environment\v@coprocenv\v
+    \acosine                   FCOS Instruction\v@FCOS\v
+   @\aCpu equate               CPU Type Equate\v@at_CPU\v
+   .\aCREF directive           Turn On/Off Symbol Cross-Referencing\v@.CREF\v
+   @\aCurSeg text macro        Current Segment Name Macro\v@at_CurSeg\v
+    \aCWD instruction          Convert Word to Doubleword\v@CBW\v
+    \aCWDE instruction         Convert Word to Doubleword (EAX)\v@CBW\v
+
+.context @d
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\bD\p³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aDAA instruction          Decimal Adjust after Addition\v@DAA\v
+    \aDAS instruction          Decimal Adjust after Subtraction\v@DAS\v
+   .\aDATA directive           Start a Data Segment\v@.DATA\v
+   @\adata macro               DATA/DATA?/CONST/STACK Location Macro\v@at_DATA\v
+    \adata register stack      Numeric Coprocessor Environment\v@coprocenv\v
+    \adata types, defining     Complex Data Types\v@CplxTypes\v
+   .\aDATA? directive          Start an Uninitialized Data Segment\v@.DATA\v
+   @\aDataSize equate          Data Size Equate\v@at_DataSize\v
+   @\aDate text macro          Current Date/Time Text Macros\v@at_Date\v
+   @\aDate                     @Date Text Macro\v@at_Date\v
+    \aDEC instruction          Decrement\v@DEC\v
+    \adeclaring parameters     Define Procedure\v@PROC\v
+    \adecrementing values      Arithmetic Instructions\v@ArithInst\v
+    \adefining data types      Complex Data Types\v@CplxTypes\v
+    \adefining macros          Macro and Iterative Blocks\v@MacroIter\v
+    \adefining procedures      Procedure and Code Labels\v@Labeling\v
+    \adirectives,\v@DirectMisc\v
+       \amiscellaneous            Miscellaneous Directives\v@DirectMisc\v
+    \adirectory control        Int 21h\v@21.dir\v
+    \adisabling interrupts     FDISI Instruction\v@FDISI\v
+    \a                         CLI Instruction\v@CLI\v
+    \adisabling interrupts\v@IntVector\v
+       \a(CLI)                 Interrupt Vector Memory\v@IntVector\v
+    \adisk data                System Operations\v@DiskData\v
+    \adisk drive\v@1Eh\v
+       \aparameter table       Int 1Eh\v@1Eh\v
+    \adisk I/O                 Int 13h\v@13h\v
+    \adisk management          Int 21h\v@21.disk\v
+    \adistance operators       Address Operators\v@AddressOp\v
+    \a                         Type and Size Operators\v@TypeSizeOp\v
+    \aDIV instruction          Unsigned Divide\v@DIV\v
+    \adividing                 Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \adividing integers        Arithmetic Instructions\v@ArithInst\v
+    \adivision, reversed       Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \adollar sign              Current Offset ($) Value\v@dollarsign\v
+    \aDOS extended error codes List of MS-DOS Extended Error Codes\v@errcod\v
+   .\aDOSSEG directive         Define Segment Ordering\v@.ALPHA\v
+    \adot operator             Structure Field Reference (.)\v@period\v
+    \aDOTNAME option           Enable/Disable Dot Labels\v@DOTNAME\v
+    \adouble colon             Labeling Punctuation (:/::)\v@colon\v
+    \adouble semicolon         Comment Delimiter (;/;;)\v@semicolon\v
+    \aDUP operator             Repeat Declaration Operator\v@DUP\v
+    \aDWORD directive          Declare Variables (Doubleword)\v@BYTE\v
+
+.context @e
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\bE\p³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aECHO directive           Display Message during Assembly\v@ECHO\v
+    \aELSE directive           IF Block Syntax\v@if_block\v
+   .\aELSE directive           Control-Flow Blocks\v@.if\v
+   .\aELSEIF directive         Control-Flow Blocks\v@.if\v
+    \aELSEIF[E] directive      Assemble if Expression True or False\v@IF\v
+    \aELSEIF[N]B directive     Assemble if Argument Blank/Not Blank\v@IFB\v
+    \aELSEIF[N]DEF directive   Assemble if Symbol Defined/Not Defined\v@IFDEF\v
+    \aELSEIFDIF[I] directive   Assemble if Arguments Different\v@IFIDN\v
+    \aELSEIFIDN[I] directive   Assemble if Arguments Identical\v@IFIDN\v
+    \aEMULATOR option          Floating-Point Code Generation\v@FLOAT\v
+    \aenabling interrupts      FENI Instruction\v@FDISI\v
+    \a                         SLI Instruction\v@CLI\v
+    \aenabling interrupts\v@IntVector\v
+       \a(STI)                 Interrupt Vector Memory\v@IntVector\v
+    \aEND directive            End Source File\v@END\v
+    \aENDIF directive          IF Block Syntax\v@if_block\v
+   .\aENDIF directive          Control-Flow Blocks\v@.if\v
+    \aENDM directive           End Macro and Iterative Blocks\v@ENDM\v
+    \aENDP directive           Define Procedure\v@PROC\v
+    \aENDS directive           End Segment and Structure Blocks\v@ENDS\v
+   .\aENDW directive           End WHILE Blocks\v@.WHILE\v
+    \aENTER instruction        Create Stack Frame\v@ENTER\v
+   @\aEnvironment macro        Environment Variable Macro\v@at_Environ\v
+    \aenvironment, coprocessor Numeric Coprocessor Environment\v@coprocenv\v
+    \aEPILOGUE option          Register Macro as EPILOGUE\v@PROLOGUE\v
+    \aEQ operator              Relational Operators\v@RelationalOp\v
+    \aEQU directive            String Equate with Macro Substitution\v@EQU\v
+    \aequal sign (=)           Redefinable Numeric Equate\v@equalSign\v
+    \aequate, text             TEXTEQU\v@EQU\v
+    \aERR directive            Generate Severe Error\v@.ERR\v
+   .\aERR[N]B directive        Generate Error for Missing Argument\v@.ERRB\v
+    \aERR[N]DEF directive      Generate Error for Undefined Symbol\v@.ERRDEF\v
+   .\aERRDIF/.ERRIDN directive Generate Error If Arguments Same/Different\v@.ERRIDN\v
+   .\aERRE/.ERRNZ directive    Generate Error If Argument Zero/Nonzero\v@.ERRE\v
+    \aerror codes              MS-DOS Extended\v@errcod\v
+    \aEVEN directive           Align Data and Code\v@ALIGN\v
+    \aexample program, SHOW    List of SHOW Files\v@showex\v
+    \aexample programs,\v@Helloex\v
+       \atemplates             List of "Hello, World." Files\v@Helloex\v
+    \aexample programs, TSR    List of TSR Files\v@TSRex\v
+    \aexceptions, clearing     FCLEX Instruction\v@FCLEX\v
+   .\aEXIT directive           Generate Start-Up/Exit Code\v@.STARTUP\v
+    \aexiting .IF              Exit Iterative Directives\v@.BREAK\v
+    \aexiting loops            Exit Iterative Directives\v@.BREAK\v
+    \aEXITM directive          End Macro and Repeat Blocks\v@EXITM\v
+    \aexponentiation           Coprocessor Instructions\v@FPTransInst\v
+    \aEXPORT                   Select Default PROC Visibility\v@optproc\v
+    \aEXPORT visibility        Define Procedure\v@PROC\v
+    \aEXPR16 option            Select 16-Bit Expressions\v@expr1632\v
+    \aEXPR32 option            Select 32-Bit Expressions\v@expr1632\v
+    \aextended key codes       Extended Key Codes\v@XKeyChart\v
+    \aEXTERN directive         Define External Variables/Labels/Symbols\v@EXTERNDEF\v
+    \aEXTERNDEF directive      Define External Variables/Labels/Symbols\v@EXTERNDEF\v
+
+.context @f
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\bF\p³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+   @\aF operand                Local Code Labels\v@at_F\v
+    \aF2XM1 instruction        Calculate 2(^X)-1\v@F2XM1\v
+    \aFABS instruction         Absolute Value\v@FABS\v
+    \aFADD instruction         Floating-Point Add\v@FADD\v
+    \aFADDP instruction        Floating-Point Add and Pop\v@FADD\v
+    \aFARDATA directive        Start a Far Data Segment\v@.FARDATA\v
+   @\afardata macro            Far Data Location Macro\v@at_FarData\v
+    \aFARDATA? directive       Start a FAR Undefined Segment\v@.FARDATA\v
+   @\afardata? macro           Undefined Far Data Location Macro\v@at_FarData\v
+    \aFBLD instruction         BCD Load\v@FLD\v
+    \aFBSTP instruction        Store BCD ST and Pop\v@FST\v
+    \aFCHS instruction         Change Sign\v@FCHS\v
+    \aFCLEX instruction        Clear Exceptions\v@FCLEX\v
+    \aFCOM instruction         Floating-Point Compare\v@FCOM\v
+    \aFCOMP instruction        Floating-Point Compare and Pop\v@FCOM\v
+    \aFCOMPP instruction       Floating-Point Compare and Pop 2x\v@FCOM\v
+    \aFCOS instruction         Cosine\v@FCOS\v
+    \aFDECSTP instruction      Decrement Stack Pointer\v@FINCSTP\v
+    \aFDISI instruction        Disable Coprocessor Interrupts\v@FDISI\v
+    \aFDIV instruction         Floating-Point Divide\v@FDIV\v
+    \aFDIVP instruction        Floating-Point Divide and Pop\v@FDIV\v
+    \aFDIVR instruction        Floating-Point Divide Reversed\v@FDIVR\v
+    \aFDIVRP instruction       Floating-Point Divide Reversed and Pop\v@FDIVR\v
+    \aFENI instruction         Enable Coprocessor Interrupts\v@FDISI\v
+    \aFFREE instruction        Free Register\v@FFREE\v
+    \aFIADD instruction        Integer Add\v@FADD\v
+    \aFICOM instruction        Integer Compare\v@FCOM\v
+    \aFICOMP instruction       Integer Compare and Pop\v@FCOM\v
+    \aFIDIV instruction        Integer Divide\v@FDIV\v
+    \aFIDIVR instruction       Integer Divide Reversed\v@FDIVR\v
+    \aFILD instruction         Integer Load\v@FLD\v
+    \afile access              File Control Block (FCB)\v@FCB\v
+    \afile operations          Int 21h\v@21.file\v
+    \afile operations (FCB)    Int 21h\v@21.filefcb\v
+   @\aFileCur macro            Current Source Filename Macro\v@at_FileCur\v
+   @\aFileName macro           Current Base Source Filename Macro\v@at_FileCur\v
+    \aFIMUL instruction        Integer Multiply\v@FMUL\v
+    \aFINCSTP instruction      Increment Stack Pointer\v@FINCSTP\v
+    \aFINIT instruction        Initialize Coprocessor\v@FINIT\v
+    \aFIST instruction         Store Integer ST\v@FST\v
+    \aFISTP instruction        Store Integer ST and Pop\v@FST\v
+    \aFISUB instruction        Integer Subtract\v@FSUB\v
+    \aFISUBR instruction       Integer Subtract Reversed\v@FSUBR\v
+    \aflags, 8086-family       Processor Flag Summary\v@FlagSummary\v
+    \aFLAT                     Select Segment Size\v@optseg\v
+    \aFLD instruction          Floating-Point Load\v@FLD\v
+    \aFLD1 instruction         Load Constant 1.0\v@FLD1\v
+    \aFLDCW instruction        Load Control Word\v@FLDCW\v
+    \aFLDENV instruction       Load Environment State (Byte)\v@FLDENV\v
+    \aFLDENVD instruction      Load Environment State (Doubleword)\v@FLDENV\v
+    \aFLDENVW instruction      Load Environment State (Word)\v@FLDENV\v
+    \aFLDL2E instruction       Load Constant Log2(e)\v@FLD1\v
+    \aFLDL2T instruction       Load Constant Log2(10)\v@FLD1\v
+    \aFLDLG2 instruction       Load Constant Log10(2)\v@FLD1\v
+    \aFLDLN2 instruction       Load Constant Ln(2)\v@FLD1\v
+    \aFLDPI instruction        Load Constant Pi\v@FLD1\v
+    \aFLDZ instruction         Load Constant 0.0\v@FLD1\v
+    \afloating-point control   Control-Flow Instructions\v@FPCFInst\v
+    \afloating-point\v@FPXferInst\v
+       \adata transfer         Coprocessor Instructions\v@FPXferInst\v
+    \aFMUL instruction         Floating-Point Multiply\v@FMUL\v
+    \aFMULP instruction        Floating-Point Multiply and Pop\v@FMUL\v
+    \aFNCLEX instruction       Clear Exceptions (No Wait)\v@FCLEX\v
+    \aFNDISI instruction       Disable Interrupts (No Wait)\v@FDISI\v
+    \aFNENI instruction        Enable Interrupts (No Wait)\v@FDISI\v
+    \aFNINIT instruction       Initialize Coprocessor (No Wait)\v@FINIT\v
+    \aFNOP instruction         No Operation\v@FNOP\v
+    \aFNSAVE instruction       Save Coprocessor State (No Wait)\v@FSAVE\v
+    \aFNSAVED instruction      Save Coprocessor State (No Wait)\v@FSAVE\v
+    \aFNSAVEW instruction      Save Coprocessor State (No Wait)\v@FSAVE\v
+    \aFNSTCW instruction       Store Control Word (No Wait)\v@FLDCW\v
+    \aFNSTENV instruction      Store Environment State (Byte, No Wait)\v@FLDENV\v
+    \aFNSTENVD instruction     Store Environment State (Doubleword, No Wait)\v@FLDENV\v
+    \aFNSTENVW instruction     Store Environment State (Word, No Wait)\v@FLDENV\v
+    \aFNSTSW instruction       Store Status Word\v@FSTSW\v
+    \aFOR directive            Iterative Assembly (for Character)\v@FOR\v
+    \aFORC directive           Iterative Macro (for Character)\v@FORC\v
+    \aFORCEFRAME attribute     Define Procedure\v@PROC\v
+    \aformatting source code   Statement Format\v@StateFormat\v
+    \aFORTRAN\v@langtype\v
+       \acalling convention    Definition of Language Type\v@langtype\v
+    \aFPATAN instruction       Partial Arctangent\v@FPATAN\v
+    \aFPREM instruction        Partial Remainder\v@FPREM\v
+    \aFPREM1 instruction       Partial Remainder\v@FPREM\v
+    \aFPTAN instruction        Partial Tangent\v@FPATAN\v
+    \aFRNDINT instruction      Round to Integer\v@FRNDINT\v
+    \aFRSTOR instruction       Store Coprocessor State (Byte)\v@FSAVE\v
+    \aFRSTORD instruction      Store Coprocessor State (Doubleword)\v@FSAVE\v
+    \aFRSTORW instruction      Store Coprocessor State (Word)\v@FSAVE\v
+    \aFSAVE instruction        Save Coprocessor State (Byte)\v@FSAVE\v
+    \aFSAVED instruction       Save Coprocessor State (Doubleword)\v@FSAVE\v
+    \aFSAVEW instruction       Save Coprocessor State (Word)\v@FSAVE\v
+    \aFSCALE instruction       Scale\v@FSCALE\v
+    \aFSETPM instruction       Set Protected Mode\v@FSETPM\v
+    \aFSIN instruction         Sine\v@FCOS\v
+    \aFSINCOS instruction      Sine/Cosine\v@FCOS\v
+    \aFSQRT instruction        Square Root\v@FSQRT\v
+    \aFST instruction          Store Floating-Point ST\v@FST\v
+    \aFSTCW instruction        Store Control Word\v@FLDCW\v
+    \aFSTENV instruction       Store Environment State (Byte)\v@FLDENV\v
+    \aFSTENVD instruction      Store Environment State (Doubleword)\v@FLDENV\v
+    \aFSTENVW instruction      Store Environment State (Word)\v@FLDENV\v
+    \aFSTP instruction         Store Floating-Point ST and Pop\v@FST\v
+    \aFSTSW instruction        Store Status Word\v@FSTSW\v
+    \aFSUB instruction         Floating-Point Subtract\v@FSUB\v
+    \aFSUBP instruction        Floating-Point Subtract and Pop\v@FSUB\v
+    \aFSUBR instruction        Floating-Point Subtract Reversed\v@FSUBR\v
+    \aFSUBRP instruction       Floating-Point Subtract Reversed and Pop\v@FSUBR\v
+    \aFTST instruction         Test for Zero\v@FTST\v
+    \aFUCOM instruction        Unordered Compare\v@FUCOM\v
+    \aFUCOMP instruction       Unordered Compare and Pop\v@FUCOM\v
+    \aFUCOMPP instruction      Unordered Compare and Pop 2x\v@FUCOM\v
+    \afull segment definitions Complete Segment Control\v@CompSeg\v
+    \aFWAIT instruction        Wait\v@FWAIT\v
+    \aFWORD directive          Declare Variables (Farword)\v@BYTE\v
+    \aFXAM instruction         Examine ST\v@FXAM\v
+    \aFXCH instruction         Exchange Registers\v@FXCH\v
+    \aFXTRACT instruction      Extract Exponent and Significand\v@FXTRACT\v
+    \aFYL2X instruction        Y log(sub2)(X)\v@FYL2X\v
+    \aFYL2XP1 instruction      Y log(sub2)(X+1)\v@FYL2XP1\v
+
+.context @g
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\bG\p³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aGE operator              Relational Operators\v@RelationalOp\v
+    \aglobal descriptor table (GDT)Processor Control Instructions\v@ProcCtrlInst\v
+    \aGOTO directive           Skip to Label\v@GOTO\v
+    \agraphics character\v@1Fh\v
+       \apattern table         Int 1Fh\v@1Fh\v
+    \agraphics modes           Video Buffers\v@VideoBuffer\v
+    \aGROUP directive          Combine Segments\v@GROUP\v
+    \aGT operator              Relational Operators\v@RelationalOp\v
+
+.context @h
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\bH\p³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aHello, world programs    List of "Hello, World." Files\v@Helloex\v
+    \aHIGH operator            High/Low-Order Byte\v@HIGH\v
+    \aHIGHWORD operator        High/Low-Order Word\v@HIGHWORD\v
+    \aHLT instruction          Halt\v@HLT\v
+
+.context @i
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\bI\p³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aI/O instructions         System I/O Instructions\v@IOInst\v
+    \aI/O subsystem interrupts Int 15h\v@15h\v
+    \aIDIV instruction         Signed Divide\v@IDIV\v
+    \aIF block syntax          IF Block Syntax\v@if_block\v
+   .\aIF directive             Control-Flow Blocks\v@.if\v
+   .\aIF, exiting              Exit Iterative Directives\v@.BREAK\v
+    \aIF[E] directive          Assemble if Expression True or False\v@IF\v
+    \aIF[N]B directive         Assemble if Argument Blank/Not Blank\v@IFB\v
+    \aIF[N]DEF directive       Assemble if Symbol Defined/Not Defined\v@IFDEF\v
+    \aIFDIF[I] directive       Assemble if Arguments Different\v@IFIDN\v
+    \aIFIDN[I] directive       Assemble if Arguments Identical\v@IFIDN\v
+    \aIMUL instruction         Signed Multiply\v@IMUL\v
+    \aIN instruction           Input from Port\v@IN\v
+    \aINC instruction          Increment\v@INC\v
+    \aINCLUDE directive        Insert Source Code\v@INCLUDE\v
+    \ainclude files            Include Files (List)\v@Includex\v
+    \aINCLUDELIB directive     Include with Library (LIB) File\v@INCLUDELIB\v
+    \aincrementing values      Arithmetic Instructions\v@ArithInst\v
+    \ainput/output             System I/O Instructions\v@IOInst\v
+    \aINS instruction          Input from Port to String\v@INS\v
+    \aINSB instruction         Input from Port to String (Bytes)\v@INS\v
+    \aINSD instruction         Input from Port to String (Doublewords)\v@INS\v
+    \aINSTR directive          Search for String\v@InStr\v
+   @\aInStr macro function     Search for String\v@InStr\v
+    \aINSW instruction         Input from Port to String (Words)\v@INS\v
+    \aInt 00h                  Divide by Zero Error\v@0h\v
+    \aInt 01h                  Single Step\v@1h\v
+    \aInt 02h                  Nonmaskable Interrupt (NMI)\v@2h\v
+    \aInt 03h                  Breakpoint\v@3h\v
+    \aInt 04h                  Arithmetic Overflow Error\v@4h\v
+    \aInt 05h                  Print Screen and BOUND Overflow\v@5h\v
+    \aInt 06h                  Illegal Instruction Error\v@6h\v
+    \aInt 07h                  Unavailable Processor Extension\v@7h\v
+    \aInt 08h                  Timer Tick\v@8h\v
+    \aInt 09h                  Keyboard\v@9h\v
+    \aInt 0Bh                  Secondary Communications Port\v@Bh\v
+    \aInt 0Ch                  Primary Communications Port\v@Ch\v
+    \aInt 0Eh                  Disk Drive I/O\v@Eh\v
+    \aInt 10h functions        Video Interrupts\v@10h\v
+    \aInt 13h functions        Disk I/O Interrupts\v@13h\v
+    \aInt 14h functions        COM Port Interrupts\v@14h\v
+    \aInt 15h functions        I/O Subsystem Interrupts\v@15h\v
+    \aInt 16h functions        Keyboard Interrupts\v@16h\v
+    \aInt 17h functions        Parallel Printer Port Interrupts\v@17h\v
+    \aInt 1Ah functions        Clock Interrupts\v@1Ah\v
+    \aInt 1Bh functions        CTRL+BREAK Interrupt\v@1Bh\v
+    \aInt 1Ch                  User Timer Interrupt\v@1Ch\v
+    \aInt 1Dh functions        Video Parameter Table Pointer\v@1Dh\v
+    \aInt 1Eh functions        Disk Drive Parameter Table Pointer\v@1Eh\v
+    \aInt 1Fh                  Graphics Character Pattern Table Pointer\v@1Fh\v
+    \aInt 21h Function 5Eh     Machine/Printer\v@21h.5Eh\v
+    \aInt 21h Function 5Fh     Device Redirection\v@21h.5Fh\v
+    \aInt 21h functions        Numeric List of Functions\v@21.biglist\v
+    \a                         Character-Oriented Functions\v@21.char\v
+    \a                         Directory Control\v@21.dir\v
+    \a                         Disk Management\v@21.disk\v
+    \a                         File Operations\v@21.file\v
+    \a                         File Operations (FCB)\v@21.filefcb\v
+    \a                         Memory Allocation\v@21.mem\v
+    \a                         System Functions\v@21.sysfun\v
+    \a                         Process Control\v@21.process\v
+    \a                         Record Functions\v@21.rec\v
+    \a                         Record Functions (FCB)\v@21.recfcb\v
+    \a                         Time/Date Functions\v@21.time\v
+    \aInt 2Fh functions        Multiplex Interrupt\v@2Fh\v
+    \aINT instruction          Interrupt\v@INT\v
+   @\aInterface macro          Current Source Filename Macro\v@at_Interface\v
+    \ainterrupt descriptor \v@ProcCtrlInst\v
+       \atable (IDT)           Processor Control Instructions\v@ProcCtrlInst\v
+    \ainterrupt return (IRET)  User Timer Interrupt\v@1Ch\v
+    \ainterrupts, BIOS         BIOS Function Calls\v@BIOSCalls\v
+    \ainterrupts, DOS          Numeric List of Interrupt 21h Functions\v@21.biglist\v
+    \ainterrupts, enabling     STI Instruction\v@CLI\v
+    \ainterrupts,\v@bios.misc\v
+       \asystem services       Direct System Services Interrupts\v@bios.misc\v
+    \aINTO instruction         Interrupt on Overflow\v@INTO\v
+    \aINVD instruction         Invalidate Data Cache\v@INVD\v
+    \aINVLPG instruction       Invalidate TLB Entry\v@INVLPG\v
+    \aINVOKE directive         Call Stack-Based Procedures\v@INVOKE\v
+    \aIRET instruction         Interrupt Return\v@IRET\v
+    \aIRETD instruction        Interrupt Return (32-bit)\v@IRET\v
+
+.context @j
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\bJ\p³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aJA instruction           Jump Conditionally\v@Jcond\v
+    \aJAE instruction          Jump Conditionally\v@Jcond\v
+    \aJB instruction           Jump Conditionally\v@Jcond\v
+    \aJBE instruction          Jump Conditionally\v@Jcond\v
+    \aJC instruction           Jump Conditionally\v@Jcond\v
+    \aJcond instruction        Jump Conditionally\v@Jcond\v
+    \aJcondition instruction   Jump Conditionally\v@Jcond\v
+    \aJCXZ instruction         Jump if CX is Zero\v@JCXZ\v
+    \aJE instruction           Jump Conditionally\v@Jcond\v
+    \aJECXZ instruction        Jump if ECX is Zero\v@JCXZ\v
+    \aJG instruction           Jump Conditionally\v@Jcond\v
+    \aJGE instruction          Jump Conditionally\v@Jcond\v
+    \aJL instruction           Jump Conditionally\v@Jcond\v
+    \aJLE instruction          Jump Conditionally\v@Jcond\v
+    \aJMP instruction          Jump Unconditionally\v@JMP\v
+    \aJNA instruction          Jump Conditionally\v@Jcond\v
+    \aJNAE instruction         Jump Conditionally\v@Jcond\v
+    \aJNB instruction          Jump Conditionally\v@Jcond\v
+    \aJNBE instruction         Jump Conditionally\v@Jcond\v
+    \aJNC instruction          Jump Conditionally\v@Jcond\v
+    \aJNE instruction          Jump Conditionally\v@Jcond\v
+    \aJNG instruction          Jump Conditionally\v@Jcond\v
+    \aJNGE instruction         Jump Conditionally\v@Jcond\v
+    \aJNL instruction          Jump Conditionally\v@Jcond\v
+    \aJNLE instruction         Jump Conditionally\v@Jcond\v
+    \aJNO instruction          Jump Conditionally\v@Jcond\v
+    \aJNP instruction          Jump Conditionally\v@Jcond\v
+    \aJNS instruction          Jump Conditionally\v@Jcond\v
+    \aJNZ instruction          Jump Conditionally\v@Jcond\v
+    \aJO instruction           Jump Conditionally\v@Jcond\v
+    \aJP instruction           Jump Conditionally\v@Jcond\v
+    \aJPE instruction          Jump Conditionally\v@Jcond\v
+    \aJPO instruction          Jump Conditionally\v@Jcond\v
+    \aJS instruction           Jump Conditionally\v@Jcond\v
+    \ajump conditionally       Jcondition Instruction\v@Jcond\v
+    \a                         JCXZ/JECXZ Instruction\v@JCXZ\v
+    \ajump lengthening,\v@LJMP\v
+       \aautomatic             LJMP Option\v@LJMP\v
+    \ajump unconditionally     CALL Instruction\v@CALL\v
+    \a                         JMP Instruction\v@JMP\v
+    \aJZ instruction           Jump Conditionally\v@Jcond\v
+
+.context @k
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\bK\p³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \akey codes                Keyboard Scan Codes\v@KeyChart83\v
+    \akeyboard data            System Operations\v@KeyData\v
+    \akeyboard interrupts      Int 16h\v@16h\v
+    \akeyword recognition      Disable/Enable Keyword Recognition\v@NoKeyword\v
+
+.context @l
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\bL\p³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aLABEL directive          Create Label\v@LABEL\v
+    \aLAHF instruction         Transfer between Flags and AH\v@LAHF\v
+    \aLANGUAGE option          Specify Default Language Type\v@LANG\v
+    \alanguage type            Definition of Language Type\v@langtype\v
+    \aLAR instruction          Load Access Rights\v@LAR\v
+    \aLDS instruction          Load Far Pointer\v@LDS\v
+    \aLE operator              Relational Operators\v@RelationalOp\v
+    \aLEA instruction          Load Effective Address\v@LEA\v
+    \aLEAVE instruction        Destroy Stack Frame\v@ENTER\v
+    \aleft, rotating bits      ROL Instruction\v@RCL\v
+    \aleft, shifting bits      SAL Instruction\v@SAL\v
+    \alength of string         SIZESTR Directive\v@SizeStr\v
+    \alengthening, automatic   LJMP Option\v@LJMP\v
+    \aLENGTHOF directive       Return Variable Length\v@LENGTH\v
+    \aLES instruction          Load Far Pointer\v@LDS\v
+    \aLFS instruction          Load Far Pointer\v@LDS\v
+    \aLGDT instruction         Load Global Descriptor Table\v@LGDT\v
+    \aLGS instruction          Load Far Pointer\v@LDS\v
+    \aLIDT instruction         Load Interrupt Descriptor Table\v@LGDT\v
+   @\aLine macro               Current Line-Number Macro\v@at_Line\v
+   .\aLIST directive           List Source Statements to .LST File\v@.LIST\v
+   .\aLISTALL directive        List All Statements to .LST File\v@.LISTALL\v
+   .\aLISTIF directive         List Statements in Conditional Blocks\v@.LISTIF\v
+    \alisting subtitle         Listing Control\v@ListCtrl\v
+    \alisting title            Listing Control\v@ListCtrl\v
+   .\aLISTMACRO directive      Enable Assembly Listing File\v@.LISTMACRO\v
+   .\aLISTMACROALL directive   List Source Statements in Macro Expansion\v@.LISTMACROALL\v
+    \aLJMP option              Automatic Conditional Jump Lengthening\v@LJMP\v
+    \aLLDT instruction         Load Local Descriptor Table\v@LGDT\v
+    \aLMSW instruction         Load Machine Status Word\v@LMSW\v
+    \aLOADDS attribute         Define Procedure\v@PROC\v
+    \aloader-resolved offset   Loader-Resolved Offset\v@LROFFSET\v
+    \aloading constants        Coprocessor Instructions\v@FPXferInst\v
+    \alocal descriptor\v@ProcCtrlInst\v
+       \atable (LDT)           Processor Control Instructions\v@ProcCtrlInst\v
+    \aLOCAL directive          Local Variables in Procedures\v@LOCAL.proc\v
+    \a                         Local Variables in Macros\v@LOCAL.mac\v
+    \aLOCK instruction         Lock the Bus\v@LOCK\v
+    \aLODS instruction         Load String Operand\v@LODS\v
+    \aLODSB instruction        Load String Operand (Bytes)\v@LODS\v
+    \aLODSD instruction        Load String Operand (Doublewords)\v@LODS\v
+    \aLODSW instruction        Load String Operand (Words)\v@LODS\v
+    \alogarithms               Coprocessor Instructions\v@FPTransInst\v
+    \alogical operators        Logical and Shift Operators\v@LogShiftOp\v
+    \aLOOP instruction         Loop\v@LOOP\v
+    \aLOOPcondition\v@LOOPE\v
+       \ainstruction           Loop If\v@LOOPE\v
+    \aLOOPD instruction        Loop (Overrides 32-Bit ECX)\v@LOOP\v
+    \aloops                    JCXZ/JECXZ Instruction\v@JCXZ\v
+    \a                         LOOP Instruction\v@LOOP\v
+    \a                         LOOPcondition Instruction\v@LOOPE\v
+    \aloops, exiting           Exit Iterative Directives\v@.BREAK\v
+    \aLOOPW instruction        Loop (Overrides 16-Bit CX)\v@LOOP\v
+    \aLOW operator             High/Low-Order Byte\v@HIGH\v
+    \aLOWWORD operator         High/Low-Order Word\v@HIGHWORD\v
+    \aLROFFSET operator        Loader-Resolved Offset\v@LROFFSET\v
+    \aLSL instruction          Load Segment Limit\v@LSL\v
+    \aLSS instruction          Load Far Pointer\v@LDS\v
+    \aLT operator              Relational Operators\v@RelationalOp\v
+    \aLTR instruction          Load Task Register\v@LTR\v
+
+.context @m
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\bM\p³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aM510 option              Maximize Compatibility with MASM 5.1\v@M510\v
+    \amachine status word\v@ProcCtrlInst\v
+       \a(MSW)                 Processor Control Instructions\v@ProcCtrlInst\v
+    \aMACRO directive          Macro Block\v@MACRO\v
+    \amacro functions          String Operators\v@StringOp\v
+   :\amacrolabel               Labeling Punctuation (:/::)\v@colon\v
+    \amacros, defining         Macro and Iterative Blocks\v@MacroIter\v
+    \amacros, MASM 5.1-\v@OLDMACROS\v
+       \aCompatible            OLDMACROS³NOOLDMACROS Option\v@OLDMACROS\v
+    manipulating
+       \acontrol registers     MOV Special Instruction\v@MOVIE\v
+       \adebug registers       MOV Special Instruction\v@MOVIE\v
+       \astrings               String Operators\v@StringOp\v
+       \atest registers        MOV Special Instruction\v@MOVIE\v
+    \aMASK operator            Bit Mask\v@MASK\v
+    MASM 5.1
+       \acompatibility         M510³NOM510 option\v@M510\v
+       \acompatible macros     OLDMACROS³NOOLDMACROS Option\v@OLDMACROS\v
+       \acompatible\v@OLDSTRUCTS\v
+          \astructure elements OLDSTRUCTS³NOOLDSTRUCTS Option\v@OLDSTRUCTS\v
+       \atwo-pass compiler     SETIF2:{TRUE³FALSE} Option\vSETIF2\v
+    \aMEMORY                   Define Segment\v@SEGMENT\v
+    \amemory allocation        Int 21h\v@21.mem\v
+    \amemory areas             Miscellaneous Memory Locations\v@MiscMem\v
+    \amemory data              System Operations\v@ConfigData\v
+    \amemory-model attributes  Memory Model Selection\v@MemoryModels\v
+    \aMicrosoft Windows OFFSET LROFFSET operator\v@LROFFSET\v
+    \aminus sign               Arithmetic Operators\v@ArithOp\v
+    \amixed-language programs  Files List\v@mixedex\v
+    \aMOD directive            Arithmetic Operators\v@ArithOp\v
+   .\aMODEL directive          Initialize Memory Model\v@.MODEL\v
+   @\aModel directive          Model Equate\v@at_MODEL\v
+    \amonochrome display       Display Attributes\v@MonoAttr\v
+    \aMOV instruction          Move Data\v@MOV\v
+    \aMOV special instruction  Move to/from Special Registers\v@MOVIE\v
+    \aMOVS instruction         Move String Data\v@MOVS\v
+    \aMOVSB instruction        Move String Data (Bytes)\v@MOVS\v
+    \aMOVSD instruction        Move String Data (Doublewords)\v@MOVS\v
+    \aMOVSW instruction        Move String Data (Words)\v@MOVS\v
+    \aMOVSX instruction        Move with Sign-Extend\v@MOVSX\v
+    \aMOVZX instruction        Move with Zero-Extend\v@MOVSX\v
+    \aMS-DOS extended\v@errcod\v
+       \aerror codes           List of MS-DOS Extended Error Codes\v@errcod\v
+    \aMUL instruction          Unsigned Multiply\v@MUL\v
+    \amultiple modules         Scope and Visibility Control\v@ScopeVisibility\v
+    \amultiplication,\v@FPArithInst\v
+       \afloating-point        Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \amultiplying numbers      Arithmetic Instructions\v@ArithInst\v
+
+.context @n
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\bN\p³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aNE operator              Relational Operators\v@RelationalOp\v
+    \aNEC V-series             Disable Byte Sign-Extended Opcode\v@nosignextend\v
+    \aNEG instruction          Two's-Complement Negation\v@NEG\v
+   .\aNO87 directive           Disable Coprocessor Instructions\v@ProcSelect\v
+   .\aNOCREF directive         Turn On/Off Symbol Cross-Referencing\v@.CREF\v
+    \aNODOTNAME option         Enable/Disable Dot Labels\v@DOTNAME\v
+    \aNOKEYWORD option         Disable/Enable Keyword Recognition\v@NoKeyword\v
+   .\aNOLIST directive         Suppress Program Listing\v@.NOLIST\v
+   .\aNOLISTIF                 Turn off List\v@.NOLISTIF\v
+   .\aNOLISTMACRO directive    Suppress Macro Listing\v@.NOLISTMACRO\v
+    \aNOLJMP option            Automatic Conditional Jump Lengthening\v@LJMP\v
+    \aNOM510 option            Maximize Compatibility with MASM 5.1\v@M510\v
+    \aNOP instruction          No Operation\v@NOP\v
+    \aNOSCOPED option          Localize Label\v@SCOPED\v
+    \aNOSIGNEXTEND option      Disable Byte Sign-Extended Opcode\v@nosignextend\v
+    \aNOT instruction          One's-Complement Negation\v@NOT\v
+    \aNOT operator             Logical and Shift Operators\v@LogShiftOp\v
+
+.context @o
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\bO\p³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aoffset                   Loader-resolved\v@LROFFSET\v
+    \aOFFSET directive         Offset Address\v@OFFSET\v
+    \aoffset operators         Address Operators\v@AddressOp\v
+    \aOFFSET option            Offset Relative to Segment/Group\v@OFFSET:\v
+    \aone's-complement\v@NOT\v
+       \anegation              NOT Instruction\v@NOT\v
+    \aoperators                Arithmetic Operators\v@ArithOp\v
+    \aOPTION directive         Set Assembler Options\v@OPTION\v
+    \aOR instruction           Logical OR\v@OR\v
+    \aOR operator              Logical and Shift Operators\v@LogShiftOp\v
+    \aORG directive            Specify Assembly Start Address\v@ORG\v
+    \aOUT instruction          Output to Port\v@OUT\v
+    \aOUTS instruction         Output String to Port\v@OUTS\v
+    \aOUTSB instruction        Output String to Port (Bytes)\v@OUTS\v
+    \aOUTSD instruction        Output String to Port (Doublewords)\v@OUTS\v
+    \aOUTSW instruction        Output String to Port (Words)\v@OUTS\v
+    \aOVERFLOW? operator       C-Style Comparison Operators\v@ccompare\v
+
+.context @p
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\bP\p³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aPAGE + directive         Cause a Page Break\v@PagePlus\v
+    \apage breaks              Listing Control\v@ListCtrl\v
+    \aPAGE directive           Set Page Size\v@PAGE\v
+    \apage format              Listing Control\v@ListCtrl\v
+    \aPARA                     Define Segment\v@SEGMENT\v
+    \aparallel printer ports   Int 17h\v@17h\v
+    \aPARITY? operator         C-Style Comparison Operators\v@ccompare\v
+    \aPASCAL\v@langtype\v
+       \acalling convention    Definition of Language Type\v@langtype\v
+    \apercent sign             Expression Operator (%)\v@percent\v
+    \aplus sign                Arithmetic Operators\v@ArithOp\v
+    \aPOP instruction          Pop\v@Pop\v
+    \aPOPA instruction         Pop All\v@PUSHA\v
+    \aPOPAD instruction        Pop All (32-bit Registers)\v@PUSHA\v
+    \aPOPCONTEXT directive     Pop Assembler Settings\v@PUSHCONTEXT\v
+    \aPOPF instruction         Pop Flags\v@PUSHF\v
+    \aPOPFD instruction        Pop Flags (32-Bit Registers)\v@PUSHF\v
+    \aPRIVATE                  Select Default PROC Visibility\v@optproc\v
+    \a                         Define Segment\v@SEGMENT\v
+    \aPRIVATE visibility       Define Procedure\v@PROC\v
+    \aPROC directive           Define Procedure\v@PROC\v
+    \aPROC option              Select Default PROC Visibility\v@optproc\v
+    \aprocedures               Defining and Using\v@Labeling\v
+    \aprocess control          Int 21h\v@21.process\v
+    \aprocessing strings       Processor Instructions\v@StringInst\v
+    \aprocessor\v@encoding\v
+       \aencoding symbols      Key to Processor Encodings\v@encoding\v
+    \aprocessor operations     Processor Instructions\v@ProcCtrlInst\v
+    \aprogram flow             Processor Instructions\v@CFInst\v
+    \aPROLOGUE option          Register Macro as PROLOGUE\v@PROLOGUE\v
+    \aprotected mode           Set Coprocessor\v@FSETPM\v
+    \aPROTO directive          Define a Procedure Prototype\v@PROTO\v
+    \aPTR operator             Specify Type for Expression\v@PTR\v
+    \aPUBLIC                   Select Default PROC Visibility\v@optproc\v
+    \aPUBLIC directive         Make Variable Public\v@PUBLIC\v
+    \aPUBLIC visibility        Define Procedure\v@PROC\v
+    \aPURGE directive          Delete Macros from Memory\v@PURGE\v
+    \aPUSH instruction         Push\v@Push\v
+    \aPUSHA instruction        Push All\v@PUSHA\v
+    \aPUSHAD instruction       Push All (32-Bit Registers)\v@PUSHA\v
+    \aPUSHCONTEXT directive    Push Assembler Settings\v@PUSHCONTEXT\v
+    \aPUSHD instruction        Push (Word)\v@Push\v
+    \aPUSHF instruction        Push Flags\v@PUSHF\v
+    \aPUSHFD instruction       Push Flags (32-Bit Registers)\v@PUSHF\v
+    \aPUSHW instruction        Push (Doubleword)\v@Push\v
+
+.context @q
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\bQ\p³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aqualified type,\v@qualifiedtype\v
+       \adefinition            \v@qualifiedtype\v
+    \aquestion mark\v@questionmark\v
+       \ainitializer           Uninitialized Value (?)\v@questionmark\v
+    \aquote delimiter          String Delimiters ("/')\v@quotes\v
+    \aQWORD directive          Declare Variables\v@BYTE\v
+
+.context @r
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\bR\p³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+   .\aRADIX directive          Set Default Radix (Number Base)\v@.RADIX\v
+    \aradix overrides          Radix Specifiers\v@RadixSpec\v
+    \aRCL instruction          Rotate Carry Flag Bits Left\v@RCL\v
+    \aRCR instruction          Rotate Carry Flag Bits Right\v@RCL\v
+    \aread-only memory         ROM Locations\v@ROMData\v
+    \aREADONLY                 Define Segment\v@SEGMENT\v
+    \aREADONLY³NOREADONLY\v@READONLY\v
+       \aoption                Make Code Segment Read-Only\v@READONLY\v
+    \aREAL10 directive         Declare Variables\v@BYTE\v
+    \aREAL4 directive          Declare Variables\v@BYTE\v
+    \aREAL8 directive          Declare Variables\v@BYTE\v
+    \aRECORD directive         Declare Record\v@RECORD\v
+    \arecording functions      Int 21h\v@21.rec\v
+    \arecording functions\v@21.recfcb\v
+       \a(FCB)                 Int 21h\v@21.recfcb\v
+    \arecords                  Complex Data Types\v@CplxTypes\v
+    \aremainder (MOD)          Arithmetic Operators\v@ArithOp\v
+    \aREP instruction          Repeat String\v@REP\v
+    \aREPcondition instruction Repeat String Conditionally\v@REPE\v
+    \aREPEAT directive         Repeat Assembly of Block\v@REPEAT\v
+   .\aREPEAT directive         Code Repeat Blocks\v@.REPEAT\v
+    \arequested privilege\v@ProcCtrlInst\v
+       \alevel (ARPL)          Processor Control Instructions\v@ProcCtrlInst\v
+    \aRET instruction          Return from Procedure/Subroutine\v@RET\v
+    \aRETF instruction         Far Return from Procedure/Subroutine\v@RET\v
+    \aRETN instruction         Near Return from Procedure/Subroutine\v@RET\v
+    \areversed division        Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \areversed subtraction     Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \aright, rotating bits     ROR Instruction\v@RCL\v
+    \aright, shifting bits     SAR Instruction\v@SAL\v
+    \aROL instruction          Rotate Operand Bits Left\v@RCL\v
+    \aROR instruction          Rotate Operand Bits Right\v@RCL\v
+    \around                    FRNDINT Instruction\v@FRNDINT\v
+
+.context @s
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\bS\p³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aSAHF instruction         Transfer between Flags and AH\v@LAHF\v
+    \aSAL instruction          Shift Bits Left\v@SAL\v
+    \aSAR instruction          Shift Bits Right\v@SAL\v
+    \aSBB instruction          Subtract with Borrow\v@SBB\v
+    \aSBYTE directive          Declare Variables (Signed Byte)\v@BYTE\v
+    \ascale                    FSCALE Instruction\v@FSCALE\v
+    \ascaling operator (*)     Arithmetic Operators\v@ArithOp\v
+    \aSCAS instruction         Scan String Flags\v@SCAS\v
+    \aSCASB instruction        Scan String Flags (Bytes)\v@SCAS\v
+    \aSCASD instruction        Scan String Flags (Doublewords)\v@SCAS\v
+    \aSCASW instruction        Scan String Flags (Words)\v@SCAS\v
+    \aSCOPED option            Choose Label Scope\v@SCOPED\v
+    \aSDWORD directive         Declare Variables (Signed Doubleword)\v@BYTE\v
+    \asearching strings        INSTR Directive\v@InStr\v
+    \aSEG operator             Return Segment or Group of Expression\v@SEG\v
+    \aSEGMENT directive        Define Segment\v@SEGMENT\v
+    \asegment information      Predefined Symbols\v@LangConst\v
+    \asegment map              MS-DOS Segment Map\v@SysMem\v
+    \asegment operators        Address Operators\v@AddressOp\v
+    \aSEGMENT option           Select Segment Size\v@optseg\v
+    \asegment registers        Register Summary\v@RegSummary\v
+    \asegment structure        defining\v@CompSeg\v
+    \asegment structure,\v@SimpleSeg\v
+       \aDefining              Simplified Segment Control\v@SimpleSeg\v
+    \asegment-order methods    Complete Segment Control\v@CompSeg\v
+    \asegmented addressing     Register Summary\v@RegSummary\v
+    \asegments, combining      GROUP Directive\v@GROUP\v
+    \aselecting\v@ProcSelect\v
+       \ainstruction sets      Processor Selection Directives\v@ProcSelect\v
+    \asemicolon                Comment Delimiter (;/;;)\v@semicolon\v
+   .\aSEQ directive            Define Segment Ordering\v@.ALPHA\v
+    \aSETcondition instruction Set Conditionally\v@SETcond\v
+   \a.SETIF2                   MASM 5.1 two-pass compiler\v@SETIF2\v
+    \asetting Boolean flags    SETcondition Instruction\v@SETcond\v
+    \a                         Set Conditions (Table)\v@SETcondtable\v
+    \asetting file date        DOS Time and Date Formats\v@Datime\v
+    \asetting file time        DOS Time and Date Formats\v@Datime\v
+    \asetting flags            Processor Instructions\v@FlagInst\v
+    \asetting\v@reg.setup\v
+       \asegment registers     Register Setup\v@reg.setup\v
+    \asetting timer data       Timer Memory\v@TimerData\v
+    \aSGDT instruction         Store Global Descriptor Table\v@SGDT\v
+    \ashift operators          Logical and Shift Operators\v@LogShiftOp\v
+    \aSHL instruction          Shift Bits Left\v@SAL\v
+    \aSHL operator             Logical and Shift Operators\v@LogShiftOp\v
+    \aSHLD instruction         Double-Precision Shift Bits Right\v@SHLD\v
+    \aSHORT directive          Force Label Type to SHORT\v@SHORT\v
+    \aSHOW example program     List of SHOW Files\v@showex\v
+    \aSHR instruction          Shift Bits Right\v@SAL\v
+    \aSHR operator             Logical and Shift Operators\v@LogShiftOp\v
+    \aSHRD instruction         Double-Precision Shift\v@SHLD\v
+    \aSIDT instruction         Store Interrupt Descriptor Table\v@SGDT\v
+    \asign extension,\v@nosignextend\v
+       \adisabling             Disable Byte Sign-Extended Opcode\v@nosignextend\v
+    \asign, changing           FCHS Instruction\v@FCHS\v
+    \aSIGN? operator           C-Style Comparison Operators\v@ccompare\v
+    \asigned divide            IDIV Instruction\v@IDIV\v
+    \asigned multiply          IMUL Instruction\v@IMUL\v
+    \asimplified\v@SimpleSeg\v
+       \asegment defaults      Simplified Segment Control\v@SimpleSeg\v
+    \asine                     FSINCOS Instruction\v@FCOS\v
+    \asize operators           Type and Size Operators\v@TypeSizeOp\v
+    \aSIZEOF operator          Return Variable Size\v@LENGTH\v
+    \aSIZESTR directive        Find String Length\v@SizeStr\v
+   @\aSizeStr macro function   Find String Length\v@SizeStr\v
+    \aslash                    Arithmetic Operators\v@ArithOp\v
+    \aSLDT instruction         Store Local Descriptor Table\v@SGDT\v
+    \aSMSW instruction         Store Machine Status Word\v@LMSW\v
+    \aspecifying floating-\v@RadixSpec\v
+       \apoint constants       Radix Specifiers\v@RadixSpec\v
+    \aspecifying integer\v@RadixSpec\v
+       \aconstants             Radix Specifiers\v@RadixSpec\v
+    \aspecifying library files Link with LIB File\v@INCLUDELIB\v
+    \asquare root              FSQRT Instruction\v@FSQRT\v
+   .\aSTACK directive          Start Stack Segment\v@.STACK\v
+   @\astack macro              Stack Location Macro\v@at_Stack\v
+    stack pointer,
+       \adecrementing          FDECSTP Instruction\v@FINCSTP\v
+       \aincrementing          FINCSTP Instruction\v@FINCSTP\v
+   .\aSTARTUP directive        Generate Start-Up/Exit Code\v@.STARTUP\v
+    \astatus word,\v@statusw\v
+       \acoprocessor           Numeric Coprocessor Status Word\v@statusw\v
+    \aSTC instruction          Modify Carry Flag\v@CLC\v
+    \aSTD instruction          Set Direction Flag\v@CLD\v
+    \aSTDCALL\v@langtype\v
+       \acalling convention    Definition of Language Type\v@langtype\v
+    \aSTI instruction          Set Interrupt Flag\v@CLI\v
+    \astoring and\v@FPEnvirInst\v
+       \aloading control data  Coprocessor Instructions\v@FPEnvirInst\v
+    \astoring DOS\v@SegmentPrefix\v
+       \aprograms on disk      Program Segment Prefix (PSP)\v@SegmentPrefix\v
+    \astoring temporary data   Stack Instructions\v@StackInst\v
+    \aSTOS instruction         Store String Data\v@STOS\v
+    \aSTOSB instruction        Store String Data (Byte)\v@STOS\v
+    \aSTOSD instruction        Store String Data (Doubleword)\v@STOS\v
+    \aSTOSW instruction        Store String Data (Word)\v@STOS\v
+    \aSTR instruction          Store Task Register\v@LTR\v
+    \astring operations        Processor Instructions\v@StringInst\v
+    strings,
+       \aconcatenating         CATSTR Directive\v@CatStr\v
+       \aextracting chars      @SubStr Macro\v@SubStr\v
+       \asearching             INSTR Directive\v@InStr\v
+    \aSTRUCT directive         Declare Structure Data Type\v@STRUCT\v
+    \astructure elements       MASM 5.1-Compatible\v@OLDSTRUCTS\v
+    \astructures               Complex Data Types\v@CplxTypes\v
+    \aSUB instruction          Subtract\v@SUB\v
+    \asubroutines, calling     CALL Instruction\v@CALL\v
+    \asubroutines,\v@RET\v
+       \areturning from        RET Instructions\v@RET\v
+    \aSUBSTR directive         Extract Characters from String\v@SubStr\v
+   @\aSubStr macro function    Extract Characters from String\v@SubStr\v
+    \aSUBTITLE directive       Specify Title/Subtitle\v@TITLE\v
+    \asubtracting              Processor Arithmetic Instructions\v@ArithInst\v
+    \a                         Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \asubtracting, reversed    Coprocessor Arithmetic Instructions\v@FPArithInst\v
+    \aSWORD directive          Declare Variables (Signed Word)\v@BYTE\v
+    \asymbols, declaring       Scope and Visibility Control\v@ScopeVisibility\v
+    \asymbols, predefined      Assembly-Language Predefined Symbols\v@LangConst\v
+    \aSYSCALL\v@langtype\v
+       \acalling convention    Definition of Language Type\v@langtype\v
+    \asystem functions         Int 21h\v@21.sysfun\v
+    \asystem services\v@bios.misc\v
+       \ainterrupts            Direct System Services\v@bios.misc\v
+
+.context @t
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\bT\p³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \atangent                  FPTAN Instruction\v@FPATAN\v
+    \aTBYTE directive          Declare Variables\v@BYTE\v
+    \aTEST instruction         Logical Compare\v@TEST\v
+    \atesting control flags    FPREM/FPREM1 Instructions\v@FPREM\v
+    \a                         FXAM Instruction\v@FXAM\v
+    \aTEXTEQU directive        String Equate with Macro Substitution\v@EQU\v
+   .\aTFCOND directive         Toggle .LISTIF/.NOLISTIF\v@.TFCOND\v
+    \aTHIS directive           Specify Same Operand Type\v@THIS\v
+   @\aTime text macro          Current Date/Time Text Macros\v@at_Date\v
+    \atime/date functions      Int 21h\v@21.time\v
+    \aTITLE directive          Specify Title/Subtitle\v@TITLE\v
+    \atranscendental\v@FPTransInst\v
+       \acalculations          Coprocessor Instructions\v@FPTransInst\v
+    \atransferring data        Processor Instructions\v@XferInst\v
+    \atransferring flags       Processor Instructions\v@FlagInst\v
+    \atrigonometric functions  Coprocessor Instructions\v@FPTransInst\v
+    \aTSR example programs     List of TSR Files\v@TSRex\v
+    \atwo's-complement\v@NEG\v
+       \anegation              NEG Instruction\v@NEG\v
+    \atwo-pass compiler,\vSETIF2\v
+       \aMASM 5.1-Compatible   SETIF2:{TRUE³FALSE} Option\vSETIF2\v
+    \atype conversion          Processor Instructions\v@XferInst\v
+    \aTYPE directive           Return Expression Attributes\v@TYPE\v
+    \atype operators           Type and Size Operators\v@TypeSizeOp\v
+    \aTYPEDEF directive        Define Type Symbol\v@TYPEDEF\v
+
+.context @u
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\bU\p³\aV\v@v\v³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \auninitialized data       Uninitialized Value (?)\v@questionmark\v
+    \aUNION directive          Declare Union as Data Type\v@UNION\v
+    \aunsigned divide          DIV Instruction\v@DIV\v
+    \aunsigned multiply        MUL Instruction\v@MUL\v
+   .\aUNTIL[CXZ] directive     Code Repeat Blocks\v@.REPEAT\v
+    \aUSE16                    Select Segment Size\v@optseg\v
+    \a                         Define Segment\v@SEGMENT\v
+    \aUSE32                    Select Segment Size\v@optseg\v
+    \a                         Define Segment\v@SEGMENT\v
+    \aUSES directive           Save Registers Used in Procedure\v@USES\v
+
+.context @v
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\bV\p³\aW\v@w\v³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aV25/V35 processors       Disable Byte Sign-Extended Opcode\v@nosignextend\v
+    \aVERR instruction         Verify Read\v@VERR\v
+   @\aVersion equate           Assembler Version Equate\v@at_Version\v
+    \aVERW instruction         Verify Write\v@VERR\v
+    \avideo data               System Operations\v@VideoData\v
+    \avideo interrupts         Int 10h\v@10h\v
+    \avideo parameter table    Int 1Dh\v@1Dh\v
+    \avisibility, setting\v@optproc\v
+       \aPROC default          Select Default PROC Visibility\v@optproc\v
+
+.context @w
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\bW\p³\aX-Z\v@x\v³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+
+    \aWait                     Coprocessor\v@FWAIT\v
+    \aWAIT instruction         Wait\v@WAIT\v
+    \aWBINVD instruction       Invalidate Data Cache\v@INVD\v
+    \aWHILE directive          Assemble While Expression is True\v@WHILE\v
+   .\aWHILE directive          Code WHILE Blocks\v@.WHILE\v
+    \aWIDTH operator           Record/Record-Field Width\v@WIDTH\v
+    \aWORD directive           Declare Variables\v@BYTE\v
+   @\aWordSize equate          Word Size Equate\v@at_WordSize\v
+
+.context @x
+.freeze 7
+.topic MASM Index
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄMASM IndexÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  ÚÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄÂÄ¿
+  ³\aA\v@a\v³\aB\v@b\v³\aC\v@c\v³\aD\v@d\v³\aE\v@e\v³\aF\v@f\v³\aG\v@g\v³\aH\v@h\v³\aI\v@i\v³\aJ\v@j\v³\aK\v@k\v³\aL\v@l\v³\aM\v@m\v³\aN\v@n\v³\aO\v@o\v³\aP\v@p\v³\aQ\v@q\v³\aR\v@r\v³\aS\v@s\v³\aT\v@t\v³\aU\v@u\v³\aV\v@v\v³\aW\v@w\v³\bX-Z\p³\a*\v@!\v³
+  ÀÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÁÄÙ
+    \aXADD instruction         Exchange and Add\v@XADD\v
+    \aXCHG instruction         Exchange\v@XCHG\v
+    \aXLAT[B] instruction      Translate Value\v@XLAT\v
+    \aXOR instruction          Exclusive OR\v@XOR\v
+    \aXOR operator             Logical and Shift Operators\v@LogShiftOp\v
+    \aZERO? operator           C-Style Comparison Operators\v@ccompare\v

@@ -1,0 +1,1 @@
+The DOC folder contains documentation for MASM 6.11. This documentation is also available in the Microsoft Developer Library Archive CD.

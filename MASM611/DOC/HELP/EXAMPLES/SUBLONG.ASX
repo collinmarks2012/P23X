@@ -1,0 +1,21 @@
+;* SubLong - Subtracts a double-word (long) integer from another.
+;*
+;* Shows:   Instructions -  sub     sbb
+;*
+;* Params:  Long1 - First integer
+;*          Long2 - Second integer
+;*
+;* Return:  Difference as long integer
+
+SubLong PROC,
+        Long1:SDWORD, Long2:SDWORD
+
+        mov     ax, WORD PTR Long1[0]   ; AX = low word, long1
+        mov     dx, WORD PTR Long1[2]   ; DX = high word, long1
+        sub     ax, WORD PTR Long2[0]   ; Subtract low word, long2
+        sbb     dx, WORD PTR Long2[2]   ; Subtract high word, long2
+        ret                             ; Result returned as DX:AX
+
+SubLong ENDP
+
+

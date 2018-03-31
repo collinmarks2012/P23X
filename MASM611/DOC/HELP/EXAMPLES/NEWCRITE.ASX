@@ -1,0 +1,10 @@
+;* NewCritErr - Handler for Interrupt 24h.
+
+NewCritErr PROC FAR
+
+        sub     al, al                  ; Tell DOS to ignore error
+        iret                            ; Return from handler
+                                        ;   without taking action
+NewCritErr ENDP
+
+        END

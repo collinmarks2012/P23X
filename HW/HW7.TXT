@@ -1,0 +1,111 @@
+HW7 - Subroutines 
+
+01.  This subroutine is to copy one list to another list. Input is:         
+    si points to the source list and di points to the destination list 
+    cx contains the count of bytes in the source list  
+    
+    subr:   cmp     cx,0        ;I1  is list size zero   
+            je      exit        ;I2  if yes we are done  
+            push    si          ;I3  save si             
+            push    di          ;I4  save di             
+            push    cx          ;I5  save cx             
+    movr:   mov     al,[si]     ;I6  get a byte          
+            mov     [di],al     ;I7  put a byte          
+            loop    movr        ;I8  repeat if more chars 
+    exit:   pop     cx          ;I9  restore cx          
+            pop     di          ;I10 restore di          
+            pop     si          ;I11 restore si          
+            ret                 ;I12 return to caller    
+                                                         
+If cx=0 on input then which is true about the subroutine's behavior 
+A. it correctly return to the caller without moving any data        
+B. it incorrectly moves 1 byte from the source to destination list  
+C. it incorrectly moves 65,536 bytes from the source to destination list 
+D. it has unpredictable behavior because it has misused the stack   
+E. it loops forever executing instructions I6, I7, I8               
+
+
+02.  This subroutine increments a byte memory value. The input is   
+si which points to the byte memory value                       
+    
+    subr:   push    ax          ; save ax             
+            mov     al,[si]     ; get the data        
+            inc     al          ; add 1 to the data   
+            mov     [si],al     ; put the data        
+            pop     ax          ; restore ax          
+            ret                 ; return to caller    
+  
+Which of these is true about instruction  mov  al,[si] 
+A. it is syntactically okay and will assemble without errors     
+B. it requires the data size to be specified by entering:        
+   mov  al,[byte ptr si]                                         
+C. it will always generate an assembler error message because al is a byte
+   register and si is a word register                                     
+D. it will assemble correctly only if the assembler has access to the data
+   declaration for list because then the assembler will know the size of  
+   the data items in the list                                             
+E. None of the above                                                      
+
+
+03.  Given this subroutine.                                              
+                                                                    
+      subr:   push  ax                                              
+              push  si                                              
+              mov   ax,[si]                                         
+              mov   [si],ah                                         
+              mov   [si+1],al                                       
+              pop   ax                                              
+              pop   si                                              
+              ret                                                   
+                                                                    
+A. The ax and si registers are correctly saved and restored.       
+B. The ax and si registers are not correctly saved and restored.   
+
+
+04.  The input to this routine is a pointer in si that points to a word of   
+data in memory.  The routine is to swap the high byte and low byte of   
+the data word in memory.  For example if si points the memory data word 
+11 22, then the routine should set the memory data word to 22 11.   
+                                                                    
+      subr:   push  ax                                              
+              push  si                                              
+              mov   ax,[si]                                         
+              mov   [si],ah                                         
+              mov   [si+1],al                                       
+              pop   si                                              
+              pop   ax                                              
+              ret                                                   
+                                                                    
+Which is true about the subroutine's operation.                     
+A. The high and low bytes will be swapped for all values of the     
+   memory data word.                                                
+B. The high and low bytes will be swapped only if both bytes of     
+   the memory data word are in the range of hex 00-7F.              
+C. The high and low bytes will be swapped only if both bytes of     
+   the memory data word are in the range of hex 80-FF.              
+D. The high and low bytes will be swapped only if both bytes of     
+   the memory data word have the same value.                        
+
+
+05.  Given this subroutine whose input is a pointer in si.              
+                                                                   
+    subr:    mov  bx,2                                             
+             mov  cx,1                                             
+             mov  ax,[si]                                          
+             mul  bx                                               
+             jc   subret                                           
+             div  cx                                               
+    subret:  ret                                                   
+                                                                   
+Which hex value, if loaded into ax by the instruction mov ax,[si]  
+would result in the subroutine generating a divide overflow.       
+A. 0000                                                            
+B. 7FFF                                                            
+C. 8000                                                            
+D. All  of the above will result in a divide overflow.             
+E. None of the above will result in a divide overflow.             
+
+
+CODE=GJEFD       
+End of file
+-

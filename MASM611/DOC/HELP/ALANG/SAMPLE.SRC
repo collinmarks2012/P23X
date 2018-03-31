@@ -1,0 +1,754 @@
+.comment
+.comment
+..| when chkline is run on this file, the error "incorrectly paired \b \p or \i \p"
+..|   error occurs. This is due to the presence of \\<FILENAME> in the file
+..|   due to the environment variable $ASMEX being equal to \MASM61\SAMPLES.
+..| Technically, the error shouldn't occur. Never could figure out why it does.
+..|    a-abird
+.comment
+.comment
+.context @addlong.asx
+.freeze 3
+.topic AddLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\addlong.asx
+
+.context @argi.asx
+.freeze 3
+.topic ArgI
+ \i\p\aMap\v@MACROS.INC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\argi.asx
+
+.context @argrev.asx
+.freeze 3
+.topic ArgRev
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\argrev.asx
+
+.context @bintohex.asx
+.freeze 3
+.topic BinToHex
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\bintohex.asx
+
+.context @changedi.asx
+.freeze 3
+.topic ChangeDir
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\changedi.asx
+
+.context @changedr.asx
+.freeze 3
+.topic ChangeDrive
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\changedr.asx
+
+.context @clearbox.asx
+.freeze 3
+.topic ClearBox
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\clearbox.asx
+
+.context @closefil.asx
+.freeze 3
+.topic CloseFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\closefil.asx
+
+.context @colors.asx
+.freeze 3
+.topic Colors
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\colors.asx
+
+.context @copyfile.asx
+.freeze 3
+.topic CopyFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\copyfile.asx
+
+.context @createfi.asx
+.freeze 3
+.topic CreateFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\createfi.asx
+
+.context @createne.asx
+.freeze 3
+.topic CreateNew
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\createne.asx
+
+.context @data.asm
+.freeze 3
+.topic Data
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\data.asm
+
+.context @delfile.asx
+.freeze 3
+.topic DelFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\delfile.asx
+
+.context @disablec.asx
+.freeze 3
+.topic DisableCGA
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\disablec.asx
+
+.context @disptext.asx
+.freeze 3
+.topic DispText
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\disptext.asx
+
+.context @divlong.asx
+.freeze 3
+.topic DivLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\divlong.asx
+
+.context @exec.asx
+.freeze 3
+.topic Exec
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\exec.asx
+
+.context @findfirs.asx
+.freeze 3
+.topic FindFirst
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\findfirs.asx
+
+.context @findnext.asx
+.freeze 3
+.topic FindNext
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\findnext.asx
+
+.context @getcurdi.asx
+.freeze 3
+.topic GetCurDir
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getcurdi.asx
+
+.context @getcurdr.asx
+.freeze 3
+.topic GetCurDrive
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getcurdr.asx
+
+.context @getcurpo.asx
+.freeze 3
+.topic GetCurPos
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getcurpo.asx
+
+.context @getdisks.asx
+.freeze 3
+.topic GetDiskSize
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getdisks.asx
+
+.context @getdta.asx
+.freeze 3
+.topic GetDTA
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getdta.asx
+
+.context @getfiles.asx
+.freeze 3
+.topic GetFileSize
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getfiles.asx
+
+.context @getfilet.asx
+.freeze 3
+.topic GetFileTime
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getfilet.asx
+
+.context @getkeycl.asx
+.freeze 3
+.topic GetKeyClock
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getkeycl.asx
+
+.context @getmem.asx
+.freeze 3
+.topic GetMem
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getmem.asx
+
+.context @getpsp.asx
+.freeze 3
+.topic GetPSP
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getpsp.asx
+
+.context @getshift.asx
+.freeze 3
+.topic GetShift
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getshift.asx
+
+.context @getstr.asx
+.freeze 3
+.topic GetStr
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getstr.asx
+
+.context @getver.asx
+.freeze 3
+.topic GetVer
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getver.asx
+
+.context @getvidco.asx
+.freeze 3
+.topic GetVidConfig
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\getvidco.asx
+
+.context @global.asx
+.freeze 3
+.topic Global
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\global.asx
+
+.context @hello.asm
+.freeze 3
+.topic Hello
+                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\hello.asm
+
+.context @helloc.asm
+.freeze 3
+.topic Helloc
+                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\helloc.asm
+
+.context @hellof.asm
+.freeze 3
+.topic Hellof
+                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\hellof.asm
+
+.context @hellom.asx
+.context @hellom.asm
+.freeze 3
+.topic Hellom
+                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\hellom.asx
+
+.context @hellomo.asm
+.freeze 3
+.topic Hellomo
+                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\hellomo.asm
+
+.comment.context @hellos2.asm
+.comment.freeze 3
+.comment.topic Hellos2
+.comment                                             \i\p\aUp\v@helloex\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+.comment컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+.comment
+.comment.include d:\masmdocs\help\examples\hellos2.asm
+
+.context @idivlong.asx
+.freeze 3
+.topic IdivLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\idivlong.asx
+
+.context @ifs.asm
+.freeze 3
+.topic Ifs
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\ifs.asm
+
+.context @imullong.asx
+.freeze 3
+.topic IMulLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\imullong.asx
+
+.context @inttoasc.asx
+.freeze 3
+.topic IntToAsc
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\inttoasc.asx
+
+.context @jcond.asm
+.freeze 3
+.topic Jcond
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\jcond.asm
+
+.context @jump.asm
+.freeze 3
+.topic Jump
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\jump.asm
+
+.context @loadptr.asx
+.freeze 3
+.topic LoadPtr
+ \i\p\aMap\v@MAPDEMO\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\loadptr.asx
+
+.context @loops.asm
+.freeze 3
+.topic Loops
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\loops.asm
+
+.context @makedir.asx
+.freeze 3
+.topic MakeDir
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\makedir.asx
+
+.context @mullong.asx
+.freeze 3
+.topic MulLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\mullong.asx
+
+.context @newblock.asx
+.freeze 3
+.topic NewBlockSize
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\newblock.asx
+
+.context @newbreak.asx
+.freeze 3
+.topic NewBreak
+ \i\p\aMap\v$ASMEX:TSR\\INSTALL.ASM!\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\newbreak.asx
+
+.context @newcrite.asx
+.freeze 3
+.topic NewCritErr
+ \i\p\aMap\v$ASMEX:TSR\\INSTALL.ASM!\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\newcrite.asx
+
+.context @newctrlc.asx
+.freeze 3
+.topic NewCtrlC
+ \i\p\aMap\v$ASMEX:TSR\\INSTALL.ASM!\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\newctrlc.asx
+
+.context @openfile.asx
+.freeze 3
+.topic OpenFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\openfile.asx
+
+.context @pause.asx
+.freeze 3
+.topic Pause
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\pause.asx
+
+.context @popall.asx
+.freeze 3
+.topic PopAll
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\popall.asx
+
+.context @pushall.asx
+.freeze 3
+.topic PushAll
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\pushall.asx
+
+.context @pushc.asx
+.freeze 3
+.topic PushC
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\pushc.asx
+
+.context @putstr.asm
+.freeze 3
+.topic PutStr
+                                              \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\putstr.asm
+
+.context @putstro.asm
+.freeze 3
+.topic PutStrO
+ \i\p\aMap\v@Hellomo.asm\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\putstro.asm
+
+.context @quadrati.asx
+.freeze 3
+.topic Quadratic
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\quadrati.asx
+
+.context @readchar.asx
+.freeze 3
+.topic ReadCharAttr
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\readchar.asx
+
+.context @readfile.asx
+.freeze 3
+.topic ReadFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\readfile.asx
+
+.context @removedi.asx
+.freeze 3
+.topic RemoveDir
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\removedi.asx
+
+.context @renamefi.asx
+.freeze 3
+.topic RenameFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\renamefi.asx
+
+.context @restorer.asx
+.freeze 3
+.topic @RestoreRegs
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\restorer.asx
+
+.context @rewind.asx
+.freeze 3
+.topic Rewind
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\rewind.asx
+
+.context @saveregs.asx
+.freeze 3
+.topic SaveRegs
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\saveregs.asx
+
+.context @setattri.asx
+.freeze 3
+.topic SetAttribute
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\setattri.asx
+
+.context @setcurpo.asx
+.freeze 3
+.topic SetCurPos
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\setcurpo.asx
+
+.context @setcursi.asx
+.freeze 3
+.topic SetCurSize
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\setcursi.asx
+
+.context @setdta.asx
+.freeze 3
+.topic @SetDTA
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\setdta.asx
+
+.context @setlinem.asx
+.freeze 3
+.topic SetLineMode
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\setlinem.asx
+
+.context @sound.asx
+.freeze 3
+.topic Sound
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\sound.asx
+
+.context @strcompa.asx
+.freeze 3
+.topic StrCompare
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\strcompa.asx
+
+.context @strfindc.asx
+.freeze 3
+.topic StrFindChar
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\strfindc.asx
+
+.context @strinput.asx
+.freeze 3
+.topic StrInput
+ \i\p\aMap\v@MAPCOMMON\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\strinput.asx
+
+.context @sublong.asx
+.freeze 3
+.topic SubLong
+ \i\p\aMap\v@MAPMATH\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\sublong.asx
+
+.context @struct.asm
+.freeze 3
+.topic Struct
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\struct.asm
+
+.context @uniquefi.asx
+.freeze 3
+.topic UniqueFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\uniquefi.asx
+
+.context @vector.asx
+.freeze 3
+.topic Vector
+ \i\p\aMap\v@MAPDEMO\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\vector.asx
+
+.context @veriansi.asx
+.freeze 3
+.topic VeriAnsi
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\veriansi.asx
+
+.context @vericop.asx
+.freeze 3
+.topic VeriCop
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\vericop.asx
+
+.context @veriprin.asx
+.freeze 3
+.topic VeriPrint
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\veriprin.asx
+
+.context @vid_conf.asx
+.freeze 3
+.topic Vid_config
+ \i\p\aMap\v@mapex\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\vid_conf.asx
+
+.context @winclose.asx
+.freeze 3
+.topic WinClose
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\winclose.asx
+
+.context @winopen.asx
+.freeze 3
+.topic WinOpen
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\winopen.asx
+
+.context @wordstor.asx
+.freeze 3
+.topic WordStore
+ \i\p\aMap\v@macros.inc\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\wordstor.asx
+
+.context @writefil.asx
+.freeze 3
+.topic WriteFile
+ \i\p\aMap\v@MAPFILE\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\writefil.asx
+
+.context @writetty.asx
+.freeze 3
+.topic WriteTTY
+ \i\p\aMap\v@MAPMISC\v\i\p                                       \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\writetty.asx
+
+.context @loopso.asm
+.freeze 3
+.topic LoopsO
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+.include d:\masmdocs\help\examples\loopso.asm
+..eos on

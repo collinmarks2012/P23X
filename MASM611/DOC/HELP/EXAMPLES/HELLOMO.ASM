@@ -1,0 +1,42 @@
+;* HELLOMO.ASM illustrates old techniques of multiple-module
+;* programming. It uses full segment definitions, pushes arguments
+;* and calls procedures explicitly, sets up its own stack frame,
+;* and shares data using PUBLIC and EXTERN.
+;*
+;* To build the program, paste HELLOMO.ASM and PUTSTRO.ASM into
+;* separate files, compile both, and link. For a similar example
+;* that uses new techniques such as INVOKE, PROTO, and extended
+;* PROC, see HELLOM.ASM.
+;*
+;* Shows:   Instructions  - call
+;*          Directives    - SEGMENT     ENDS       GROUP
+;*                          PUBLIC      EXTERN     END
+;*          DOS Functions - 4Ch (Exit Program with Return Code)
+
+        .DOSSEG                         ; Force DOS segment order
+DGROUP  GROUP   _DATA, STACK            ; Stack and data in DGROUP
+
+STACK   SEGMENT PARA STACK 'STACK'
+        DB      100h DUP (?)            ; 256-byte stack
+STACK   ENDS
+
+_DATA   SEGMENT WORD PUBLIC 'DATA'      ; Data segment with string data
+msg     DB      "Hello, world.", 13, 10, 0      ; Null-terminated string
+_DATA   ENDS
+
+_TEXT   SEGMENT WORD PUBLIC 'CODE'      ; Code segment
+        ASSUME  cs:_TEXT, ds:DGROUP, ss:DGROUP
+start:
+        mov     ax, DGROUP              ; Initialize data segment
+        mov     ds, ax
+
+        EXTERN  C putstr:NEAR           ; Declare as C external near symbol
+        mov     ax, OFFSET msg          ; Load address of data and
+        push    ax                      ;  push as function argument
+        call    putstr                  ; Call function
+
+        mov     ax, 4C00h               ; Exit functions with 0 in AL
+        int     21h                     ; Exit Program with Return Code
+
+_TEXT   ENDS
+        END     start                   ; Specify label of start address

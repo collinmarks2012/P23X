@@ -1,0 +1,13 @@
+CSC23x:  Homework Grades    (code=1-86887-2) Ver 580110
+Student:                Marks,               Collin 
+Created: 06/11/16 Updated:  06/29 16:43:00  
+
+HW#  Started        Status         Grade
+HW5  06/12/16       D 06/12 28:45  088               
+HW6  06/14/16       D 06/14 12:36  100               
+HW7  06/24/16       D 06/24 12:32  100               
+HW8  06/29/16       D 06/29 16:42  100               
+VER=F081661S1P0T10W1O0P0R8:1:31 Z042900V00/09000000808
+
+End of file     
+-

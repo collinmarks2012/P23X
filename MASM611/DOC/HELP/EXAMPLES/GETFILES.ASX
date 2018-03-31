@@ -1,0 +1,24 @@
+;* GetFileSize - Gets the size of an open file, specified by handle.
+;*
+;* Shows:   DOS Function - 42h (Set File Pointer)
+;*
+;* Params:  Handle - File handle
+;*
+;* Return:  Long integer with file size in bytes
+
+GetFileSize PROC,
+        Handle:WORD
+
+        mov     bx, Handle              ; BX = file handle
+        mov     ax, 4202h               ; AH = function #,
+                                        ; AL = move to end of
+        sub     cx, cx                  ;      file plus offset
+        sub     dx, dx                  ; CX:DX = offset (zero)
+        int     21h                     ; Set File Pointer
+        mov     ax, dx                  ; Set DX:AX = file size in
+        mov     dx, cx                  ;   bytes, return long int
+        ret
+
+GetFileSize ENDP
+
+

@@ -1,0 +1,680 @@
+.context @index
+.context alang.index
+.context @a
+.freeze 7
+.topic MASM Index [1]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\bA\pЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aAAA instruction             ASCII Adjust After Addition\v@AAA\v\i\p
+  \i\p\aAAD instruction             ASCII Adjust Before Division\v@AAD\v\i\p
+  \i\p\aAAM instruction             ASCII Adjust After Multiply\v@AAM\v\i\p
+  \i\p\aADC instruction             Add with Carry\v@ADC\v\i\p
+  \i\p\aADD instruction             Add Source, Destination Operands\v@ADD\v\i\p
+  \i\p\aALIGN directive             Align Data and Code\v@Align\v\i\p
+  \i\p\a.ALPHA directive            Alphabetical Segment Ordering\v@.ALPHA\v\i\p
+  \i\p\aAND instruction             Logical AND\v@AND\v\i\p
+  \i\p\aAND operator                AND Operator\vop.AND\v\i\p
+  \i\p\aASSUME directive            Segment Register Control\v@ASSUME\v\i\p
+  \i\p\aasterisk                    Multiplication (*) Operator\v@asterisk\v\i\p
+
+.context @b
+.freeze 7
+.topic MASM Index [2]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\bB\pЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\a@B directive                Backward Search/Jump\v@at_B\v\i\p
+  \i\p\aBIOS interrupts             BIOS Interrupts\v@BIOSCalls\v\i\p
+  \i\p\aBOUND instruction           Check Array Bounds\v@BOUND\v\i\p
+  \i\p\a.BREAK directive            Exit Iterative Directives\v@.BREAK\v\i\p
+  \i\p\aBSWAP instruction           Byte Swap\v@BSWAP\v\i\p
+  \i\p\aBYTE directive              Declare byte-length variables\v@BYTE\v\i\p
+
+.context @c
+.freeze 7
+.topic MASM Index [3]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\bC\pЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aCALL instruction            Call Procedure\v@CALL\v\i\p
+  \i\p\aCASEMAP directive           Control Case Mapping \vCASEMAP\v\i\p
+  \i\p\aCATSTR directive            Concatenate Strings\v@CATSTR\v\i\p
+  \i\p\aCBW instruction             Convert Byte to Word\v@CBW\v\i\p
+  \i\p\aCLC instruction             Clear Carry Flag\v@CLC\v\i\p
+  \i\p\aCLI instruction             Clear Interrupt Flag\v@CLI\v\i\p
+  \i\p\aCMC instruction             Complement Carry Flag\v@CMC\v\i\p
+  \i\p\aCMP instruction             Compare Two Operands\v@CMP\v\i\p
+  \i\p\aCMPS, CMPSB instruction     Compare String\v@CMPS\v\i\p
+  \i\p\aCMPSW, CMPSD instruction    Compare String\v@CMPS\v\i\p
+  \i\p\aCMPXCHG instruction         Compare and Exchange\v@CMPXCHG\v\i\p
+  \i\p\a.CODE directive             Start Code Segment\v@.CODE\v\i\p
+  \i\p\a@code macro                 Code Segment Macro\v@at_CODE\v\i\p
+  \i\p\a@CodeSize macro             Code Size Macro\v@at_CodeSize\v\i\p
+  \i\p\acolon                       Segment Override (:) Operator\v@colon\v\i\p
+  \i\p\aCOMM directive              Create Communal Variables\v@COMM\v\i\p
+  \i\p\aCOMMENT directive           Multiline Comments\v@COMMENT\v\i\p
+  \i\p\aCONST directive             Start a Constant Data Block\v@.CONST\v\i\p
+  \i\p\a.CONTINUE directive         Evaluate Loop Condition\v@.CONTINUE\v\i\p
+  \i\p\a@CPU macro                  CPU-Type Macro\v@at_CPU\v\i\p
+  \i\p\a.CREF directive             Collect Cross-Reference Info.\v@.CREF\v\i\p
+  \i\p\a@CurSeg macro               Current Segment Name Macro\v@at_CurSeg\v\i\p
+  \i\p\aCWD instruction             Convert Word to Double\v@CWD\v\i\p
+  \i\p\aCWDE instruction            Convert Word to Extended Double\v@CWDE\v\i\p
+
+.context @d
+.freeze 7
+.topic MASM Index [4]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\bD\pЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aDAA instruction             Decimal Adjust After Addition\v@DAA\v\i\p
+  \i\p\aDAS instruction             Decimal Adjust after Subtraction\v@DAS\v\i\p
+  \i\p\a.DATA directive             Start an uninitialized data segment\v@.DATA?\v\i\p
+  \i\p\aDATA directive              Start a data segment\v@.DATA\v\i\p
+  \i\p\a@DATA pointer               Pointer to DATA/DATA?/CONST/STACK\v@at_DATA\v\i\p
+  \i\p\a@DataSize macro             Data Size Macro\v@at_DataSize\v\i\p
+  \i\p\aDIV instruction             Unsigned Divide\v@DIV\v\i\p
+  \i\p\adollar sign                 Current Line Indicator ($)\v@dollarsign\v\i\p
+  \i\p\ainterrupts, DOS, misc.      Miscellaneous DOS Functions\v@21.misc\v\i\p
+  \i\p\a.DOSSEG directive           Order segments by DOS conventions\v@.DOSSEG\v\i\p
+  \i\p\adot operator                Structure-Field (.) Reference\v@period\v\i\p
+  \i\p\aDOTNAME/NODOTNAME dir.      Enable Dot Usage\vDOTNAME\v\i\p
+  \i\p\aDUP directive               Specify Count Declarations\v@DUP\v\i\p
+  \i\p\aDWORD directive             Declare double word-length variables\v@DWORD\v\i\p
+
+.context @e
+.freeze 7
+.topic MASM Index [5]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\bE\pЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aECHO/%OUT directive         Display Message During Assembly\v@ECHO\v\i\p
+  \i\p\a.ELSE directive             Conditional blocks\v@.if\v\i\p
+  \i\p\aELSE directive              IF block syntax\v@if_block\v\i\p
+  \i\p\a.ELSEIF directive           Conditional blocks\v@.if\v\i\p
+  \i\p\aELSEIF/ELSEIFE directive    ELSEIF/ELSEIFE Directives\vELSEIF\v\i\p
+  \i\p\aELSEIF1/ELSEIF2 directive   IF1/IF2/ELSEIF1/ELSEIF2 Directives\vIF1\v\i\p
+  \i\p\aELSEIFB/ELSEIFNB directive  IFB/IFNB/ELSEIFB/ELSEIFNB Directives\v@IFB\v\i\p
+  \i\p\aELSEIFDEF directive         IFDEF/IFNDEF/ELSEIFDEF/ELSEIFNDEF Directives\v@IFDEF\v\i\p
+  \i\p\aELSEIFDIF directive         IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aELSEIFDIFI directive        IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aELSEIFIDN directive         IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aELSEIFIDNI directive        IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aELSEIFNDEF directive        IFDEF/ELSEIFDEF Directives\v@IFDEF\v\i\p
+  \i\p\a.ENDIF directive            Conditional blocks\v@.if\v\i\p
+  \i\p\aENDIF directive             IF block syntax\v@if_block\v\i\p
+  \i\p\aENDM directive              End macro and iterative blocks\v@ENDM\v\i\p
+  \i\p\aENDP directive              End PROC block\v@PROC\v\i\p
+  \i\p\aENDS directive              End segment and structure blocks\v@ENDS\v\i\p
+  \i\p\aENTER instruction           Make Stack Frame\v@ENTER\v\i\p
+  \i\p\aEQ directive                Equal-To Operator\vEQ\v\i\p
+  \i\p\aEQU directive               Numeric and string equate\v@EQU\v\i\p
+  \i\p\aequal sign                  Numeric Equate (=)\v@equalSign\v\i\p
+  \i\p\aERR directive               Generate a severe error\v@.ERR\v\i\p
+  \i\p\a.ERR1/.ERR2 directives      Generate a pass-dependent error\v@ERR1\v\i\p
+  \i\p\a.ERRB/.ERRNB directive      Generate an error for a missing argument\v@.ERRB\v\i\p
+  \i\p\aERRDEF/ERRNDEF directive    Generate an error for undefined symbol\v@.ERRDEF\v\i\p
+  \i\p\a.ERRDIF/.ERRIDN directive   Generate error if args are same/different\v@.ERRIDN\v\i\p
+  \i\p\a.ERRE/.ERRNZ directive      Generate error-argument zero/nonzero\v@.ERRE\v\i\p
+  \i\p\aEVEN directive              Align Data and Code\v@Align\v\i\p
+  \i\p\aEXIT directive              Exit to DOS or OS/2\v@.STARTUP\v\i\p
+  \i\p\aExiting .IF                 Exit Iterative Directives\v@.BREAK\v\i\p
+  \i\p\aExiting loops               Exit Iterative Directives\v@.BREAK\v\i\p
+  \i\p\aEXITM directive             End macro and repeat blocks\v@EXITM\v\i\p
+  \i\p\aEXTERN directive            Define ext. variables, labels, and symbols\v@EXTERN\v\i\p
+  \i\p\aEXTERNDEF directive         Define ext. vars./labels/symbols conditionally\v@EXTERNDEF\v\i\p
+
+.context @f
+.freeze 7
+.topic MASM Index [6]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\bF\pЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\a@F directive                Forward Search/Jump\v@at_F\v\i\p
+  \i\p\aF2XM1 instruction           Calculate 2(^X)-1\vF2XM1\v\i\p
+  \i\p\aFABS instruction            Absolute Value\vFABS\v\i\p
+  \i\p\aFADD instruction            Add\vFADD\v\i\p
+  \i\p\aFADDP/FIADD instruction     Add\vFADD\v\i\p
+  \i\p\a@FarData[?] macro           FarData Location Macro\v@at_FarData\v\i\p
+  \i\p\aFARDATA directive           Start a FAR data segment\v@.FARDATA\v\i\p
+  \i\p\aFARDATA? directive          Start uninitialized far data segment\v@.FARDATA?\v\i\p
+  \i\p\aFCHS instruction            Change Sign\vFCHS\v\i\p
+  \i\p\aFCLEX/FNCLEX instruction    Clear Exceptions\vFCLEX\v\i\p
+  \i\p\aFCOM/FCOMP/FCOMPP           Compare\vFCOM\v\i\p
+  \i\p\aFCOS instruction            Cosine\vFCOS\v\i\p
+  \i\p\aFDECSTP instruction         Decrement Stack Pointer\vFDECSTP\v\i\p
+  \i\p\aFDISI/FNDISI instruction    Disable Interrupts\vFDISI\v\i\p
+  \i\p\aFDIV instruction            Divide\vFDIV\v\i\p
+  \i\p\aFDIVP/FIDIV instruction     Divide\vFDIV\v\i\p
+  \i\p\aFDIVR instruction           Divide Reversed\vFDIVR\v\i\p
+  \i\p\aFDIVRP/FIDIVR instruction   Divide Reversed\vFDIVR\v\i\p
+  \i\p\aFENI/FNENI instruction      Enable Interrupts\vFENI\v\i\p
+  \i\p\aFFREE instruction           Free Register\vFFREE\v\i\p
+  \i\p\aFICOM/FICOMP instruction    Compare\vFCOM\v\i\p
+  \i\p\a@FileName macro             Current Source Filename Macro\v@at_FileName\v\i\p
+  \i\p\aFINCSTP instruction         Increment Stack Pointer\vFINCSTP\v\i\p
+  \i\p\aFINIT/FNINIT instruction    Initialize Coprocessor\vFINIT\v\i\p
+  \i\p\aFIST instruction            Store\vFST\v\i\p
+  \i\p\aFISTP/FBSTP instruction     Store\vFST\v\i\p
+  \i\p\aFLD/FILD/FBLD instruction   Load\vFLD\v\i\p
+  \i\p\aFLD1/FLDZ instruction       Load Constant\vFLD1\v\i\p
+  \i\p\aFLDCW instruction           Load Control Word\vFLDCW\v\i\p
+  \i\p\aFLDENV instruction          Load Environment State\vFLDENV\v\i\p
+  \i\p\aFLDLN2 instruction          Load Constant\vFLD1\v\i\p
+  \i\p\aFLDL2T/FLDLG2 instruction   Load Constant\vFLD1\v\i\p
+  \i\p\aFLDPI/FLDL2E instruction    Load Constant\vFLD1\v\i\p
+  \i\p\aFLOAT directive             Floating Point Options\vFLOAT\v\i\p
+  \i\p\aFMUL instruction            Multiply\vFMUL\v\i\p
+  \i\p\aFMULP/FIMUL instruction     Multiply\vFMUL\v\i\p
+  \i\p\aFNinstruction               No-Wait Instructions\vFNinstruction\v\i\p
+  \i\p\aFNOP instruction            No Operation\vFNOP\v\i\p
+  \i\p\aFOR directive               Reiterating Macro\v@FOR\v\i\p
+  \i\p\aFORC/IRPC directive         Reiterating Macro (for Character)\v@FORC\v\i\p
+  \i\p\aFPATAN instruction          Partial Arctangent\vFPATAN\v\i\p
+  \i\p\aFPREM instruction           Partial Remainder\vFPREM\v\i\p
+  \i\p\aFPREM1 instruction          Partial Remainder (IEEE)\vFPREM1\v\i\p
+  \i\p\aFPTAN instruction           Partial Tangent\vFPTAN\v\i\p
+  \i\p\aFRNDINT instruction         Round to Integer\vFRNDINT\v\i\p
+  \i\p\aFRSTOR instruction          Restore Saved State\vFRSTOR\v\i\p
+  \i\p\aFSAVE/FNSAVE instruction    Save Coprocessor State\vFSAVE\v\i\p
+  \i\p\aFSCALE instruction          Scale\vFSCALE\v\i\p
+  \i\p\aFSETPM instruction          Set Protected Mode\vFSETPM\v\i\p
+  \i\p\aFSIN instruction            Sine\vFSIN\v\i\p
+  \i\p\aFSINCOS instruction         Sine and Cosine\vFSINCOS\v\i\p
+  \i\p\aFSQRT instruction           Square Root\vFSQRT\v\i\p
+  \i\p\aFST/FSTP instruction        Store\vFST\v\i\p
+  \i\p\aFSTCW/FNSTCW instruction    Store Control Word\vFSTCW\v\i\p
+  \i\p\aFSTENV/FNSTENV instruction  Store Environment State\vFSTENV\v\i\p
+  \i\p\aFSTSW/FNSTSW instruction    Store Status Word\vFSTSW\v\i\p
+  \i\p\aFSUB/FISUB instruction      Subtract\vFSUB\v\i\p
+  \i\p\aFSUBP instruction           Subtract\vFSUB\v\i\p
+  \i\p\aFSUBR/FISUBR instruction    Subtract Reversed\vFSUBR\v\i\p
+  \i\p\aFSUBRP instruction          Subtract Reversed\vFSUBR\v\i\p
+  \i\p\aFTST instruction            Test for Zero\vFTST\v\i\p
+  \i\p\aFUCOM instruction           Unordered Compare\vFUCOM\v\i\p
+  \i\p\aFUCOMP/FUCOMPP instruction  Unordered Compare\vFUCOM\v\i\p
+  \i\p\aFWAIT instruction           Wait\vFWAIT\v\i\p
+  \i\p\aFWORD directive             Declare 6-byte variables\v@FWORD\v\i\p
+  \i\p\aFXAM instruction            Examine\vFXAM\v\i\p
+  \i\p\aFXCH instruction            Exchange Registers\vFXCH\v\i\p
+  \i\p\aFXTRACT instruction         Extract Exponent and Significand\vFXTRACT\v\i\p
+  \i\p\aFYL2X instruction           Y log(sub2)(X)\vFYL2X\v\i\p
+  \i\p\aFYL2XP1 instruction         Y log(sub2)(X+1)\vFYL2XP1\v\i\p
+
+.context @g
+.freeze 7
+.topic MASM Index [7]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\bG\pЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aGE directive                Greater-Than/Equal-To Operator\vGE\v\i\p
+  \i\p\aGOTO directive              Skip to label\v@GOTO\v\i\p
+  \i\p\aGROUP directive             Combine segments\v@GROUP\v\i\p
+  \i\p\aGT directive                Greater-Than Operator\vGT\v\i\p
+
+.context @h
+.freeze 7
+.topic MASM Index [8]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\bH\pЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aHIGH directive              High-Order Byte: Two's Complement\v@HIGH\v\i\p
+  \i\p\aHLT instruction             Halt\v@HLT\v\i\p
+
+.context @i
+.freeze 7
+.topic MASM Index [9]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\bI\pЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aIDIV instruction            Signed Divide\v@IDIV\v\i\p
+  \i\p\a.IF directive               Conditional blocks\v@.if\v\i\p
+  \i\p\a.IF, exiting                Exit Iterative Directives\v@.BREAK\v\i\p
+  \i\p\aIF block syntax             IF block syntax\v@if_block\v\i\p
+  \i\p\aIF/IFE directive            Assemble if expression true or false\v@IF\v\i\p
+  \i\p\a@IFB/IFNB directive         IFB/IFNB/ELSEIFB/ELSEIFNB Directives\v@IFB\v\i\p
+  \i\p\a@IFDEF/IFNDEF directive     IFDEF/IFNDEF/ELSEIFDEF/ELSEIFNDEF Directives\v@IFDEF\v\i\p
+  \i\p\aIFDIF/IFDIFI directive      IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aIFIDN/IFIDNI directive      IFDIF/ELSEIFDIF Variations\v@IFIDN\v\i\p
+  \i\p\aLJMP|NOLJMP directive       Automatic Condition Jump Lengthening\vLJMP\v\i\p
+  \i\p\aIMUL instruction            Signed Multiply\v@IMUL\v\i\p
+  \i\p\aIN instruction              Input from Port\v@IN\v\i\p
+  \i\p\aINC instruction             Increment\v@INC\v\i\p
+  \i\p\aINCLUDE directive           Insert Source Code\v@INCLUDE\v\i\p
+  \i\p\aINCLUDELIB directive        Link with LIB File\v@INCLUDELIB\v\i\p
+  \i\p\aINS, INSB instruction       Input from Source to String\v@INS\v\i\p
+  \i\p\aINSTR directive             Search for String\vINSTR\v\i\p
+  \i\p\aINSW, INSD instruction      Input from Source to String\v@INS\v\i\p
+  \i\p\aINT instruction             Interrupt\v@INT\v\i\p
+  \i\p\aINT 1Ah functions           Clock\v@1Ah\v\i\p
+  \i\p\aINT 10h functions           Video Functions (Summary)\v@10h\v\i\p
+  \i\p\aINT 13h functions           Disk I/O\v@13h\v\i\p
+  \i\p\aINT 14h functions           COM Port\v@14h\v\i\p
+  \i\p\aINT 15h functions           I/O Subsystem\v@15h\v\i\p
+  \i\p\aINT 16h functions           Keyboard \v@16h\v\i\p
+  \i\p\aINT 17h functions           Parallel Printer Port\v@17h\v\i\p
+  \i\p\aINT 21h functions           Interrupt 21h, Character-Oriented Functions\v@21.char\v\i\p
+  \i\p\a                            Interrupt 21h, Directory-Control Functions\v@21.dir\v\i\p
+  \i\p\a                            Interrupt 21h, Disk-Management Functions\v@21.disk\v\i\p
+  \i\p\a                            Interrupt 21h, File Operations\v@21.file\v\i\p
+  \i\p\a                            Interrupt 21h, File Operations, FCB\v@21.filefcb\v\i\p
+  \i\p\a                            Interrupt 21h, Function 5Eh (Machine/Printer)\v@21h.5Eh\v\i\p
+  \i\p\a                            Interrupt 21h, Function 5Fh (Device Redirect.)\v@21h.5Fh\v\i\p
+  \i\p\a                            Interrupt 21h, Memory-Allocation Functions\v@21.mem\v\i\p
+  \i\p\a                            Interrupt 21h, Record Functions, FCB\v@21.recfcb\v\i\p
+  \i\p\a                            Interrupt 21h, System Functions\v@21.sysfun\v\i\p
+  \i\p\a                            Interrupt 21h, Process-Control Functions\v@21.process\v\i\p
+  \i\p\a                            Interrupt 21h, Record Functions\v@21.rec\v\i\p
+  \i\p\a                            Interrupt 21h, Time and Date Functions\v@21.time\v\i\p
+  \i\p\ainterrupts, BIOS, misc.     Miscellaneous BIOS Interrupts\v@bios.misc\v\i\p
+  \i\p\ainterrupts, DOS, misc.      Miscellaneous DOS Functions\v@21.misc\v\i\p
+  \i\p\aINTO instruction            Interrupt on Overflow\v@INTO\v\i\p
+  \i\p\aINVD instruction            Invalidate Data Cache\v@INVD\v\i\p
+  \i\p\aINVLPG instruction          Invalidate TLB Entry\v@INVLPG\v\i\p
+  \i\p\aINVOKE directive            Automate to Stack-Based Procedures\v@INVOKE\v\i\p
+  \i\p\aIRET/IRETD instruction      Interrupt Return\v@IRET\v\i\p
+
+.context @j
+.freeze 7
+.topic MASM Index [10]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\bJ\pЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aJcondition instruction      Jump Conditionally\v@JB\v\i\p
+  \i\p\aJCXZ/JECXZ instruction      Jump if CX is Zero\v@JCXZ\v\i\p
+  \i\p\aJMP instruction             Jump Unconditionally\v@JMP\v\i\p
+
+.context @k
+.freeze 7
+.topic MASM Index [11]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\bK\pЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  No entries
+
+.context @l
+.freeze 7
+.topic MASM Index [12]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\bL\pЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aLABEL directive             Create New Variable or Label\v@LABEL\v\i\p
+  \i\p\aLAHF instruction            Load Flags into AH Register\v@LAHF\v\i\p
+  \i\p\aLANG directive              Specify Default Language Type\vLANG\v\i\p
+  \i\p\aLAR instruction             Load Access Rights\v@LAR\v\i\p
+  \i\p\aLDS/LES/LFS instruction     Load Far Pointer\v@LDS\v\i\p
+  \i\p\aLE directive                Less-Than/Equal-To Operator\vLE\v\i\p
+  \i\p\aLEA instruction             Load Effective Address\v@LEA\v\i\p
+  \i\p\aLEAVE instruction           High Level Procedure Exit\v@LEAVE\v\i\p
+  \i\p\aLENGTH directive            Variable Length\vLENGTH\v\i\p
+  \i\p\aLGDT/LIDT/LLDT instruction  Load Descriptor Table\v@LGDT\v\i\p
+  \i\p\aLGS, LSS instruction        Load Far Pointer\v@LDS\v\i\p
+  \i\p\a.LIST directive             List Source Statements to .LST File\v@.LIST\v\i\p
+  \i\p\a.LISTIF directive           List Statements in Conditional Blocks\v@.LISTIF\v\i\p
+  \i\p\a.LISTMACRO directive        Enable Assembly Listing File\v@.LISTMACRO\v\i\p
+  \i\p\a.LISTMACROALL directive     List Source Statements in Macro Expansion\v@.LISTMACROALL\v\i\p
+  \i\p\aLMSW instruction            Load Machine Status Word\v@LMSW\v\i\p
+  \i\p\aLOCAL directive             LOCAL (in procedures)\v@LOCAL.proc\v\i\p
+  \i\p\aLOCAL.mac directive         LOCAL (in macros)\v@LOCAL.mac\v\i\p
+  \i\p\aLOCK instruction            Lock the Bus\v@LOCK\v\i\p
+  \i\p\aLODS, LODSB instruction     Load String Operand\v@LODS\v\i\p
+  \i\p\aLODSW, LODSD instruction    Load String Operand\v@LODS\v\i\p
+  \i\p\aLOOP instruction            LOOP\v@LOOP\v\i\p
+  \i\p\aLOOPcondition instruction   LOOPcondition\v@LOOPE\v\i\p
+  \i\p\aloops, exiting              Exit Iterative Directives\v@.BREAK\v\i\p
+  \i\p\aLOW directive               Low-Order Byte: Two's Complement\v@LOW\v\i\p
+  \i\p\aLROFFSET directive          Loader-Resolved Offset\v@LROFFSET\v\i\p
+  \i\p\aLSL instruction             Load Segment Limit\v@LSL\v\i\p
+  \i\p\aLTR instruction             Load Task Register\v@LTR\v\i\p
+  \i\p\aLT directive                Less-Than Operator\vLT\v\i\p
+
+.context @m
+.freeze 7
+.topic MASM Index [13]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\bM\pЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aM510/NOM510 directive       Maximize Compatibility with MASM 5.10\vM510\v\i\p
+  \i\p\aMACRO directive             Mark Macro Block\v@MACRO\v\i\p
+  \i\p\am510MACROS/NOm510MACROS dir.MASM 5.10-Compatible Macros\vMACROOPT\v\i\p
+  \i\p\aMASK directive              Bit Mask\v@MASK\v\i\p
+  \i\p\amemory models               MemoryModelError\v@Tiny\v\i\p
+  \i\p\aminus sign                  Unary Minus (-) Operator\v@unaryminus\v\i\p
+  \i\p\a                            Binary Minus (-) Operator\v@minus\v\i\p
+  \i\p\aMOD directive               Remainder (Modulus)\vMOD\v\i\p
+  \i\p\a.MODEL directive            Initialize Memory Model\v@.MODEL\v\i\p
+  \i\p\a@Model directive            Model Equate\v@at_MODEL\v\i\p
+  \i\p\aMOV instruction             Move Data\v@MOV\v\i\p
+  \i\p\a                            Move to/from Special Registers\v@MOVIE\v\i\p
+  \i\p\aMOVS, MOVSB instruction     Move String Data\v@MOVS\v\i\p
+  \i\p\aMOVSW, MOVSD instruction    Move String Data\v@MOVS\v\i\p
+  \i\p\aMOVSX instruction           Move with Sign-Extend\v@MOVSX\v\i\p
+  \i\p\aMOVZX instruction           Move with Zero-Extend\v@MOVZX\v\i\p
+  \i\p\aMUL instruction             Unsigned Multiply\v@MUL\v\i\p
+
+.context @n
+.freeze 7
+.topic MASM Index [14]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\bN\pЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aNE directive                Not-Equal-To Operator\vNE\v\i\p
+  \i\p\aNEG instruction             Two's Complement Negation\v@NEG\v\i\p
+  \i\p\a.no87 directive             Disable Coprocessor Instructions\v@.no87\v\i\p
+  \i\p\a.NOCREF/.XCREF directive    Turn off Symbol Cross-Referencing\v.NOCREF\v\i\p
+  \i\p\a.NOLIST directive           Suppress Program Listing\v@.NOLIST\v\i\p
+  \i\p\a.NOLISTIF directive         Turn off List\v@.NOLISTIF\v\i\p
+  \i\p\a.NOLISTMACRO directive      Suppress Macro Listing\v.NOLISTMACRO\v\i\p
+  \i\p\aNOP instruction             No Operation\v@NOP\v\i\p
+  \i\p\aNOT instruction             One's Complement Negation\v@NOT\v\i\p
+  \i\p\aNOT Operator                Reverse Bits\vop.NOT\v\i\p
+
+.context @o
+.freeze 7
+.topic MASM Index [15]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\bO\pЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aOFFSET directive            Offset Address\v@OFFSET\v\i\p
+  \i\p\aOFFSET: directive           Offset-Generated Fixups\vOFFSET:\v\i\p
+  \i\p\aOPTION directive            Set assembler options\v@OPTION\v\i\p
+  \i\p\aOR instruction              Inclusive OR\v@OR\v\i\p
+  \i\p\aOR Operator                 OR Operator\vop.OR\v\i\p
+  \i\p\a                            XOR Operator\vop.XOR\v\i\p
+  \i\p\aORG                         Specify Assembly Address\v@ORG\v\i\p
+  \i\p\aOUT instruction             Output to Port\v@OUT\v\i\p
+  \i\p\aOUTS, OUTSB instruction     Output String to Port\v@OUTS\v\i\p
+  \i\p\aOUTSW, OUTSD instruction    Output String to Port\v@OUTS\v\i\p
+
+.context @p
+.freeze 7
+.topic MASM Index [16]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\bP\pЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aPAGE + directive            Page Break/Section Number\v@PagePlus\v\i\p
+  \i\p\aPAGE directive              Set Page Size\v@PAGE\v\i\p
+  \i\p\apercent sign                Expression Operator (%) \v@percent\v\i\p
+  \i\p\aplus sign                   Binary Plus (+) Operator\v@plus\v\i\p
+  \i\p\a                            Unary Plus (+) Operator\v@unaryplus\v\i\p
+  \i\p\aPOP instruction             Pop into Destination\v@POP\v\i\p
+  \i\p\aPOPA/POPAD instruction      Pop All\v@POPA\v\i\p
+  \i\p\aPOPF/POPFD instruction      Pop Flags\v@POPF\v\i\p
+  \i\p\aPROC directive              Define Procedure\v@PROC\v\i\p
+  \i\p\aPROLOGUE/EPILOGUE directive Registerq MacroId\vPROLOGUE\v\i\p
+  \i\p\aPROTO directive             Defining a Prototype\v@PROTO\v\i\p
+  \i\p\aPTR directive               Specify Type for Expression\v@PTR\v\i\p
+  \i\p\aPTRLIST directive           Specify High-Level Type\vptrlist\v\i\p
+  \i\p\aPUBLIC directive            Make Variables Public\v@PUBLIC\v\i\p
+  \i\p\aPURGE directive             Delete Macros from Memory\v@PURGE\v\i\p
+  \i\p\aPUSH instruction            Push Source onto Stack\v@PUSH\v\i\p
+  \i\p\aPUSHA/PUSHAD instruction    Push All\v@PUSHA\v\i\p
+  \i\p\aPUSHF/PUSHFD instruction    Push Flags\v@PUSHF\v\i\p
+
+.context @q
+.freeze 7
+.topic MASM Index [17]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\bQ\pЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aquestion mark               Literal Character (!) Operator\v@exclamation\v\i\p
+  \i\p\a                            Uninitialized Value (?)\v@questionmark\v\i\p
+  \i\p\aQWORD directive             Declare 8-byte variables\v@QWORD\v\i\p
+
+.context @r
+.freeze 7
+.topic MASM Index [18]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\bR\pЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\a.RADIX directive            Set Default Radix\v@.RADIX\v\i\p
+  \i\p\aRCL/RCR instruction         Rotate\v@RCL\v\i\p
+  \i\p\aROL/ROR instruction         Rotate\v@RCL\v\i\p
+  \i\p\aREADONLY/NOREADONLY         Check for Instructions\vREADONLY\v\i\p
+  \i\p\aRECORD directive            Declare Record\v@RECORD\v\i\p
+  \i\p\aREP instruction             Repeat String\v@REP\v\i\p
+  \i\p\aREPcondition instruction    REPcondition\v@REPE\v\i\p
+  \i\p\a.REPEAT directive           Code Loop Blocks (.REPEAT/.UNTIL)\v@.REPEAT\v\i\p
+  \i\p\aREPEAT                      Mark a Block of Statements\v@REPEAT\v\i\p
+  \i\p\aRET/RETN/RETF instruction   Return from Procedure\v@RET\v\i\p
+
+.context @s
+.freeze 7
+.topic MASM Index [19]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\bS\pЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aSAHF instruction            Store AH into Flags\v@SAHF\v\i\p
+  \i\p\aSAL/SAR instruction         Shift\v@SAL\v\i\p
+  \i\p\aPUSH/POPCONTEXT directive   Save/Restore Context Information\v@PUSHCONTEXT\v\i\p
+  \i\p\aSBB instruction             Subtract with Borrow\v@SBB\v\i\p
+  \i\p\aSBYTE directive             Declare signed byte-length variables\v@SBYTE\v\i\p
+  \i\p\aSCAS, SCASB instruction     Scan String Flags\v@SCAS\v\i\p
+  \i\p\aSCASW, SCASD instruction    Scan String Flags\v@SCAS\v\i\p
+  \i\p\aSCOPED/NOSCOPED directive   Localize Label\vSCOPED\v\i\p
+  \i\p\aSDWORD directive            Declare signed double word-length variables\v@SDWORD\v\i\p
+  \i\p\aSEG directive               Return Expression Frame\vSEG\v\i\p
+  \i\p\aSEGMENT directive           Define Program Segment\v@SEGMENT\v\i\p
+  \i\p\asemicolon                   Comment Delimeter (;) \v@semicolon\v\i\p
+  \i\p\a.SEQ directive              Order Segment Output\v@.SEQ\v\i\p
+  \i\p\aSETcond instruction         Set Conditionally\v@SETB\v\i\p
+  \i\p\aSGDT/SIDT/SLDT instruction  Store Descriptor Table\v@SGDT\v\i\p
+  \i\p\aSHL Operator                Shift Expression Left\vop.SHL\v\i\p
+  \i\p\aSHL/SHR instruction         Shift\v@SAL\v\i\p
+  \i\p\aSHLD/SHRD instruction       Double Precision Shift\v@SHLD\v\i\p
+  \i\p\aSHORT directive             Force Label Type to SHORT\v@SHORT\v\i\p
+  \i\p\aSHR Operator                Shift Expression Right\vop.SHR\v\i\p
+  \i\p\aSIZE directive              Variable Size\vSIZE\v\i\p
+  \i\p\aSIZESTR directive           Assign String Length\vSIZESTR\v\i\p
+  \i\p\aslash                       Division (/) Operator\v@slash\v\i\p
+  \i\p\aSMSW instruction            Store Machine Status Word\v@SMSW\v\i\p
+  \i\p\a.STACK directive            Start Stack Segment\v@.STACK\v\i\p
+  \i\p\a.STARTUP directive          Generate Startup Code\v@.STARTUP\v\i\p
+  \i\p\aSTC instruction             Set Carry Flag\v@STC\v\i\p
+  \i\p\aSTD instruction             Set Direction Flag\v@STD\v\i\p
+  \i\p\aSTI instruction             Set Interrupt Flag\v@STI\v\i\p
+  \i\p\aSTOS, STOSB instruction     Store String Data\v@STOS\v\i\p
+  \i\p\aSTOSW, STOSD instruction    Store String Data\v@STOS\v\i\p
+  \i\p\aSTR instruction             Store Task Register\v@STR\v\i\p
+  \i\p\aSTRUCT/STRUC directive      Declare Structure as Data Type\v@STRUCT\v\i\p
+  \i\p\aSUB instruction             Subtract\v@SUB\v\i\p
+  \i\p\aSUBSTR directive            Extract Characters from String\vSUBSTR\v\i\p
+  \i\p\aSUBTITLE/SUBTTL directive   Specify Subtitle\v@SUBTITLE\v\i\p
+  \i\p\aSWORD directive             Declare signed word-length variables\v@SWORD\v\i\p
+
+.context @t
+.freeze 7
+.topic MASM Index [20]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\bT\pЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aTBYTE directive             Declare 10-byte variables\v@TBYTE\v\i\p
+  \i\p\aTEST instruction            Logical Compare\v@TEST\v\i\p
+  \i\p\a.TFCOND directive           Toggle .LISTIF/.NOLISTIF\v@.TFCOND\v\i\p
+  \i\p\aTHIS directive              Specify Same Operand Type\v@THIS\v\i\p
+  \i\p\aTITLE directive             Specify Title\v@TITLE\v\i\p
+  \i\p\aTYPE directive              Return Expression Attributes\vTYPE\v\i\p
+  \i\p\aTYPEDEF directive           Define Type Symbol\v@TYPEDEF\v\i\p
+  \i\p\a                            TYPEDEF Uses\vTYPEDEF.USE\v\i\p
+
+.context @u
+.freeze 7
+.topic MASM Index [21]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\bU\pЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aUNION directive             Declare Union as Data Type\v@UNION\v\i\p
+  \i\p\a.UNTIL/.UNTILCXZ directive  Code Loop Blocks (.REPEAT/.UNTIL)\v@.REPEAT\v\i\p
+  \i\p\aUSES directive              USES (PROC Keyword)\v@USES\v\i\p
+
+.context @v
+.freeze 7
+.topic MASM Index [22]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\bV\pЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aVERR/VERW instruction       Verify Read or Write\v@VERR\v\i\p
+  \i\p\a@Version macro              Assembler Version Macro\v@at_Version\v\i\p
+
+.context @w
+.freeze 7
+.topic MASM Index [23]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\bW\pЁ\aX-Z\v@x\vЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aWAIT instruction            Suspend CPU Execution\v@WAIT\v\i\p
+  \i\p\aWBINVD instruction          Write Back/Invalidate Data Cache\v@WBINVD\v\i\p
+  \i\p\aWHILE directive             Mark a Block Conditionally\v@WHILE\v\i\p
+  \i\p\a.WHILE/.ENDW directive      Code Loop Blocks (.WHILE/.ENDW)\v@.WHILE\v\i\p
+  \i\p\aWIDTH directive             Record/Record-Field Width\v@WIDTH\v\i\p
+  \i\p\aWORD directive              Declare word-length variables\v@WORD\v\i\p
+  \i\p\a@WordSize macro             Word Size Macro\v@at_WordSize\v\i\p
+
+.context @x
+.freeze 7
+.topic MASM Index [24]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\bX-Z\pЁ\a*\v@!\vЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\aXADD instruction            Exchange and Add\v@XADD\v\i\p
+  \i\p\aXCHG instruction            Exchange\v@XCHG\v\i\p
+  \i\p\aXLAT/XLATB instruction      Translate\v@XLAT\v\i\p
+  \i\p\aXOR instruction             Exclusive OR\v@XOR\v\i\p
+
+.context @!
+.freeze 7
+.topic MASM Index [25]
+                                             \i\p\aUp\vpwb.hlp!vx\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ддMASM INDEXдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+  здбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбдбд©
+  Ё\aA\v@a\vЁ\aB\v@b\vЁ\aC\v@c\vЁ\aD\v@d\vЁ\aE\v@e\vЁ\aF\v@f\vЁ\aG\v@g\vЁ\aH\v@h\vЁ\aI\v@i\vЁ\aJ\v@j\vЁ\aK\v@k\vЁ\aL\v@l\vЁ\aM\v@m\vЁ\aN\v@n\vЁ\aO\v@o\vЁ\aP\v@p\vЁ\aQ\v@q\vЁ\aR\v@r\vЁ\aS\v@s\vЁ\aT\v@t\vЁ\aU\v@u\vЁ\aV\v@v\vЁ\aW\v@w\vЁ\aX-Z\v@x\vЁ\b*\pЁ
+  юдададададададададададададададададададададададададады
+
+  \i\p\a/ operator                  Division (/) Operator\v@slash\v\i\p
+  \i\p\a[] operator                 Index ([]) Operator\v@brackets\v\i\p
+  \i\p\a\\ Operator                  Line Continuation (\\) Operator\v@backslash\v\i\p
+  \i\p\a: operator                  Segment Override (:) Operator\v@colon\v\i\p
+  \i\p\a; operator                  Comment Delimeter (;) \v@semicolon\v\i\p
+  \i\p\a;; operator                 Macro Comment Delimeter (;;)\v@semicolons\v\i\p
+  \i\p\a<> operator                 Literal Text (<>) Operator\v@anglebrackets\v\i\p
+  \i\p\a= operator                  Numeric Equate (=)\v@equalSign\v\i\p
+  \i\p\a? directive                 Uninitialized Value (?)\v@questionmark\v\i\p
+  \i\p\a@@ directive                Jump Target (@@)\v@at_at\v\i\p
+  \i\p\a! operator                  Literal Character (!) Operator\v@exclamation\v\i\p
+  \i\p\a$ directive                 Current Line Indicator ($)\v@dollarsign\v\i\p
+  \i\p\a% operator                  Expression Operator (%) \v@percent\v\i\p
+  \i\p\a& operator                  Substitute Operator (&)\v@ampersand\v\i\p
+  \i\p\a* operator                  Multiplication (*) Operator\v@asterisk\v\i\p
+  \i\p\a+ operator                  Binary Plus (+) Operator\v@plus\v\i\p
+  \i\p\a                            Unary Plus (+) Operator\v@unaryplus\v\i\p
+  \i\p\a- operator                  Unary Minus (-) Operator\v@unaryminus\v\i\p
+  \i\p\a                            Binary Minus (-) Operator\v@minus\v\i\p
+  \i\p\a. operator                  Structure-Field (.) Reference\v@period\v\i\p
+  \i\p\a.186 directive              8086/80186 Processor Instructions\v@.186\v\i\p
+  \i\p\a286P directive              286P Processor Instructions (80286-486)\v@.286P\v\i\p
+  \i\p\a.287 directive              80287/387 Coprocessor Instructions\v@.287\v\i\p
+  \i\p\a.386 directive              80386/486 Processor Instructions \v@.386\v\i\p
+  \i\p\a.386P directive             386P Processor Instructions (80386/486)\v@.386P\v\i\p
+  \i\p\a.387 directive              8087/80387 Coprocessor Instructions \v@.387\v\i\p
+  \i\p\a.486 directive              80486 Processor Instructions \v@.486\v\i\p
+  \i\p\a.486P directive             486P Processor Instructions (80486)\v@.486P\v\i\p
+  \i\p\a.8086 directive             8086/88 Processor Instructions \v@.8086\v\i\p
+  \i\p\a.8087 directive             8087 Coprocessor Instructions \v.8087\v\i\p

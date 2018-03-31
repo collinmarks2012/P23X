@@ -1,0 +1,128 @@
+Microsoft (R) Macro Assembler Version 6.11		    07/09/16 21:10:53
+key.asm							     Page 1 - 1
+
+
+				;--------------------------------------------------------------------
+				;	program: 	KEY
+				;
+				;	function: 	KEY reads printable characters from the Standard Input
+				;				The characters are processed one at a time as they are read
+				;				If the character is an upper case letter (A-Z) then write 
+				;				it to the standard output (ah=02h, dl=char, int 21h).
+				;				If the character is a lower case letter (a-z) then convert
+				;				it to upper case and write it to the standard output.
+				;				You can perform this conversion by subtracting 20h 
+				;				from the lower case letter.
+				;				If the character is a blank (20h) or period (2Eh) then 
+				;				write it to the standard output.
+				;				If the character is anything else then do not write it 
+				; 				to the standard output, just throw the character away.
+				;
+				;	owner: 		Collin Marks
+				;
+				;	date: 		06/04/2016
+				;---------------------------------------
+				    .model     small 				; 64k code and 64k data
+					.8086 							; only allow 8086 instructions
+					.stack 256 						; reserve 256 bytes for the stack
+				;---------------------------------------
+ 0000					.data 							; start the data segment
+				;---------------------------------------
+				; Declaration of the variable trans
+				;---------------------------------------
+ 0000  0020 [				tran db 32 dup('*')					; the 32 characters below space
+        2A
+       ]
+ 0020  20					 db ' '							; the space character
+ 0021  0020 [					 db 32 dup('*')					; the 32 character b/w space and 'A'
+        2A
+       ]
+ 0041  41 42 43 44 45 46			 db 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'	; A-Z in upper case
+       47 48 49 4A 4B 4C
+       4D 4E 4F 50 51 52
+       53 54 55 56 57 58
+       59 5A
+ 005B  0006 [					 db 6 dup('*')					; the 6 characters b/w 'Z' and 'a'
+        2A
+       ]
+ 0061  41 42 43 44 45 46			 db 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'	; A-Z in upper case
+       47 48 49 4A 4B 4C
+       4D 4E 4F 50 51 52
+       53 54 55 56 57 58
+       59 5A
+ 007B  0085 [					 db 133 dup('*')				; the remaining characters
+        2A
+       ]
+				;---------------------------------------
+ 0000					.code 							;start the code segment
+				;---------------------------------------
+				; start the program
+				;---------------------------------------
+ 0000				start:
+ 0000  B8 ---- R			mov ax,@data 					;establish addressability to the
+ 0003  8E D8				mov ds,ax 						;data segment for this program
+				;---------------------------------------
+				; While loop will continue to run until a period is inputted
+				;---------------------------------------
+ 0005					whileP:
+ 0005  BB 0000 R				mov bx, offset tran 	; bx will point to the 'morphed' ASCii table
+ 0008  B4 08					mov ah, 8 				; code to read from DOS
+ 000A  CD 21					int 21h					; read a char
+												; if a period is present end the program
+ 000C  3C 2E					cmp al, 46				; check to see if period is inputted
+ 000E  74 0D					je endProgram			; if period is present end the program
+ 0010  D7					xlat				; translate the char to 'morphed' table
+ 0011  3C 2A					cmp al, 42				; check to see if a special character 
+												; was inputted
+ 0013  74 F0					je whileP				; ignore that special character
+ 0015  B4 02					mov ah, 2				; code to write the char
+ 0017  8A D0					mov dl, al				; move the char to dl
+ 0019  CD 21					int 21h					; write the character
+ 001B  EB E8					jmp whileP				; continue through the loop
+					
+				;---------------------------------------
+				; Will effectively end the program
+				;---------------------------------------
+ 001D					endProgram:
+ 001D  B4 02					mov ah, 2			; code to write last char
+ 001F  B2 2E					mov dl, '.'			; write a period to dl register
+ 0021  CD 21					int 21h				; write the period char
+ 0023  B8 4C00					mov ax, 4c00h		; close program process 
+ 0026  CD 21					int 21h
+						end start
+Microsoft (R) Macro Assembler Version 6.11		    07/09/16 21:10:53
+key.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0100	  Word	  Public  'DATA'	
+STACK  . . . . . . . . . . . . .	16 Bit	 0100	  Para	  Stack	  'STACK'	 
+_TEXT  . . . . . . . . . . . . .	16 Bit	 0028	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+endProgram . . . . . . . . . . .	L Near	 001D	  _TEXT	
+start  . . . . . . . . . . . . .	L Near	 0000	  _TEXT	
+tran . . . . . . . . . . . . . .	Byte	 0000	  _DATA	
+whileP . . . . . . . . . . . . .	L Near	 0005	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

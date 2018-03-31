@@ -1,0 +1,1870 @@
+.context F2XM1
+.context @F2XM1
+.topic F2XM1 Instruction
+.freeze 3
+..index F2XM1 instruction, Calculate 2(^X)-1
+ \i\p\aDetail\v@F2XM1.des\v\i\p                                    \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Calculate 2(^X)-1
+
+  \bSyntax:\p   F2XM1
+
+  \bSee also:\p FYL2X, FYL2XP1
+
+  \bDescription:\p
+
+     Calculates Y = 2(^X) - 1 where X is taken from ST. The result, Y,
+     is returned in ST. X must be in the range 0 <= X <= 0.5 on the
+     8087/287, or in the range -1.0 <= X <= +1.0 on the 80387/486.
+.context @F2XM1.des
+.freeze 2
+.topic F2XM1 Instruction
+ \i\p\aSummary\v@F2XM1\v\i\p                                   \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ F2XM1           ³ f2xm1                  ³  87 310-630
+                 ³                        ³ 287 310-630
+                 ³                        ³ 387 211-476
+                 ³                        ³ 486 140-279
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context FABS
+.context @FABS
+.topic FABS Instruction
+.freeze 3
+..index FABS instruction, Absolute Value
+ \i\p\aDetail\v@FABS.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Absolute Value
+
+  \bSyntax:\p   FABS
+
+  \bSee also:\p FCHS, FRNDINT
+
+  \bDescription:\p
+
+     Converts the element in ST to its absolute value.
+.context @FABS.des
+.freeze 2
+.topic FABS Instruction
+ \i\p\aSummary\v@FABS\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FABS            ³ fabs                   ³  87 10-17
+                 ³                        ³ 287 10-17
+                 ³                        ³ 387 22
+                 ³                        ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FADD
+.context FADD
+.context @FADDP
+.context FADDP
+.context @FIADD
+.context FIADD
+.topic FADD Instruction
+.freeze 3
+..index FADD instruction, Floating-Point Add
+..index FADDP instruction, Floating-Point Add and Pop
+..index FIADD instruction, Integer Add
+ \i\p\aDetail\v@FADD.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Add
+
+  \bSyntax:\p   FADD [dest,src]
+            FADDP dest,ST
+            FADD src
+            FIADD src
+
+  \bSee also:\p FSUB, FSUBR
+
+  \bDescription:\p
+
+     Adds the source to the destination and returns the sum in the
+     destination. If two register operands are specified, one must be
+     ST. If a memory operand is specified, the sum replaces the value
+     in ST. Memory operands can be 32- or 64-bit real numbers or 16-
+     or 32-bit integers.
+
+     If no operand is specified, ST is added to ST(1) and the stack is
+     popped; the sum is returned in ST. For FADDP, the source must be
+     ST; the sum is returned in the destination and ST is popped.
+.context @FADD.des
+.freeze 2
+.topic FADD Instruction
+ \i\p\aSummary\v@FADD\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FADD [reg,reg] ³ fadd   st,st(2)         ³  87 70-100
+                ³ fadd   st(5),st         ³ 287 70-100
+                ³ fadd                    ³ 387 to=23-31,fr=26-34
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FADDP reg,ST   ³ faddp  st(6),st         ³  87 75-105
+                ³                         ³ 287 75-105
+                ³                         ³ 387 23-31
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FADD memreal   ³ fadd   QWORD PTR [bx]   ³  87 (s=90-120,s=95-125)+EA
+                ³ fadd   shortreal        ³ 287 s=90-120,l=95-125
+                ³                         ³ 387 s=24-32,l=29-37
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FIADD memint   ³ fiadd  int16            ³  87 (w=102-137,d=108-143)+EA
+                ³ fiadd  warray[di]       ³ 287 w=102-137,d=108-143
+                ³ fiadd  double           ³ 387 w=71-85,d=57-72
+                ³                         ³ 486 w=20-35,d=19-32
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FCHS
+.context FCHS
+.topic FCHS Instruction
+.freeze 3
+..index sign,, changing
+..index FCHS instruction, Change Sign
+ \i\p\aDetail\v@FCHS.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Change Sign
+
+  \bSyntax:\p   FCHS
+
+  \bSee also:\p FABS
+
+  \bDescription:\p
+
+     Reverses the sign of the value in ST.
+.context @FCHS.des
+.freeze 2
+.topic FCHS Instruction
+ \i\p\aSummary\v@FCHS\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCHS            ³ fchs                   ³  87 10-17
+                 ³                        ³ 287 10-17
+                 ³                        ³ 387 24-25
+                 ³                        ³ 486 6
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FCLEX
+.context FCLEX
+.context FNCLEX
+.topic FCLEX Instruction
+.freeze 3
+..index exceptions,, clearing
+..index FCLEX instruction, Clear Exceptions
+..index FNCLEX instruction, Clear Exceptions (No Wait)
+ \i\p\aDetail\v@FCLEX.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Clear Exceptions
+
+  \bSyntax:\p   FCLEX
+            FNCLEX
+
+  \bSee also:\p \aStatus Word\v@statusw\v
+
+  \bDescription:\p
+
+     Clears all exception flags, the busy flag, and bit 7 in the status
+     word. Bit 7 is the interrupt-request flag on the 8087 and the
+     error-status flag on the 80287, 80387, and 80486.
+
+     This instruction has wait and no-wait versions. The wait version
+     (FCLEX) checks for unmasked numeric errors. The no-wait version
+     (FNCLEX) does not. When the .8087 directive is used, the assembler
+     puts the WAIT instruction before the wait versions and the NOP
+     instruction before the no-wait versions.
+
+.context @FCLEX.des
+.freeze 2
+.topic FCLEX Instruction
+ \i\p\aSummary\v@FCLEX\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCLEX           ³ fclex                  ³  87 2-8
+ FNCLEX          ³                        ³ 287 2-8
+                 ³                        ³ 387 11
+                 ³                        ³ 486 7
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  NOTE: The timings reflect the no-wait version of the instruction.
+        The wait version may take additional clock cycles.
+.context @FCOM
+.context FCOM
+.context @FCOMP
+.context FCOMP
+.context @FCOMPP
+.context FCOMPP
+.context @FICOM
+.context FICOM
+.context @FICOMP
+.context FICOMP
+.topic FCOM Instruction
+.freeze 3
+..index FCOM instruction, Floating-Point Compare
+..index FCOMP instruction, Floating-Point Compare and Pop
+..index FCOMPP instruction, Floating-Point Compare and Pop 2x
+..index FICOM instruction, Integer Compare
+..index FICOMP instruction, Integer Compare and Pop
+ \i\p\aDetail\v@FCOM.des\v\i\p                                    \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Compare
+
+  \bSyntax:\p   FCOM [src]
+            FCOMP [src]
+            FCOMPP
+            FICOM src
+            FICOMP src
+
+  \bSee also:\p FTST, FUCOM, FSTSW, SAHF, FXAM, \aStatus Word\v@statusw\v
+
+  \bDescription:\p
+
+     Compares the specified source operand to ST and sets the condition
+     codes of the status word according to the result. The instruction
+     subtracts the source operand from ST without changing either
+     operand. Memory operands can be 32- or 64-bit real numbers or 16-
+     or 32-bit integers.
+
+     If no operand is specified or if two pops are specified, ST is
+     compared to ST(1) and the stack is popped. If one pop is specified
+     with an operand, the operand is compared to ST. If one of the
+     operands is a NAN, an invalid-operation exception occurs.
+     See: FUCOM
+
+     The condition codes for FCOM are as follows:
+
+     \bC3     C2     C1     C0     Meaning\p
+
+     0      0      ?      0      ST > source
+     0      0      ?      1      ST < source
+     1      0      ?      0      ST = source
+     1      1      ?      1      ST not comparable to source
+.context @FCOM.des
+.freeze 2
+.topic FCOM Instruction
+ \i\p\aSummary\v@FCOM\v\i\p                                   \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOM [reg]     ³ fcom   st(2)            ³  87 40-50
+                ³ fcom                    ³ 287 40-50
+                ³                         ³ 387 24
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOMP [reg]    ³ fcomp  st(7)            ³  87 42-52
+                ³ fcomp                   ³ 287 42-52
+                ³                         ³ 387 26
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOMPP         ³ fcompp                  ³  87 45-55
+                ³                         ³ 287 45-55
+                ³                         ³ 387 26
+                ³                         ³ 486 5
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOM memreal   ³ fcom   shortreals[di]   ³  87 (s=60-70,l=65-75)+EA
+                ³ fcom   longreal         ³ 287 s=60-70,l=65-75
+                ³                         ³ 387 s=26,l=31
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOMP memreal  ³ fcomp  longreal         ³  87 (s=63-73,l=67-77)+EA
+                ³ fcomp  shorts[di]       ³ 287 s=63-73,l=67-77
+                ³                         ³ 387 s=26,l=31
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FICOM memint   ³ ficom  double           ³  87 (w=72-86,d=78-91)+EA
+                ³ ficom  warray[di]       ³ 287 w=72-86,d=78-91
+                ³                         ³ 387 w=71-75,d=56-63
+                ³                         ³ 486 w=16-20,d=15-17
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FICOMP memint  ³ ficomp WORD PTR [bp+6]  ³  87 (w=74-88,d=80-93)+EA
+                ³ ficomp darray[di]       ³ 287 w=74-88,d=80-93
+                ³                         ³ 387 w=71-75,d=56-63
+                ³                         ³ 486 w=16-20,d=15-17
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FCOS
+.context FSIN
+.context FCOS
+.context FSINCOS
+.topic FSIN/FCOS/FSINCOS Instructions
+.freeze 3
+..index FCOS instruction, Cosine
+..index cosine, FCOS Instruction
+..index FSIN instruction, Sine
+..index sine, FSINCOS Instruction
+..index FSINCOS instruction, Sine/Cosine
+ \i\p\aDetail\v@FCOS.des\v\i\p                                    \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Sine/Cosine
+            80387/486 Only
+
+  \bSyntax:\p   FSIN
+            FCOS
+            FSINCOS
+
+  \bSee also:\p .387, .486, FPREM, FPREM1, FPTAN
+
+  \bDescription:\p
+
+     FSIN replaces a value in radians in ST with its sine. FCOS
+     replaces a value in radians in ST with its cosine. FSINCOS
+     calculates the sine and cosine of a radian value in ST. The sine
+     replaces the value in ST, and then the cosine is pushed onto the
+     stack.
+
+     If |ST| < 2^63, the C2 bit of the status word is cleared and the
+     sine and/or cosine is calculated. Otherwise, C2 is set and no
+     calculation is performed. ST can be reduced to the required range
+     with FPREM or FPREM1.
+
+.context @FCOS.des
+.freeze 2
+.topic FSIN/FCOS/FSINCOS Instructions
+ \i\p\aSummary\v@FCOS\v\i\p                                   \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSIN           ³ fsin                    ³  87 ÄÄ
+                ³                         ³ 287 ÄÄ
+                ³                         ³ 387 122-771*
+                ³                         ³ 486 257-354œ
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FCOS           ³ fcos                    ³  87 ÄÄ
+                ³                         ³ 287 ÄÄ
+                ³                         ³ 387 123-772*
+                ³                         ³ 486 257-354œ
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSINCOS        ³ fsincos                 ³  87 ÄÄ
+                ³                         ³ 287 ÄÄ
+                ³                         ³ 387 194-809*
+                ³                         ³ 486 292-365œ
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  * For operands with an absolute value greater than pi/4, up to 76
+    additional clocks may be required.
+
+  œ For operands with an absolute value greater than pi/4, add n clocks
+    where n = operand / (pi/4).
+.context @FINCSTP
+.context FINCSTP
+.context FDECSTP
+.topic FINCSTP/FDECSTP Instructions
+.freeze 3
+..index stack pointer,, incrementing, FINCSTP Instruction
+..index stack pointer,, decrementing, FDECSTP Instruction
+..index FINCSTP instruction, Increment Stack Pointer
+..index FDECSTP instruction, Decrement Stack Pointer
+ \i\p\aDetail\v@FINCSTP.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Increment or Decrement Stack Pointer
+
+  \bSyntax:\p   FINCSTP
+            FDECSTP
+
+  \bDescription:\p
+
+     Increments or decrements the stack-top pointer in the status word.
+     No tags or registers are changed, and no data is transferred. If
+     the stack pointer is 7, FINCSTP changes it to 0. If the stack
+     pointer is 0, FDECSTP changes it to 7.
+.context @FINCSTP.des
+.freeze 2
+.topic FINCSTP/FDECSTP Instructions
+ \i\p\aSummary\v@FINCSTP\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FINCSTP        ³ fincstp                 ³  87 6-12
+                ³                         ³ 287 6-12
+                ³                         ³ 387 21
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDECSTP        ³ fdecstp                 ³  87 6-12
+                ³                         ³ 287 6-12
+                ³                         ³ 387 22
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FDISI
+.context FENI
+.context FNENI
+.context FDISI
+.context FNDISI
+.topic FDISI/FENI Instructions
+.freeze 3
+..index FENI instruction, Enable Coprocessor Interrupts
+..index enabling interrupts, FENI Instruction
+..index FNENI instruction, Enable Interrupts (No Wait)
+..index FDISI instruction, Disable Coprocessor Interrupts
+..index disabling interrupts, FDISI Instruction
+..index FNDISI instruction, Disable Interrupts (No Wait)
+ \i\p\aDetail\v@FDISI.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Enable or Disable Interrupts
+            8087 Only
+
+  \bSyntax:\p   FDISI
+            FNDISI
+            FENI
+            FNENI
+
+  \bSee also:\p .8087
+
+  \bDescription:\p
+
+     FDISI disables interrupts by setting the interrupt-enable mask in
+     the control word; FENI enables them by clearing the interrupt-
+     enable mask. Since the 80287, 80387, and 80486 do not have an
+     interrupt-enable mask, FDISI and FENI are recognized but ignored
+     on these coprocessors.
+
+     These instructions have wait and no-wait versions. The wait
+     versions (FDISI and FENI) check for unmasked numeric errors; the
+     no-wait versions (FNDISI and FNENI) do not. When the .8087
+     directive is used, the assembler puts the WAIT instruction before
+     the wait versions and the NOP instruction before the no-wait
+     versions.
+
+.context @FDISI.des
+.freeze 2
+.topic FDISI/FENI Instructions
+ \i\p\aSummary\v@FDISI\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDISI          ³ fdisi                   ³  87 2-8
+ FNDISI         ³                         ³ 287 2
+                ³                         ³ 387 2
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FENI           ³ feni                    ³  87 2-8
+ FNENI          ³                         ³ 287 2
+                ³                         ³ 387 2
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  NOTE: The timings reflect the no-wait version of the instructions.
+        The wait versions may take additional clock cycles.
+
+.context @FDIV
+.context FDIV
+.context @FDIVP
+.context FDIVP
+.context @FIDIV
+.context FIDIV
+.topic FDIV Instructions
+.freeze 3
+..index FDIV instruction, Floating-Point Divide
+..index FDIVP instruction, Floating-Point Divide and Pop
+..index FIDIV instruction, Integer Divide
+ \i\p\aDetail\v@FDIV.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Divide
+
+  \bSyntax:\p   FDIV [dest,src]
+            FDIVP dest,ST
+            FDIV src
+            FIDIV src
+
+  \bSee also:\p FDIVR, FMUL
+
+  \bDescription:\p
+
+     Divides the destination by the source and returns the quotient in
+     the destination. If two register operands are specified, one must
+     be ST. If a memory operand is specified, the quotient replaces the
+     value in ST. Memory operands can be 32- or 64-bit real numbers or
+     16- or 32-bit integers.
+
+     If no operand is specified, ST(1) is divided by ST and the stack
+     is popped; the result is returned in ST. For FDIVP, the source
+     must be ST; the quotient is returned in the destination register
+     and ST is popped.
+.context @FDIV.des
+.freeze 2
+.topic FDIV Instruction
+ \i\p\aSummary\v@FDIV\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIV [reg,reg] ³ fdiv   st,st(2)         ³  87 193-203
+                ³ fdiv   st(5),st         ³ 287 193-203
+                ³ fdiv                    ³ 387 to=88,fr=91
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIVP reg,ST   ³ fdivp  st(6),st         ³  87 197-207
+                ³                         ³ 287 197-207
+                ³                         ³ 387 91
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIV memreal   ³ fdiv   DWORD PTR [bx]   ³  87 (s=215-225,l=220-230)+EA
+                ³ fdiv   shortreal[di]    ³ 287 s=215-225,l=220-230
+                ³ fdiv   longreal         ³ 387 s=89,l=94
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FIDIV memint   ³ fidiv  int16            ³  87 (w=224-238,d=230-243)+EA
+                ³ fidiv  warray[di]       ³ 287 w=224-238,d=230-243
+                ³ fidiv  double           ³ 387 w=136-140,d=120-127
+                ³                         ³ 486 w=85-89,d=84-86
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FDIVR
+.context FDIVR
+.context @FDIVRP
+.context FDIVRP
+.context @FIDIVR
+.context FIDIVR
+.topic FDIVR Instructions
+.freeze 3
+..index FDIVR instruction, Floating-Point Divide Reversed
+..index FDIVRP instruction, Floating-Point Divide Reversed and Pop
+..index FIDIVR instruction, Integer Divide Reversed
+ \i\p\aDetail\v@FDIVR.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Divide Reversed
+
+  \bSyntax:\p   FDIVR [dest,src]
+            FDIVRP dest,ST
+            FDIVR src
+            FIDIVR src
+
+  \bSee also:\p FDIV, FMUL
+
+  \bDescription:\p
+
+     Divides the source by the destination and returns the quotient in
+     the destination. If two register operands are specified, one must
+     be ST. If a memory operand is specified, the quotient replaces the
+     value in ST. Memory operands can be 32- or 64-bit real numbers or
+     16- or 32-bit integers.
+
+     If no operand is specified, ST is divided by ST(1) and the stack
+     is popped; the result is returned in ST. For FDIVRP, the source
+     must be ST; the quotient is returned in the destination register
+     and ST is popped.
+.context @FDIVR.des
+.freeze 2
+.topic FDIVR Instruction
+ \i\p\aSummary\v@FDIVR\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIVR [reg,reg]³ fdivr  st,st(2)         ³  87 194-204
+                ³ fdivr  st(5),st         ³ 287 194-204
+                ³ fdivr                   ³ 387 to=88,fr=91
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIVRP reg,ST  ³ fdivrp st(6),st         ³  87 198-208
+                ³                         ³ 287 198-208
+                ³                         ³ 387 91
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FDIVR memreal  ³ fdivr  longreal         ³  87 (s=216-226,l=221-231)+EA
+                ³ fdivr  shortreal[di]    ³ 287 s=216-226,l=221-231
+                ³                         ³ 387 s=89,l=94
+                ³                         ³ 486 73
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FIDIVR memint  ³ fidivr double           ³  87 (w=225-239,d=231-245)+EA
+                ³ fidivr warray[di]       ³ 287 w=225-239,d=231-245
+                ³                         ³ 387 w=135-141,d=121-128
+                ³                         ³ 486 w=85-89,d=84-86
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FFREE
+.context FFREE
+.topic FFREE Instruction
+.freeze 3
+..index FFREE instruction, Free Register
+ \i\p\aDetail\v@FFREE.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Free Register
+
+  \bSyntax:\p   FFREE dest
+
+  \bSee also:\p \aCoprocessor Environment\v@coprocenv\v
+
+  \bDescription:\p
+
+     Changes the specified register's tag to empty without changing the
+     contents of the register.
+.context @FFREE.des
+.freeze 2
+.topic FFREE Instruction
+ \i\p\aSummary\v@FFREE\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FFREE ST(i)    ³ ffree  st(3)            ³  87 9-16
+                ³                         ³ 287 9-16
+                ³                         ³ 387 18
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FINIT
+.context FINIT
+.context @FNINIT
+.context FNINIT
+.topic FINIT Instruction
+.freeze 3
+..index FINIT instruction, Initialize Coprocessor
+..index FNINIT instruction, Initialize Coprocessor (No Wait)
+ \i\p\aDetail\v@FINIT.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Initialize Coprocessor
+
+  \bSyntax:\p    FINIT
+             FNINIT
+
+  \bDescription:\p
+
+     Initializes the coprocessor and resets all the registers and flags
+     to their default values. On the 80387/486, the condition codes of
+     the status word are cleared. On the 8087/287, they are unchanged.
+
+     This instruction has wait and no-wait versions. The wait version
+     (FINIT) checks for unmasked numeric errors; the no-wait version
+     (FNINIT) does not. When the .8087 directive is used, the assembler
+     puts the WAIT instruction before the wait versions and the NOP
+     instruction before the no-wait versions.
+
+.context @FINIT.des
+.freeze 2
+.topic FINIT Instruction
+ \i\p\aSummary\v@FINIT\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FINIT          ³ finit                   ³  87 2-8
+ FNINIT         ³                         ³ 287 2-8
+                ³                         ³ 387 33
+                ³                         ³ 486 17
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  NOTE: The timings reflect the no-wait version of the instruction.
+        The wait version may take additional clock cycles.
+.context @FLD
+.context FLD
+.context @FILD
+.context FILD
+.context @FBLD
+.context FBLD
+.topic FLD Instruction
+.freeze 3
+..index FLD instruction, Floating-Point Load
+..index FILD instruction, Integer Load
+..index FBLD instruction, BCD Load
+ \i\p\aDetail\v@FLD.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Load
+
+  \bSyntax:\p   FLD src
+            FILD src
+            FBLD src
+
+  \bSee also:\p \aFLDconst\v@FLD1\v, FST, FXCH
+
+  \bDescription:\p
+
+     Pushes the specified operand onto the stack. All memory operands
+     are automatically converted to temporary-real numbers before being
+     loaded.
+
+     Memory operands can be 32-, 64-, or 80-bit real numbers or 16-,
+     32-, or 64-bit integers.
+.context @FLD.des
+.freeze 2
+.topic FLD Instruction
+ \i\p\aSummary\v@FLD\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLD reg      ³ fld   st(3)            ³  87 17-22
+              ³                        ³ 287 17-22
+              ³                        ³ 387 14
+              ³                        ³ 486  4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLD memreal  ³ fld   longreal         ³  87 (s=38-56,l=40-60,t=53-65)+EA
+              ³ fld   shortarray[bx+di]³ 287 s=38-56,l=40-60,t=53-65
+              ³ fld   tempreal         ³ 387 s=20,l=25,t=44
+              ³                        ³ 486 s=3,l=3,t=6
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FILD memint  ³ fild  mem16            ³  87 (w=46-54,d=52-60,q=60-68)+EA
+              ³ fild  DWORD PTR [bx]   ³ 287 w=46-54,d=52-60,q=60-68
+              ³ fild  quads[si]        ³ 387 w=61-65,d=45-52,q=56-67
+              ³                        ³ 486 w=13-16,d=9-12,q=10-18
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FBLD membcd  ³ fbld  packbcd          ³  87 (290-310)+EA
+              ³                        ³ 287 290-310
+              ³                        ³ 387 266-275
+              ³                        ³ 486 70-103
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FLD1
+.context FLD1
+.context @FLDZ
+.context FLDZ
+.context @FLDPI
+.context FLDPI
+.context @FLDL2E
+.context FLDL2E
+.context @FLDL2T
+.context FLDL2T
+.context @FLDLG2
+.context FLDLG2
+.context @FLDLN2
+.context FLDLN2
+.topic FLDconst Instruction
+.freeze 3
+..index constants, loading
+..index constant,,1.0, FLD1 Instruction
+..index FLD1 instruction, Load Constant 1.0
+..index constant,,0.0, FLDZ Instruction
+..index FLDZ instruction, Load Constant 0.0
+..index constant,,Pi, FLDPI Instruction
+..index FLDPI instruction, Load Constant Pi
+..index constant,,Log2(e), FLDL2E Instruction
+..index FLDL2E instruction, Load Constant Log2(e)
+..index constant,,Log2(10), FLDL2T Instruction
+..index FLDL2T instruction, Load Constant Log2(10)
+..index FLDLG2 instruction, Load Constant Log10(2)
+..index constant,,Log10(2), FLDLG2 Instruction
+..index FLDLN2 instruction, Load Constant Ln(2)
+..index constant,,Ln(2), FLDLN2 Instruction
+ \i\p\aDetail\v@FLD1.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Load Constant
+
+  \bSyntax:\p   FLDconst
+
+  \bSee also:\p FLD
+
+  \bDescription:\p
+
+     Pushes a constant onto the stack. The following constants can be
+     loaded:
+
+     \bInstruction\p     \bConstant\p
+
+     FLD1            +1.0
+
+     FLDZ            +0.0
+
+     FLDPI           pi
+
+     FLDL2E          Log (e)
+                        2
+
+     FLDL2T          Log (10)
+                        2
+
+     FLDLG2          Log  (2)
+                        10
+
+     FLDLN2          Log (2)
+                        e
+.context @FLD1.des
+.freeze 2
+.topic FLDconst Instruction
+ \i\p\aSummary\v@FLD1\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLD1           ³ fld1                    ³  87 15-21
+                ³                         ³ 287 15-21
+                ³                         ³ 387 24
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDZ           ³ fldz                    ³  87 11-17
+                ³                         ³ 287 11-17
+                ³                         ³ 387 20
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDPI          ³ fldpi                   ³  87 16-22
+                ³                         ³ 287 16-22
+                ³                         ³ 387 40
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDL2E         ³ fldl2e                  ³  87 15-21
+                ³                         ³ 287 15-21
+                ³                         ³ 387 40
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDL2T         ³ fldl2t                  ³  87 16-22
+                ³                         ³ 287 16-22
+                ³                         ³ 387 40
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDLG2         ³ fldlg2                  ³  87 18-24
+                ³                         ³ 287 18-24
+                ³                         ³ 387 41
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDLN2         ³ fldln2                  ³  87 17-23
+                ³                         ³ 287 17-23
+                ³                         ³ 387 41
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FLDCW
+.context FLDCW
+.context FSTCW
+.context FNSTCW
+.topic FLDCW/FSTCW Instructions
+.freeze 3
+..index FLDCW instruction, Load Control Word
+..index FSTCW instruction, Store Control Word
+..index FNSTCW instruction, Store Control Word (No Wait)
+ \i\p\aDetail\v@FLDCW.des\v\i\p                                    \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Load or Store Control Word
+
+  \bSyntax:\p   FLDCW src
+            FSTCW dest
+            FNSTCW dest
+
+  \bSee also:\p FSTSW, FSTENV, FSAVE, \aControl Word\v@controlW\v
+
+  \bDescription:\p
+
+     FLDCW loads the specified word into the coprocessor control word.
+     FSTCW stores the control word to a specified 16-bit memory
+     operand.
+
+     FSTCW has wait and no-wait versions. The wait version (FSTCW)
+     checks for unmasked numeric errors; the no-wait version (FNSTCW)
+     does not. When the .8087 directive is used, the assembler puts the
+     WAIT instruction before the wait version and the NOP instruction
+     before the no-wait version.
+
+.context @FLDCW.des
+.freeze 2
+.topic FLDCW/FSTCW Instructions
+ \i\p\aSummary\v@FLDCW\v\i\p                                   \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDCW mem16    ³ fldcw  ctrlword         ³  87 (7-14)+EA
+                ³                         ³ 287 7-14
+                ³                         ³ 387 19
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTCW mem16    ³ fstcw  ctrlword         ³  87 12-18
+ FNSTCW mem16   ³                         ³ 287 12-18
+                ³                         ³ 387 15
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  NOTE: The timings reflect the no-wait version of the FSTCW. The wait
+        version may take additional clock cycles.
+.context @FLDENV
+.context FLDENV
+.context FLDENVW
+.context FLDENVD
+.context FSTENV
+.context FSTENVW
+.context FSTENVD
+.context FNSTENV
+.context FNSTENVW
+.context FNSTENVD
+.topic FSTENV/FLDENV Instructions
+.freeze 3
+..index FLDENV instruction, Load Environment State (Byte)
+..index FLDENVW instruction, Load Environment State (Word)
+..index FLDENVD instruction, Load Environment State (Doubleword)
+..index FSTENV instruction, Store Environment State (Byte)
+..index FSTENVW instruction, Store Environment State (Word)
+..index FNSTENVD instruction, Store Environment State (Doubleword, No Wait)
+..index FSTENVD instruction, Store Environment State (Doubleword)
+..index FNSTENV instruction, Store Environment State (Byte, No Wait)
+..index FNSTENVW instruction, Store Environment State (Word, No Wait)
+ \i\p\aDetail\v@FLDENV.des\v\i\p                                    \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Load or Store Environment State
+
+  \bSyntax:\p   FSTENV dest
+            FNSTENV dest
+            FLDENV mem
+
+  \bSee also:\p FSAVE, FSTCW, FSTSW, \aCoprocessor Environment\v@coprocenv\v
+
+  \bDescription:\p
+
+     FSTENV stores the 14-byte coprocessor environment state to a
+     specified memory location. FLDENV loads it from a specified memory
+     location.
+
+     The environment state includes the control word, status word, tag
+     word, instruction pointer, and operand pointer. On the 80387/486
+     in 32-bit mode, the environment state is 28 bytes.
+
+     The FSTENV instruction has wait and no-wait versions. The wait
+     version (FSTENV) checks for unmasked numeric errors; the no-wait
+     version (FNSTENV) does not. When the .8087 directive is used, the
+     assembler puts the WAIT instruction before the wait version and
+     the NOP instruction before the no-wait version.
+.context @FLDENV.des
+.freeze 2
+.topic FSTENV/FLDENV Instructions
+ \i\p\aSummary\v@FLDENV\v\i\p                                   \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FLDENV mem     ³ fldenv [bp+10]          ³  87 (35-45)+EA
+ FLDENVW mem*   ³                         ³ 287 35-45
+ FLDENVD mem*   ³                         ³ 387 71
+                ³                         ³ 486 44,pm=34
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTENV mem     ³ fstenv [bp-14]          ³  87 (40-50)+EA
+ FSTENVW mem*   ³                         ³ 287 40-50
+ FSTENVD mem*   ³                         ³ 387 103-104
+ FNSTENV mem    ³                         ³ 486 67,pm=56
+ FNSTENVW mem*  ³                         ³
+ FNSTENVD mem*  ³                         ³
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  * 80387/486 only.
+
+  NOTE: The timings reflect the no-wait versions of FSTENV. The wait
+        versions may take additional clock cycles.
+.context @FMUL
+.context FMUL
+.context @FMULP
+.context FMULP
+.context @FIMUL
+.context FIMUL
+.topic FMUL Instruction
+.freeze 3
+..index FMUL instruction, Floating-Point Multiply
+..index FMULP instruction, Floating-Point Multiply and Pop
+..index FIMUL instruction, Integer Multiply
+ \i\p\aDetail\v@FMUL.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Multiply
+
+  \bSyntax:\p   FMUL [dest,src]
+            FMULP dest,ST
+            FMUL src
+            FIMUL src
+
+  \bSee also:\p FDIV, FDIVR
+
+  \bDescription:\p
+
+     Multiplies the source by the destination and returns the product
+     in the destination. If two register operands are specified, one
+     must be ST. If a memory operand is specified, the product replaces
+     the value in ST. Memory operands can be 32- or 64-bit real numbers
+     or 16- or 32-bit integers.
+
+     If no operand is specified, ST(1) is multiplied by ST and the
+     stack is popped; the product is returned in ST. For FMULP, the
+     source must be ST; the product is returned in the destination
+     register and ST is popped.
+.context @FMUL.des
+.freeze 2
+.topic FMUL Instruction
+ \i\p\aSummary\v@FMUL\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FMUL [reg,reg] ³ fmul   st,st(2)        ³  87 130-145 (90-105)*
+                ³ fmul   st(5),st        ³ 287 130-145 (90-105)*
+                ³ fmul                   ³ 387 to=46-54 (49),fr=29-57 (52)œ
+                ³                        ³ 486 16
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FMULP reg,ST   ³ fmulp  st(6),st        ³  87 134-148 (94-108)*
+                ³                        ³ 287 134-148 (94-108)*
+                ³                        ³ 387 29-57 (52)œ
+                ³                        ³ 486 16
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FMUL memreal   ³ fmul   DWORD PTR [bx]  ³  87 (s=110-125,l=154-168)+EA
+                ³ fmul   shortreal[di+3] ³ 287 s=110-125,l=154-168
+                ³ fmul   longreal        ³ 387 s=27-35,l=32-57
+                ³                        ³ 486 s=11,l=14
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FIMUL memint   ³ fimul  int16           ³  87 (w=124-138,d=130-144)+EA
+                ³ fimul  warray[di]      ³ 287 w=124-138,d=130-144
+                ³ fimul  double          ³ 387 w=76-87,d=61-82
+                ³                        ³ 486 w=23-27,d=22-24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  * The clocks in parentheses show times for short valuesÄÄthose with 40
+    trailing zeros in their fraction because they were loaded from a
+    short-real memory operand.
+
+  œ The clocks in parentheses show typical speeds.
+
+   If the register operand is a short valueÄÄhaving 40 trailing zeros
+    in its fraction because it was loaded from a short-real memory
+    operandÄÄthen the timing is (112-126)+EA on the 8087 or 112-126 on
+    the 80287.
+
+.context @FNOP
+.context FNOP
+.topic FNOP Instruction
+.freeze 3
+..index FNOP instruction, No Operation
+ \i\p\aDetail\v@FNOP.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    No Operation
+
+  \bSyntax:\p   FNOP
+
+  \bSee also:\p NOP
+
+  \bDescription:\p
+
+     Performs no operation. FNOP can be used for timing delays or
+     alignment.
+.context @FNOP.des
+.freeze 2
+.topic FNOP Instruction
+ \i\p\aSummary\v@FNOP\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FNOP           ³ fnop                    ³  87 10-16
+                ³                         ³ 287 10-16
+                ³                         ³ 387 12
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FPATAN
+.context FPATAN
+.context @FPTAN
+.context FPTAN
+.topic FPATAN/FPTAN Instructions
+.freeze 3
+..index FPATAN instruction, Partial Arctangent
+..index arctangent, FPATAN Instruction
+..index FPTAN instruction, Partial Tangent
+..index tangent, FPTAN Instruction
+ \i\p\aDetail\v@FPATAN.des\v\i\p                                    \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Partial Arctangent and Tangent
+
+  \bSyntax:\p   FPATAN
+            FPTAN
+
+  \bSee also:\p FSIN
+
+  \bDescription:\p
+
+     FPATAN finds the partial tangent by calculating Z = ARCTAN(Y / X)
+     where X is taken from ST and Y from ST(1). On the 8087/287, Y and
+     X must be in the range 0 <= Y < X < infinity. On the 80387/486,
+     there is no restriction on X and Y. X is popped from the stack and
+     Z replaces Y in ST.
+
+     FPTAN finds the partial tangent by calculating Y / X = TAN(Z). Z
+     is taken from ST. Z must be in the range 0 <= Z <= pi/4 on the
+     8087/287. On the 80387/486, |Z| must be less than 2^63. The result
+     is the ratio Y / X. Y replaces Z, and X is pushed into ST. Thus, Y
+     is returned in ST(1) and X in ST.
+
+.context @FPATAN.des
+.freeze 2
+.topic FPATAN/FPTAN Instructions
+ \i\p\aSummary\v@FPATAN\v\i\p                                   \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FPATAN         ³ fpatan                  ³  87 250-800
+                ³                         ³ 287 250-800
+                ³                         ³ 387 314-487
+                ³                         ³ 486 218-303
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FPTAN          ³ fptan                   ³  87 30-540
+                ³                         ³ 287 30-540
+                ³                         ³ 387 191-497*
+                ³                         ³ 486 200-273œ
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  * For operands with an absolute value greater than pi/4, up to 76
+    additional clocks may be required.
+
+  œ For operands with an absolute value greater than pi/4, add n clocks
+    where n = operand / (pi/4).
+.context @FPREM
+.context FPREM
+.context FPREM1
+.topic FPREM/FPREM1 Instructions
+.freeze 3
+..index testing control flags
+..index FPREM instruction, Partial Remainder
+..index FPREM1 instruction, Partial Remainder
+ \i\p\aDetail\v@FPREM.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Partial Remainder
+
+  \bSyntax:\p   FPREM
+            FPREM1 (80387/487 only)
+
+  \bDescription:\p
+
+     Calculates the remainder of ST divided by ST(1); the result is
+     returned in ST. The remainder retains the same sign as the original
+     dividend. The calculation uses the following formula:
+
+          remainder = ST - ST(1) * quotient
+
+     For FPREM, the quotient is the exact value obtained by chopping
+     ST / ST(1) toward 0. For FPREM1, the quotient is the integer
+     nearest to the exact value of ST / ST(1). When two integers are
+     equally close to the given value, the even integer is used. FPREM1
+     conforms to the IEEE standard.
+
+     These instructions are normally used in a loop that repeats until
+     the reduction is complete, as indicated by the condition codes of
+     the status word.
+
+     The condition codes for FPREM and FPREM1 are as follows:
+
+     \bC3     C2     C1     C0     Meaning\p
+
+     ?      1      ?      ?      Incomplete reduction
+     0      0      0      0      Quotient MOD 8 = 0
+     0      0      0      1      Quotient MOD 8 = 4
+     0      0      1      0      Quotient MOD 8 = 1
+     0      0      1      1      Quotient MOD 8 = 5
+     1      0      0      0      Quotient MOD 8 = 2
+     1      0      0      1      Quotient MOD 8 = 6
+     1      0      1      0      Quotient MOD 8 = 3
+     1      0      1      1      Quotient MOD 8 = 7
+
+.context @FPREM.des
+.freeze 2
+.topic FPREM/FPREM1 Instructions
+ \i\p\aSummary\v@FPREM\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FPREM          ³ fprem                   ³  87 15-190
+                ³                         ³ 287 15-190
+                ³                         ³ 387 74-155
+                ³                         ³ 486 70-138
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FPREM1         ³ fprem1                  ³  87 ÄÄ
+                ³                         ³ 287 ÄÄ
+                ³                         ³ 387 95-185
+                ³                         ³ 486 72-167
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FRNDINT
+.context FRNDINT
+.topic FRNDINT Instruction
+.freeze 3
+..index FRNDINT instruction, Round to Integer
+..index round
+ \i\p\aDetail\v@FRNDINT.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Round to Integer
+
+  \bSyntax:\p   FRNDINT
+
+  \bSee also:\p FABS
+
+  \bDescription:\p
+
+     Rounds ST from a real number to an integer. The rounding control
+     (RC) field of the control word specifies the rounding method.
+
+.context @FRNDINT.des
+.freeze 2
+.topic FRNDINT Instruction
+ \i\p\aSummary\v@FRNDINT\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FRNDINT        ³ frndint                 ³  87 16-50
+                ³                         ³ 287 16-50
+                ³                         ³ 387 66-80
+                ³                         ³ 486 21-30
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FSAVE
+.context FSAVE
+.context FNSAVE
+.context FSAVEW
+.context FSAVED
+.context FNSAVEW
+.context FNSAVED
+.context FRSTOR
+.context FRSTORW
+.context FRSTORD
+.topic FSAVE/FRSTOR Instructions
+.freeze 3
+..index FSAVE instruction, Save Coprocessor State (Byte)
+..index FSAVEW instruction, Save Coprocessor State (Word)
+..index FSAVED instruction, Save Coprocessor State (Doubleword)
+..index FNSAVE instruction, Save Coprocessor State (No Wait)
+..index FNSAVEW instruction, Save Coprocessor State (No Wait)
+..index FNSAVED instruction, Save Coprocessor State (No Wait)
+..index FRSTOR instruction, Store Coprocessor State (Byte)
+..index FRSTORW instruction, Store Coprocessor State (Word)
+..index FRSTORD instruction, Store Coprocessor State (Doubleword)
+ \i\p\aDetail\v@FSAVE.des\v\i\p                                    \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Save or Restore Coprocessor State
+
+  \bSyntax:\p   FSAVE dest
+            FNSAVE dest
+            FRSTOR src
+
+  \bSee also:\p FSTENV, FSTSW, FSTCW, \aCoprocessor Environment\v@coprocenv\v
+
+  \bDescription:\p
+
+     FSAVE stores the 94-byte coprocessor state to a specified memory
+     location; FRSTOR restores it from a specified memory location.
+
+     In 32-bit mode on the 80387/486, the environment state takes 108
+     bytes.
+
+     FSAVE has wait and no-wait versions. The wait version (FSAVE)
+     checks for unmasked numeric errors; the no-wait version (FNSAVE)
+     does not. After saving the state, the coprocessor is initialized
+     as if FINIT had been executed.
+
+     When the .8087 directive is used, the assembler puts the WAIT
+     instruction before the wait version and the NOP instruction before
+     the no-wait version.
+.context @FSAVE.des
+.freeze 2
+.topic FSAVE/FRSTOR Instructions
+ \i\p\aSummary\v@FSAVE\v\i\p                                   \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSAVE mem      ³ fsave  [bp-94]          ³  87 (197-207)+EA
+ FSAVEW mem*    ³ fsave  cobuffer         ³ 287 œ
+ FSAVED mem*    ³                         ³ 387 375-376
+ FNSAVE mem     ³                         ³ 486 154,pm=143
+ FNSAVEW mem*   ³                         ³
+ FNSAVED mem*   ³                         ³
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FRSTOR mem     ³ frstor [bp-94]          ³  87 (197-207)+EA
+ FRSTORW mem*   ³                         ³ 287 œ
+ FRSTORD mem*   ³                         ³ 387 308
+                ³                         ³ 486 131,pm=120
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  * 80387/486 only.
+
+  œ Clock counts are not meaningful in determining overall execution
+    time of this instruction. Timing is determined by operand
+    transfers.
+
+  NOTE: The timings reflect the no-wait versions of FSAVE. The wait
+        versions may take additional clock cycles.
+.context @FSCALE
+.context FSCALE
+.topic FSCALE Instruction
+.freeze 3
+..index FSCALE instruction, Scale
+..index scale
+ \i\p\aDetail\v@FSCALE.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Scale
+
+  \bSyntax:\p   FSCALE
+
+  \bSee also:\p FSQRT
+
+  \bDescription:\p
+
+     Scales by powers of 2 by calculating the function Y = Y * 2^X. X
+     is the scaling factor taken from ST(1), and Y is the value to be
+     scaled from ST. The scaled result replaces the value in ST; the
+     scaling factor remains in ST(1). If the scaling factor is not an
+     integer, it will be truncated toward zero before the scaling.
+
+     On the 8087/287 processors, if X is not in the range -2^15 <= X < 2^15
+     or if X is in the range 0 < X < 1, the result will be undefined. The
+     80387/486 processors have no restrictions on the range of operands.
+.context @FSCALE.des
+.freeze 2
+.topic FSCALE Instruction
+ \i\p\aSummary\v@FSCALE\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSCALE         ³ fscale                  ³  87 32-38
+                ³                         ³ 287 32-38
+                ³                         ³ 387 67-86
+                ³                         ³ 486 30-32
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FSETPM
+.context FSETPM
+.topic FSETPM Instruction
+.freeze 3
+..index FSETPM instruction, Set Protected Mode
+..index protected mode, Set Coprocessor
+ \i\p\aDetail\v@FSETPM.des\v\i\p                                    \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Set Protected Mode
+            80287 Only
+
+  \bSyntax:\p   FSETPM
+
+  \bSee also:\p .287
+
+  \bDescription:\p
+
+     Sets the 80287 to protected mode. The instruction and operand
+     pointers are in the protected-mode format after this instruction.
+     On the 80387/486, FSETPM is recognized but interpreted as the FNOP
+     instruction, since the 80386/486 processors handle addressing
+     identically in real and protected modes.
+.context @FSETPM.des
+.freeze 2
+.topic FSETPM Instruction
+ \i\p\aSummary\v@FSETPM\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSETPM         ³ fsetpm                  ³  87 ÄÄ
+                ³                         ³ 287 2-8
+                ³                         ³ 387 12
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FSQRT
+.context FSQRT
+.topic FSQRT Instruction
+.freeze 3
+..index FSQRT instruction, Square Root
+..index square root, FSQRT Instruction
+ \i\p\aDetail\v@FSQRT.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Square Root
+
+  \bSyntax:\p   FSQRT
+
+  \bSee also:\p FSCALE
+
+  \bDescription:\p
+
+     Replaces the value of ST with its square root. The square root
+     of -0 is -0.
+.context @FSQRT.des
+.freeze 2
+.topic FSQRT Instruction
+ \i\p\aSummary\v@FSQRT\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSQRT          ³ fsqrt                   ³  87 180-186
+                ³                         ³ 287 180-186
+                ³                         ³ 387 122-129
+                ³                         ³ 486 83-87
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FST
+.context FST
+.context @FSTP
+.context FSTP
+.context @FIST
+.context FIST
+.context @FISTP
+.context FISTP
+.context @FBSTP
+.context FBSTP
+.topic FST Instruction
+.freeze 3
+..index FST instruction, Store Floating-Point ST
+..index FSTP instruction, Store Floating-Point ST and Pop
+..index FIST instruction, Store Integer ST
+..index FISTP instruction, Store Integer ST and Pop
+..index FBSTP instruction, Store BCD ST and Pop
+ \i\p\aDetail\v@FST.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Store
+
+  \bSyntax:\p   FST dest
+            FSTP dest
+            FIST dest
+            FISTP dest
+            FBSTP dest
+
+  \bDescription:\p
+
+     Stores the value in ST to the specified memory location or
+     register. Temporary-real values in registers are converted to the
+     appropriate integer, BCD, or floating-point format as they are
+     stored. With FSTP, FISTP, and FBSTP, the ST register value is
+     popped off the stack.
+
+     Memory operands can be 32-, 64-, or 80-bit real numbers for FSTP,
+     or 16-, 32-, or 64-bit integers for FISTP.
+.context @FST.des
+.freeze 2
+.topic FST Instruction
+ \i\p\aSummary\v@FST\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FST reg       ³ fst    st(6)          ³  87 15-22
+               ³ fst    st             ³ 287 15-22
+               ³                       ³ 387 11
+               ³                       ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTP reg      ³ fstp   st             ³  87 17-24
+               ³ fstp   st(3)          ³ 287 17-24
+               ³                       ³ 387 12
+               ³                       ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FST memreal   ³ fst    shortreal      ³  87 (s=84-90,l=96-104)+EA
+               ³ fst    longs[bx]      ³ 287 s=84-90,l=96-104
+               ³                       ³ 387 s=44,l=45
+               ³                       ³ 486 s=7,l=8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTP memreal  ³ fstp   longreal       ³  87 (s=86-92,l=98-106,t=52-58)+EA
+               ³ fstp   tempreals[bx]  ³ 287 s=86-92,l=98-106,t=52-58
+               ³                       ³ 387 s=44,l=45,t=53
+               ³                       ³ 486 s=7,l=8,t=6
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FIST memint   ³ fist   int16          ³  87 (w=80-90,d=82-92)+EA
+               ³ fist   doubles[8]     ³ 287 w=80-90,d=82-92
+               ³                       ³ 387 w=82-95,d=79-93
+               ³                       ³ 486 w=29-34,d=28-34
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FISTP memint  ³ fistp  longint        ³  87 (w=82-92,d=84-94,q=94-105)+EA
+               ³ fistp  doubles[bx]    ³ 287 w=82-92,d=84-94,q=94-105
+               ³                       ³ 387 w=82-95,d=79-93,q=80-97
+               ³                       ³ 486 29-34
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FBSTP membcd  ³ fbstp  bcds[bx]       ³  87 (520-540)+EA
+               ³                       ³ 287 520-540
+               ³                       ³ 387 512-534
+               ³                       ³ 486 172-176
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FSTSW
+.context FSTSW
+.context @FNSTSW
+.context FNSTSW
+.topic FSTSW Instruction
+.freeze 3
+..index FSTSW instruction, Store Status Word
+..index FNSTSW instruction, Store Status Word
+ \i\p\aDetail\v@FSTSW.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Store Status Word
+
+  \bSyntax:\p   FSTSW dest
+            FNSTSW dest
+
+  \bDescription:\p
+
+     Stores the status word to a specified 16-bit memory operand. On
+     the 80287, 80387, and 80486, the status word can also be stored to
+     the processor's AX register.
+
+     FSTSW has wait and no-wait versions. The wait version (FSTSW)
+     checks for unmasked numeric errors; the no-wait version (FNSTSW)
+     does not. When the .8087 directive is used, the assembler puts the
+     WAIT instruction before the wait version and the NOP instruction
+     before the no-wait version.
+
+.context @FSTSW.des
+.freeze 2
+.topic FSTSW Instruction
+ \i\p\aSummary\v@FSTSW\v\i\p                                   \i\p\aUp\v@FPEnvirInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTSW mem16    ³ fstsw  statword         ³  87 12-18
+ FNSTSW mem16   ³                         ³ 287 12-18
+                ³                         ³ 387 15
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSTSW AX       ³ fstsw  ax               ³  87 ÄÄ
+ FNSTSW AX      ³                         ³ 287 10-16
+                ³                         ³ 387 13
+                ³                         ³ 486 3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  NOTE: The timings reflect the no-wait version of the instruction.
+        The wait version may take additional clock cycles.
+.context @FSUB
+.context FSUB
+.context @FSUBP
+.context FSUBP
+.context @FISUB
+.context FISUB
+.topic FSUB Instruction
+.freeze 3
+..index FSUB instruction, Floating-Point Subtract
+..index FSUBP instruction, Floating-Point Subtract and Pop
+..index FISUB instruction, Integer Subtract
+ \i\p\aDetail\v@FSUB.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Subtract
+
+  \bSyntax:\p   FSUB [dest,src]
+            FSUBP dest,ST
+            FSUB src
+            FISUB src
+
+  \bSee also:\p FSUBR, FADD
+
+  \bDescription:\p
+
+     Subtracts the source from the destination and returns the
+     difference in the destination. If two register operands are
+     specified, one must be ST. If a memory operand is specified, the
+     result replaces the value in ST. Memory operands can be 32- or
+     64-bit real numbers or 16- or 32-bit integers.
+
+     If no operand is specified, ST is subtracted from ST(1) and the
+     stack is popped; the difference is returned in ST. For FSUBP, the
+     source must be ST; the difference (destination minus source) is
+     returned in the destination register and ST is popped.
+.context @FSUB.des
+.freeze 2
+.topic FSUB Instruction
+ \i\p\aSummary\v@FSUB\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUB [reg,reg] ³ fsub   st,st(2)         ³  87 70-100
+                ³ fsub   st(5),st         ³ 287 70-100
+                ³ fsub                    ³ 387 to=29-37,fr=26-34
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUBP reg,ST   ³ fsubp  st(6),st         ³  87 75-105
+                ³                         ³ 287 75-105
+                ³                         ³ 387 26-34
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUB memreal   ³ fsub   longreal         ³  87 (s=90-120,s=95-125)+EA
+                ³ fsub   shortreals[di]   ³ 287 s=90-120,l=95-125
+                ³                         ³ 387 s=24-32,l=28-36
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FISUB memint   ³ fisub  double           ³  87 (w=102-137,d=108-143)+EA
+                ³ fisub  warray[di]       ³ 287 w=102-137,d=108-143
+                ³                         ³ 387 w=71-83,d=57-82
+                ³                         ³ 486 w=20-35,d=19-32
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FSUBR
+.context FSUBR
+.context @FSUBRP
+.context FSUBRP
+.context @FISUBR
+.context FISUBR
+.topic FSUBR Instruction
+.freeze 3
+..index FSUBR instruction, Floating-Point Subtract Reversed
+..index FSUBRP instruction, Floating-Point Subtract Reversed and Pop
+..index FISUBR instruction, Integer Subtract Reversed
+ \i\p\aDetail\v@FSUBR.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Subtract Reversed
+
+  \bSyntax:\p   FSUBR [dest,src]
+            FSUBRP dest,ST
+            FSUBR src
+            FISUBR src
+
+  \bSee also:\p FSUB, FADD
+
+  \bDescription:\p
+
+     Subtracts the destination operand from the source operand and
+     returns the result in the destination operand. If two register
+     operands are specified, one must be ST. If a memory operand is
+     specified, the result replaces the value in ST. Memory operands
+     can be 32- or 64-bit real numbers or 16- or 32-bit integers.
+
+     If no operand is specified, ST(1) is subtracted from ST and the
+     stack is popped; the difference is returned in ST. For FSUBRP, the
+     source must be ST; the difference (source minus destination) is
+     returned in the destination register and ST is popped.
+.context @FSUBR.des
+.freeze 2
+.topic FSUBR Instruction
+ \i\p\aSummary\v@FSUBR\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                         \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUBR [reg,reg]³ fsubr  st,st(2)         ³  87 70-100
+                ³ fsubr  st(5),st         ³ 287 70-100
+                ³ fsubr                   ³ 387 to=29-37,fr=26-34
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUBRP reg,ST  ³ fsubrp st(6),st         ³  87 75-105
+                ³                         ³ 287 75-105
+                ³                         ³ 387 26-34
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FSUBR memreal  ³ fsubr  QWORD PTR [bx]   ³  87 (s=90-120,s=95-125)+EA
+                ³ fsubr  shortreal[di]    ³ 287 s=90-120,l=95-125
+                ³ fsubr  longreal         ³ 387 s=25-33,l=29-37
+                ³                         ³ 486 8-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FISUBR memint  ³ fisubr int16            ³  87 (w=103-139,d=109-144)+EA
+                ³ fisubr warray[di]       ³ 287 w=103-139,d=109-144
+                ³ fisubr double           ³ 387 w=72-84,d=58-83
+                ³                         ³ 486 w=20-35,d=19-32
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FTST
+.context FTST
+.topic FTST Instruction
+.freeze 3
+..index FTST instruction, Test for Zero
+ \i\p\aDetail\v@FTST.des\v\i\p                                    \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Test for Zero
+
+  \bSyntax:\p   FTST
+
+  \bSee also:\p FCOM, \aStatus Word\v@statusW\v
+
+  \bDescription:\p
+
+     Compares ST with +0.0 and sets the condition of the status word
+     according to the result.
+
+     The condition codes for FTST are as follows:
+
+     \bC3     C2     C1     C0     Meaning\p
+
+     0      0      ?      0      ST is positive
+     0      0      ?      1      ST is negative
+     1      0      ?      0      ST is 0
+     1      1      ?      1      ST is not comparable (NAN or
+                                 projective infinity)
+
+.context @FTST.des
+.freeze 2
+.topic FTST Instruction
+ \i\p\aSummary\v@FTST\v\i\p                                   \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FTST           ³ ftst                    ³  87 38-48
+                ³                         ³ 287 38-48
+                ³                         ³ 387 28
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FUCOM
+.context FUCOM
+.context @FUCOMP
+.context FUCOMP
+.context @FUCOMPP
+.context FUCOMPP
+.topic FUCOM Instruction
+.freeze 3
+..index FUCOM instruction, Unordered Compare
+..index FUCOMP instruction, Unordered Compare and Pop
+..index FUCOMPP instruction, Unordered Compare and Pop 2x
+ \i\p\aDetail\v@FUCOM.des\v\i\p                                    \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Unordered Compare
+            80387/486 Only
+
+  \bSyntax:\p   FUCOM [src]
+            FUCOMP [src]
+            FUCOMPP
+
+  \bSee also:\p FCOM, FTST, \aStatus Word\v@statusW\v
+
+  \bDescription:\p
+
+     Compares the specified source to ST and sets the condition codes
+     of the status word according to the result. The instruction
+     subtracts the source operand from ST without changing either
+     operand. Memory operands are not allowed.
+
+     If no operand is specified or if two pops are specified, ST is
+     compared to ST(1). If one pop is specified with an operand, the
+     given register is compared to ST.
+
+     Unlike FCOM, FUCOM does not cause an invalid-operation exception
+     if one of the operands is a NAN. Instead, the condition codes are
+     set to unordered.
+
+     The condition codes for FUCOM are as follows:
+
+     \bC3     C2     C1     C0     Meaning\p
+
+     0      0      ?      0      ST > source
+     0      0      ?      1      ST < source
+     1      0      ?      0      ST = source
+     1      1      ?      1      Unordered
+.context @FUCOM.des
+.freeze 2
+.topic FUCOM Instruction
+ \i\p\aSummary\v@FUCOM\v\i\p                                   \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FUCOM [reg]    ³ fucom  st(2)            ³  87 ÄÄ
+                ³ fucom                   ³ 287 ÄÄ
+                ³                         ³ 387 24
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FUCOMP [reg]   ³ fucomp st(7)            ³  87 ÄÄ
+                ³ fucomp                  ³ 287 ÄÄ
+                ³                         ³ 387 26
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FUCOMPP        ³ fucompp                 ³  87 ÄÄ
+                ³                         ³ 287 ÄÄ
+                ³                         ³ 387 26
+                ³                         ³ 486 5
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FWAIT
+.context FWAIT
+.topic FWAIT Instruction
+.freeze 3
+..index FWAIT instruction, Wait
+..index Wait, Coprocessor
+ \i\p\aDetail\v@FWAIT.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Wait
+
+  \bSyntax:\p   FWAIT
+
+  \bSee also:\p WAIT
+
+  \bDescription:\p
+
+     Suspends execution of the processor until the coprocessor is
+     finished executing. This is an alternate mnemonic for the
+     processor WAIT instruction.
+.context @FWAIT.des
+.freeze 2
+.topic FWAIT Instruction
+ \i\p\aSummary\v@FWAIT\v\i\p                                   \i\p\aUp\v@FPSysInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FWAIT          ³ fwait                   ³  87 4
+                ³                         ³ 287 3
+                ³                         ³ 387 6
+                ³                         ³ 486 1-3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FXAM
+.context FXAM
+.topic FXAM Instruction
+.freeze 3
+..index testing control flags
+..index FXAM instruction, Examine ST
+ \i\p\aDetail\v@FXAM.des\v\i\p                                    \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Examine
+
+  \bSyntax:\p   FXAM
+
+  \bSee also:\p \aStatus Word\v@statusw\v
+
+  \bDescription:\p
+
+     Reports the contents of ST in the condition flags of the status
+     word.
+
+     The condition codes for FXAM are as follows:
+
+     \bC3\p     \bC2\p     \bC1\p     \bC0\p     \bMeaning\p
+
+     0      0      0      0      + Unnormal*
+     0      0      0      1      + NAN
+     0      0      1      0      - Unnormal*
+     0      0      1      1      - NAN
+     0      1      0      0      + Normal
+     0      1      0      1      + Infinity
+     0      1      1      0      - Normal
+     0      1      1      1      - Infinity
+     1      0      0      0      + 0
+     1      0      0      1      Empty
+     1      0      1      0      - 0
+     1      0      1      1      Empty
+     1      1      0      0      + Denormal
+     1      1      0      1      Empty*
+     1      1      1      0      - Denormal
+     1      1      1      1      Empty*
+
+     * Not used on the 80387/486 processors. Unnormals are not supported by
+       the 80387/486. Also, the 80387/486 processors use two codes instead
+       of four to identify empty registers.
+
+.context @FXAM.des
+.freeze 2
+.topic FXAM Instruction
+ \i\p\aSummary\v@FXAM\v\i\p                                   \i\p\aUp\v@FPCFInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FXAM           ³ fxam                    ³  87 12-23
+                ³                         ³ 287 12-23
+                ³                         ³ 387 30-38
+                ³                         ³ 486 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FXCH
+.context FXCH
+.topic FXCH Instruction
+.freeze 3
+..index FXCH instruction, Exchange Registers
+ \i\p\aDetail\v@FXCH.des\v\i\p \i\p\aExample\v@Quadrati.asx\v\i\p                          \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Exchange Registers
+
+  \bSyntax:\p   FXCH [dest]
+
+  \bSee also:\p FLD
+
+  \bDescription:\p
+
+     Exchanges the specified (destination) register and ST. If no
+     operand is specified, ST and ST(1) are exchanged.
+.context @FXCH.des
+.freeze 2
+.topic FXCH Instruction
+ \i\p\aSummary\v@FXCH\v\i\p                                   \i\p\aUp\v@FPXferInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FXCH [reg]     ³ fxch   st(3)            ³  87 10-15
+                ³ fxch                    ³ 287 10-15
+                ³                         ³ 387 18
+                ³                         ³ 486 4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FXTRACT
+.context FXTRACT
+.topic FXTRACT Instruction
+.freeze 3
+..index FXTRACT instruction, Extract Exponent and Significand
+ \i\p\aDetail\v@FXTRACT.des\v\i\p                                    \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Extract Exponent and Significand
+
+  \bSyntax:\p   FXTRACT
+
+  \bDescription:\p
+
+     Extracts the exponent and significand (mantissa) fields of ST. The
+     exponent replaces the value in ST, and then the significand is
+     pushed onto the stack.
+.context @FXTRACT.des
+.freeze 2
+.topic FXTRACT Instruction
+ \i\p\aSummary\v@FXTRACT\v\i\p                                   \i\p\aUp\v@FPArithInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FXTRACT        ³ fxtract                 ³  87 27-55
+                ³                         ³ 287 27-55
+                ³                         ³ 387 70-76
+                ³                         ³ 486 16-20
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FYL2X
+.context FYL2X
+.topic FYL2X Instruction
+.freeze 3
+..index FYL2X instruction, Y log(sub2)(X)
+ \i\p\aDetail\v@FYL2X.des\v\i\p                                    \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Y log(sub2)(X)
+
+  \bSyntax:\p   FYL2X
+
+  \bSee also:\p FYL2XP1, F2XM1
+
+  \bDescription:\p
+
+     Calculates Z = Y log(sub2)(X) where X is taken from ST and Y from
+     ST(1). The stack is popped and the result, Z, replaces Y in ST. X
+     must be in the range 0 < X < infinity and Y in the range
+     minus infinity < Y < infinity.
+.context @FYL2X.des
+.freeze 2
+.topic FYL2X Instruction
+ \i\p\aSummary\v@FYL2X\v\i\p                                   \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FYL2X          ³ fyl2x                   ³  87 900-1100
+                ³                         ³ 287 900-1100
+                ³                         ³ 387 120-538
+                ³                         ³ 486 196-329
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.context @FYL2XP1
+.context FYL2XP1
+.topic FYL2XP1 Instruction
+.freeze 3
+..index FYL2XP1 instruction, Y log(sub2)(X+1)
+ \i\p\aDetail\v@FYL2XP1.des\v\i\p                                    \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bTitle:\p    Y log(sub2)(X+1)
+
+  \bSyntax:\p   FYL2XP1
+
+  \bSee also:\p FYL2X, F2XM1
+
+  \bDescription:\p
+
+     Calculates Z = Y log(sub2)(X + 1) where X is taken from ST and Y
+     from ST(1). The stack is popped once and the result, Z, replaces Y
+     in ST. X must be in the range 0 <= |X| < (1 - (SQRT2 / 2)) and Y in
+     the range minus infinity < Y < infinity.
+
+.context @FYL2XP1.des
+.freeze 2
+.topic FYL2XP1 Instruction
+ \i\p\aSummary\v@FYL2XP1\v\i\p                                   \i\p\aUp\v@FPTransInst\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ FYL2XP1        ³ fyl2xp                  ³  87 700-1000
+                ³                         ³ 287 700-1000
+                ³                         ³ 387 257-547
+                ³                         ³ 486 171-326
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

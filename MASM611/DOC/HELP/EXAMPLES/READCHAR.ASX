@@ -1,0 +1,28 @@
+;* ReadCharAttr - Reads character and display attribute at cursor location.
+;*
+;* Shows:   BIOS Interrupt - 10h, Function 8 (Read Character and Attribute
+;*                                at Cursor)
+;*
+;* Uses:    vconfig - Video configuration structure (initialized
+;*          by calling the GetVidConfig procedure)
+;*
+;* Params:  Attr - Pointer to short integer for display attribute
+;*
+;* Return:  Short integer with ASCII value of character
+
+ReadCharAttr PROC USES di,
+        Attr:PWORD
+
+        mov     ah, 8                   ; Function 8
+        mov     bh, vconfig.dpage       ; Current page
+        int     10h                     ; Read Character and Attribute
+        sub     bh, bh
+        mov     bl, ah                  ; BX = attribute
+        cbw                             ; AX = character
+        LoadPtr es, di, Attr            ; ES:DI = pointer to int
+        mov     es:[di], bx             ; Copy attribute
+        ret
+
+ReadCharAttr ENDP
+
+

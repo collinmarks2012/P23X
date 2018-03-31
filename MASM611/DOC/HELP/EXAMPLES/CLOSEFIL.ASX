@@ -1,0 +1,20 @@
+;* CloseFile - Closes an open file, specified by handle. See the CopyFile
+;* procedure for another example of using DOS Function 3Eh to close files.
+;*
+;* Shows:   DOS Function - 3EH (Close File)
+;*
+;* Params:  Handle - File handle
+;*
+;* Return:  None
+
+CloseFile PROC,
+        Handle:WORD
+
+        mov     bx, Handle              ; BX = file handle
+        mov     ah, 3Eh                 ; DOS Function 3Eh
+        int     21h                     ; Close file
+        ret
+
+CloseFile ENDP
+
+

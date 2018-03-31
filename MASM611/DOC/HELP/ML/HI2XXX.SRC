@@ -1,0 +1,2238 @@
+..| File name in SLM      : \masm61\help\ml\HI2XXX.SRC
+..| Help file destination : ML.HLP
+..| 
+..| Contents of this file : H2INC nonfatal error help
+..| Product and version   : H2INC version 1.00???
+..| Released with         : MASM 6.1
+..| 
+..| Number of errors      : 165
+..| Number of topics      : 166
+..| Number of contexts    : 167
+..| First context         : errHI2XXX
+..| Last context          : HI2225
+..|
+..| HISTORY (start)
+..| 90 05 07 OWNERSHIP: MarciM
+..| 90 05 07 Created from C2XXX.SRC shipped with C 6.0
+..| 90 05 16 Converted text, codes, and comments to work with H2INC
+..| 90 10 08 <Up>=>localTOC; C to H2INC everywhere
+..| 90 10 08 MASM Beta 1
+..| 90 10 24 OWNERSHIP: WillieS
+..| 90 10 31 OWNERSHIP: JonKa
+..| 90 12 03 Incorporated BobAl review comments
+..| 91 02 12 Added new TOC
+..| HISTORY (end)
+..| 
+..| Doubled backslashes : HI2001, HI2015, HI2017, HI2022, HI2153
+..| 
+.context errHI2XXX
+.context @errHI2XXX
+.freeze 3
+.topic H2INC Nonfatal Errors
+                                             \i\p\aUp\v@errtoc.masm\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bH2INC Nonfatal Errors\p
+
+     To find out about a specific error, click on the error number
+     with the right mouse button.
+
+     See: \i\p\aHow to View Errors Help\vadvisor.hlp!errorview\v\i\p
+
+     HI2000    HI2030    HI2071    HI2090    HI2124    HI2156    HI2200
+     HI2001    HI2031    HI2072    HI2091    HI2128    HI2157    HI2201
+     HI2003    HI2033    HI2043    HI2092    HI2129    HI2158    HI2205
+     HI2004    HI2034    HI2044    HI2095    HI2130    HI2159    HI2208
+     HI2005    HI2035    HI2045    HI2100    HI2131    HI2160    HI2209
+     HI2006    HI2037    HI2046    HI2101    HI2132    HI2161    HI2210
+     HI2007    HI2038    HI2047    HI2102    HI2133    HI2162    HI2211
+     HI2008    HI2041    HI2048    HI2103    HI2134    HI2165    HI2212
+     HI2009    HI2042    HI2049    HI2104    HI2136    HI2166    HI2213
+     HI2010    HI2056    HI2050    HI2105    HI2137    HI2167    HI2214
+     HI2012    HI2057    HI2051    HI2106    HI2139    HI2168    HI2215
+     HI2013    HI2058    HI2052    HI2107    HI2141    HI2171    HI2216
+     HI2014    HI2059    HI2054    HI2108    HI2143    HI2172    HI2217
+     HI2015    HI2060    HI2055    HI2109    HI2144    HI2173    HI2218
+     HI2016    HI2061    HI2075    HI2110    HI2145    HI2174    HI2219
+     HI2017    HI2062    HI2076    HI2111    HI2146    HI2177    HI2220
+     HI2018    HI2063    HI2077    HI2112    HI2147    HI2178    HI2221
+     HI2019    HI2064    HI2078    HI2113    HI2148    HI2179    HI2222
+     HI2021    HI2065    HI2079    HI2114    HI2149    HI2185    HI2223
+     HI2022    HI2066    HI2080    HI2115    HI2150    HI2187    HI2224
+     HI2025    HI2067    HI2082    HI2117    HI2151    HI2189    HI2225
+     HI2026    HI2068    HI2084    HI2118    HI2152    HI2193
+     HI2027    HI2069    HI2086    HI2120    HI2153    HI2194
+     HI2028    HI2070    HI2087    HI2121    HI2154    HI2195
+
+.context HI2000
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2000
+
+     UNKNOWN ERROR
+     Contact Microsoft Product Support Services
+
+     The compiler detected an unknown error condition.
+
+     Note the circumstances of the error and notify Microsoft
+     Corporation by following the instructions in the Microsoft Support
+     Services section of your Environment and Tools book.
+.context HI2001
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2001
+
+     newline in constant
+
+     A string constant was continued onto a second line without either
+     a backslash or closing and opening quotes.
+
+     To break a string constant onto two lines in the source file, do
+     one of the following:
+
+        ş End the first line with the line-continuation character, a
+          backslash, \\.
+..LUE.BACKSLASH one single
+
+        ş Close the string on the first line with a double quotation
+          mark, and open the string on the next line with another
+          quotation mark.
+
+     It is not sufficient to end the first line with \\n, the escape
+..LUE.BACKSLASH one single
+     sequence for embedding a newline character in a string constant.
+
+     The following two examples demonstrate causes of this error:
+
+          printf("Hello,
+              world");
+         or
+          printf("Hello,\\n
+              world");
+..LUE.BACKSLASH one single
+
+     The following two examples show ways to correct this error:
+
+          printf("Hello,\\
+              world");
+         or
+          printf("Hello,"
+              " world");
+..LUE.BACKSLASH one single
+
+     Note that any spaces at the beginning of the next line after a
+     line-continuation character are included in the string constant.
+     Note, also, that neither solution actually places a newline
+     character into the string constant. To embed this character:
+
+          printf("Hello,\\n\\
+              world");
+         or
+          printf("Hello,\\
+              \\nworld");
+         or
+          printf("Hello,\\n"
+              "world");
+         or
+          printf("Hello,"
+              "\\nworld");
+..LUE.BACKSLASH six single
+
+..|| C2002 is obsolete, per chuckg
+
+.context HI2003
+..*.STRING expected 'defined id'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2003
+
+     expected 'defined id'
+
+     An identifier was expected after the preprocessing keyword
+     'defined'.
+.context HI2004
+..*.STRING expected 'defined(id)'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2004
+
+     expected 'defined(id)'
+
+     An identifier was expected after the left parenthesis, (,
+     following the preprocessing keyword 'defined'.
+.context HI2005
+..*.STRING #line expected a line number, found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2005
+
+     #line expected a line number, found 'token'
+
+     A #line directive lacked the required line-number specification.
+.context HI2006
+..*.STRING #include expected a file name, found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2006
+
+     #include expected a file name, found 'token'
+
+     An #include directive lacked the required file-name specification.
+.context HI2007
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2007
+
+     #define syntax
+
+     An identifier was expected following #define in a preprocessing
+     directive.
+.context HI2008
+..*.STRING '%c' : unexpected in macro definition
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2008
+
+     'character' : unexpected in macro definition
+
+     The given character was found immediately following the name of
+     the macro.
+.context HI2009
+..*.STRING reuse of macro formal '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2009
+
+     reuse of macro formal 'identifier'
+
+     The given identifier was used more than once in the formal-
+     parameter list of a macro definition.
+.context HI2010
+..*.STRING '%c' : unexpected in macro formal-parameter list
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2010
+
+     'character' : unexpected in macro formal-parameter list
+
+     The given character was used incorrectly in the formal-parameter
+     list of a macro definition.
+..|| C2011 is obsolete, per chuckg
+.context HI2012
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2012
+
+     missing name following '<'
+
+     An #include directive lacked the required file-name specification.
+.context HI2013
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2013
+
+     missing '>'
+
+     The closing angle bracket (>) was missing from an #include
+     directive.
+.context HI2014
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2014
+
+     preprocessor command must start as first non-white-space
+
+     Non-white-space characters appeared before the number sign (#)
+     of a preprocessor directive on the same line.
+.context HI2015
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2015
+
+     too many characters in constant
+
+     A character constant contained more than one character.
+
+     Note that an escape sequence (for example, \\t for tab) is
+     converted to a single character.
+..LUE.BACKSLASH one single
+
+.context HI2016
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2016
+
+     no closing single quotation mark
+
+     A newline character was found before the closing single quotation
+     mark of a character constant.
+.context HI2017
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2017
+
+     illegal escape sequence
+
+     An escape sequence appeared where one was not expected.
+
+     An escape sequence (a backslash, \\, followed by a number or
+     letter) may occur only in a character or string constant.
+..LUE.BACKSLASH one single
+
+.context HI2018
+..*.STRING unknown character '0x%x'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2018
+
+     unknown character 'hexnumber'
+
+     The ASCII character corresponding to the given hexadecimal number
+     appeared in the source file but is an illegal character.
+
+     One possible cause of this error is corruption of the source
+     file. Edit the file and look at the line on which the error
+     occurred.
+.context HI2019
+..*.STRING expected preprocessor command, found '%c'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2019
+
+     expected preprocessor directive, found 'character'
+
+     The given character followed a number sign (#), but it was not
+     the first letter of a preprocessor directive.
+..|| C2020 is obsolete, per chuckg
+.context HI2021
+..*.STRING expected exponent value, not '%c'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2021
+
+     expected exponent value, not 'character'
+
+     The given character was used as the exponent of a floating-point
+     constant but was not a valid number.
+.context HI2022
+..*.STRING '%ld' : too big for char
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2022
+
+     'number' : too big for character
+
+     The octal number following a backslash (\\) in a character or
+     string constant was too large to be represented as a character.
+..LUE.BACKSLASH one single
+
+..|| C2023 and C2024 are obsolete, per chuckg
+
+.context HI2025
+..*.STRING '%s' : enum/struct/union type redefinition
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2025
+
+     'identifier' : enum/struct/union type redefinition
+
+     The given identifier had already been used for an enumeration,
+     structure, or union tag.
+.context HI2026
+..*.STRING '%s' : member of enum redefinition
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2026
+
+     'identifier' : member of enum redefinition
+
+     The given identifier has already been used for an enumeration
+     constant, either within the same enumeration type or within
+     another visible enumeration type.
+.context HI2027
+..*.STRING use of undefined enum/struct/union '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2027
+
+     use of undefined enum/struct/union 'identifier'
+
+     The given identifier referred to a structure or union type that
+     was not defined.
+.context HI2028
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2028
+
+     struct/union member needs to be inside a struct/union
+
+     Structure and union members must be declared within the structure
+     or union.
+
+     This error may be caused by an enumeration declaration containing
+     a declaration of a structure member, as in the following example:
+
+          enum a {
+                 january,
+                 february,
+                 int march;    /* Illegal structure declaration */
+                 };
+..|| C2029 is obsolete, per chuckg
+.context HI2030
+..*.STRING '%Fs' : struct/union member redefinition
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2030
+
+     'identifier' : struct/union member redefinition
+
+     The identifier was used for more than one member of the same
+     structure or union.
+.context HI2031
+..*.STRING '%Fs' : function cannot be struct/union member
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2031
+
+     'identifier' : function cannot be struct/union member
+
+     The given function was declared to be a member of a structure or
+     union.
+
+     To correct this error, use a pointer to the function instead.
+..|| C2032 is obsolete, per chuckg
+.context HI2033
+..*.STRING '%Fs' : bit field cannot have indirection
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2033
+
+     'identifier' : bit field cannot have indirection
+
+     The given bit field was declared as a pointer (*), which is not
+     allowed.
+.context HI2034
+..*.STRING '%Fs' : bit-field type too small for number of bits"
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2034
+
+     'identifier' : type of bit field too small for number of bits
+
+     The number of bits specified in the bit-field declaration
+     exceeded the number of bits in the given base type.
+.context HI2035
+..*.STRING struct/union '%Fs' : unknown size
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2035
+
+     struct/union 'identifier' : unknown size
+
+     The given structure or union had an undefined size.
+
+     Usually this occurs when referencing a declared but not defined
+     structure or union tag.
+
+     For example, the following causes this error:
+
+          struct s_tag *ps;
+          ps = &my_var;
+          *ps = 17;    /* This line causes the error */
+..|| C2036 is obsolete, per chuckg
+.context HI2037
+..*.STRING left of '%s' specifies undefined struct/union '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2037
+
+     left of 'operator' specifies undefined struct/union 'identifier'
+
+     The expression before the member-selection operator ( -> or .)
+     identified a structure or union type that was not defined.
+.context HI2038
+..*.STRING '%s' : not struct/union member
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2038
+
+     'identifier' : not struct/union member
+
+     The given identifier was used in a context that required a
+     structure or union member.
+..|| C2039 and C2040 are obsolete, per chuckg
+.context HI2041
+..*.STRING illegal digit '%c' for base %d
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2041
+
+     illegal digit 'character' for base 'number'
+
+     The given character was not a legal digit for the base used.
+.context HI2042
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2042
+
+     signed/unsigned keywords mutually exclusive
+
+     The keywords 'signed' and 'unsigned' were both used in a single
+     declaration, as in the following example:
+
+          unsigned signed int i;
+.context HI2056
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2056
+
+     illegal expression
+
+     An expression was illegal because of a previous error, which may
+     not have produced an error message.
+.context HI2057
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2057
+
+     expected constant expression
+
+     The context requires a constant expression.
+.context HI2058
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2058
+
+     constant expression is not integral
+
+     The context requires an integral constant expression.
+.context HI2059
+..*.STRING syntax error : '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2059
+
+     syntax error : 'token'
+
+     The token caused a syntax error.
+.context HI2060
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2060
+
+     syntax error : end-of-file found
+
+     The compiler expected at least one more token.
+
+     Some causes of this error include:
+
+        ş Omitting a semicolon (;), as in
+
+               int *p
+
+        ş Omitting a closing brace (}) from the last function, as in
+
+               main()
+               {
+.context HI2061
+..*.STRING syntax error : identifier '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2061
+
+     syntax error : identifier 'identifier'
+
+     The identifier caused a syntax error.
+.context HI2062
+..*.STRING type '%s' unexpected
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2062
+
+     type 'type' unexpected
+
+     The compiler did not expect the given type to appear here,
+     possibly because it already had a required type.
+.context HI2063
+..*.STRING '%s' : not a function
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2063
+
+     'identifier' : not a function
+
+     The given identifier was not declared as a function, but an
+     attempt was made to use it as a function.
+.context HI2064
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2064
+
+     term does not evaluate to a function
+
+     An attempt was made to call a function through an expression that
+     did not evaluate to a function pointer.
+.context HI2065
+..*.STRING '%s' : undefined
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2065
+
+     'identifier' : undefined
+
+     An attempt was made to use an identifier that was not defined.
+.context HI2066
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2066
+
+     cast to function type is illegal
+
+     An object was cast to a function type, which is illegal.
+
+     However, it is legal to cast an object to a function pointer.
+.context HI2067
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2067
+
+     cast to array type is illegal
+
+     An object was cast to an array type.
+.context HI2068
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2068
+
+     illegal cast
+
+     A type used in a cast operation was not legal for this expression.
+.context HI2069
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2069
+
+     cast of void term to nonvoid
+
+     The void type was cast to a different type.
+.context HI2070
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2070
+
+     illegal sizeof operand
+
+     The operand of a sizeof expression was not an identifier or a
+     type name.
+.context HI2071
+..*.STRING '%Fs' : bad storage class
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2071
+
+     'identifier' : illegal storage class
+
+     The given storage class cannot be used in this context.
+.context HI2072
+..*.STRING '%Fs' : initialization of a function
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2072
+
+     'identifier' : initialization of a function
+
+     An attempt was made to initialize a function.
+..|| C2073 and C2074 are obsolete, per chuckg
+.context HI2043
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2043
+
+     illegal break
+
+     A break statement is legal only within a do, for, while, or switch
+     statement.
+.context HI2044
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2044
+
+     illegal continue
+
+     A continue statement is legal only within a do, for, or while
+     statement.
+.context HI2045
+..*.STRING '%s' : label redefined
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2045
+
+     'identifier' : label redefined
+
+     The label appeared before more than one statement in the same
+     function.
+.context HI2046
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2046
+
+     illegal case
+
+     The keyword case may appear only within a switch statement.
+.context HI2047
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2047
+
+     illegal default
+
+     The keyword default may appear only within a switch statement.
+.context HI2048
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2048
+
+     more than one default
+
+     A switch statement contained more than one default label.
+.context HI2049
+..*.STRING case value %ld already used
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2049
+
+     case value 'value' already used
+
+     The case value was already used in this switch statement.
+.context HI2050
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2050
+
+     nonintegral switch expression
+
+     A switch expression did not evaluate to an integral value.
+.context HI2051
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2051
+
+     case expression not constant
+
+     Case expressions must be integral constants.
+.context HI2052
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2052
+
+     case expression not integral
+
+     Case expressions must be integral constants.
+..|| C2053 is obsolete in C6
+.context HI2054
+..*.STRING expected '(' to follow '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2054
+
+     expected '(' to follow 'identifier'
+
+     The context requires parentheses after the function identifier.
+
+     One cause of this error is forgetting an equal sign (=) on a
+     complex initialization, as in
+
+          int array1[]    /* Missing = */
+          {
+            1,2,3
+          };
+.context HI2055
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2055
+
+     expected formal-parameter list, not a type list
+
+     An argument-type list appeared in a function definition instead of
+     a formal-parameter list.
+.context HI2075
+..*.STRING '%Fs' : array initialization needs curly braces
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2075
+
+     'identifier' : array initialization needs curly braces
+
+     There were no curly braces, {}, around the given array
+     initializer.
+.context HI2076
+..*.STRING '%Fs' : struct/union initialization needs curly braces
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2076
+
+     'identifier' : struct/union initialization needs curly braces
+
+     There were no curly braces, {}, around the given structure or
+     union initializer.
+.context HI2077
+..*.STRING nonscalar field initializer '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2077
+
+     nonscalar field initializer 'identifier'
+
+     An attempt was made to initialize a bit-field member of a
+     structure with a nonscalar value.
+.context HI2078
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2078
+
+     too many initializers
+
+     The number of initializers exceeded the number of objects to be
+     initialized.
+.context HI2079
+..*.STRING '%Fs' uses undefined struct/union '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2079
+
+     'identifier' uses undefined struct/union 'name'
+
+     The <identifier> was declared as structure or union type name, but
+     the <name> had not been defined. This error may also occur if an
+     attempt is made to initialize an anonymous union.
+.context HI2080
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2080
+
+     illegal far _fastcall function
+
+     A far _fastcall function may not be compiled with the /Gw option,
+     or with the /Gq option if stack checking is enabled.
+..|| C2081 is obsolete in C6
+.context HI2082
+..*.STRING redefinition of formal parameter '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2082
+
+     redefinition of formal parameter 'identifier'
+
+     A formal parameter to a function was redeclared within the
+     function body.
+..|| C2083 is obsolete, per chuckg
+.context HI2084
+..*.STRING function '%Fs' already has a body
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2084
+
+     function 'function' already has a body
+
+     The function has already been defined.
+.context HI2086
+..*.STRING '%Fs' : redefinition
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2086
+
+     'identifier' : redefinition
+
+     The given identifier was defined more than once, or a subsequent
+     declaration differed from a previous one.
+
+     The following are ways to cause this error:
+
+          int a;
+          char a;
+          main()
+          {
+          }
+
+          main()
+          {
+            int a;
+            int a;
+          }
+
+     However, the following does not cause this error:
+
+          int a;
+          int a;
+          main()
+          {
+          }
+.context HI2087
+..*.STRING '%Fs' : missing subscript
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2087
+
+     'identifier' : missing subscript
+
+     The definition of an array with multiple subscripts was missing
+     a subscript value for a dimension other than the first dimension.
+
+     The following is an example of an illegal definition:
+
+          int func(a)
+              char a[10][];
+              { }
+
+     The following is an example of a legal definition:
+
+          int func(a)
+              char a[][5];
+              { }
+..|| C2088 and C2089 are obsolete, per chuckg
+.context HI2090
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2090
+
+     function returns array
+
+     A function cannot return an array. It can return a pointer to an
+     array.
+.context HI2091
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2091
+
+     function returns function
+
+     A function cannot return a function. It can return a pointer to a
+     function.
+.context HI2092
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2092
+
+     array element type cannot be function
+
+     Arrays of functions are not allowed. Arrays of pointers to
+     functions are allowed.
+.context HI2095
+..*.STRING '%Fs' : actual has type void : parameter %d
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2095
+
+     'function' : actual has type void : parameter 'number'
+
+     An attempt was made to pass a void argument to a function. The
+     given number indicates which argument was in error.
+
+     Formal parameters and arguments to functions cannot have type
+     void. They can, however, have type void * (pointer to void).
+.context HI2100
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2100
+
+     illegal indirection
+
+     The indirection operator (*) was applied to a nonpointer value.
+.context HI2101
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2101
+
+     '&' on constant
+
+     The address-of operator (&) did not have an lvalue as its
+     operand.
+.context HI2102
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2102
+
+     '&' requires lvalue
+
+     The address-of operator (&) must be applied to an lvalue
+     expression.
+.context HI2103
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2103
+
+     '&' on register variable
+
+     An attempt was made to take the address of a register variable.
+.context HI2104
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2104
+
+     '&' on bit field ignored
+
+     An attempt was made to take the address of a bit field.
+.context HI2105
+..*.STRING '%s' needs lvalue
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2105
+
+     'operator' needs lvalue
+
+     The given operator did not have an lvalue operand.
+.context HI2106
+..*.STRING '%s' : left operand must be lvalue
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2106
+
+     'operator' : left operand must be lvalue
+
+     The left operand of the given operator was not an lvalue.
+.context HI2107
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2107
+
+     illegal index, indirection not allowed
+
+     A subscript was applied to an expression that did not evaluate to
+     a pointer.
+.context HI2108
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2108
+
+     nonintegral index
+
+     A nonintegral expression was used in an array subscript.
+.context HI2109
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2109
+
+     subscript on nonarray
+
+     A subscript was used on a variable that was not an array.
+.context HI2110
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2110
+
+     pointer + pointer
+
+     An attempt was made to add one pointer to another using the
+     plus (+) operator.
+.context HI2111
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2111
+
+     pointer + nonintegral value
+
+     An attempt was made to add a nonintegral value to a pointer.
+.context HI2112
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2112
+
+     illegal pointer subtraction
+
+     An attempt was made to subtract pointers that did not point to
+     the same type.
+.context HI2113
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2113
+
+     pointer subtracted from nonpointer
+
+     The right operand in a subtraction operation using the minus (-)
+     operator was a pointer, but the left operand was not.
+.context HI2114
+..*.STRING '%s' : pointer on left; needs integral right
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2114
+
+     'operator' : pointer on left; needs integral right
+
+     The left operand of the given operator was a pointer; so the right
+     operand must be an integral value.
+.context HI2115
+..*.STRING '%s' : incompatible types
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2115
+
+     'identifier' : incompatible types
+
+     An expression contained incompatible types.
+..|| C2116 is changed to C2121
+.context HI2117
+..*.STRING '%s' : illegal for struct/union
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2117
+
+     'operator' : illegal for struct/union
+
+     Structure and union type values are not allowed with the given
+     operator.
+.context HI2118
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2118
+
+     negative subscript
+
+     A value defining an array size was negative.
+.context HI2120
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2120
+
+     void illegal with all types
+
+     The void type was used in a declaration with another type.
+.context HI2121
+..*.STRING '%s' : bad %s operand
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2121
+
+     'operator' : bad left/right operand
+
+     The left or right operand of the given operator was illegal for
+     that operator.
+..|| C2122 and C2123 are obsolete, per chuckg
+.context HI2124
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2124
+
+     divide or mod by zero
+
+     A constant expression was evaluated and found to have a zero
+     denominator.
+.context HI2128
+..*.STRING '%s' : huge array cannot be aligned to segment boundary
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2128
+
+     'identifier' : huge array cannot be aligned to segment boundary
+
+     The given huge array was large enough to cross two segment
+     boundaries, but could not be aligned to both boundaries to prevent
+     an individual array element from crossing a boundary.
+
+     If the size of a huge array causes it to cross two boundaries, the
+     size of each array element must be a power of two, so that a whole
+     number of elements will fit between two segment boundaries.
+.context HI2129
+..*.STRING static function '%s' not found
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2129
+
+     static function 'function' not found
+
+     A forward reference was made to a static function that was never
+     defined.
+.context HI2130
+..*.STRING #line expected a string containing the file name, found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2130
+
+     #line expected a string containing the file name, found 'token'
+
+     The optional token following the line number on a #line directive
+     was not a string.
+.context HI2131
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2131
+
+     more than one memory attribute
+
+     More than one of the keywords _near, _far, _huge, or _based were
+     applied to an item, as in the following example:
+
+          typedef int _near nint;
+          nint _far a;    /* Illegal */
+.context HI2132
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2132
+
+     syntax error : unexpected identifier
+
+     An identifier appeared in a syntactically illegal context.
+.context HI2133
+..*.STRING '%Fs' : unknown size
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2133
+
+     'identifier' : unknown size
+
+     An attempt was made to declare an unsized array as a local
+     variable.
+.context HI2134
+..*.STRING '%Fs' : struct/union too large
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2134
+
+     'identifier' : struct/union too large
+
+     The size of a structure or union exceeded the 64K compiler limit.
+..|| C2135 is obsolete, per chuckg
+.context HI2136
+..*.STRING '%Fs' : prototype must have parameter types
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2136
+
+     'function' : prototype must have parameter types
+
+     A function prototype declarator had formal-parameter names, but no
+     types were provided for the parameters.
+
+     A formal parameter in a function prototype must either have a type
+     or be represented by an ellipsis (...) to indicate a variable
+     number of arguments and no type checking.
+
+     One cause of this error is a misspelling of a type name in a
+     prototype that does not provide the names of formal parameters.
+.context HI2137
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2137
+
+     empty character constant
+
+     The illegal empty-character constant ('') was used.
+..|| C2138 is for QC2 only, per chuckg
+.context HI2139
+..*.STRING type following '%s' is illegal
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2139
+
+     type following 'identifier' is illegal
+
+     Two types were used in the same declaration.
+
+     For example:
+
+          int double a;
+.context HI2141
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2141
+
+     value out of range for enum constant
+
+     An enumeration constant had a value outside the range of values
+     allowed for type int.
+..|| C2142 is for QC2 only, per chuckg
+.context HI2143
+..*.STRING syntax error : missing '%s' before '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2143
+
+     syntax error : missing 'token1' before 'token2'
+
+     The compiler expected <token1> to appear before <token2>.
+
+     This message may appear if a required closing brace (}), right
+     parenthesis ()), or semicolon (;) is missing.
+.context HI2144
+..*.STRING syntax error : missing '%s' before type '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2144
+
+     syntax error : missing 'token' before type 'type'
+
+     The compiler expected the given token to appear before the
+     given type name.
+
+     This message may appear if a required closing brace (}), right
+     parenthesis ()), or semicolon (;) is missing.
+.context HI2145
+..*.STRING syntax error : missing '%s' before identifier
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2145
+
+     syntax error : missing 'token' before identifier
+
+     The compiler expected the given token to appear before an
+     identifier.
+
+     This message may appear if a semicolon (;) does not appear after
+     the last declaration of a block.
+.context HI2146
+..*.STRING syntax error : missing '%s' before identifier '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2146
+
+     syntax error : missing 'token' before identifier 'identifier'
+
+     The compiler expected the given token to appear before the given
+     identifier.
+.context HI2147
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2147
+
+     unknown size
+
+     An attempt was made to increment an index or pointer to an array
+     whose base type has not yet been declared.
+.context HI2148
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2148
+
+     array too large
+
+     An array exceeded the maximum legal size of 64K.
+
+     Either reduce the size of the array, or declare it with _huge.
+.context HI2149
+..*.STRING '%Fs' : named bit-field cannot have 0 width
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2149
+
+     'identifier' : named bit field cannot have 0 width
+
+     The given named bit field had zero width. Only unnamed bit fields
+     are allowed to have zero width.
+.context HI2150
+..*.STRING '%Fs' : bit field must have type int, signed int, or unsigned int
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2150
+
+     'identifier' : bit field must have type int, signed int, or
+     unsigned int
+
+     The ANSI C standard requires bit fields to have types of int,
+     signed int, or unsigned int. This message appears only when
+     compiling with the /Za option.
+.context HI2151
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2151
+
+     more than one language attribute
+
+     More than one keyword specifying a calling convention for a
+     function was given.
+.context HI2152
+..*.STRING '%s' : pointers to functions with different attributes
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2152
+
+     'identifier' : pointers to functions with different attributes
+
+     An attempt was made to assign a pointer to a function declared
+     with one calling convention (_cdecl, _fortran, _pascal, or
+     _fastcall) to a pointer to a function declared with a different
+     calling convention.
+.context HI2153
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2153
+
+     hex constants must have at least 1 hex digit
+
+     The hexadecimal constants 0x, 0X and \\x are illegal. At least one
+     hexadecimal digit must follow the x or X.
+..LUE.BACKSLASH one single
+
+.context HI2154
+..*.STRING '%Fs' : does not refer to a segment name
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2154
+
+     'segment' : does not refer to a segment name
+
+     A _based-allocated variable must be allocated in a segment unless
+     it is extern and uninitialized.
+..|| C2155 is obsolete, per chuckg
+.context HI2156
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2156
+
+     pragma must be outside function
+
+     A pragma that must be specified at a global level, outside a
+     function body, occurred within a function.
+
+     For example, the following causes this error:
+
+          main()
+          {
+            #pragma optimize("l", on)
+          }
+.context HI2157
+..*.STRING '%s' : must be declared before use in pragma list
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2157
+
+     'function' : must be declared before use in pragma list
+
+     The function name in the list of functions for an alloc_text
+     pragma has not been declared prior to being referenced in the
+     list.
+.context HI2158
+..*.STRING '%s' : is a function
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2158
+
+     'identifier' : is a function
+
+     The given identifier was specified in the list of variables in a
+     same_seg pragma but was previously declared as a function.
+.context HI2159
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2159
+
+     more than one storage class specified
+
+     A declaration contained more than one storage class, as in
+
+          extern static int i;
+.context HI2160
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2160
+
+     ## cannot occur at the beginning of a macro definition
+
+     A macro definition began with a token-pasting operator (##), as in
+
+          #define mac(a,b) ##a
+.context HI2161
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2161
+
+     ## cannot occur at the end of a macro definition
+
+     A macro definition ended with a token-pasting operator (##), as in
+
+          #define mac(a,b) a##
+.context HI2162
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2162
+
+     expected macro formal parameter
+
+     The token following a stringizing operator (#) was not a formal-
+     parameter name.
+
+     For example:
+
+          #define print(a) printf(#b)
+.context HI2165
+..*.STRING '%s' : cannot modify pointers to data
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2165
+
+     'keyword' : cannot modify pointers to data
+
+     The _fortran, _pascal, _cdecl, or _fastcall keyword was used
+     illegally to modify a pointer to data, as in the following
+     example:
+
+          char _pascal *p;
+.context HI2166
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2166
+
+     lvalue specifies const object
+
+     An attempt was made to modify an item declared with const type.
+.context HI2167
+..*.STRING '%Fs' : too many actual parameters for intrinsic
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2167
+
+     'function' : too many actual parameters for intrinsic function
+
+     A reference to the intrinsic function name contained too many
+     actual parameters.
+.context HI2168
+..*.STRING '%Fs' : too few actual parameters for intrinsic
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2168
+
+     'function' : too few actual parameters for intrinsic function
+
+     A reference to the intrinsic function name contained too few
+     actual parameters.
+.context HI2171
+..*.STRING '%s' : bad operand
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2171
+
+     'operator' : illegal operand
+
+     The given unary operator was used with an illegal operand type, as
+     in the following example:
+
+          int (*fp)();
+          double d,d1;
+          ù ù ù
+          fp++;
+          d = ~d1;
+.context HI2172
+..*.STRING '%Fs' : actual is not a pointer : parameter %d
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2172
+
+     'function' : actual is not a pointer : parameter 'number'
+
+     An attempt was made to pass an argument that was not a pointer
+     to a function that expected a pointer. The given number indicates
+     which argument was in error.
+.context HI2173
+..*.STRING '%Fs' : actual is not a pointer : parameter %d, parameter list %d
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2173
+
+     'function' : actual is not a pointer : parameter 'number1',
+     parameter list 'number2'
+
+     An attempt was made to pass a nonpointer argument to a function
+     that expected a pointer.
+
+     This error occurs in calls that return a pointer to a function.
+     The first number indicates which argument was in error; the second
+     number indicates which argument list contained the invalid
+     argument.
+.context HI2174
+..*.STRING '%Fs' : actual has type void : parameter %d, parameter list %d
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2174
+
+     'function' : actual has type void : parameter 'number1',
+     parameter list 'number2'
+
+     An attempt was made to pass a void argument to a function. Formal
+     parameters and arguments to functions cannot have type void. They
+     can, however, have type void * (pointer to void).
+
+     This error occurs in calls that return a pointer to a function.
+     The first number indicates which argument was in error; the second
+     number indicates which argument list contained the invalid
+     argument.
+..|| C2175 is relevant only in the QC environment
+.context HI2177
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2177
+
+     constant too big
+
+     Information was lost because a constant value was too large to be
+     represented in the type to which it was assigned.
+
+.context HI2178
+..*.STRING '%s' : storage class for same_seg variables must be extern
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2178
+
+     'identifier' : storage class for same_seg variables must be
+     extern
+
+     The given variable was specified in a same_seg pragma, but it was
+     not declared with extern storage class.
+.context HI2179
+..*.STRING '%Fs' : was used in same_seg, but storage class is no longer extern
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2179
+
+     'identifier' : was used in same_seg, but storage class is no
+     longer extern
+
+     The given variable was specified in a same_seg pragma, but it was
+     redeclared with a storage class other than extern.
+..|| C2183 and C2184 are obsolete, per chuckg
+.context HI2185
+..*.STRING '%Fs' : illegal _based allocation
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2185
+
+     'identifier' : illegal _based allocation
+
+     A _based-allocated variable that explicitly has extern storage
+     class and is uninitialized may not have a base of any of the
+     following:
+
+        ş (_segment) & var
+        ş _segname("_STACK")
+        ş (_segment)_self
+        ş void
+
+     If the variable does not explicitly have extern storage class or
+     it is uninitialized, then its base must use _segname("<string>")
+     where <string> is any segment name or reserved segment name except
+     "_STACK".
+..|| C2186 is obsolete, per chuckg
+.context HI2187
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2187
+
+     cast of near function pointer to far function pointer
+
+     An attempt was made to cast a near function pointer as a far
+     function pointer.
+..|| C2188 is obsolete in C6
+.context HI2189
+..*.STRING #error : %Fs
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2189
+
+     #error : 'string'
+
+     An #error directive was encountered. The <string> is the descriptive
+     text supplied in the directive.
+..|| C2190 and C2191 and C2192 are obsolete, per chuckg
+.context HI2193
+..*.STRING '%Fs' : already in a segment
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2193
+
+     'identifier' : already in a segment
+
+     A variable in the same_seg pragma has already been allocated in a
+     segment, using _based.
+.context HI2194
+..*.STRING '%Fs' : is a text segment
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2194
+
+     'segment' : is a text segment
+
+     The given text segment was used where a data, const, or bss
+     segment was expected.
+.context HI2195
+..*.STRING '%Fs' : is a data segment
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2195
+
+     'segment' : is a data segment
+
+     The given data segment was used where a text segment was expected.
+.context HI2200
+..*.STRING '%Fs' : function has already been defined
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2200
+
+     'function' : function has already been defined
+
+     A function name passed as an argument in an alloc_text pragma has
+     already been defined.
+.context HI2201
+..*.STRING '%Fs' : storage class must be extern
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2201
+
+     'function' : storage class must be extern
+
+     A function declaration appears within a block, but the function is
+     not declared extern. This causes an error if the /Za option is in
+     effect.
+
+     For example, the following causes this error, when compiled with
+     /Za:
+
+          main()
+          {
+              static int func1();
+          }
+..|| C2202 and C2203 and C2204 are obsolete, per chuckg
+.context HI2205
+..*.STRING '%Fs' : cannot initialize extern block scoped variables
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2205
+
+     'identifier' : cannot initialize extern block-scoped variables
+
+     A variable with extern storage class may not be initialized in a
+     function.
+.context HI2208
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2208
+
+     no members defined using this type
+
+     An enum, struct, or union was defined without any members. This is
+     an error only when compiling with /Za; otherwise, it is a warning.
+.context HI2209
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2209
+
+     type cast in _based construct must be (_segment)
+
+     The only type allowed within a cast in a _based declarator is
+     (_segment).
+.context HI2210
+..*.STRING '%Fs' : must be near/far data pointer
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2210
+
+     'identifier' : must be near/far data pointer
+
+     The base in a _based declarator may not be an array, a function,
+     or a _based pointer.
+.context HI2211
+..*.STRING (_segment) applied to function identifier '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2211
+
+     (_segment) applied to function identifier 'function'
+
+     The item cast in a _based declarator must not be a function.
+.context HI2212
+..*.STRING '%Fs' : _based not available for functions/pointers to functions
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2212
+
+     'identifier' : _based not available for functions/pointers to
+     functions
+
+     Functions cannot be _based-allocated. Use the alloc_text pragma.
+.context HI2213
+..*.STRING '%s' : illegal argument to _based
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2213
+
+     'identifier' : illegal argument to _based
+
+     A symbol used as a base must have type _segment or be a near or
+     far pointer.
+.context HI2214
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2214
+
+     pointers based on void require the use of :>
+
+     A _based pointer based on void cannot be dereferenced. Use the :>
+     operator to create an address that can be dereferenced.
+.context HI2215
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2215
+
+     :> operator only for objects based on void
+
+     The right operand of the :> operator must be a pointer based on
+     void, as in
+
+          char _based(void) *cbvpi
+.context HI2216
+..*.STRING '%Fs' may not be used with '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2216
+
+     'attribute1' may not be used with 'attribute2'
+
+     The given function attributes are incompatible.
+
+     Some combinations of attributes that cause this error are
+
+        ş _saveregs and _interrupt
+        ş _fastcall and _saveregs
+        ş _fastcall and _interrupt
+        ş _fastcall and _export
+.context HI2217
+..*.STRING '%Fs' must be used with '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2217
+
+     'attribute1' must be used with 'attribute2'
+
+     The first function attribute requires the second attribute to be
+     used.
+
+     Some causes for this error include
+
+        ş An interrupt function explicitly declared as near. Interrupt
+          functions must be far.
+
+        ş An interrupt function or a function with a variable number of
+          arguments, when that function is declared with the _fortran,
+          _pascal, or _fastcall attribute. Functions declared with the
+          _interrupt attribute or with a variable number of arguments
+          must use the C calling conventions. Remove the _fortran,
+          _pascal, or _fastcall attribute from the function
+          declaration.
+.context HI2218
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2218
+
+     type in _based construct must be void
+
+     The only type allowed within a _based construct is void.
+.context HI2219
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2219
+
+     syntax error : type qualifier must be after '*'
+
+     Either const or volatile appeared where a type or qualifier is not
+     allowed, as in
+
+          int (const *p);
+.context HI2220
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2220
+
+     warning treated as error - no object file generated
+
+     When the compiler option /WX is used, the first warning generated
+     by the compiler causes this error message to be displayed.
+
+     Either correct the condition that caused the warning, or compile
+     at a lower warning level or without /WX.
+.context HI2221
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2221
+
+     '.' : left operand points to struct/union, use '->'
+
+     The left operand of the '.' operator must be a struct/union type.
+     It cannot be a pointer to a struct/union type.
+
+     This error usually means that a '->' operator must be used.
+.context HI2222
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2222
+
+     '->' : left operand has struct/union type, use '.'
+
+     The left operand of the '->' operator must be a pointer to a
+     struct/union type. It cannot be a struct/union type.
+
+     This error usually means that a '.' operator must be used.
+.context HI2223
+..*.STRING left of '->%Fs' must point to struct/union
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2223
+
+     left of '->member' must point to struct/union
+
+     The left operand of the '->' operator is not a pointer to a
+     struct/union type.
+
+     This error can occur when the left operand is an undefined
+     variable. Undefined variables have type int.
+.context HI2224
+..*.STRING left of '.%Fs' must have struct/union type
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2224
+
+     left of '.member' must have struct/union type
+
+     The left operand of the '.' operator is not a struct/union type.
+
+     This error can occur when the left operand is an undefined
+     variable. Undefined variables have type int.
+.context HI2225
+..*.STRING '%Fs' : first member of struct is unnamed
+.freeze 3
+                                             \i\p\aUp\v@errHI2XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC error HI2225
+
+     'tagname' : first member of struct is unnamed
+
+     The struct with the given tag started with an unnamed member (an
+     alignment member). Struct definitions must start with a named
+     member.
+..|| C2350 and C2351 are obsolete in C6
+..|| C2353 changed to C1127 fatal error in C6

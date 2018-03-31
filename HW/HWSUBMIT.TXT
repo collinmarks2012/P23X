@@ -1,0 +1,462 @@
+CSC23x:  Homework Grades    (code=1-86887-2) Ver 580110
+Student:                Marks,               Collin 
+Created: 06/11/16 Updated:  06/29 16:42:57  
+
+HW#  Started        Status         Grade
+HW5  06/12/16       D 06/12 28:45  088               
+HW6  06/14/16       D 06/14 12:36  100               
+HW7  06/24/16       D 06/24 12:32  100               
+HW8  06/29/16       D 06/29 16:42  100               
+VER=S781661M1H0R10P1V0C0R8:1:21 W042900V00/09000000858
+
+End of file     
+-
+
+
+**********   HW5.TXT   **********
+
+HW5 - Multiply and Divide 
+
+01. Given these hex values for the 8086 registers 
+    AX=8C14  BX=3258  CX=8007  DX=F0C2
+    What are the hex values in DX and AX after executing this instruction:
+
+    mul  cl 
+
+02. Was the Carry Flag set to 0 or 1 ? 
+
+03. Given these hex values for the 8086 registers 
+    AX=9D02  BX=F707  CX=84A7  DX=3C1C
+    What are the hex values in DX and AX after executing this instruction:
+
+    mul  ch 
+
+04. Was the Carry Flag set to 0 or 1 ? 
+
+05. Given these hex values for the 8086 registers 
+    AX=4EFC  BX=0744  CX=60A5  DX=36D3
+    What are the hex values in DX and AX after executing this instruction:
+
+    imul  bh 
+
+06. Was the Carry Flag set to 0 or 1 ? 
+
+07. Given these hex values for the 8086 registers 
+    AX=BF02  BX=34BF  CX=B2A1  DX=EB3A
+    What are the hex values in DX and AX after executing this instruction:
+
+    imul  bl 
+
+08. Was the Carry Flag set to 0 or 1 ? 
+
+09. Given these hex values for the 8086 registers 
+    AX=024D  BX=6982  CX=0011  DX=292F
+    What are the hex values in DX and AX after executing this instruction:
+
+    mul  cx 
+
+10. Was the Carry Flag set to 0 or 1 ? 
+
+11. Given these hex values for the 8086 registers 
+    AX=5BD2  BX=7988  CX=1000  DX=D861
+    What are the hex values in DX and AX after executing this instruction:
+
+    mul  cx 
+
+12. Was the Carry Flag set to 0 or 1 ? 
+
+13. Given these hex values for the 8086 registers 
+    AX=026E  BX=FFFD  CX=47B8  DX=D4E3
+    What are the hex values in DX and AX after executing this instruction:
+
+    imul  bx 
+
+14. Was the Carry Flag set to 0 or 1 ? 
+
+15. Given these hex values for the 8086 registers 
+    AX=9F82  BX=0010  CX=A127  DX=27DD
+    What are the hex values in DX and AX after executing this instruction:
+
+    imul  bx 
+
+16. Was the Carry Flag set to 0 or 1 ? 
+
+17. Given these hex values for the 8086 registers 
+    AX=0001  BX=4F89  CX=6806  DX=5E86
+    What are the hex values in DX and AX after executing this instruction:
+
+    div  cl 
+
+18. Given these hex values for the 8086 registers 
+    AX=001D  BX=40B0  CX=0004  DX=0000
+    What are the hex values in DX and AX after executing this instruction:
+
+    div  cx 
+
+19. Given these hex values for the 8086 registers 
+    AX=002D  BX=FFFA  CX=8488  DX=5222
+    What are the hex values in DX and AX after executing this instruction:
+
+    idiv  bl 
+
+20. Given these hex values for the 8086 registers 
+    AX=FFF9  BX=0028  CX=1A2E  DX=0867
+    What are the hex values in DX and AX after executing this instruction:
+
+    idiv  bl 
+
+21. Given these hex values for the 8086 registers 
+    AX=FFB8  BX=FFFF  CX=0604  DX=96EE
+    What are the hex values in DX and AX after executing this instruction:
+
+    idiv  bl 
+
+22. Given these hex values for the 8086 registers 
+    AX=FFC5  BX=0005  CX=F6C0  DX=FFFF
+    What are the hex values in DX and AX after executing this instruction:
+
+    idiv  bx 
+
+23. Given these hex values for the 8086 registers 
+    AX=9D87  BX=B41D  CX=5830  DX=8C63
+    Will this instruction cause a divide overflow? 
+
+    div  ch 
+
+24. Given these hex values for the 8086 registers 
+    AX=0ABE  BX=1B45  CX=F2C7  DX=EAC0
+    Will this instruction cause a divide overflow? 
+
+    div  cx 
+
+25. Given these hex values for the 8086 registers 
+    AX=83DF  BX=A850  CX=F7F6  DX=B763
+    Will this instruction cause a divide overflow? 
+
+    idiv  ch 
+
+End of file
+-
+
+
+**********   HW5.ANS   **********
+
+ 1:F0C2
+ 1:008C
+ 2:0
+ 3:3C1C
+ 3:0108
+ 4:1
+ 5:36D3
+ 5:00EB
+ 5:36D3
+ 5:00E4
+ 6:0
+ 7:EB3A
+ 7:FF80
+ 7:EB3A
+ 7:ff60
+ 8:1
+ 9:0000
+ 9:271D
+10:0
+11:05BD
+11:2000
+12:1
+13:FFFF
+13:F8B6
+14:0
+15:fff9
+15:f820
+16:1
+17:5E86
+17:0100
+18:0000
+18:0107
+18:0001
+18:0007
+19:5222
+19:03f9
+20:0867
+20:f900
+21:96EE
+21:0048
+22:fffc
+22:fff5
+23:n
+24:n
+25:y
+End of file
+-
+
+
+**********   HW6.TXT   **********
+
+HW6 - Indirect Addressing 
+
+These are the hex values for the 8086 pointer registers. 
+
+    SI=000B  DI=0007  BX=0014  BP=00EB
+
+These are the hex values for the Data Segment shown 16 bytes per line. 
+
+    0000: 04 7A C4 0F 25 B3 89 B4 9B 62 8C BE 8D A0 D3 26 
+    0010: DB 5F D7 94 60 A1 E5 31 74 E8 C5 B6 B5 ED 9A CA 
+    0020: 08 94 09 8A DA 20 9D 69 AC A3 6A 3A CE B9 F1 8B 
+    0030: 6A 76 44 35 C5 9D 6B 31 C2 13 05 AD A8 93 32 5F 
+
+The first 5 questions access BYTE size data. 
+
+01. What is the hex value in al after executing: mov al,[bx] 
+
+02. What is the hex value in al after executing: mov al,[si] 
+
+03. What is the hex value in al after executing: mov al,[di] 
+
+04. What is the hex value in al after executing: mov al,[di+1] 
+
+05. What is the hex value in al after executing: mov al,[di-1] 
+
+The next 10 questions access WORD size data.
+
+06. What is the hex value in ax after executing: mov ax,[bx] 
+
+07. What is the hex value in ax after executing: mov ax,[si] 
+
+08. What is the hex value in ax after executing: mov ax,[di] 
+
+09. What is the hex value in ax after executing: mov ax,[si+7] 
+
+10. What is the hex value in ax after executing: mov ax,[di+12] 
+
+11. What is the hex value in ax after executing: mov ax,[bx-13] 
+
+12. What is the hex value in ax after executing: mov ax,[bx+si] 
+
+13. What is the hex value in ax after executing: mov ax,[bx+di] 
+
+14. What is the hex value in ax after executing: mov ax,[bx+si+4] 
+
+15. What is the hex value in ax after executing: mov ax,[bx+di-9] 
+
+16. Does this instruction need a data size override:  add [bx],9  
+
+17. From which segment (code, data, extra, stack) is the   
+    source data obtained for this instruction:  sub dx,[di]  
+
+18. From which segment (code, data, extra, stack) is the     
+    source data obtained for this instruction:  mov dx,[bp+4]  
+
+19. From which segment (code, data, extra, stack) is the     
+    source data obtained for this instruction:  sub dx,[ds:bp] 
+
+20. Is this instruction valid:  sub [dx],2  
+
+End of file
+-
+
+
+**********   HW6.ANS   **********
+
+ 1:60
+ 2:BE
+ 3:B4
+ 4:9B
+ 5:89
+ 6:A160
+ 7:8DBE
+ 8:9BB4
+ 9:94D7
+10:6094
+11:9BB4
+12:08CA
+13:B5B6
+14:DA8A
+15:94D7
+16:y
+17:data
+18:stack
+19:data
+20:n
+End of file
+-
+
+
+**********   HW7.TXT   **********
+
+HW7 - Subroutines 
+
+01.  This subroutine is to copy one list to another list. Input is:         
+    si points to the source list and di points to the destination list 
+    cx contains the count of bytes in the source list  
+    
+    subr:   cmp     cx,0        ;I1  is list size zero   
+            je      exit        ;I2  if yes we are done  
+            push    si          ;I3  save si             
+            push    di          ;I4  save di             
+            push    cx          ;I5  save cx             
+    movr:   mov     al,[si]     ;I6  get a byte          
+            mov     [di],al     ;I7  put a byte          
+            loop    movr        ;I8  repeat if more chars 
+    exit:   pop     cx          ;I9  restore cx          
+            pop     di          ;I10 restore di          
+            pop     si          ;I11 restore si          
+            ret                 ;I12 return to caller    
+                                                         
+If cx=0 on input then which is true about the subroutine's behavior 
+A. it correctly return to the caller without moving any data        
+B. it incorrectly moves 1 byte from the source to destination list  
+C. it incorrectly moves 65,536 bytes from the source to destination list 
+D. it has unpredictable behavior because it has misused the stack   
+E. it loops forever executing instructions I6, I7, I8               
+
+
+02.  This subroutine increments a byte memory value. The input is   
+si which points to the byte memory value                       
+    
+    subr:   push    ax          ; save ax             
+            mov     al,[si]     ; get the data        
+            inc     al          ; add 1 to the data   
+            mov     [si],al     ; put the data        
+            pop     ax          ; restore ax          
+            ret                 ; return to caller    
+  
+Which of these is true about instruction  mov  al,[si] 
+A. it is syntactically okay and will assemble without errors     
+B. it requires the data size to be specified by entering:        
+   mov  al,[byte ptr si]                                         
+C. it will always generate an assembler error message because al is a byte
+   register and si is a word register                                     
+D. it will assemble correctly only if the assembler has access to the data
+   declaration for list because then the assembler will know the size of  
+   the data items in the list                                             
+E. None of the above                                                      
+
+
+03.  Given this subroutine.                                              
+                                                                    
+      subr:   push  ax                                              
+              push  si                                              
+              mov   ax,[si]                                         
+              mov   [si],ah                                         
+              mov   [si+1],al                                       
+              pop   ax                                              
+              pop   si                                              
+              ret                                                   
+                                                                    
+A. The ax and si registers are correctly saved and restored.       
+B. The ax and si registers are not correctly saved and restored.   
+
+
+04.  The input to this routine is a pointer in si that points to a word of   
+data in memory.  The routine is to swap the high byte and low byte of   
+the data word in memory.  For example if si points the memory data word 
+11 22, then the routine should set the memory data word to 22 11.   
+                                                                    
+      subr:   push  ax                                              
+              push  si                                              
+              mov   ax,[si]                                         
+              mov   [si],ah                                         
+              mov   [si+1],al                                       
+              pop   si                                              
+              pop   ax                                              
+              ret                                                   
+                                                                    
+Which is true about the subroutine's operation.                     
+A. The high and low bytes will be swapped for all values of the     
+   memory data word.                                                
+B. The high and low bytes will be swapped only if both bytes of     
+   the memory data word are in the range of hex 00-7F.              
+C. The high and low bytes will be swapped only if both bytes of     
+   the memory data word are in the range of hex 80-FF.              
+D. The high and low bytes will be swapped only if both bytes of     
+   the memory data word have the same value.                        
+
+
+05.  Given this subroutine whose input is a pointer in si.              
+                                                                   
+    subr:    mov  bx,2                                             
+             mov  cx,1                                             
+             mov  ax,[si]                                          
+             mul  bx                                               
+             jc   subret                                           
+             div  cx                                               
+    subret:  ret                                                   
+                                                                   
+Which hex value, if loaded into ax by the instruction mov ax,[si]  
+would result in the subroutine generating a divide overflow.       
+A. 0000                                                            
+B. 7FFF                                                            
+C. 8000                                                            
+D. All  of the above will result in a divide overflow.             
+E. None of the above will result in a divide overflow.             
+
+
+CODE=GJEFD       
+End of file
+-
+
+
+**********   HW7.ANS   **********
+
+ 1:D
+ 2:A
+ 3:B
+ 4:A
+ 5:E
+End of file
+-
+
+
+**********   HW8.TXT   **********
+
+HW8 - Machine Code 
+
+01. Convert:  mov dx,[varx]  into hex machine code. 
+    Varx is a word variable located at hex offset 1000 in the data segment.
+
+02. Convert:  add bl,100  into hex machine code. 
+
+03. Convert:  sub dx,bx  into hex machine code. 
+
+04. Convert:  cmp bx,1000  into hex machine code. 
+
+05. Convert:  mov [vary],-1  into hex machine code. 
+    Vary is a byte variable located at hex offset 2000 in the data segment.
+
+06. Given this hex machine code: F7E8  What is the       
+    symbolic opcode for that instruction (mul, imul, div, idiv).   
+
+07. Given the same hex machine code: F7E8  What is the   
+    size of the data used by that instruction (byte, word).  
+
+08. Given the same hex machine code: F7E8  What is the   
+    register specified the r/m field.  
+
+09. Given this hex machine code: 7753  What is the symbolic opcode 
+    for this instruction.  
+
+10. This hex machine code represents 1 or more symbolic instructions. 
+    7878 
+    How many symbolic instructions does it represent? 
+
+End of file
+-
+
+
+**********   HW8.ANS   **********
+
+ 1:8B150010
+ 1:8B160010
+ 2:80D364
+ 2:80C364
+ 3:2BD3
+ 4:81FBE803
+ 5:C6060020FF
+ 6:imul
+ 7:word
+ 8:ax
+ 9:ja
+10:1
+End of file
+-

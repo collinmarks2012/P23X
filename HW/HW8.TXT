@@ -1,0 +1,32 @@
+HW8 - Machine Code 
+
+01. Convert:  mov dx,[varx]  into hex machine code. 
+    Varx is a word variable located at hex offset 1000 in the data segment.
+
+02. Convert:  add bl,100  into hex machine code. 
+
+03. Convert:  sub dx,bx  into hex machine code. 
+
+04. Convert:  cmp bx,1000  into hex machine code. 
+
+05. Convert:  mov [vary],-1  into hex machine code. 
+    Vary is a byte variable located at hex offset 2000 in the data segment.
+
+06. Given this hex machine code: F7E8  What is the       
+    symbolic opcode for that instruction (mul, imul, div, idiv).   
+
+07. Given the same hex machine code: F7E8  What is the   
+    size of the data used by that instruction (byte, word).  
+
+08. Given the same hex machine code: F7E8  What is the   
+    register specified the r/m field.  
+
+09. Given this hex machine code: 7753  What is the symbolic opcode 
+    for this instruction.  
+
+10. This hex machine code represents 1 or more symbolic instructions. 
+    7878 
+    How many symbolic instructions does it represent? 
+
+End of file
+-

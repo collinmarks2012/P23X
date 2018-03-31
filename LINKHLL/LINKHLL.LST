@@ -1,0 +1,123 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/30/16 20:39:43
+linkhll.asm						     Page 1 - 1
+
+
+				;--------------------------------------------------------------------
+				;	program: 	LINKHLL
+				;
+				;	function: 	The LinkHLL subroutine will find the maximum
+				; 				of 4 parameter values
+				; 				and then constructs the product of the 2 maxs.
+				;				We will search for the 2 maxs and then return
+				;				the product
+				;
+				;	owner: 		Collin Marks
+				;
+				;	date: 		06/30/2016
+				;---------------------------------------
+				;
+				; The LinkHLL subroutine will find the maximum
+				; of 4 parameter values
+				; and then construct the product of the 2 maxs
+				;
+				;---------------------------------------
+				         .model    small               ;
+				         .8086                         ;
+				         public    _linkhll            ;
+				;---------------------------------------
+
+ 0000				         .data
+				;---------------------------------------
+				;
+				; Data Segment
+				;
+				;---------------------------------------
+
+ 0000				         .code
+				;---------------------------------------
+				;
+				; Code Segment
+				;
+				; initially pushes all the pointers for
+				; subroutine
+				;
+				;---------------------------------------
+ 0000				_linkhll:
+ 0000  55					push bp			; saves the callers bp
+ 0001  8B EC					mov bp,sp		; loads bp from sp
+ 0003  8B 46 04					mov ax, [bp+4]	; store values into the reg
+ 0006  8B 5E 06					mov bx, [bp+6]	; put value into 
+ 0009  8B 4E 08					mov cx, [bp+8]	; put value into cx
+ 000C  8B 56 0A					mov dx, [bp+10]	; put value into dx
+ 000F  3B C1					cmp ax, cx		; cmp ax to cx
+ 0011  77 01					ja A			; if ax < cx then swap them
+ 0013  91					xchg ax, cx		; swaps ax and cx
+				;---------------------------------------
+				; will process relation between ax and dx
+				;---------------------------------------		
+ 0014					A:
+ 0014  3B C2					cmp ax, dx		; cmp ax to dx
+ 0016  77 01					ja B			; if ax < dx then swap them 
+ 0018  92					xchg ax, dx		; swap ax and dx
+				;---------------------------------------
+				; will process relation between bx and cx
+				;---------------------------------------	
+ 0019					B:
+ 0019  3B D9					cmp bx, cx		; cmp bx to cx
+ 001B  77 02					ja D			; if bx < cx then swap them
+ 001D  87 D9					xchg bx, cx		; swaps bx and cx
+				;---------------------------------------
+				; will process relation between bx and dx
+				;---------------------------------------	
+ 001F					D:
+ 001F  3B DA					cmp bx, dx		; cmp bx to dx
+ 0021  77 02					ja E			; if bx < dx swap them
+ 0023  87 DA					xchg bx, dx		; swaps bx and dx
+				;---------------------------------------
+				; will effectively construct the multiplicand
+				; and will end program
+				;---------------------------------------	
+ 0025					E:	
+ 0025  F7 E3					mul bx			; multiply ax and bx register
+ 0027  5D					pop bp			; restore registers
+ 0028  C3			        ret             ; return values will be in dx:ax pair
+				        end             ; effectively terminate the subroutine
+				;---------------------------------------
+
+ 
+Microsoft (R) Macro Assembler Version 6.11		    06/30/16 20:39:43
+linkhll.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0000	  Word	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	16 Bit	 0029	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+A  . . . . . . . . . . . . . . .	L Near	 0014	  _TEXT	
+B  . . . . . . . . . . . . . . .	L Near	 0019	  _TEXT	
+D  . . . . . . . . . . . . . . .	L Near	 001F	  _TEXT	
+E  . . . . . . . . . . . . . . .	L Near	 0025	  _TEXT	
+_linkhll . . . . . . . . . . . .	L Near	 0000	  _TEXT	Public
+
+	   0 Warnings
+	   0 Errors

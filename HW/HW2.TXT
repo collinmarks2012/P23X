@@ -1,0 +1,115 @@
+HW2 - Signed Numbers 
+
+01. Add the following 8 bit two's complement signed binary numbers
+    00000010
+  + 00000100
+    --------
+
+02. Did a two's complement signed overflow occur? (Y/N)
+
+03. Add the following 8 bit two's complement signed binary numbers
+    01101110
+  + 11001100
+    --------
+
+04. Did a two's complement signed overflow occur? (Y/N)
+
+05. Add the following 8 bit two's complement signed binary numbers
+    00001110
+  + 10100101
+    --------
+
+06. Did a two's complement signed overflow occur? (Y/N)
+
+07. Subtract the following 8 bit two's complement signed binary numbers
+    01110100
+  - 00111011
+    --------
+
+08. Did an two's complement signed overflow occur? (Y/N)
+
+09. Subtract the following 8 bit two's complement signed binary numbers
+    01111010
+  - 01110010
+    --------
+
+10. Did an two's complement signed overflow occur? (Y/N)
+
+11. Subtract the following 8 bit two's complement signed binary numbers
+    00011110
+  - 01010010
+    --------
+
+12. Did an two's complement signed overflow occur? (Y/N)
+
+13. Add the following 2 digit two's complement signed hex numbers
+    3D
+  + 54
+    --
+
+14. Did a signed overflow occur? (Y/N)
+
+15. Add the following 2 digit two's complement signed hex numbers
+    3D
+  + E8
+    --
+
+16. Did a signed overflow occur? (Y/N)
+
+17. Add the following 2 digit two's complement signed hex numbers
+    E2
+  + 77
+    --
+
+18. Did a signed overflow occur? (Y/N)
+
+19. Subtract the following 2 digit two's complement signed hex numbers
+    DC
+  - 2F
+    --
+
+20. Did a signed overflow occur? (Y/N)
+
+21. Subtract the following 2 digit two's complement signed hex numbers
+    DD
+  - 50
+    --
+
+22. Did a signed overflow occur? (Y/N)
+
+23. Subtract the following 2 digit two's complement signed hex numbers
+    2F
+  - DE
+    --
+
+24. Did a signed overflow occur? (Y/N)
+
+25. Convert the following SIGNED MAGNITUDE binary number to decimal.
+    00011111
+
+26. Convert the following SIGNED ONE'S COMPLEMENT number to decimal.
+    00011111
+
+27. Convert the following SIGNED TWO'S COMPLEMENT number to decimal.
+    00011111
+
+28. Convert the following SIGNED MAGNITUDE binary number to decimal.
+    11011111
+
+29. Convert the following SIGNED ONE'S COMPLEMENT number to decimal.
+    11011111
+
+30. Convert the following SIGNED TWO'S COMPLEMENT number to decimal.
+    11011111
+
+31. Convert the following SIGNED MAGNITUDE binary number to decimal.
+    11000110
+
+32. Convert the following SIGNED ONE'S COMPLEMENT number to decimal.
+    11000110
+
+33. Convert the following SIGNED TWO'S COMPLEMENT number to decimal.
+    11000110
+
+End of file
+-

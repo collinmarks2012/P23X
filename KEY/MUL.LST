@@ -1,0 +1,65 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/12/16 18:34:30
+mul.asm							     Page 1 - 1
+
+
+				    .model     small 				; 64k code and 64k data
+					.8086 							; only allow 8086 instructions
+					.stack 256 						; reserve 256 bytes for the stack
+				;---------------------------------------
+ 0000					.data 		
+ 0000 0000				AAXX dw ?
+ 0002 0000				DDXX dw ?
+ 0000					.code 
+ 0000					start:
+ 0000  B8 ---- R			mov ax, @data
+ 0003  8E D8				mov ds, ax
+ 0005  B8 1811				mov ax, 1811h
+ 0008  BB B527				mov bx, 46375
+ 000B  B9 9002				mov cx, 9002h
+ 000E  BA C1A4				mov dx, 49572
+ 0011  F6 E1				mul cl
+ 0013  A3 0000 R			mov AAXX, ax
+ 0016  89 16 0002 R			mov DDXX, dx
+ 001A  B4 02				mov ah, 2
+ 001C  8B 16 0000 R			mov dx, AAXX
+ 0020  CD 21				int 21h
+ 0022  B4 02				mov ah, 2
+ 0024  8B 16 0002 R			mov dx, DDXX
+ 0028  CD 21				int 21h
+					end start
+	
+Microsoft (R) Macro Assembler Version 6.11		    06/12/16 18:34:30
+mul.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	16 Bit	 0004	  Word	  Public  'DATA'	
+STACK  . . . . . . . . . . . . .	16 Bit	 0100	  Para	  Stack	  'STACK'	 
+_TEXT  . . . . . . . . . . . . .	16 Bit	 002A	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0002h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+AAXX . . . . . . . . . . . . . .	Word	 0000	  _DATA	
+DDXX . . . . . . . . . . . . . .	Word	 0002	  _DATA	
+start  . . . . . . . . . . . . .	L Near	 0000	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

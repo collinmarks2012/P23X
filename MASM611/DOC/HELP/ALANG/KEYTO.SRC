@@ -1,0 +1,443 @@
+.context @timings
+.freeze 3
+.topic Key to Timings
+ \i\p\aEncodings\v@encoding\v\i\p \i\p\aFlags\v@keytoflags\v\i\p                         \i\p\aUp\v@LangInstructions\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Instruction timings are calculated using these symbols:
+
+     \bSymbol      Description\p
+
+     EA          Effective address calculation time.
+                 See: \i\p\aEA Calculation\v@ea\v\i\p
+
+     b,w,d,q     Byte, word, doubleword, or quadword integer operands.
+
+     s,l,t       Short real, long real, and 10-byte temporary real
+                 operands.
+
+     pm          Timing for protected mode.
+
+     n           Number of iterations. Repeated instructions may have a
+                 base number of clocks plus a number of clocks for each
+                 iteration. For example, 8+4n means eight clocks plus
+                 four clocks for each iteration.
+
+     noj         No jump. Timing of instruction if conditional jump not
+                 taken.
+
+     m           Next instruction components. Some control transfer
+                 instructions take different times depending on the
+                 length of the next instruction executed. On the 8088
+                 and 8086, m is never a factor. On the 80286, m is the
+                 number of bytes in the next instruction. On the 80386,
+                 m is the number of components in the next instruction.
+                 A component is an instruction byte or a displacement
+                 or data operand.
+
+     to,fr       To or from stack top. On the 80387, the to clocks
+                 represent timings when ST is the destination. The fr
+                 clocks represent timings when ST is the source.
+
+     88          Timing for an 8088 processor.
+
+     W88         Timing for an 8088 processor when operand is a word.
+
+     On the 80286-80486 processors, add one clock cycle if a base,
+     an index, and displacement are all used by the instruction.
+
+     Convert clocks to nanoseconds by dividing one microsecond by the
+     number of megahertz (MHz) at which the processor is running. For
+     example, on a processor running at 8 MHz, one clock takes 125
+     nanoseconds (1000 MHz per nanosecond/8 MHz).
+
+     The clock counts are for best-case timings. Actual timings vary
+     depending on wait states, alignment of the instruction, status of
+     the prefetch queue, and other factors.
+.context @ea
+.freeze 3
+.topic EA Calculation Times
+                                             \i\p\aUp\v@timings\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Use this chart to determine how many clock cycles are needed for
+     effective address calculation time (EA) on the 8086/8088 processors
+     and 8087 coprocessor:
+
+     \bComponents              EA Clocks     Examples\p
+
+     Displacement            6             mov   ax, stuff
+                                           mov   ax, stuff+2
+
+     Base or index           5             mov   ax, [bx]
+                                           mov   ax, [di]
+
+     Displacement plus       6             mov   ax, [bp+8]
+     base or index                         mov   ax, stuff[di]
+
+     BP+DI or BX+SI          7             mov   ax, [bx+si]
+                                           mov   ax, [bx+di]
+
+     BP+SI or BX+DI          8             mov   ax, [bx+di]
+                                           mov   ax, [bp+si]
+
+     BP+DI+disp              11            mov   ax, stuff[bx+si]
+     or BX+SI+disp                         mov   ax, [bp+di+8]
+
+     BP+SI+disp              12            mov   ax, stuff[bx+di]
+     or BX+DI+disp                         mov   ax, [bx+di+20]
+
+     Segment override        EA+2          mov   ax, es:stuff
+                                           mov   ax, ds:[bp+10]
+.context @encoding
+.freeze 3
+..index processor encoding symbols
+.topic Key to Processor Encodings
+ \i\p\aFlags\v@keytoflags\v\i\p \i\p\aTimings\v@timings\v\i\p                           \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aScaled Index Mode (386+)\v@scalemode\v, \a16/32-Bit Overrides (386+)\v@32override\v
+
+     Encodings are shown below for each instruction variation.
+
+     Select an abbreviation for more information.
+
+     \bAbbreviation\p     \bDescription\p
+
+     \ad                Transfer direction bit\v@dfield\v
+     \aa                Accumulator direction bit\v@afield\v
+     \aw                Word/byte bit\v@wfield\v
+     \as                Sign bit\v@sfield\v
+     \amod              Register/memory mode\v@modfield\v
+     \areg              General-purpose register\v@regfield\v
+     \asreg             Segment register/override\v@sregfield\v
+     \ar/m              Register/memory operand type\v@rmfield\v
+     \adisp             Address displacement\v@dispfield\v
+     \adata             Constant data\v@datafield\v
+.context @scalemode
+.freeze 3
+.topic Scaled Index Mode
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aScaling (ss) Field\v@scalefield\v, \aIndex Field\v@indexfield\v,
+               \aBase Register (base) Field\v@basefield\v, \aRegister/Memory (r/m) Field\v@rmfield\v
+
+     Many 80386/486 extended memory operands are too complex to be
+     represented by a single mod-reg-r/m byte. For these operands, a
+     value of 100 in the \ar/m field\v@rmfield\v signals the presence of a second
+     encoding byte called the Scaled Index Base (SIB) byte.
+
+     The SIB byte is made up of the following fields:
+
+     \bField     Bits\p
+
+     base      0-2
+     index     3-5
+     ss        6-7
+.context @32override
+.freeze 3
+.topic 32-Bit Overrides
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     On the 80386/486 processors, 32-bit operands can be accessed in a
+     16-bit segment and 16-bit operands can be accessed in a 32-bit
+     segment using the 66h operand size override prefix. Likewise, 32-bit
+     addresses can be accessed in a 16-bit segment and 16-bit addresses
+     can be accessed in a 32-bit segment using the 67h address size
+     override prefix.
+.context @dfield
+.freeze 3
+.topic Transfer Direction (d) Bit
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p P2 \areg\v@sregfield\v
+
+     The transfer direction (d) bit changes the direction of data
+     transfer. If set, the do memory to register. If clear, do
+     register to memory.
+.context @afield
+.freeze 3
+.topic Accumulator Direction (a) Bit
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The accumulator direction (a) bit changes the direction of accumulator
+     data transfer. If set, move accumulator to memory. If clear,
+     move memory to accumulator.
+.context @wfield
+.freeze 3
+.topic Word/Byte (w) Bit
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     If the word/byte (w) bit is set, use 16-bit or 32-bit operands
+     under the .386 or .486 directive. If clear, use 8-bit operands.
+.context @sfield
+.freeze 3
+.topic Sign (s) Bit
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     If the sign (s) bit is set, sign-extend 8-bit immediate data
+     to 16 bits. Under the .386 or .486 directive, sign-extend 8-bit and
+     16-bit immediate data to 32 bits.
+.context @modfield
+.freeze 3
+.topic Mode (mod) Field
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aRegister/Memory (r/m) Field\v@rmfield\v, \aScaled Index Mode\v@scalemode\v
+
+     The two-bit mode (mod) field gives the register/memory (r/m)
+     addressing mode.
+
+     \bmod\p    \bDescription\p
+
+     00     If \ar/m\v@rmfield\v is 110, a direct memory operand is used; otherwise,
+            an indirect memory operand is used with a zero
+            displacement. The operand must be based, indexed, or based
+            indexed.
+
+     01     An indirect memory operand is used with an 8-bit
+            displacement.
+
+     10     An indirect memory operand is used with a 16-bit
+            displacement.
+
+     11     Instruction is register-to-register. The \areg field\v@regfield\v
+            specifies the destination, and the \ar/m field\v@rmfield\v specifies the
+            source.
+
+     In 32-bit mode, 00, 01, and 11 in the mode field have different
+     meanings.
+.context @regfield
+.freeze 3
+.topic Register (reg) Field
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The three-bit register (reg) field specifies one of the following
+     general-purpose registers:
+
+             \bIf w=1\p          \bIf w=0\p
+     \breg\p     \b(16/32-bit)\p     \b(8-bit)\p
+
+     000     AX/EAX          AL
+     001     CX/ECX          CL
+     010     DX/EDX          DL
+     011     BX/EBX          BL
+     100     SP/ESP          AH
+     101     BP/EBP          CH
+     110     SI/ESI          DH
+     111     DI/EDI          BH
+
+     The register field can also specify encoding information rather
+     than a register name.
+.context @sregfield
+.freeze 3
+.topic Segment Register (sreg) Field
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The three-bit segment register (sreg) field specifies one of the
+     following segment registers:
+
+     \bsreg\p     \bRegister Name\p
+
+     000      ES
+     001      CS
+     010      SS
+     011      DS
+     100      FS (386+)
+     101      GS (386+)
+
+     If a memory operand has a segment override, the entire instruction
+     has one of the following bytes as a prefix:
+
+     \bPrefix\p     \bRegister Name\p
+
+     26h        ES
+     2Eh        CS
+     36h        SS
+     3Eh        DS
+     64h        FS (386+)
+     65h        GS (386+)
+.context @rmfield
+.freeze 3
+.topic Register/Memory (r/m) Field
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aMode (mod) Field\v@modfield\v, \aScaled Index Mode\v@basefield\v
+
+     The three-bit register/memory (r/m) field specifies the addressing
+     mode.
+
+     \br/m\p     \bAddressing mode\p
+     000     DS:[BX+SI+disp]
+     001     DS:[BX+DI+disp]
+     010     SS:[BP+SI+disp]
+     011     SS:[BP+DI+disp]
+     100     DS:[SI+disp]
+     101     DS:[DI+disp]
+     110     DS:[BP+disp]
+     111     DS:[BX+disp]
+
+     If mod is 11, the r/m field specifies the destination register
+     using the same encoding as the \areg field\v@regfield\v.
+
+     If mod is 00 and r/m is 110, the operand is treated as a direct
+     memory operand. This means that the operand [BP] is encoded as
+     [BP+0] rather than having a short form like other register
+     indirect operands. Encoding [BX] takes one byte; encoding [BP]
+     takes two bytes.
+.context @dispfield
+.freeze 3
+.topic Displacement (disp) Bytes
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Displacement (disp) bytes give the offset for memory operands. In
+     instruction coding, the possible lengths (in bytes) are shown in
+     parentheses.
+
+     Use a one-byte displacement for a byte offset, such as
+
+          MOV ax, [bx+4]
+
+     A two-byte displacement is a near pointer. A displacement of zero
+     means no offset. Under the .386 and .486 directives, offsets can be
+     up to four bytes.
+.context @datafield
+.freeze 3
+.topic Data Bytes
+                                             \i\p\aUp\v@encoding\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The data (data) bytes give the actual value for constant values.
+     In instruction coding, the possible lengths (in bytes) are shown
+     in parentheses.
+
+     Under the .386 and .486 directives, values can be up to four
+     bytes.
+.context @basefield
+.freeze 3
+.topic Base Register (base) Field
+                                             \i\p\aUp\v@scalemode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aScaling (ss) Field\v@scalefield\v, \aIndex Field\v@indexfield\v, \aMode (mod) Field\v@modfield\v,
+               \aRegister/Memory (r/m) Field\v@rmfield\v
+
+     In scaled indexing, the base register (base) field combines with
+     the mod field to specify the base register and the displacement.
+     Scaled addressing is allowed only under the .386 and .486
+     directives.
+
+     Fields for 32-bit indexed operands are:
+
+     \bmod\p    \br/m\p     \bbase\p    \bOperand\p
+
+     00     100     000     DS:[EAX+(scale*index)]
+     00     100     001     DS:[ECX+(scale*index)]
+     00     100     010     DS:[EDX+(scale*index)]
+     00     100     011     DS:[EBX+(scale*index)]
+     00     100     100     SS:[ESP+(scale*index)]
+     00     100     101     DS:[disp32+(scale*index)]
+     00     100     110     DS:[ESI+(scale*index)]
+     00     100     111     DS:[EDI+(scale*index)]
+
+     01     100     000     DS:[EAX+(scale*index)+disp8]
+     01     100     001     DS:[ECX+(scale*index)+disp8]
+     01     100     010     DS:[EDX+(scale*index)+disp8]
+     01     100     011     DS:[EBX+(scale*index)+disp8]
+     01     100     100     SS:[ESP+(scale*index)+disp8]
+     01     100     101     SS:[EBP+(scale*index)+disp8]
+     01     100     110     DS:[ESI+(scale*index)+disp8]
+     01     100     111     DS:[EDI+(scale*index)+disp8]
+
+     10     100     000     DS:[EAX+(scale*index)+disp32]
+     10     100     001     DS:[ECX+(scale*index)+disp32]
+     10     100     010     DS:[EDX+(scale*index)+disp32]
+     10     100     011     DS:[EBX+(scale*index)+disp32]
+     10     100     100     SS:[ESP+(scale*index)+disp32]
+     10     100     101     SS:[EBP+(scale*index)+disp32]
+     10     100     110     DS:[ESI+(scale*index)+disp32]
+     10     100     111     DS:[EDI+(scale*index)+disp32]
+
+     The operand [EBP] must be encoded as [EBP+0]; the 0 is an 8-bit
+     displacement. Similarly, [EBP+(scale*index)] must be encoded as
+     [EBP+(scale*index)+0]. The short encoding form available with
+     other base registers cannot be used with EBP.
+.context @indexfield
+.freeze 3
+.topic Index Register (index) Field
+                                             \i\p\aUp\v@scalemode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aScaling (ss) Field\v@scalefield\v, \aBase Register (base) Field\v@basefield\v
+
+     In scaled indexing, the index register (index) field specifies the
+     index register used. Scaled addressing is allowed only under the
+     .386 and .486 directives.
+
+     \bIndex\p     \bRegister\p
+
+     000       EAX
+     001       ECX
+     010       EDX
+     011       EBX
+     100       No index
+     101       EBP
+     110       ESI
+     111       EDI
+.context @scalefield
+.freeze 3
+.topic Scaling (ss) Field
+                                             \i\p\aUp\v@Scalemode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aIndex Field\v@indexfield\v, \aBase Register (base) Field\v@basefield\v
+
+     In scaled indexing, the scaling (ss) field specifies a multiplier
+     for the index register. Scaled addressing is allowed only under
+     the .386 and .486 directives.
+
+     \bss\p     \bScale\p
+
+     00     1
+     01     2
+     10     4
+     11     8
+.context @keytoflags
+.freeze 3
+.topic Key to Flags
+ \i\p\aEncodings\v@encoding\v\i\p \i\p\aTimings\v@timings\v\i\p                       \i\p\aUp\v@contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSee also:\p \aFlags Summary\v@FlagSummary\v
+
+     In the summary screens, symbols are used to indicate
+     flags. The first row of the display has a one-character
+     abbreviation for the flag name. Only flags common to all
+     processors are shown.
+
+     O  Overflow         T  Trap        A  Auxiliary Carry
+     D  Direction        S  Sign        P  Parity
+     I  Interrupt        Z  Zero        C  Carry
+
+     The second line has codes indicating how the flag can be affected.
+
+     \bCode      Effect\p
+
+     1         Sets flag unconditionally
+     0         Clears flag unconditionally
+     ?         Randomly sets or clears flag
+     blank     No effect on flag
+     ñ         Affects flag according to result of instruction
+
+

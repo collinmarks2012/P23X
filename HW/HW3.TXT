@@ -1,0 +1,43 @@
+HW3 - Basic Computer Architecture 
+
+Questions 1-4 relate to a microprocessor with this instruction format.
+   All instructions have two operands:
+   - one is a register
+   - the other is an absolute address of a memory variable
+   This machine's memory is Byte Addressable.
+
+The binary format of an instruction looks as follows:
+
+   OOOOOOOOLLRRRRRRRAAAAAAAAAAAAAAAAAAAA
+
+Where....
+ 8 = O = number of bits in the opcode
+ 2 = L = number of bits that indicate the size of a data variable 
+ 7 = R = number of bits that indicate which register to use 
+20 = A = number of bits that indicate the address of a byte in memory
+
+*** GIVE ALL ANSWERS IN DECIMAL ***
+01. How many unique OPCODES can this processor have.
+
+02. How many different sizes of data can this processor allow.
+
+03. How many registers does this processor have.
+
+04. How many MegaBytes of memory can this processor address.
+
+Questions 5-7 relate to a microprocessor with these characteristics.
+   250 = clock speed in MegaHertz
+     1 = the number of clock cycles required for each instruction
+
+   Note that MegaHertz represents millions of cycles per second,
+   1 Nano-second is 1 billionth of a second,
+   MIPS stands for Million Instructions Per Second.
+
+05. How many Nano-seconds does 1 clock cycle take to complete.
+
+06. How many Nano-seconds does 1 instruction take to execute.
+
+07. How many MIPS does this processor execute.
+
+End of file
+-

@@ -1,0 +1,9 @@
+;* NewCtrlC - Handler for Interrupt 23h.
+
+NewCtrlC PROC   FAR
+
+        iret                            ; Return from handler
+                                        ;   without taking action
+NewCtrlC ENDP
+
+

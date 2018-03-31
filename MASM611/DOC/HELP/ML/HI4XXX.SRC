@@ -1,0 +1,1748 @@
+..| File name in SLM      : \masm60\help\ml\HI4XXX.SRC
+..| Help file destination : ML.HLP
+..| 
+..| Contents of this file : H2INC warning help
+..| Product and version   : H2INC version 1.00???
+..| Released with         : MASM 6.0
+..| 
+..| Number of errors      : 102
+..| Number of topics      : 103
+..| Number of contexts    : 104
+..| First context         : errHI4XXX
+..| Last context          : HI4820
+..|
+..| HISTORY (start)
+..| 90 05 07 OWNERSHIP: MarciM
+..| 90 05 07 Created from C4XXX.SRC shipped with C 6.0
+..| 90 05 16 Converted text, codes, and comments to work with H2INC
+..| 90 10 08 <Up>=>localTOC; C to H2INC everywhere
+..| 90 10 08 MASM Beta 1
+..| 90 10 24 OWNERSHIP: WillieS
+..| 90 10 31 OWNERSHIP: JonKa
+..| 90 12 03 Incorporated BobAl review comments
+..| 91 02 12 Added new TOC
+..| 92 10 15 removed os2 refs a-abird
+..| HISTORY (end)
+..| 
+..| Doubled backslashes : HI4125, HI4129, HI4139
+..| 
+.context errHI4XXX
+.context @errHI4XXX
+.freeze 3
+:nH2INC Warnings
+                                             \i\p\aUp\v@errtoc.masm\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bH2INC Warnings\p
+
+     To find out about a specific error, click on the error number
+     with the right mouse button.
+
+     See:  \i\p\aHow to View Errors Help\vadvisor.hlp!errorview\v\i\p
+
+     HI4000    HI4020    HI4050    HI4086    HI4111    HI4132    HI4323
+     HI4001    HI4021    HI4051    HI4087    HI4112    HI4135    HI4324
+     HI4002    HI4022    HI4053    HI4088    HI4113    HI4136    HI4799
+     HI4003    HI4023    HI4063    HI4089    HI4114    HI4138    HI4800
+     HI4004    HI4024    HI4066    HI4090    HI4115    HI4139    HI4801
+     HI4005    HI4028    HI4067    HI4091    HI4116    HI4186    HI4802
+     HI4006    HI4030    HI4071    HI4092    HI4119    HI4200    HI4810
+     HI4007    HI4031    HI4072    HI4093    HI4120    HI4201    HI4811
+     HI4008    HI4034    HI4073    HI4095    HI4123    HI4202    HI4812
+     HI4009    HI4040    HI4076    HI4096    HI4125    HI4203    HI4815
+     HI4010    HI4042    HI4079    HI4198    HI4126    HI4204    HI4816
+     HI4011    HI4044    HI4082    HI4104    HI4128    HI4205    HI4820
+     HI4015    HI4047    HI4083    HI4105    HI4129    HI4209
+     HI4016    HI4048    HI4084    HI4109    HI4130    HI4300
+     HI4017    HI4049    HI4085    HI4110    HI4131    HI4301
+.context HI4000
+..*.STRING UNKNOWN WARNING\n\t\tContact Microsoft Product Support Services
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4000
+
+     UNKNOWN WARNING
+     Contact Microsoft Product Support Services
+
+     The compiler detected an unknown error condition.
+
+     Note the circumstances of the error and notify Microsoft
+     Corporation by following the instructions in the Microsoft Support
+     Services section of your Environment and Tools book.
+.context HI4001
+..*.STRING nonstandard extension used - '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (levels 1 and 4) HI4001
+
+     nonstandard extension used - 'extension'
+
+     The given nonstandard language extension was used when the /Ze
+     option was specified.
+
+     This is a level 4 warning, except in the case of a function
+     pointer cast to data when the Quick Compile option, /qc, is in
+     use, which produces a level 1 warning.
+
+     If the /Za option has been specified, this condition generates a
+     syntax error.
+.context HI4002
+..*.STRING too many actual parameters for macro '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4002
+
+     too many actual parameters for macro 'identifier'
+
+     The number of actual arguments specified with the given identifier
+     was greater than the number of formal parameters given in the
+     macro definition of the identifier.
+
+     The additional actual parameters are collected but ignored during
+     expansion of the macro.
+.context HI4003
+..*.STRING not enough actual parameters for macro '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4003
+
+     not enough actual parameters for macro 'identifier'
+
+     The number of actual arguments specified with the given identifier
+     was less than the number of formal parameters given in the macro
+     definition of the identifier.
+
+     When a formal parameter is referenced in the definition and the
+     corresponding actual parameter has not been provided, empty text
+     is substituted in the macro expansion.
+.context HI4004
+..*.STRING missing close parenthesis after 'defined'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4004
+
+     missing ')' after 'defined'
+
+     The closing parenthesis was missing from an #if defined phrase.
+
+     The compiler assumes a right parenthesis, ), after the first
+     identifier it finds. It then attempts to compile the remainder of
+     the line, which may result in another warning or error.
+
+     The following example causes this warning and a fatal error:
+
+          #if defined( ID1 ) || ( ID2 )
+
+     The compiler assumed a right parenthesis after ID1, then found a
+     mismatched parenthesis in the remainder of the line. The following
+     avoids this problem:
+
+          #if defined( ID1 ) || defined( ID2 )
+.context HI4005
+..*.STRING '%s' : macro redefinition
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4005
+
+     'identifier' : macro redefinition
+
+     The given identifier was defined twice. The compiler assumed the
+     new macro definition.
+
+     To eliminate the warning, either remove one of the definitions or
+     use an #undef directive before the second definition.
+
+     This warning is caused in situations where a macro is defined both
+     on the command line and in the code with a #define directive.
+.context HI4006
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4006
+
+     #undef expected an identifier
+
+     The name of the identifier whose definition was to be removed was
+     not given with the #undef directive. The #undef was ignored.
+.context HI4007
+..*.STRING '%Fs' : must be '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4007
+
+     'identifier' : must be 'attribute'
+
+     The attribute of the given function was not explicitly stated.
+     The compiler forced the attribute.
+
+     For example, the function main must have the _cdecl attribute.
+
+.context HI4008
+..*.STRING '%Fs' : '%Fs' attribute on data ignored
+..*.NOTE In C6.0, the second substitution is always _fastcall, but in
+..*.NOTE future versions of the compiler this may not be so, and this
+..*.NOTE message and description will have to be rewritten.
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4008
+
+     'identifier' : _fastcall attribute on data ignored
+
+     The _fastcall attribute on the given data identifier was ignored.
+.context HI4009
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4009
+
+     string too big, trailing characters truncated
+
+     A string exceeded the compiler limit of 2047 on string size. The
+     excess characters at the end of the string were truncated.
+
+     To correct this problem, break the string into two or more
+     strings.
+.context HI4010
+..*.STRING identifier is a MASM keyword
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4010
+
+     identifier is a MASM keyword
+
+     This warning is issued if the .h include file tries to redefine a
+     MASM keyword. H2INC will give a warning whenever such conflicts
+     take place. This includes #define, typedef, structures, and other
+     variables. If you want to redefine a MASM keyword, use #define
+     instead. A #define in the .inc file will not try to redefine the
+     MASM keyword unless the /Ht option is set.
+
+     This warning will also be issued anytime converting a typedef
+     statement will result in a type with the same name as the type.
+     The translation is not done in this case.
+.context HI4011
+..*.STRING identifier truncated to '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4011
+
+     identifier truncated to 'identifier'
+
+     Only the first 31 characters of an identifier are significant. The
+     characters after the limit were truncated.
+
+     This may mean that two identifiers that are different before
+     truncation may have the same identifier name after truncation.
+..|| C4012 is never generated, do not document, per chuckg
+..|| C4013 and C4014 are obsolete, per chuckg
+.context HI4015
+..*.STRING '%Fs' : bit-field type must be integral
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4015
+
+     'identifier' : bit-field type must be integral
+
+     The given bit field was not declared as an integral type. The
+     compiler assumed the base type of the bit field to be unsigned.
+
+     Bit fields must be declared as unsigned integral types.
+
+.context HI4016
+..*.STRING '%s' : no function return type, using int as default
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4016
+
+     'function' : no function return type, using int as default
+
+     The given function had not yet been declared or defined, so the
+     return type was unknown. A default return type of int was assumed.
+.context HI4017
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4017
+
+     cast of int expression to far pointer
+
+     A far pointer represents a full segmented address. On an 8086/8088
+     processor, casting an int value to a far pointer may produce an
+     address with a meaningless segment value.
+
+     The compiler extended the int expression to a four-byte value.
+.context HI4020
+..*.STRING '%Fs' : too many actual parameters
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4020
+
+     'function' : too many actual parameters
+
+     The number of arguments specified in a function call was greater
+     than the number of parameters specified in the function prototype
+     or function definition.
+
+     The extra parameters were passed according to the calling
+     convention used on the function.
+.context HI4021
+..*.STRING '%Fs' : too few actual parameters
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4021
+
+     'function' : too few actual parameters
+
+     The number of arguments specified in a function call was less
+     than the number of parameters specified in the function prototype
+     or function definition.
+
+     Only the provided actual parameters are passed. If the called
+     function references a variable that was not passed, the results
+     are undefined and may be unexpected.
+.context HI4022
+..*.STRING '%Fs' : pointer mismatch : parameter %d
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4022
+
+     'function' : pointer mismatch : parameter 'number'
+
+     The pointer type of the given parameter was different from the
+     pointer type specified in the argument-type list or function
+     definition.
+
+     The parameter will be passed without change. Its value will be
+     interpreted as a pointer within the called function.
+.context HI4023
+..*.STRING '%Fs' : _based pointer passed to unprototyped function : parameter %d
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4023
+
+     'function' : _based pointer passed to unprototyped function :
+     parameter 'number'
+
+     When in a near data model, only the offset portion of a _based
+     pointer is passed to an unprototyped function. If the function
+     expects a far pointer, the resulting code will be wrong. In any
+     data model, if the function is defined to take a _based pointer
+     with a different base, the resulting code may be unpredictable.
+
+     If a prototype is used before the call, the call will be generated
+     correctly.
+.context HI4024
+..*.STRING '%Fs' : different types : parameter %d
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4024
+
+     'function' : different types : parameter 'number'
+
+     The type of the given parameter in a function call did not agree
+     with the type given in the argument-type list or function
+     definition.
+
+     The parameter will be passed without change. The function will
+     interpret the parameter's type as the type expected by the
+     function.
+..|| C4025 is obsolete, per chuckg
+.context HI4028
+..*.STRING parameter %d declaration different
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4028
+
+     parameter 'number' declaration different
+
+     The type of the given parameter did not agree with the
+     corresponding type in the argument-type list or with the
+     corresponding formal parameter.
+
+     The original declaration was used.
+.context HI4030
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4030
+
+     first parameter list longer than the second
+
+     A function was declared more than once with different parameter
+     lists.
+
+     The first declaration was used.
+.context HI4031
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4031
+
+     second parameter list is longer than the first
+
+     A function was declared more than once with different parameter
+     lists.
+
+     The first declaration was used.
+.context HI4034
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4034
+
+     sizeof returns 0
+
+     The sizeof operator was applied to an operand that yielded a size
+     of zero.
+
+     This warning is informational.
+..|| C4036, C4037, C4038, C4039 are obsolete, per chuckg
+.context HI4040
+..*.STRING memory attribute on '%Fs' ignored
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4040
+
+     memory attribute on 'identifier' ignored
+
+     The _near, _far, _huge, or _based keyword has no effect in the
+     declaration of the given identifier and is ignored.
+
+     One cause of this warning is a huge array that is not declared
+     globally. Declare huge arrays outside of main.
+..|| C4041 is obsolete, per chuckg
+.context HI4042
+..*.STRING '%Fs' : has bad storage class
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4042
+
+     'identifier' : has bad storage class
+
+     The storage class specified for <identifier> cannot be used in
+     this context.
+
+     The default storage class for this context was used in place of
+     the illegal class:
+
+        ş If <identifier> was a function, the compiler assumed extern
+          class.
+
+        ş If <identifier> was a formal parameter or local variable, the
+          compiler assumed auto class.
+
+        ş If <identifier> was a global variable, the compiler assumed
+          the variable was declared with no storage class.
+.context HI4044
+..*.STRING _huge on '%Fs' ignored, must be an array
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4044
+
+     _huge on 'identifier' ignored, must be an array
+
+     The compiler ignored the _huge memory attribute on the given
+     identifier. Only arrays may be declared with the _huge memory
+     attribute. On pointers, _huge must be used as a modifier, not as
+     a memory attribute.
+..|| C4046 is obsolete, per chuckg
+.context HI4047
+..*.STRING '%s' : different levels of indirection
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4047
+
+     'operator' : different levels of indirection
+
+     An expression involving the specified operator had inconsistent
+     levels of indirection.
+
+     If both operands are of arithmetic type, or if both are not (such
+     as array or pointer), then they are used without change, though
+     the compiler may DS-extend one of the operands if one is far and
+     one is near. If one is arithmetic and one is not, the arithmetic
+     operator is converted to the type of the other operator.
+
+     For example, the following code causes this warning but is
+     compiled without change:
+
+          char **p;
+          char *q;
+          p = q;   /* Warning */
+.context HI4048
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4048
+
+     array's declared subscripts different
+
+     An expression involved pointers to arrays of different size.
+
+     The pointers were used without conversion.
+.context HI4049
+..*.STRING '%s' : indirection to different types
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4049
+
+     'operator' : indirection to different types
+
+     The pointer expressions used with the given operator had different
+     base types.
+
+     The expressions were used without conversion.
+
+     For example, the following code causes this warning:
+
+          struct ts1 *s1;
+          struct ts2 *s2;
+          s2 = s1;   /* Warning */
+.context HI4050
+..*.STRING '%s' : different code attributes
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4050
+
+     'operator' : different code attributes
+
+     The function-pointer expressions used with <operator> had
+     different code attributes. The attribute involved is either
+     _export or _loadds.
+
+     This is a warning and not an error, because _export and _loadds
+     affect only entry sequences and not calling conventions.
+.context HI4051
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4051
+
+     type conversion, possible loss of data
+
+     Two data items in an expression had different base types, causing
+     the type of one item to be converted. During the conversion, a
+     data item was truncated.
+..|| C4052 is obsolete, per chuckg
+.context HI40520
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4052
+
+     invalid numerical argument 'string'
+
+     A numerical argument was expected instead of the given string.
+.context HI4053
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4053
+
+     at least one void operand
+
+     An expression with type void was used as an operand.
+
+     The expression was evaluated using an undefined value for the void
+     operand.
+..|| C4055 is obsolete in C6
+..|| C4057 is obsolete
+.context HI4063
+..*.STRING '%s' : function too large for post-optimizer
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4063
+
+     'function' : function too large for post-optimizer
+
+     Not enough space was available to optimize the given function.
+
+     One of the following may be a solution:
+
+        ş Recompile with fewer optimizations.
+
+        ş Divide the function into two or more smaller functions.
+.comment
+.comment        ş In OS/2, recompile using the /B3 C3L option to invoke the
+.comment          large-model version of the third pass of the compiler.
+..|| C4064 is obsolete in C6
+.context HI4066
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4066
+
+     local symbol-table overflow - some local symbols may be missing
+     in listings
+
+     The listing generator ran out of heap space for local variables,
+     so the source listing may not contain symbol-table information for
+     all local variables.
+.context HI4067
+..*.STRING unexpected characters following '%s' directive - newline expected
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4067
+
+     unexpected characters following 'directive' directive - newline
+     expected
+
+     Extra characters followed a preprocessor directive and were
+     ignored. This warning appears only when compiling with the /Za
+     option.
+
+     For example, the following code causes this warning:
+
+          #endif    NO_EXT_KEYS
+
+     To remove the warning, compile with /Ze or use comment
+     delimiters:
+
+          #endif    /* NO_EXT_KEYS */
+..|| C4070 is obsolete in C6
+.context HI4071
+..*.STRING '%Fs' : no function prototype given
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4071
+
+     'function' : no function prototype given
+
+     The given function was called before the compiler found the
+     corresponding function prototype.
+
+     The function will be called using the default rules for calling
+     a function without a prototype.
+.context HI4072
+..*.STRING '%Fs' : no function prototype on _fastcall function
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4072
+
+     'function' : no function prototype on _fastcall function
+
+     A _fastcall function was called without first being prototyped.
+
+     Functions that are _fastcall should be prototyped to guarantee
+     that the registers assigned at each point of call are the same as
+     the registers assumed when the function is defined. A function
+     defined in the new ANSI style is a prototype.
+
+     A prototype must be added when this warning appears, unless the
+     function takes no arguments or takes only arguments that cannot be
+     passed in the general-purpose registers.
+.context HI4073
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4073
+
+     scoping too deep, deepest scoping merged when debugging
+
+     Declarations appeared at a static nesting level greater than 13.
+     As a result, all declarations beyond this level will seem to
+     appear at the same level.
+..|| C4074 is now C4001
+..|| C4075 is obsolete, per chuckg
+.context HI4076
+..*.STRING '%s' : may be used on integral types only
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4076
+
+     'type' : may be used on integral types only
+
+     The signed or unsigned type modifier was used with a nonintegral
+     type.
+
+     The given qualifier was ignored.
+
+     The following example causes this warning:
+
+          unsigned double x;
+.context HI4079
+..*.STRING unexpected token '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4079
+
+     unexpected token 'token'
+
+     An unexpected separator token was found in the argument list of a
+     pragma.
+
+     The remainder of the pragma was ignored.
+.context HI4082
+..*.STRING expected an identifier, found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4082
+
+     expected an identifier, found 'token'
+
+     An identifier was missing from the argument list.
+
+     The remainder of the pragma was ignored.
+.context HI4083
+..*.STRING expected '(', found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4083
+
+     expected '(', found 'token'
+
+     A left parenthesis, (, was missing from a pragma's argument list.
+
+     The pragma was ignored.
+
+     The following example causes this warning:
+
+          #pragma check_pointer on)
+.context HI4084
+..*.STRING expected a pragma keyword, found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4084
+
+     expected a pragma keyword, found 'token'
+
+     The <token> following #pragma was not recognized as a directive.
+
+     The pragma was ignored.
+
+     The following example causes this warning:
+
+          #pragma (on)
+.context HI4085
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4085
+
+     expected [on | off]
+
+     The pragma expected an on or off parameter, but the specified
+     parameter was unrecognized or missing.
+
+     The pragma was ignored.
+.context HI4086
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4086
+
+     expected [1 | 2 | 4]
+
+     The pragma expected a parameter of either 1, 2, or 4, but the
+     specifed parameter was unrecognized or missing.
+.context HI4087
+..*.STRING '%Fs' : declared with void parameter list
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4087
+
+     'function' : declared with void parameter list
+
+     The given function was declared as taking no parameters, but a
+     call to the function specified actual parameters.
+
+     The extra parameters were passed according to the calling
+     convention used on the function.
+
+     The following example causes this warning:
+
+          int f1(void);
+          f1(10);
+.context HI4088
+..*.STRING '%Fs' : pointer mismatch : parameter %d, parameter list %d
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4088
+
+     'function' : pointer mismatch : parameter 'number', parameter list
+     'number'
+
+     The argument passed to the given function had a different level
+     of indirection from the given parameter in the function
+     definition.
+
+     The parameter will be passed without change. Its value will be
+     interpreted as a pointer within the called function.
+.context HI4089
+..*.STRING '%Fs' : different types : parameter %d, parameter list %d
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4089
+
+     'function' : different types : parameter 'number', parameter list
+     'number'
+
+     The argument passed to the given function did not have the same
+     type as the given parameter in the function definition.
+
+     The parameter will be passed without change. The function will
+     interpret the parameter's type as the type expected by the
+     function.
+.context HI4090
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4090
+
+     different const/volatile qualifiers
+
+     A pointer to an item declared as const was assigned to a pointer
+     that was not declared as const. As a result, the const item
+     pointed to could be modified without being detected.
+
+     The expression was compiled without modification.
+
+     The following example causes this warning:
+
+          const char *p = "abcde";
+          int str(char *s);
+          str(p);
+.context HI4091
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4091
+
+     no symbols were declared
+
+     The compiler detected an empty declaration, as in the following
+     example:
+
+          int ;
+
+     The declaration was ignored.
+.context HI4092
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4092
+
+     untagged enum/struct/union declared no symbols
+
+     The compiler detected an empty declaration using an untagged
+     structure, union, or enumerated variable.
+
+     The declaration was ignored.
+
+     For example, the following code causes this warning:
+
+          struct { . . . };
+.context HI4093
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4093
+
+     unescaped newline in character constant in inactive code
+
+     The constant expression of an #if, #elif, #ifdef, or #ifndef
+     preprocessor directive evaluated to 0, making the code that
+     follows inactive. Within that inactive code, a newline character
+     appeared within a set of single or double quotation marks.
+
+     All text until the next double quotation mark was considered to be
+     within a character constant.
+..|| C4094 is obsolete, per chuckg
+.context HI4095
+..*.STRING expected ')', found '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4095
+
+     expected ')', found 'token'
+
+     More than one argument was given for a pragma that can take only
+     one argument.
+
+     The compiler assumed the expected parenthesis and ignored the
+     remainder of the line.
+.context HI4096
+..*.STRING '%Fs' must be used with '%Fs'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4096
+
+     'attribute1' must be used with 'attribute2'
+
+     The use of attribute2 requires the use of attribute1.
+
+     For example, using a variable number of arguments (...) requires
+     that _cdecl be used. Also, _interrupt functions must be _far and
+     _cdecl.
+
+     The compiler assumed <attribute1> for the function.
+.context HI4098
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4098
+
+     void function returning a value
+
+     A function declared with a void return type also returned a value.
+
+     A function was declared with a void return type but was defined as
+     a value.
+
+     The compiler assumed the function returns a value of type int.
+..|| C4099 is obsolete in C6
+..|| C4103 is obsolete, per chuckg
+.context HI4104
+..*.STRING '%s' : near data in same_seg pragma, ignored
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4104
+
+     'identifier' : near data in same_seg pragma, ignored
+
+     The given near variable was specified in a same_seg pragma.
+
+     The <identifier> was ignored.
+.context HI4105
+..*.STRING '%Fs' : code modifiers only on function or pointer to function
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4105
+
+     'identifier' : code modifiers only on function or pointer to
+     function
+
+     The given identifier was declared with a code modifier that can be
+     used only with a function or function pointer.
+
+     The code modifier was ignored.
+.context HI4109
+..*.STRING unexpected identifier '%s'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4109
+
+     unexpected identifier 'identifier'
+
+     The pragma contained an unexpected token.
+
+     The pragma was ignored.
+.context HI4110
+..*.STRING unexpected token 'int constant'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4110
+
+     unexpected token 'int constant'
+
+     The pragma contained an unexpected integer constant.
+
+     The pragma was ignored.
+.context HI4111
+..*.STRING unexpected token 'string'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4111
+
+     unexpected token 'string'
+
+     The pragma contained an unexpected string.
+
+     The pragma was ignored.
+.context HI4112
+..*.STRING macro name '%s' is reserved, %s ignored
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4112
+
+     macro name 'name' is reserved, 'command' ignored
+
+     The given command attempted to define or undefine the predefined
+     macro <name> or the preprocessor operator 'defined'. The given
+     command is displayed as either #define or #undef, even if the
+     attempt was made using command-line options.
+
+     The command was ignored.
+
+.context HI4113
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4113
+
+     function parameter lists differed
+
+     A function pointer was assigned to a function pointer, but the
+     parameter lists of the functions do not agree.
+
+     The expression was compiled without modification.
+.context HI4114
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4114
+
+     same type qualifier used more than once
+
+     A type qualifier (const, volatile, signed, or unsigned) was used
+     more than once in the same type.
+
+     The second occurrence of the qualifier was ignored.
+.context HI4115
+..*.STRING '%Fs' : type definition in formal parameter list
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4115
+
+     'tag' : type definition in formal parameter list
+
+     The given tag was used to define a struct, union, or enum in the
+     formal parameter list of a function.
+
+     The compiler assumed the definition was at the global level.
+.context HI4116
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4116
+
+     (no tag) : type definition in formal parameter list
+
+     A struct, union, or enum type with no tag was defined in the
+     formal parameter list of a function.
+
+     The compiler assumed the definition was at the global level.
+..|| C4117 is obsolete in C6
+.context HI4119
+..*.STRING different bases '%Fs' and '%Fs' specified
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4119
+
+     different bases 'name1' and 'name2' specified
+
+     The _based pointers in the expression have different symbolic
+     bases. There may be truncation or loss in the code generated.
+.context HI4120
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4120
+
+     _based/unbased mismatch
+
+     The expression contains a conversion between a _based pointer and
+     another pointer that is unbased. Some information may have been
+     truncated.
+
+     This warning commonly occurs when a _based pointer is passed to a
+     function that accepts a near or far pointer.
+..|| C4121 is obsolete in C6
+.context HI4123
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4123
+
+     different base expressions specified
+
+     The expression contains a conversion between _based pointers, but
+     the base expressions of the _based pointers are different. Some of
+     the _based conversions may be unexpected.
+.context HI4125
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4125
+
+     decimal digit terminates octal escape sequence
+
+     An octal escape sequence in a character or string constant was
+     terminated with a decimal digit.
+
+     The compiler evaluated the octal number without the decimal digit,
+     and assumed the decimal digit was a character.
+
+     The following example causes this warning:
+
+          char array1[] = "\\709";
+..LUE BACKSLASH one single
+
+     If the digit 9 was intended as a character and was not a typing
+     error, correct the example as follows:
+
+          char array[] = "\\0709";  /* String containing "89" */
+..LUE BACKSLASH one single
+
+.context HI4126
+..*.STRING '%c' : unknown memory model flag
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4126
+
+     'flag' : unknown memory model flag
+
+     The flag used with the /A option was not recognized and was
+     ignored.
+.context HI4128
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4128
+
+     storage-class specifier after type
+
+     A storage-class specifier (auto, extern, register, static) appears
+     after a type in a declaration. The compiler assumed the storage
+     class specifier occurred before the type.
+
+     New-style code places the storage-class specifier first.
+.context HI4129
+..*.STRING '%c' : unrecognized character escape sequence
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4129
+
+     'character' : unrecognized character escape sequence
+
+     The <character> following a backslash in a character or string
+     constant was not recognized as a valid escape sequence.
+
+     As a result, the backslash is ignored and not printed, and the
+     character following the backslash is printed.
+
+     To print a single backslash (\\), specify a double backslash
+     (\\\\).
+..LUE.BACKSLASH one single, one double
+
+.context HI4130
+..*.STRING '%Fs' : logical operation on address of string constant
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4130
+
+     'operator ' : logical operation on address of string constant
+
+     The operator was used with the address of a string literal.
+     Unexpected code was generated.
+
+     For example, the following code causes this warning:
+
+          char *pc;
+          pc = "Hello";
+          if (pc == "Hello") ...
+
+     The if statement compares the value stored in the pointer pc to
+     the address of the string "Hello", which is separately allocated
+     each time it occurs in the code. It does not compare the string
+     pointed to by pc with the string "Hello".
+
+     To compare strings, use the strcmp function.
+.context HI4131
+..*.STRING '%Fs' : uses old-style declarator
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4131
+
+     'function' : uses old-style declarator
+
+     The function declaration or definition is not a prototype.
+
+     New-style function declarations are in prototype form.
+
+        ş old style
+
+               int addrec( name, id )
+               char *name;
+               int id;
+               { }
+
+        ş new style
+
+               int addrec( char *name, int id )
+               { }
+.context HI4132
+..*.STRING '%Fs' : const object should be initialized
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4132
+
+     'object' : const object should be initialized
+
+     The value of a const object cannot be changed, so the only way to
+     give the const object a value is to initialize it.
+
+     It will not be possible to assign a value to <object>.
+..|| C4134 obsolete per chuckg
+.context HI4135
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4135
+
+     conversion between different integral types
+
+     Information was lost between two integral types.
+
+     For example, the following code causes this warning:
+
+          int intvar;
+          long longvar;
+          intvar = longvar;
+
+     If the information is merely interpreted differently, this warning
+     is not given, as in the following example:
+
+          unsigned uintvar = intvar;
+.context HI4136
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4136
+
+     conversion between different floating types
+
+     Information was lost or truncated between two floating types.
+
+     For example, the following code causes this warning:
+
+          double doublevar;
+          float floatvar;
+          floatvar = doublevar;
+
+     Note that unsuffixed floating-point constants have type double, so
+     the following code causes this warning:
+
+          floatvar = 1.0;
+
+     If the floating-point constant should be treated as float type,
+     use the F (or f) suffix on the constant to prevent the following
+     warning:
+
+          floatvar = 1.0F;
+.context HI4138
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4138
+
+     '*/' found outside of comment
+
+     The compiler found a closing comment delimiter (*/) without a
+     preceding opening delimiter. It assumed a space between the
+     asterisk (*) and the forward slash (/).
+
+     The following example causes this warning:
+
+          int */*comment*/ptr;
+
+     In this example, the compiler assumed a space before the first
+     comment delimiter (/*), and issued the warning but compiled the
+     line normally. To remove the warning, insert the assumed space.
+
+     Usually, the cause of this warning is an attempt to nest comments.
+
+     To comment out sections of code that may contain comments, enclose
+     the code in an #if/#endif block and set the controlling expression
+     to zero, as in:
+
+          #if 0
+          int my_variable;   /* Declaration currently not needed */
+          #endif
+.context HI4139
+..*.STRING '0x%x' : hex escape sequence is out of range
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4139
+
+     'hexnumber' : hex escape sequence is out of range
+
+     A hex escape sequence appearing in a character or string constant
+     was too large to be converted to a character.
+
+     If in a string constant, the compiler cast the low byte of the
+     hexadecimal number to a char. If in a char constant, the compiler
+     made the cast and then sign extended the result. If in a char
+     constant and compiled with /J, the compiler cast the value to an
+     unsigned char.
+
+     For example, '\\x1ff' is out of range for a character.  Note that
+     the following code causes this warning:
+..LUE.BACKSLASH one single
+
+          printf("\\x7Bell\\n");
+..LUE.BACKSLASH two single
+
+     The number 7be is a legal hex number, but is too large for a
+     character.  To correct this example, use three hex digits:
+
+          printf("\\x007Bell\\n");
+..LUE.BACKSLASH two single
+
+.context HI4186
+..*.STRING string too long - truncated to %d characters
+..*.NOTE The substitution is always 40, per chuckg and binhn
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4186
+
+     string too long - truncated to 40 characters
+
+     The string argument for a title or subtitle pragma exceeded the
+     maximum allowable length and was truncated.
+.context HI4200
+..*.STRING local variable '%s' used without having been initialized
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4200
+
+     local variable 'identifier' used without having been initialized
+
+     A reference was made to a local variable that had not been
+     assigned a value. As a result, the value of the variable is
+     unpredictable.
+
+     This warning is given only when compiling with global register
+     allocation on (/Oe).
+.context HI4201
+..*.STRING local variable '%s' may be used without having been initialized
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4201
+
+     local variable 'identifier' may be used without having been
+     initialized
+
+     A reference was made to a local variable that might not have been
+     assigned a value. As a result, the value of the variable may be
+     unpredictable.
+
+     This warning is given only when compiling with the global register
+     allocation on (/Oe).
+.context HI4202
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4202
+
+     unreachable code
+
+     The flow of control can never reach the indicated line.
+
+     This warning is given only when compiling with one of the global
+     optimizations (/Oe, /Og, or /Ol).
+.context HI4203
+..*.STRING '%s' : function too large for global optimizations
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4203
+
+     'function' : function too large for global optimizations
+
+     The named function was too large to fit in memory and be compiled
+     with the selected optimization. The compiler did not perform any
+     global optimizations (/Oe, /Og, or /Ol). Other /O optimizations,
+     such as /Oa and /Oi, are still performed.
+
+     One of the following may remove this warning:
+
+        ş Recompile with fewer optimizations.
+
+        ş Divide the function into two or more smaller functions.
+.comment
+.comment        ş In OS/2, recompile using the /B2 C2L option to invoke the
+.comment          large-model version of the second pass of the compiler.
+.context HI4204
+..*.STRING '%s' : in-line assembler precludes global optimizations
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4204
+
+     'function' : in-line assembler precludes global optimizations
+
+     The use of in-line assembler in the named function prevented the
+     specified global optimizations (/Oe, /Og, or /Ol) from being
+     performed.
+.context HI4205
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4205
+
+     statement has no effect
+
+     The indicated statement will have no effect on the program
+     execution.
+
+     Some examples of statements with no effect:
+
+          1;
+          a + 1;
+          b == c;
+..|| C4207 and C4208 are in the debug version only
+.context HI4209
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 4) HI4209
+
+     comma operator within array index expression
+
+     The value used as an index into an array was the last one of
+     multiple expressions separated by the comma operator.
+
+     An array index legally may be the value of the last expression in
+     a series of expressions separated by the comma operator. However,
+     the intent may have been to use the expressions to specify
+     multiple indexes into a multidimensional array.
+
+     For example, the following line, which causes this warning, is
+     legal in C, and specifies the index c into array a:
+
+          a[b,c]
+
+     However, the following line uses both b and c as indexes into a
+     two-dimensional array:
+
+          a[b][c]
+.context HI4300
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4300
+
+     insufficient memory to process debugging information
+..marcim Does H2INC really generate this warning?
+
+     The program was compiled with the /Zi option, but not enough
+     memory was available to create the required debugging information.
+
+     One of the following may be a solution:
+
+        ş Split the current file into two or more files and compile
+          them separately.
+
+        ş Remove other programs or drivers running in the system which
+          could be consuming significant amounts of memory.
+.comment
+.comment        ş In OS/2, recompile using the /B3 C3L option to invoke the
+.comment          large-model version of the third pass of the compiler.
+.context HI4301
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4301
+
+     loss of debugging information caused by optimization
+
+     Some optimizations, such as code motion, cause references to
+     nested variables to be moved. The information about the level at
+     which the variables are declared may be lost. As a result, all
+     declarations will seem to be at nesting level 1.
+.context HI4323
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4323
+
+     potential divide by 0
+
+     The second operand in a divide operation evaluated to zero at
+     compile time, giving undefined results.
+
+     The 0 operand may have been generated by the compiler, as in the
+     following example:
+
+          func1() { int i,j,k; i /= j && k; }
+.context HI4324
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 3) HI4324
+
+     potential mod by 0
+
+     The second operand in a remainder operation evaluated to zero at
+     compile time, giving undefined results.
+.context HI4799
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4799
+
+     unknown option 'character' in 'option'
+
+     A command option was specified that was not understood by
+     H2INC, or the given character was not a valid letter for
+     the option.
+.context HI4800
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4800
+
+     more than one memory model specified
+
+     There was more than one memory model given at the command line.
+     The /AT, /AS, /AM, /AC, /AL, and /AH options specify the memory
+     model.
+
+     This error is caused by conflicting options specified at the
+     command line and in the CL and H2INC environment variables.
+.context HI4801
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4801
+
+     more than one target processor specified
+
+     There was more than one processor type given at the command line.
+     The /G0, /G1, and /G2 options specify the processor type.
+
+     This error is caused by conflicting options specified at the
+     command line and in the CL and H2INC environment variables.
+
+.context HI4802
+..*.STRING ignoring invalid /Zp value '%d'
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4802
+
+     ignoring invalid /Zp value 'value'
+
+     The alignment value specified to the /Zp option was not 1, 2, or
+     4. The default of 1 was assumed.
+
+.context HI4810
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 2) HI4810
+
+     untranslatable basic type size
+
+     H2INC could not translate the item to a MASM type.
+
+     The C void type cannot be translated to a similar MASM type.
+.context HI4811
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4811
+
+     static function prototype not translated
+
+     H2INC does not translate static items, as they are not visible
+     outside the C source file.
+
+.context HI4812
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4812
+
+     static variable declaration not accepted with /Mn switch
+
+     H2INC does not translate static items, as they are not visible
+     outside the C source file.
+
+.context HI4815
+..*.STRING '%s' : EQU string truncated to 254 characters
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4815
+
+     'string' : EQU string truncated to 254 characters
+
+     A #define statement exceeded 254 characters, the maximum length of a
+     MASM EQU statement. The string was truncated.
+
+.context HI4816
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level 1) HI4816
+
+     ignoring _fastcall function definition
+
+     H2INC does not translate function declarations or prototypes with
+     the _fastcall attribute. The _fastcall calling convention cannot
+     be used directly with MASM.  See the documentation with your C
+     compiler for details on _fastcall.
+
+.context HI4820
+..*.STRING ignoring function definition : %Fs()
+.freeze 3
+                                             \i\p\aUp\v@errHI4XXX\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC warning (level ???) HI4820
+
+     ignoring function definition : 'function'()
+
+     H2INC does not translate function bodies.
+
+     H2INC translates header information only; it cannot convert program
+     code.

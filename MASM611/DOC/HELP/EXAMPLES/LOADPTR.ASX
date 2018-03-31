@@ -1,0 +1,30 @@
+;* LoadPtr - Macro to load far address into segment:register pair, or
+;* near address into register.
+;*
+;* Params:  sgmnt - Segment to be loaded with segment address
+;*          reg - Register to be loaded with offset address
+;*          pointer - Pointer to address
+;*
+;* Shows:   Instructions - lds     les
+;*          Directives - MACRO     IF        IFIDNI     ELSE
+;*                       ELSE      IFENDIF   .ERR       ENDM
+;*          Operators - < >       ;;
+
+LoadPtr MACRO sgmnt, reg, pointer       ;; Macro definition
+    IF @DataSize                        ;; If far pointer, and
+        IFIDNI <sgmnt>, <ds>            ;;   if 1st argument is DS,
+            lds reg, pointer            ;;   load DS:reg with far address
+        ELSEIFIDNI <sgmnt>, <es>        ;;   or if 1st argument is ES,
+            les reg, pointer            ;;   load ES:reg with far address
+        ELSE                            ;; Generate error if not DS or ES
+            .ERR <First argument must be DS or ES>
+        ENDIF
+    ELSE                                ;; If near pointer,
+        IFIDNI <sgmnt>, <es>            ;;   and if segment is ES,
+            push ds                     ;;   ensure ES points to
+            pop  es                     ;;   same segment as DS
+        ENDIF
+        mov reg, pointer                ;; Then load reg with near address
+    ENDIF
+ENDM
+

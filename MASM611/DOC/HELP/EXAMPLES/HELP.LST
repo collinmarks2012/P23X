@@ -1,0 +1,598 @@
+                        Example File Cross-Reference
+                        ============================
+
+Instruction             Function        File            Demo Program
+-----------             --------        --------        ------------
+
+MOVS                    WinOpen         WinOpen.asx     MISC.ASM
+LODS                    WinClose        WinClose.asx    MISC.ASM
+STOS                    WinOpen         WinOpen.asx     MISC.ASM
+SCAS                    StrFindChar     StrFindC.asx    FILE.ASM
+CMPS                    StrCompare      StrCompa.asx    FILE.ASM
+
+REP                     WinOpen         WinOpen.asx     MISC.ASM
+REPE/REPNE              StrCompare      StrCompa.asx    FILE.ASM
+
+CLD/STD                 StrFindChar     StrFindC.asx    FILE.ASM
+
+LDS/LES/                LoadPtr         LoadPtr.asx     DEMO.INC
+  LFS/LGS/LSS
+
+ADD                     AddLong         AddLong.asx     MATH.ASM
+INC                    ^WriteFile       WriteFil.asx    FILE.ASM
+SUB                     SubLong         SubLong.asx     MATH.ASM
+DEC                    ^WriteFile       WriteFil.asx    FILE.ASM
+NEG                    #Maybe           XXXX
+
+ADC                     AddLong         AddLong.asx     MATH.ASM
+SBB                     SubLong         SubLong.asx     MATH.ASM
+
+IMUL                    ImulLong        ImulLong.asx    MATH.ASM
+MUL                     MulLong         MulLong.asx     MATH.ASM
+DIV                     DivLong         DivLong.asx     MATH.ASM
+IDIV                    IdivLong        IdivLong.asx    MATH.ASM
+
+AND                     Colors          Colors.asx      MISC.ASM
+OR                      Colors          Colors.asx      MISC.ASM
+XOR                     Colors          Colors.asx      MISC.ASM
+NOT                     Colors          Colors.asx      MISC.ASM
+
+RCL/RCR/ROL/ROR         Colors          Colors.asx      MISC.ASM
+
+SAL/SAR/SHL/SHL         GetFileTime     GetFileT.asx    FILE.ASM
+
+CALL                   ^Hellomo         hellomo.asx
+
+RET/RETN/RETF          ^GetMem          GetMem.asx      MISC.ASM
+
+LOOP                   ^Loopso          loopso.asm
+
+LOOPE/LOOPNE           ^Loopso          loopso.asm
+
+CMP                    ^Jcond           jcond.asm
+
+TEST                   ^Jcond           jcond.asm
+
+Jcond                   Jcond           jcond.asm
+
+JCXZ/JECXZ              StrCompare      StrCompa.asx    FILE.ASM
+
+JMP                    ^ImulLong        ImulLong.asx    MATH.ASM
+
+PUSH                    GetMem          GetMem.asx      MISC.ASM
+POP                     GetMem          GetMem.asx      MISC.ASM
+
+INT                    ^Hello           hello.asm
+INTO                    None            XXXX
+
+IN                      Sound           Sound.asx       MISC.ASM
+OUT                     Sound           Sound.asx       MISC.ASM
+
+INS                     None            XXXX
+OUTS                    None            XXXX
+
+AAA                     None            XXXX
+AAS                     None            XXXX
+AAM                     IntToAsc        IntToAsc.asx    MISC.ASM
+AAD                     None            XXXX
+DAA                     None            XXXX
+DAS                     None            XXXX
+
+XLAT/XLATB              BinToHex        BinToHex.asx    MISC.ASM
+
+XCHG                    IntToAsc        IntToAsc.asx    MISC.ASM
+
+LEA                    #Maybe           XXXX
+
+CBW/CWD/CDQ/CWDE       ^GetCurDrive     GetCurDr.asx    FILE.ASM
+
+PUSHF/POPF              FindFirst       FindFirs.asx    FILE.ASM
+
+PUSHA/POPA              PushAll         PushAll.asx     MACROS.INC
+
+CLC/CMC/STC             CopyFile        CopyFile.asx    FILE.ASM
+
+CLI/STI                 DisableCGA      DisableC.asx    COMMON.ASM
+IRET                   #NewBreak        NewBreak.asx    HANDLERS.ASM
+
+SAHF/LAHF              ^Quadratic       Quadrati.asx    MATH.ASM
+
+ESC                     None            XXXX
+HLT                     None            XXXX
+LOCK                    None            XXXX
+NOP                     None            XXXX
+WAIT                    None            XXXX
+
+ARPL                    None            XXXX
+CLTS                    None            XXXX
+LAR                     None            XXXX
+LGDT/LIDT/LLDT          None            XXXX
+LMSW/SMSW               None            XXXX
+LSL                     None            XXXX
+LTR/STR                 None            XXXX
+SGDT/SIDT/SLDT          None            XXXX
+VERR/VERW               None            XXXX
+
+MOV special             None            XXXX
+
+INVLPG                  None            XXXX
+INVD/WBINVD             None            XXXX
+
+BOUND                   None            XXXX
+ENTER/LEAVE             None            XXXX
+
+BSF/BSR                 None            XXXX
+BT/BTC/BTR/BTS          None            XXXX
+SETcond                 None            XXXX
+SHLD/SHRD               None            XXXX
+
+MOVSX/MOVZX            #Maybe           XXXX
+
+BSWAP                   None            XXXX
+XADD                    None            XXXX
+CMPXCHG                 None            XXXX
+
+FLD1/FLDZ/FLDPI/FLDL2E/
+   FLDL2T/FLDLG2/FLDLN2 Quadratic       Quadrati.asx    MATH.ASM
+FLD/FILD/FBLD           Quadratic       Quadrati.asx    MATH.ASM
+FADD/FADDP/FIADD        Quadratic       Quadrati.asx    MATH.ASM
+FMUL/FMULP/FIMUL        Quadratic       Quadrati.asx    MATH.ASM
+FXCH                   ^Quadratic       Quadrati.asx    MATH.ASM
+FSUBR/FSUBRP/FISUBR     Quadratic       Quadrati.asx    MATH.ASM
+FCHS                    Quadratic       Quadrati.asx    MATH.ASM
+FSUB/FSUBP/FISUB        Quadratic       Quadrati.asx    MATH.ASM
+FST/FSTP/FIST/
+   FISTP/FBSTP          Quadratic       Quadrati.asx    MATH.ASM
+FDIV/FDIVP/FIDIV       ^Quadratic       Quadrati.asx    MATH.ASM
+FDIVR/FDIVRP/FIDIVR    ^Quadratic       Quadrati.asx    MATH.ASM
+FWAIT/WAIT             ^Quadratic       Quadrati.asx    MATH.ASM
+FSTSW/FNSTSW           ^Quadratic       Quadrati.asx    MATH.ASM
+
+F2XM1                   None            XXXX
+FABS                    None            XXXX
+FCLEX/FNCLEX/
+   FICOM/FICOMP         None            XXXX
+FDISI/FNDISI/
+   FENI/FNENI           None            XXXX
+FFREE                   None            XXXX
+FINCSTP/FDECSTP         None            XXXX
+FINIT/FNINIT            None            XXXX
+FNOP                    None            XXXX
+FPATAN/FPTAN            None            XXXX
+FPREM/FPREM1            None            XXXX
+FRNDINT                 None            XXXX
+FSAVE/FNSAVE/FRSTOR     None            XXXX
+FSCALE                  None            XXXX
+FSETPM                  None            XXXX
+FSIN/FCOS/FSINCOS       None            XXXX
+FSQRT                   None            XXXX
+FSTCW/FNSTCW/FLDCW      None            XXXX
+FSTENV/FNSTENV/FLDENV   None            XXXX
+FTST                    None            XXXX
+FUCOM/FUCOMP/FUCOMPP    None            XXXX
+FXAM                    None            XXXX
+FXCH                    None            XXXX
+FXTRACT                 None            XXXX
+FYL2X                   None            XXXX
+FYL2XP1                 None            XXXX
+
+Directive               Function        File            Demo Program
+---------               --------        --------        ------------
+
+.IF/.ELSE/.ELSEIF/
+   .ENDIF               Ifs             ifs.asm
+
+.WHILE/.ENDW            Loops           loops.asm
+.REPEAT/.UNTIL/
+   .UNTILCXZ            Loops           loops.asm
+.CONTINUE               Loops           loops.asm
+.BREAK                 ^Loops           loops.asm
+
+.186/.28X/.38X/.48X/
+   .808X/.no87          None            XXXX
+
+.ALPHA/.SEQ/.DOSSEG    ^Hello           hello.asm
+
+.MODEL                  Hello           hello.asm
+.CODE                   Hello           hello.asm
+.STACK                  Hello           hello.asm
+.DATA                   Hello           hello.asm
+.CONST                  None            XXXX
+.DATA?                  None            XXXX
+.FARDATA                None            XXXX
+.FARDATA?               None            XXXX
+.STARTUP/.EXIT          Hello           hello.asm
+
+END                    ^Hellomo         hellomo.asx
+
+EQU                    ^GetStr          getstr.asx      FILE.ASM
+
+SEGMENT                ^Hellomo         hellomo.asx
+ENDS (segment)         ^Hellomo         hellomo.asx
+GROUP                  ^Hellomo         hellomo.asx
+ASSUME                  Helloc          helloc.asm
+ORG                     Helloc          helloc.asm
+
+PUBLIC                 ^Hellomo         hellomo.asx
+EXTERN                 ^Hellomo         hellomo.asx
+EXTERNDEF              ^Global          global.asx
+
+DB                      Data            data.asm
+DW                      Data            data.asm
+DD                      Data            data.asm
+DF                      None            XXXX
+DQ                      Data            data.asm
+DT                      Data            data.asm
+BYTE                    Data            data.asm
+SBYTE                   Data            data.asm
+WORD                    Data            data.asm
+DWORD                   Data            data.asm
+SWORD                   Data            data.asm
+SDWORD                  Data            data.asm
+FWORD                   None            XXXX
+QWORD                   Data            data.asm
+TBYTE                   Data            data.asm
+
+TYPEDEF                 Data            data.asm
+
+PROC                   ^Hellom          hellom.asx
+ENDP                   ^Hellom          hellom.asx
+LOCAL (in PROC)         FindFirst       FindFirs.asx    FILE.ASM
+
+INVOKE                 ^Hellom          hellom.asx
+PROTO                  ^Hellom          hellom.asx
+
+STRUCT                 ^Struct          struct.asm
+ENDS (structure)       ^Struct          struct.asm
+UNION                  ^Struct          struct.asm
+RECORD                 ^Struct          struct.asm
+
+MACRO                   LoadPtr         LoadPtr.asx     DEMO.INC
+ENDM                    LoadPtr         LoadPtr.asx     DEMO.INC
+EXITM                  ^@ArgI           argi.asx        MACROS.INC
+LOCAL (in Macro)       ^@ArgI           argi.asx        MACROS.INC
+=                      ^@ArgI           argi.asx        MACROS.INC
+TEXTEQU                ^@ArgI           argi.asx        MACROS.INC
+FOR                    ^@ArgI           argi.asx        MACROS.INC
+WHILE                  #Maybe           XXXX
+REPEAT                ^#Maybe           XXXX
+FORC                   #Maybe           XXXX
+GOTO                    None            XXXX
+PURGE                   None            XXXX
+
+SUBSTR/@SubStr         ^@ArgRev         argrev.asx      MACROS.INC
+CATSTR/@CatStr         ^@SaveRegs       SaveRegs.asx    MACROS.INC
+SIZESTR/@SizeStr       ^@ArgRev         argrev.asx      MACROS.INC
+INSTR/@InStr           ^@SaveRegs       SaveRegs.asx    MACROS.INC
+@Environ                None            XXXX
+
+ECHO                   #Maybe           XXXX
+
+IF/IFE/ELSEIF/ELSEIFE   LoadPtr         LoadPtr.asx     DEMO.INC
+IFB/IFNB/ELSEIFB/
+   ELSEIFNB            #Maybe           XXXX
+IFDEF/IFNDEF/
+   ELSEIFDEF/
+   ELSEIFNDEF          ^Hellomo         hellomo.asx
+IFDIF/IFIDN/
+   IFIDNI/IFIDNI/
+   ELSEIFDIF/ELSEIFIDN/
+   ELSEIFIDNI/
+   ELSEIFIDNI           LoadPtr         LoadPtr.asx     DEMO.INC
+IF1/IF2/
+   ELSEIF1/ELSEIF2      None            XXXX
+ELSE/ENDIF              LoadPtr         LoadPtr.asx     DEMO.INC
+
+COMM                    None            XXXX
+
+ALIGN                   None            XXXX
+EVEN                    None            XXXX
+
+LABEL                   Data            data.asm
+
+
+.ERR                    LoadPtr         LoadPtr.asx     DEMO.INC
+.ERR1/.ERR2             None            XXXX
+.ERRB/.ERRNB            None            XXXX
+.ERRDEF/.ERRNDEF        None            XXXX
+.ERRDIF/.ERRDIFI/
+  .ERRIDN/.ERRIDNI      None            XXXX
+.ERRE/.ERRNZ            None            XXXX
+
+INCLUDE                 Hellos2         hellos2.asm
+INCLUDELIB              Hellos2         hellos2.asm
+
+TITLE                   Hello           hello.asm
+SUBTITLE                None            XXXX
+PAGE                    None            XXXX
+PAGE+                   None            XXXX
+
+.LISTMACROALL           None            XXXX
+.LALL                   None            XXXX
+.LFCOND                 None            XXXX
+.LISTIF                 None            XXXX
+.LIST                   None            XXXX
+.SFCOND                 None            XXXX
+.NOLISTIF               None            XXXX
+.CREF                   None            XXXX
+.NOCREF                 None            XXXX
+.XCREF                  None            XXXX
+.XALL                   None            XXXX
+.LISTMACRO              None            XXXX
+.NOLISTMACRO            None            XXXX
+.SALL                   None            XXXX
+.TFCOND                 None            XXXX
+.NOLIST                 None            XXXX
+.XLIST                  None            XXXX
+
+COMMENT                 None            XXXX
+NAME                    None            XXXX
+
+OPTION                  None            XXXX
+.RADIX                  None            XXXX
+
+PUSHCONTEXT/
+   POPCONTEXT          #Maybe           XXXX
+
+Attributes for OPTION
+---------------------
+
+M510/NOM510             None            XXXX
+DOTNAME/NODOTNAME       None            XXXX
+READONLY/NOREADONLY     None            XXXX
+SCOPED/NOSCOPED         None            XXXX
+LJMP/NOLJMP             None            XXXX
+OLDMACROS/NOOLDMACROS   None            XXXX
+LANG:                   None            XXXX
+CASEMAP:                None            XXXX
+FLOAT:                  None            XXXX
+OFFSET:                 None            XXXX
+PROLOGUE:               None            XXXX
+EPILOGUE:               None            XXXX
+NOKEYWORD:              None            XXXX
+EXPR16/EXPR32           None            XXXX
+
+Other Attributes
+----------------
+
+PASCAL/C/BASIC/FORTRAN/
+   SYSCALL/STDCALL      None            XXXX
+OS_DOS/OS_OS2           None            XXXX
+farstack/nearstack      None            XXXX
+tiny                    Helloc          Helloc.asm
+small                   None            XXXX
+compact                 None            XXXX
+medium                  None            XXXX
+large                   None            XXXX
+huge                    None            XXXX
+flat                   ^Hellos22        Hellos22.asm
+near/far/...            None            XXXX
+
+Operator                Function        File            Demo Program
+--------                --------        --------        ------------
+
+- * / + MOD             None            XXXX
+.                       None            XXXX
+
+NOT/OR/XOR/AND         ^@PushAll        pushall.asx     MACROS.INC
+
+SHL/SHR                 None            XXXX
+
+HIGH/LOW                None            XXXX
+
+LENGTH                 ^Data            data.asm
+SIZE                   #Maybe           XXXX
+TYPE                   #Maybe           XXXX
+OPATTR/.TYPE           ^pushc           pushc.asx
+
+MASK                   ^Struct          struct.asm
+WIDTH                  ^Struct          struct.asm
+
+SHORT                   None            XXXX
+
+:                       WinClose        WinClose.asx    MISC.ASM
+SEG                     WinClose        WinClose.asx    MISC.ASM
+OFFSET                  Hello           hello.asm
+LROFFSET                None            XXXX
+DUP                     Data            data.asm
+PTR                     AddLong         AddLong.asx     MATH.ASM
+THIS                    None            XXXX
+
+EQ/NE/GT/GE/LT/LE      ^@ArgI           argi.asx        MACROS.INC
+
+<>                     ^@ArgRev         argrev.asx      MACROS.INC
+;;                      LoadPtr         loadptr.asx     DEMO.INC
+;                       None            XXXX
+!                      ^@ArgRev         argrev.asx      MACROS.INC
+%                      ^@ArgRev         argrev.asx      MACROS.INC
+&                     ^#Maybe           XXXX
+
+:                       None            XXXX
+::                      None            XXXX
+"/'                    ^Data            data.asm
+\                       None            XXXX
+[]                     ^Data            data.asm
+
+Equate                  Function        File            Demo Program
+------                  --------        --------        ------------
+
+@data                  ^MulLong         mullong.asx     MATH.ASM
+@code                   Vector          Vector.asx      DEMO.INC
+@stack                  None            XXXX
+@DataSize              ^Hellom          hellom.asx
+@CodeSize              ^Hellom          hellom.asx
+@Cpu                   ^pushc           pushc.asx       MACROS.INC
+@Interface             #Maybe           XXXX
+@Model                 #Maybe           XXXX
+@CurSeg                ^Global          global.asx
+@FileName               None            XXXX
+@FileCur                None            XXXX
+@WordSize               None            XXXX
+@Version                None            XXXX
+@Line                   None            XXXX
+@Date                   None            XXXX
+@Time                   None            XXXX
+
+@F                     ^Maybe           XXXX
+@B                     ^Maybe           XXXX
+@@                     ^Maybe           XXXX
+
+DOS and BIOS Interrupt Calls
+----------------------------
+
+Int  Func  Description             Source          File           Demo
+---  ----  -------------           -----------     ----------     ----
+
+10   0     SetMode                 GetVidConfig    GetVidCo.asx   COMMON.ASM
+     1     SetCurSize              SetCurSize      SetCurSi.asx   MISC.ASM
+     2     SetCurPos               SetCurPos       SetCurPo.asx   COMMON.ASM
+     3     GetCurPos/Size          GetCurPos       GetCurPo.asx   COMMON.ASM
+     4     GetLightPenPos          None            XXXX
+     5     SetDisplayPage          None            XXXX
+     6     ScrollUp                ClearBox        ClearBo.asx    COMMON.ASM
+     7     ScrollDown              ClearBox        ClearBo.asx    COMMON.ASM
+     8     ReadCharAttr            ReadCharAttr    ReadChar.asx   FILE.ASM
+     9     WriteCharAttr          ^Struct          struct.asm
+     A     WriteChar              #Maybe           XXXX
+     B     SetPalette              None            XXXX
+     C     WritePixel              None            XXXX
+     D     ReadPixel               None            XXXX
+     E     puts or cputs           WriteTTY        WriteTTY.asx   MISC.ASM
+     F     GetMode                 GetVidConfig    GetVidCo.asx   COMMON.ASM
+     10    Miscellaneous           None            XXXX
+     11 00/10  43-line mode        SetLineMode     SetLineM.asx   MISC.ASM
+     11 01/11  Miscellaneous       None            XXXX
+     11 02/12  Miscellaneous       None            XXXX
+     11 03/04  Miscellaneous       None            XXXX
+     11 14     Miscellaneous       None            XXXX
+     11 20-24  Miscellaneous       None            XXXX
+     11 30     Miscellaneous       None            XXXX
+     12 10     Miscellaneous       None            XXXX
+     12 20/30  50-line mode        SetLineMode     SetLineM.asx   MISC.ASM
+     12 31-36  Miscellaneous       None            XXXX
+     13    Miscellaneous           None            XXXX
+     1A    VGA functions           GetVidConfig    GetVidCo.asx   COMMON.ASM
+     1B    Miscellaneous           None            XXXX
+     1C    Miscellaneous           None            XXXX
+
+11   NA    Get peripherals         VeriCop         VeriCop.asx    MISC.ASM
+
+12   NA    GetMem                  GetMem          GetMem.asx     MISC.ASM
+
+
+13   00-1A Low-level disk access   None            XXXX
+
+14   00-05 Communications          None            XXXX
+
+15   00-05 Casette                 None            XXXX
+
+16   0     GetKey                  GetKeyClock     GetKeyCl.asx   MISC.ASM
+     1     CheckKey                GetKeyClock     GetKeyCl.asx   MISC.ASM
+     2     GetShift                GetShift        GetShift.asx   MISC.ASM
+     03-05 Miscellaneous           None            XXXX
+     10    GetKey                  GetKeyClock     GetKeyCl.asx   MISC.ASM
+     11    CheckKey                GetKeyClock     GetKeyCl.asx   MISC.ASM
+     12    GetShift                GetShift        GetShift.asx   MISC.ASM
+
+17   00/01 Printer access          None            XXXX
+     02    IsPrint                 VeriPrint       VeriPrin.asx   MISC.ASM
+
+18         ROM BASIC               None            XXXX
+
+1A   0     Time services           Pause           Pause.asx      MISC.ASM
+     01-07 Miscellaneous           None            XXXX
+     0A-0B Miscellaneous           None            XXXX
+     80    Miscellaneous           None            XXXX
+
+1B   NA    Ctrl-Break handler     #NewBreak        NewBreak.asx   HANDLERS.ASM
+
+20         Terminate               None            XXXX
+
+21   1     getch                  #Maybe           XXXX
+     2     putch                  ^Hellom          hellom.asx
+     3     Aux Input               None            XXXX
+     4     Aux Output              None            XXXX
+     5     PrintCh                 None            XXXX
+     6     getch                   VeriAnsi        VeriAnsi.asx   MISC.ASM
+     7     Raw input, no echo     ^Loops           loops.asm
+     8     Input, echo            #Maybe           XXXX
+     9     puts                    Hello           hello.asm
+     A     gets                    GetStr          GetStr.asx     FILE.ASM
+     B     Check input status      None            XXXX
+     C     Flush kb buffer         VeriAnsi        VeriAnsi.asx   MISC.ASM
+     D     Disk Reset              None            XXXX
+     E     SetDrive                ChangeDrive     ChangeDr.asx   FILE.ASM
+     0F-17 FCB File control        None            XXXX
+     19    GetDrive               ^GetCurDrive     GetCurDr.asx   FILE.ASM
+     1A    SetDTA                  SetDTA          SetDTA.asx     FILE.ASM
+     1B/1C Get drive               None            XXXX
+     21-24 FCB file control        None            XXXX
+     25    Set Vector              Exec            Exec.asx       MISC.ASM
+     26    Create PSP              None            XXXX
+     27-28 FCB file control        None            XXXX
+     29    Parse Filename          Exec            Exec.asx       MISC.ASM
+     2A/2B Get/Set Date            GetKeyClock     GetKeyCl.asx   MISC.ASM
+     2C/2D Get/Set Time            GetKeyClock     GetKeyCl.asx   MISC.ASM
+     2E    Set Verify              None            XXXX
+     2F    Get DTA                 GetDTA          GetDTA.asx     FILE.ASM
+     30    GetVersion              GetVer          GetVer.asx     COMMON.ASM
+     31    TSR                    #Maybe           XXXX
+     33    GetSetBreak            #Maybe           XXXX
+     35    Get Vector              Exec            Exec.asx       MISC.ASM
+     36    GetDriveInfo function   GetDiskSize     GetDiskS.asx   FILE.ASM
+     38    GetSetCountry           None            XXXX
+     39    MkDir                   MakeDir         MakeDir.asx    FILE.ASM
+     3A    RmDir                   RemoveDir       RemoveDi.asx   FILE.ASM
+     3B    ChDir                   ChangeDir       ChangeDi.asx   FILE.ASM
+     3C    Create File             CreateFile      CreateFi.asx   FILE.ASM
+     3D    Open File               OpenFile        OpenFile.asx   FILE.ASM
+     3E    Close File              CloseFile       CloseFil.asx   FILE.ASM
+     3F    Read File               ReadFile        ReadFile.asx   FILE.ASM
+     40    Write FIle              WriteFile       WriteFil.asx   FILE.ASM
+     41    Remove                  DelFile         DelFile.asx    FILE.ASM
+     42    FileSize                GetFileSize     GetFileS.asx   FILE.ASM
+     42    MovePtr                 Rewind          Rewind.asx     FILE.ASM
+     43    Get/Set File Attr       SetAttribute    SetAttri.asx   FILE.ASM
+     44    IOCTL                   None            XXXX
+     45    Dupe handle             None            XXXX
+     46    Redirect handle         None            XXXX
+     47    Get Current Directory   GetCurDir       GetCurDi.asx   FILE.ASM
+     48    Allocate Memory         WinOpen         WinOpen.asx    MISC.ASM
+     49    Free Memory             WinClose        WinClose.asx   MISC.ASM
+     4A    Resize Allocated Block  NewBlockSize    NewBlock.asx   MISC.ASM
+     4B    EXEC                    Exec            Exec.asx       MISC.ASM
+     4C    Exit                   ^Hellomo         hellomo.asx
+     4D    Get Return Code         Exec            Exec.asx       MISC.ASM
+     4E    FindFirst               FindFirst       FindFirs.asx   FILE.ASM
+     4F    FindNext                FindNext        FindNext.asx   FILE.ASM
+     54    Get verify              None            XXXX
+     56    Rename                  RenameFile      RenameFi.asx   FILE.ASM
+     57    Get/Set File Date Time  SetAttribute    SetAttri.asx   FILE.ASM
+     58    Get/Set Alloc Strategy  None            XXXX
+     59    Get Extended Error      None            XXXX
+     5A    MakeTemp                UniqueFile      UniqueFi.asx   FILE.ASM
+     5B    Create New File         CreateNewFile   CreateNe.asx   FILE.ASM
+     5C    Lock/Unlock             None            XXXX
+     5E-5F Miscellaneous Network   None            XXXX
+     62    Get PSP                 GetPSP          GetPSP.asx     MISC.ASM
+     63    Get lead byte           None            XXXX
+     65    Get extended country    None            XXXX
+     66    Get/Set Code Page       None            XXXX
+     67    Set handle count        None            XXXX
+     68    Commit file             None            XXXX
+
+22         Terminate handler       None            XXXX
+
+23         CTRL+C handler         #NewCtrlC        NewCtrlC.asx   HANDLERS.ASM
+
+24         Critical error handler #NewCritErr      NewCritE.asx   HANDLERS.ASM
+
+25         Absolute disk read      None            XXXX
+
+26         Absolute disk write     None            XXXX
+
+27         TSR                     None            XXXX
+
+28         Dos Idle                StrInput        StrInput.asx   COMMON.ASM
+
+2F         Multiplex              #Maybe           XXXX

@@ -1,0 +1,1377 @@
+.context h.title
+ML/MASM Command-Line Help
+.context ml.contents
+.context @ml.contents
+.context MASM 6.1 Command Line
+.freeze 3
+.topic ML Driver 6.1 Table of Contents
+                                             \i\p\aUp\vpwb.hlp!hv\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄML ContentsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \i\p\aML Command-Line Syntax\v@comline\v\i\p       \i\p\aMASM Driver Command-Line Syntax\v@MASM.EXE\v\i\p
+     \i\p\aML Options\v@alphacommand\v\i\p                   \i\p\aMASM Driver Options\v@MASM510opts\v\i\p
+     \i\p\aML Linking Options\v@linkingml\v\i\p           \i\p\aLINK Options\vLINK.HLP!LINK.EXE\v\i\p
+     \i\p\aQuickAssembler Emulation\v@QuickAssmb\v\i\p     \i\p\aH2INC Utility\v@h2inc.contents\v\i\p
+     \i\p\aML Environment Variable\v@mlenv\v\i\p      \i\p\aAssembly Language Help\valang.hlp!alang.contents\v\i\p
+                                    \i\p\aML Error Messages\v@ErrTOC.masm\v\i\p
+.context ml.exe
+.context @comline
+..index ML driver,, syntax for
+.topic ML Command-Line Syntax
+.freeze 3
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄML Command-Line SyntaxÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ML [options] filename [[options] filename]...[/link linkoptions]
+
+     \bSyntax\p                  \bDescription\p
+
+     <options>               Specifies options that modify assembler
+                             actions. Precede each option with a / or
+                             a -. Separate options with spaces. You can
+                             mix filenames and options, but options only
+                             modify filenames that follow them.
+                             See: \i\p\aML Options\v@AlphaCommand\v\i\p
+
+     <sourcefile>            Gives the name(s) of a source or object
+                             file to be processed, or library to be
+                             searched at link time. Filenames with
+                             .ASM extensions are assembled; those with
+                             .OBJ, .DEF,  and .LIB extensions are passed
+                             to the linker. Filenames without extensions
+                             are assumed to have the .OBJ extension.
+
+     </link linkoptions>     Specifies additional command-line options
+                             to be passed to the linker.
+                             See: \i\p\aML Linking Options\v@linkingml\v\i\p
+
+     Filenames are not case sensitive; options are case sensitive.
+
+     You can use any number of options, filenames, and library names
+     with the ML command. Under DOS, the command line cannot exceed 128
+     characters. If you cannot fit all options and filenames on the
+     command line, you can use the ML environment variable to contain
+     some of the options.
+
+     See: \i\p\aML Environment Variable\v@mlenv\v\i\p
+.context @alphacommand
+.context ml
+..index ML driver options
+..index assembler, Command-Line Options
+..index options, ML Command-Line Options
+..index switches, ML Command-Line Options
+.topic ML Command-Line Options
+.freeze 3
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄML Command-Line OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Select an option for more information.
+
+     \bSwitch\p    \bDescription\p
+
+     @<file>   \i\p\aSpecify command-line response file\v@fileout\v\i\p
+     /AT       \i\p\aEnable tiny memory model support\v@tinyopt\v\i\p
+     /Bl       \i\p\aSelect alternate linker\v@altlink\v\i\p
+     /c        \i\p\aAssemble without linking\v@assembnolink\v\i\p
+     /C<x>     \i\p\aControl case sensitivity\v@caseopt\v\i\p
+     /COFF     \i\p\aGenerate COFF formated file\v@coff\v\i\p
+     /D        \i\p\aDefine a text macro\v@defmacro\v\i\p
+     /EP       \i\p\aProduce a first-pass listing\v@firstpass\v\i\p
+     /F        \i\p\aSet stack size\v@stacksize\v\i\p
+     /FPi      \i\p\aGenerate emulator code for floating point\v@inlineem\v\i\p
+     /F<x>     \i\p\aSet output filename and type\v@outputfiles\v\i\p
+     /G<x>     \i\p\aSet language type\v@lang\v\i\p
+     /H        \i\p\aSet maximum length of external symbols\v@extlen\v\i\p
+     /help     \i\p\aCall QuickHelp\v@help\v\i\p
+     /?        \i\p\aShow ML option fields\v@help\v\i\p
+     /I        \i\p\aAdd to include file path\v@include\v\i\p
+     /link     \i\p\aPass arguments to the linker\v@linkingml\v\i\p
+     /nologo   \i\p\aSuppress copyright message\v@nologo\v\i\p
+     /S<x>     \i\p\aControl listing files\v@listingfiles\v\i\p
+     /Ta       \i\p\aAssemble non-.ASM files\v@nonASM\v\i\p
+.comment     /VM       \i\p\aEnable virtual memory\v@virtmem\v\i\p
+     /w        \i\p\aWarning level 0 (same as /W0)\v@mwarnings\v\i\p
+     /WX       \i\p\aDo not generate object file if warnings occur\v@mwarnings\v\i\p
+     /W<x>     \i\p\aSet warning level\v@mwarnings\v\i\p
+     /X        \i\p\aRemove INCLUDE environment variable from include path\v@noinclude\v\i\p
+     /Zd       \i\p\aGenerate line-number information in .OBJ file\v@debugopt\v\i\p
+     /Zf       \i\p\aMake all symbols public\v@sympub\v\i\p
+     /Zi       \i\p\aGenerate full CodeView information in .OBJ file\v@debugopt\v\i\p
+     /Zm       \i\p\aMaximize MASM 5.1 compatibility\v@510comp\v\i\p
+     /Zp       \i\p\aSet default structure alignment\v@structalign\v\i\p
+     /Zs       \i\p\aCheck syntax without generating .OBJ file\v@debugopt\v\i\p
+.context @fileout
+.context @<file>
+.context @FILE
+.context @
+..index @<filename> command-line option
+..index command-line extender for ml
+..index ml response file
+.freeze 3
+.topic @<filename> Response File Option
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄResponse File OptionÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   @<filename>
+
+     ML accepts an assembler response file as an argument
+     on the command line. A response file is an ASCII file that can
+     contain multiple options and filenames that you would otherwise
+     enter by hand on the command line or by using the ML environment
+     variable. Unlike either the command line or the ML environment
+     variable, using a response file allows multiple lines of options
+     and filenames.
+
+     See also: \i\p\aML environment variable\v@mlenv\v\i\p
+
+     The options in the response file are interpreted as if they were
+     present on the command line at the position of the response file
+     invocation. An exception to this rule is the /link command. If
+     /link appears in the response file, all options on the rest of the
+     line are passed to the linker. Options in subsequent lines in
+     the response file and options on the command line after the
+     response file invocation are still accepted as compiler options.
+
+     Note that a response file should not contain the ML command.
+     Also, each option must begin and end on the same line; you cannot
+     use the backslash (\\ to concatenate an option across two lines.
+
+     To invoke a response file, enter the at sign (@) followed
+     immediately by a filename; you can also specify a drive and path.
+     A response file invocation is not allowed in the ML environment
+     variable string or in another response file.
+
+     For example, you could enter the following into a file named RESP:
+
+          /Zp /link MYLIB.LIB
+
+     These options are used by ML in addition to any options you
+     specify on the ML command line. If you specify the ML command
+
+          ML @RESP MYAPP.ASM
+
+     the resulting command to ML is
+
+          ML /Zp MYAPP.ASM /link MYLIB.LIB
+
+     Note that the commands are effectively concatenated. You can use
+     NMAKE to create a temporary response file for a single compilation
+     step:
+
+          MYAPP.OBJ : MYAPP.ASM
+              ML @<< MYAPP.ASM
+          /DV100 /Lr /Zp
+          <<
+
+     See also: \i\pNMAKE\i\p
+.context @tinyopt
+.context /AT
+.context -AT
+..index /AT command-line option
+..index memory model,, tiny, /AT Command-Line Option
+..index tiny memory model, /AT Command-Line Option
+.freeze 3
+.topic Tiny Model Support
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄTiny Model SupportÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /AT
+
+     Enables tiny memory model support. Generates error messages for
+     code constructs that violate the requirements for .COM format
+     files. This option causes the linker to generate the /TINY option.
+
+     NOTE: Using this option is not equivalent to specifying tiny model
+           using the .MODEL TINY directive. You must create a program
+           that fits into a single, 16-bit segment for this option to
+           be valid.
+
+     See: \i\p\a.MODEL Directive\valang.hlp!.model\v\i\p
+          \i\p\aMemory Models\valang.hlp!MemoryModels\v\i\p
+.context @altlink
+.context /Bl
+.context -Bl
+..index /Bl command-line option
+..index use alternate linker, /Bl Command-Line Option
+..index linker,, use alternate, /Bl Command-Line Option
+.freeze 3
+.topic Use Alternate Linker
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄUse Alternate LinkerÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Bl[path]<filename>
+
+     \bSee also:\p \a/c\v@assembnolink\v
+
+     Selects an alternate linker. By default, the assembler searches for
+     LINK.EXE in the current path.
+
+     Use the optional <path> parameter to give a fully-specified path for
+     <filename>. The <filename> parameter specifies the filename of the
+     linker. The assembler assumes an .EXE extension for <filename> if
+     none is given.
+.context @assembnolink
+.context /c
+.context -c
+..index /c command-line option
+..index assemble without linking, /D Command-Line Option
+.freeze 3
+.topic Assemble without Linking
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄAssemble without LinkingÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /c
+
+     \bSee also:\p \a/Bl\v@altlink\v
+
+     Assembles files without linking them. Use this option to create
+     .OBJ files for later linking. This option affects all files given
+     to ML.
+.context @coff
+.context /COFF
+.context /coff
+..index /COFF alternate file format
+..index NT-compatible object files
+.freeze 3
+.topic /COFF Command Line Option
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄCommon Object File FormatÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /COFF
+
+     Causes the object file to be in Microsoft Windows NT-Compatible
+     common object file format.
+.context @caseopt
+.context /Cx
+.context /Cp
+.context /Cu
+.context -Cx
+.context -Cp
+.context -Cu
+..index /C<x> command-line options
+..index case sensitivity, /C<x> Command-Line Options
+.freeze 3
+.topic Case Sensitivity
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄCase SensitivityÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /C<x>
+
+     Controls case sensitivity, where /C<x> is one of the following:
+
+     \bOption\p     \bAction\p
+
+     /Cx        Preserves case of identifiers declared with PUBLIC,
+                COMM, EXTERNDEF, EXTERN, PROTO, and PROC
+
+     /Cp        Preserves case of all user identifiers
+
+     /Cu        Maps all identifiers to uppercase
+
+     The default setting is /Cx. The \aOPTION CASEMAP:\valang.hlp!casemap\v directive will
+     override the /C<x> command-line option.
+
+     If you enable case sensitivity with the /Cp option, all
+     identifiers that have the same spelling but use different cases
+     are considered different.
+
+     If you use /Cx, all names are converted to uppercase for use in
+     the current module. However, when a name is emitted to the object
+     file, the case of the name given with the PUBLIC, EXTERNDEF, EXTERN,
+     COMM, PROTO, or PROC directive is the case used. This allows a case-
+     sensitive LINK to work.
+
+     If you use EXTERNDEF, EXTERN, or the /Zi option, the case of the
+     symbolic data available to CodeView is affected by these options.
+
+     Use /Cp or /Cx when creating object modules that are to be linked
+     with object modules created by a case-sensitive compiler. If case
+     sensitivity is important, you should also use the /NOI linker
+     option.
+
+     NOTE: The ML and QA drivers always set the /NOI link option. If
+           you are linking with one of these drivers, you must assemble
+           with the /Cx or /Cp option.
+
+     See: \i\p\aOPTION CASEMAP:\valang.hlp!casemap\v\i\p   \i\pEXTERNDEF\i\p
+          \i\pPUBLIC\i\p            \i\pEXTERN\i\p
+          \i\pCOMM\i\p
+.context @defmacro
+.context /D
+.context -D
+..index macros,, defining, /D Command-Line Option
+..index /D command-line option
+.freeze 3
+.topic Define Macros
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄDefine MacrosÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /D<identifier>[=value]
+
+     This option defines a text macro in the source file. The
+     <identifier> field specifies the name of the macro. The optional
+     <value> field specifies its value. The default value of
+     <identifier> is an empty string.
+
+     Identifiers defined with the /D option are treated exactly
+     like identifiers defined with the TEXTEQU directive. If the same
+     identifier is given in a source file and on the command line,
+     the source-file definition will take precedence.
+
+     The <value> field can be any text string that does not include a
+     space, comma, or semicolon. If <value> includes a space, it must
+     be enclosed in quotation marks. For example,
+
+          /Dname="Macro Assembler"
+
+     See: \i\p\aTEXTEQU Macro\valang.hlp!textequ\v\i\p
+.context @firstpass
+.context /EP
+.context -EP
+..index first-pass listing, /EP Command-Line Option
+..index listing,, first-pass , /EP Command-Line Option
+..index /EP command-line option
+.freeze 3
+.topic Generate a First-Pass Listing
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄGenerate a First-Pass ListingÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /EP
+
+     \bSee also:\p \a/Sf\v@listingfiles\v
+
+     Produces a listing from the assembler's first pass and sends it to
+     STDOUT, unless redirected.
+
+     The first-pass listing will have:
+
+     ş  Macro definitions removed
+     ş  Macros expanded
+     ş  Conditional assembly statements resolved
+     ş  Some equates expanded
+
+     The first-pass listing includes all error and warning messages that
+     were generated in the first pass. If no errors or warnings were
+     generated, the first-pass listing will be a valid ML source file.
+
+     Use the \a/Sf option\v@listingfiles\v to add a first-pass listing to the beginning
+     of a listing file.
+
+     Do not confuse this listing with the first-pass listing given by
+     versions of the assembler that used 2-pass assembly.
+.context @stacksize
+.context /F
+.context -F
+..index stack size, /F Command-Line Option
+..index /F command-line option
+.freeze 3
+.topic Set Stack Size
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Stack SizeÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /F stacksize
+
+     Sets the amount of memory available for the linker's stack by
+     passing the /ST[ACK] option to the linker. The <stacksize> field
+     must be a hexadecimal number between 0000 and FFFF. You must
+     include a space between /F and <stacksize>.
+.context @outputfiles
+.context /Fo
+.context /Fe
+.context /Fl
+.context /Fb
+.context /Fm
+.context /l
+.context -Fo
+.context -Fe
+.context -Fl
+.context -Fb
+.context -Fm
+.context -l
+.context /FR
+.context -FR
+..index browser,, source, /Fr Command-Line Option
+..index /Fr command-line option
+..index source browser, /Fr Command-Line Option
+..index files,, output, F<x> Command-Line Options
+..index output files, F<x> Command-Line Options
+..index F<x> command-line options
+.freeze 3
+.topic Set Alternate Output Files
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Alternate Output FilesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /F<x>[filename]
+
+     \bSee also:\p \a/S<x>\v@listingfiles\v, \a/EP\v@firstpass\v
+
+     Specifies filenames for assembler output files where /F<x> is
+     one of the following:
+
+                           \bDefault\p
+     \bOption\p    \bFilename\p    \bExtension\p     \bFile Type\p
+
+     /Fo       Required    .OBJ          Object
+     /Fe       Required    .EXE          Executable
+     /Fb       Optional    .EXE          Bound executable
+     /Fl       Optional    .LST          Listing
+     /Fm       Optional    .MAP          Map file of linker symbols
+     /FR       Optional    .SBR          Full source-browser database
+     /Fr       Optional    .SBR          Limited source-browser database
+
+     No space is allowed between the option and the source filename.
+     If you give <filename> without an extension, the assembler appends
+     the default extension. If you do not give <filename> or give a
+     backslash-terminated path for <filename>, the assembler uses the
+     source filename with the default extension.
+
+     If you do not give <filename> with the /Fb option, the assembler
+     generates only a bound executable; it does not generate a
+     separate protected-mode executable.
+
+     To modify the type of listing file generated by /Fl, use the
+     \a/S<x> options\v@listingfiles\v.
+
+     See: \i\p\aListing Files\v@listingfiles\v\i\p
+.context @inlineem
+.context /FPi
+.context -FPi
+..index 80x87 coprocessor instructions, /FPi Command-Line Option
+..index inline 80x87 instructions, /FPi Command-Line Option
+..index emulation,, inline, /FPi Command-Line Option
+.freeze 3
+.topic Inline Math Emulation
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄInline Math EmulationÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /FPi
+
+     Generates instructions for an 80x87 coprocessor that can be used
+     with the emulator math package. Generates fixup information that
+     turns each floating-point math instruction into a software
+     interrupt. This option is equivalent to \aOPTION EMULATOR\valang.hlp!emulator\v. The
+     \aOPTION NOEMULATOR\valang.hlp!emulator\v directive overrides the /FPi command-line option.
+
+     This option is only relevant when linking assembly modules with
+     Microsoft high-level language modules. No emulator library is
+     provided with the assembler. Emulator libraries require support
+     from the high-level language start-up code.
+
+     Follow the directions provided with your compiler when using /FPi.
+
+     See: \i\p\aOPTION EMULATOR\valang.hlp!emulator\v\i\p
+.context @lang
+.context /Gc
+.context /Gd
+.context -Gc
+.context -Gd
+..index language type, /G<x> Command-Line Option
+..index /G<x> command-line option
+.freeze 3
+.topic Set Language Type
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Language TypeÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Gc
+               /Gd
+
+     Specifies the default language type (langtype) for the source
+     files. Use the /Gc option to select the Pascal langtype. Use the
+     /Gd option to select the C langtype. These options are equivalent
+     to the \aOPTION LANGUAGE:PASCAL\valang.hlp!language\v and \aOPTION LANGUAGE:C\valang.hlp!language\v directives
+     respectively. The \aOPTION LANGUAGE:\valang.hlp!language\v directive overrides the /Gc
+     and /Gd command-line options.
+
+     Language types specified in source file statements will override
+     these command-line options.
+
+     See: \i\p\aOPTION LANGUAGE:\valang.hlp!language\v\i\p
+          \i\p\aLanguage Type\valang.hlp!langtype\v\i\p
+.context @extlen
+.context /H
+.context -H
+..index external symbols,,maximum length, /H Command-Line Option
+..index length of external symbols,,maximum, /H Command-Line Option
+..index /H command-line option
+.freeze 3
+.topic Set Maximum Length of External Symbols
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Maximum Length of External SymbolsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /H<length>
+
+     Sets the maximum length of symbols exported to the linker; any
+     symbols longer than this are truncated. The <length> field is a
+     decimal number between 1 and 255 specifying the maximum number of
+     characters exported.
+
+     This option is useful when linking with object files created by
+     compilers that limit the length of symbols output to the object
+     file.
+
+     See: \i\p\aEXTERNDEF\valang.hlp!externdef\v\i\p   \i\p\aEXTERN\valang.hlp!extern\v\i\p
+          \i\p\aPUBLIC\valang.hlp!public\v\i\p
+.context /?
+.context /help
+.context -help
+.context -?
+.context @help
+..index /help option, Display Help File
+..index QuickHelp from ML, /help Command-Line Option
+..index help,, from command line, /help Command-Line Option
+.freeze 3
+.topic /help Switch
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄCall QuickHelpÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /help
+               /?
+
+     The /help option invokes QuickHelp and displays the ML command-
+     line table of contents. This option is not case sensitive.
+
+     The /? option shows a brief summary of ML options and usage.
+.context /I
+.context -I
+.context @include
+..index INCLUDE environment variable, /I Command-Line Option
+..index /I command-line option
+..index files,, include, /I Command-Line Option
+..index .INC files,, changing path, /I Command-Line Option
+.freeze 3
+.topic Include File Path
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄInclude File PathÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /I<pathname>
+
+     Adds <pathname> to the head of the list of search paths for
+     include files, temporarily augmenting the effect of the INCLUDE
+     environment variable. The <pathname> path can be absolute or
+     relative to the current directory.
+
+     This option causes the assembler to search the directory or
+     directories you specify before searching the standard directories
+     given by the INCLUDE environment variable.
+
+     The assembler searches for include files in this order:
+
+        ş The current directory of the file with the INCLUDE directive
+        ş The /I command-line include path or the PWB include path
+        ş The INCLUDE environment variable
+
+     To add more than one include directory, specify the /I option more
+     than once on the ML command line. The directories are searched in
+     the order they appear on the command line.
+
+     See: \i\p\a/X Command-Line Option\v@noinclude\v\i\p
+.context /link
+.context -link
+.context @linkingml
+..index linking, /link Command-Line Option
+..index libraries, /link Command-Line Option
+..index /link command-line option
+..index .LIB files,, linking
+.freeze 3
+.topic Set Linker Options
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Linker OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /link [linkoptions][libraries]
+
+     Passes linker options, library names, and library search paths
+     specified after /link to LINK. These options must be the last
+     argument in the command line and must appear after any source-file
+     names and ML options. Unlike ML options, link options are not
+     case sensitive.
+
+     You can also link object files and libraries without the /link
+     option by giving object filenames with the .OBJ extension,
+     library names with the .LIB extension, and module-definition files
+     with the .DEF extension. For example:
+
+          ML PROG1.ASM LIB1.LIB /link LIB2 LIB3
+
+     This command line assembles PROG1.ASM and links PROG1.OBJ,
+     LIB1.LIB, and LIB2.LIB.
+
+     See: \i\p\aINCLUDELIB Directive\valang.hlp!INCLUDELIB\v\i\p
+          \i\p\aLINK.EXE Options\vLINK.HLP!LINK.EXE\v\i\p
+.context /nologo
+.context -nologo
+.context @nologo
+..index /nologo command-line option
+..index messages,, suppressing, /nologo Option
+..index copyright,, suppressing, /nologo Option
+..index logo,, suppressing, /nologo Option
+.freeze 3
+.topic Suppress Assembly Messages
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSuppress Assembly MessagesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /nologo
+
+     Suppresses the Microsoft copyright message displayed when ML
+     starts.
+.context @listingfiles
+.context /Sa
+.context /Sf
+.context /Sg
+.context /Sn
+.context /Sx
+.context /Sp
+.context /Ss
+.context /St
+.context -Sa
+.context -Sf
+.context -Sg
+.context -Sn
+.context -Sx
+.context -Sp
+.context -Ss
+.context -St
+..index files,,listing, /S<x> Command-Line Options
+..index output files,, listing, /S<x> Command-Line Options
+..index listing files, /S<x> Command-Line Options
+..index /S<x> options
+.freeze 3
+.topic Control Listing Files
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄControl Listing FilesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /S<x>
+
+     Modifies the type of listing file generated by the \a/Fl option\v@OutputFiles\v. The
+     /Sx, /Sp, and /Sl switches can be overridden by \alisting directives\valang.hlp!ListCtrl\v.
+     Combine listing options to obtain the desired output.
+
+                             \bDefault  /Sa /Sg /Sx /Sn /Sf /Sl /Sp /Ss /St\p
+                              ÚÄÄÄ¿  ÚÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿
+     Assembler-generated code ³OFF³  ³ + ³ + ³   ³   ³   ³   ³   ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     False conditionals       ³OFF³  ³ + ³   ³ + ³   ³   ³   ³   ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     Symbol table             ³ON ³  ³   ³   ³   ³ - ³   ³   ³   ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     First-pass listing       ³OFF³  ³   ³   ³   ³   ³ + ³   ³   ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     Line width               ³ 0 ³  ³   ³   ³   ³   ³   ³ # ³   ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     Page length              ³ 0 ³  ³   ³   ³   ³   ³   ³   ³ # ³   ³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     Title                    ³"" ³  ³   ³   ³   ³   ³   ³   ³   ³txt³   ³
+                              ÃÄÄÄ´  ÃÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+     Subtitle                 ³"" ³  ³   ³   ³   ³   ³   ³   ³   ³   ³txt³
+                              ÀÄÄÄÙ  ÀÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙ
+
+     \bOption\p         \bEffect\p
+
+     /Sa            Lists all lines of code in a source file and
+                    overrides any listing directives in the source file.
+
+     /Sc            Lists instruction timings in listing file when
+                    used with the /Fl option.
+
+     /Sf            Adds a first-pass listing to the beginning of a
+                    listing file. Useful for debugging code with
+                    fatal errors.
+
+     /Sg            Turns on listing of assembler-generated code.
+                    Assembler-generated code is created by directives
+                    such as .IF, .WHILE, .STARTUP, and INVOKE.
+
+     /Sl<width>     Sets output-file line width. The <width> parameter
+                    must be 60-255 or 0. The default <width> is 0,
+                    meaning no limit to the line length. Equivalent to
+                    the PAGE directive.
+
+     /Sn            Suppresses generation of symbol table.
+
+     /Sp<length>    Sets output-file page length. The <length> parameter
+                    must be 10-255 or 0. The default <length> is 0,
+                    meaning no page breaks generated. Equivalent to the
+                    PAGE directive.
+
+     /Ss<text>      Sets subtitle to <text>. Equivalent to the SUBTITLE
+                    directive.
+
+     /St<text>      Sets title to <text>. Equivalent to the TITLE
+                    directive.
+
+     /Sx            Turns on listing of lines in false portion of
+                    conditionals. Equivalent to the .LISTIF directive.
+
+     See: \i\p\a/Fl Option\v@OutputFiles\v\i\p
+          \i\p\aListing Directives\valang.hlp!ListCtrl\v\i\p
+          \i\p\aPAGE\valang.hlp!page\v\i\p
+.context @nonASM
+.context /Ta
+.context -Ta
+..index input files,, non-.ASM, /Ta Command-Line Option
+..index source files,, non-.ASM, /Ta Command-Line Option
+..index files,,non-.ASM, /Ta Command-Line Option
+..index /Ta command-line option
+.freeze 3
+.topic Assemble Non-.ASM Files
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄAssemble Non-.ASM FilesÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Ta<sourcefile>
+
+     Assembles <sourcefile> regardless of the file extension. Without
+     this option, the assembler requires the .ASM extension. The /Ta
+     option applies only to the filename that immediately follows it,
+     but you can apply this option to multiple filenames.
+.comment.context @virtmem
+.comment.context /VM
+.comment.context -VM
+.comment..index virtual memory,, enable, /VM Command-Line Option
+.comment..index memory,, enable virtual, /VM Command-Line Option
+.comment..index /VM command-line option
+.comment.freeze 3
+.comment.topic Enable Virtual Memory
+.comment                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+.commentÄÄÄÄÄEnable Virtual MemoryÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.comment
+.comment     \bSyntax:\p   /VM
+.comment
+.comment     Enables virtual memory for temporary storage in MS-DOS. This option
+.comment     will allow assembly of source files that will not assemble due to
+.comment     memory restrictions. The /VM option is ignored in OS/2.
+.comment
+.comment     The assembler will use virtual memory in this order:
+.comment
+.comment     ş  EMS memory (if available)
+.comment     ş  XMS memory (if available)
+.comment     ş  Disk space
+.comment
+.comment     The assembler will use the directory specified by the TMP environment
+.comment     variable. If this variable is not set, it will use the current
+.comment     directory.
+.context @mwarnings
+.context /W0
+.context /W1
+.context /W2
+.context /WX
+.context /w
+.context -W0
+.context -W1
+.context -W2
+.context -WX
+.context -w
+..index /W<x> option
+..index warning levels, /W<x> Option
+.freeze 3
+.topic Set Warning Levels
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄSet Warning LevelÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /W<x>
+               /w
+
+     Selects how much warning output is generated by the assembler,
+     where /W<x> is one of the following:
+
+     /W0     Display only errors (A1xxx-A2xxx).
+
+     /W1     Display errors and warnings (A4xxx). This is the default.
+
+     /W2     Display errors and warnings (A4xxx-A5xxx).
+
+     /W3     Display all errors and warnings.
+
+     /WX     Do not generate .OBJ if warnings exist.
+
+     /w      Identical to /W0.
+
+     Select an error number for more information.
+
+     \bError Number\p     \bMeaning\p
+
+     \aA1xxx            Fatal error; stops assembly\v@erra1xxx\v
+
+     \aA2xxx            Severe error (such as syntax errors); assembly\v@erra2xxx\v
+                      \acontinues without an .OBJ file generated.\v@erra2xxx\v
+
+     \aA4xxx            Warning; indicates programming problems,\v@erra4xxx\v
+                      \aincluding ambiguous statements or type mismatches\v@erra4xxx\v
+
+     \aA5xxx-A6xxx      Warning; signals statements that may produce\v@erra4xxx\v
+                      \ainefficient code.\v@erra4xxx\v
+
+     See: \i\p\aError Codes\v@errtoc.masm\v\i\p
+.context /X
+.context -X
+.context @noinclude
+..index INCLUDE environment variable,,removing, /X Command-Line Option
+..index /X command-line option
+..index .INC files,, changing path, /X Command-Line Option
+.freeze 3
+.topic Remove INCLUDE Environment Variable
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄRemove INCLUDE Environment VariableÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /X
+
+     Removes the directories specified in the INCLUDE environment
+     variable from the the list of directories to search for include
+     files. This option does not affect directories specified with the
+     \a/I\v@include\v command-line option.
+
+     See: \i\p\a/I Command-Line Option\v@include\v\i\p
+.context @debugopt
+.context /Zi
+.context /Zd
+.context /Zs
+.context -Zi
+.context -Zd
+.context -Zs
+..index /Zi command-line option
+..index /Zd command-line option
+..index /Zs command-line option
+..index CodeView information,, generating, /Zi Command-Line Option
+..index SYMDEB information,, generating, /Zd Command-Line Option
+..index syntax checking, /Zs Command-Line Option
+.freeze 3
+.topic Debugging Output
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄDebugging OutputÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Zi
+               /Zd
+               /Zs
+
+     \bOption\p     \bEffect\p
+
+     /Zi        Generates full debugging information for CodeView.
+
+     /Zd        Generates line-number information only. Can be used
+                to save memory when debugging under CodeView or to
+                give information to the SYMDEB debugger.
+
+     /Zs        Checks syntax only. Does not generate an .OBJ or .EXE
+                file.
+
+     Normally you should use the /Zi option for debugging, but if you
+     are running out of memory under CodeView, you can use the more
+     limited /Zd to create less information. Generate smaller .EXE
+     files by calling the assembler with no debugging options.
+
+     See: \i\p\aOutput Files\v@outputfiles\v\i\p
+.context @sympub
+.context /Zf
+.context -Zf
+..index symbols,, making all public, /Zf Command-Line Option
+..index public,, making all symbols, /Zf Command-Line Option
+..index /Zf command-line option
+.freeze 3
+.topic Make Symbols Public
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄMake Symbols PublicÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Zf
+
+     Causes all symbols to be public. This command-line option allows
+     you to easily share information between modules, but it can cause
+     link errors due to name conflicts if symbols defined in different
+     modules have the same name.
+
+     See: \i\pEXTERNDEF\i\p
+          \i\pPUBLIC\i\p
+.context /Zm
+.context -Zm
+.context @510comp
+..index MASM compatibility,, maximize, /Zm Command-Line Option
+..index compatibility,, MASM 5.1, /Zm Command-Line Option
+..index 5.1 MASM compatibility,, maximize, /Zm Command-Line Option
+..index /Zm command-line option
+.freeze 3
+.topic Maximize MASM 5.1 Compatibility
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄMaximize MASM 5.1 CompatibilityÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Zm
+
+     Sets all options to maximize compatibility with previous versions
+     of the assembler. This option is equivalent to the \aOPTION M510\valang.hlp!M510\v
+     directive.
+
+     See: \i\p\aOPTION M510\valang.hlp!M510\v\i\p
+          \i\p\aMASM.EXE Driver\v@masm.exe\v\i\p
+.context /Zp
+.context -Zp
+.context @structalign
+..index alignment,, structure, /Zp Command-Line Option
+..index structure alignment, /Zp Command-Line Option
+..index /Zp command-line option
+.freeze 3
+.topic Align Structures
+                                             \i\p\aUp\v@alphacommand\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄAlign StructuresÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bSyntax:\p   /Zp[alignment]
+
+     Sets the default alignment of structures defined with the STRUCT
+     directive. The <alignment> field specifies the alignment of data
+     in bytes and can be 1, 2, or 4. The default alignment is 1.
+
+     See: \i\p\aSTRUCT Directive\valang.hlp!STRUCT\v\i\p
+.context MASM.EXE
+.context @MASM.EXE
+..index MASM.EXE file, MASM 5.1 Compatible Driver
+..index MASM 5.1 driver
+.freeze 3
+.topic MASM Driver Command-Line Syntax
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄMASM Command-Line SyntaxÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     MASM [/options] sourcefile [, [objectfile] [, [listingfile]
+       [, [crossreferencefile]]]] [;]
+
+     The MASM driver emulates the behavior of previous versions of
+     the assembler. This driver is included to allow you to run old
+     makefiles with few, if any, changes. Use the more powerful ML
+     driver for new makefiles.
+
+     The MASM driver converts MASM command lines to ML command lines
+     and then invokes ML. The MASM driver performs the following
+     actions:
+
+        ş Converts MASM options, fields, and filenames to their
+          ML equivalents. Also converts options, fields, and filenames
+          from the MASM environment variable.
+
+        ş Adds the /Zm option (enabling MASM 5.1 compatibility
+          features).
+
+        ş Specifies /I. (a path of "."), forcing ML to search for
+          include files in the current directory first.
+
+        ş Adds the /c option so that LINK.EXE must be called
+          separately.
+
+        ş Adds the /Ta (assemble independent of extension) option if
+          the input file extension is not .ASM.
+
+        ş Adds the /FR (add source browser information) option if
+          <crossreferencefile> is given.
+
+        ş Invokes ML.EXE. Note that the ML environment variable is
+          still used by ML.
+
+     See: \i\p\aMASM Driver Command-Line Options\v@masm510opts\v\i\p
+          \i\p\aMASM 5.1 Compatibility Switch (/Zm)\v@510comp\v\i\p
+.context masm
+.context @masm510opts
+..index options,, MASM.EXE command-line
+..index switches,, MASM.EXE command-line
+..index command-line,, MASM.EXE options
+.freeze 3
+.topic MASM Driver Command-Line Options
+                                             \i\p\aUp\v@masm.exe\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄMASM Driver OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The following MASM options are translated into their ML
+     equivalents. MASM options are not case sensitive; ML options are:
+
+  \bMASM\p
+  \bOptions\p    \bDescription\p                   \bML Result\p
+
+  /A         Provides alphabetic           Warning issued; unsupported.
+             segment order.                Functionality can be emulated
+                                           by the .ALPHA directive.
+
+  /B         Sets internal buffer size.    Ignored; unsupported.
+
+  /C         Creates cross-reference       Translated to /FR.
+             table in listing file.
+
+  /D         Creates Pass 1 listing.       Translated to /Fl /Sf.
+
+  /Dsymbol   Defines a symbol.             Passed through unmodified.
+
+  /E         Emulates floating-point       Translated to /FPi.
+             instructions.
+
+  /H         Lists command-line            Calls QH for MASM.EXE.
+             arguments.
+
+  /I         Specifies include path.       Passed through unmodified.
+
+  /L         Provides normal listing.      Translated to /Fl.
+
+  /LA        Lists all.                    Translated to /Fl and /Sa.
+
+  /ML        Treats names as case-         Translated to /Cp.
+             sensitive.
+
+  /MU        Converts names to             Translated to /Cu.
+             uppercase.
+
+  /MX        Preserves case on nonlocal    Translated to /Cx.
+             names (symbols declared
+             using PUBLIC, EXTERN, or
+             COMM directive).
+
+  /N         Suppresses table in listing   Translated to /Sn.
+             file.
+
+  /P         Checks for impure code.       Ignored; unsupported.
+                                           See: OPTION READONLY.
+
+  /S         Provides sequential           Warning issued; unsupported.
+             segment ordering.             Functionality can be emulated
+                                           with the .SEQ directive, which
+                                           is in effect by default.
+
+  /T         Terse assembly.               Translated to /nologo.
+
+  /V         Verbose assembly.             Ignored; unsupported.
+
+  /W0        Warning level 0.              Translated to /W0.
+
+  /W1        Warning level 1.              Translated to /W1.
+
+  /W2        Warning level 2.              Translated to /W2.
+
+  /X         Lists false conditionals.     Translated to /Sx.
+
+  /Z         Displays error lines          Ignored; unsupported.
+             on screen.
+
+  /ZD        Generates line numbers        Translated to /Zd.
+             for CodeView.
+
+  /ZI        Generates symbols for         Translated to /Zi.
+             CodeView.
+.context @QuickAssmb
+..index QuickAssembler compatible options
+.freeze 3
+.topic QuickAssembler Command-Line Options
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄQuickAssembler Command-Line OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The following QuickAssembler options are recognized by ML.EXE and
+     provide some compatibility with makefiles designed for QCL.EXE:
+
+  \bQA Option\p   \bDescription\p               \bML Result\p
+
+  /a          Provides alphabetic       Warning issued from ML. Use the
+              segment order.            .ALPHA directive instead.
+
+  /s          Provides sequential       Warning issued from the assembler.
+              segment order.            Functionality can be emulated with
+                                        the .SEQ directive, which is in
+                                        effect by default.
+
+  /Sq         Generates list file for   Translated to /Sl0 /Sp0.
+              viewing with editor.
+
+  /Ez         Writes the source code    Ignored by ML.
+              for error lines to the
+              screen.
+
+  /Cl         Preserves case of all     Identical to the /Cp option.
+              user identifiers.
+
+  /P1         Performs one-pass         Ignored. The assembler is single-
+              assembly.                 pass only.
+
+  /P2         Performs two-pass         Ignored. The assembler is single-
+              assembly.                 pass only.
+.context @mlenv
+..index environment variable,, ML
+..index variable,, ML environment
+..index ML environment variable
+.freeze 3
+.topic ML Environment Variable
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄML Environment VariableÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Use the ML environment variable to set options you want to use
+     most of the time so that you don't have to specify them on the
+     command line each time you run ML.The ML environment variable
+     also allows you to specify a command line longer than the DOS
+     limit of 128 characters. For example, you can type
+.comment parent in next line removed from previous
+.comment     limit of 128 characters (OS/2 does not have this limit).
+
+          SET ML=/DDEBUG /DV100 /Zi
+
+     ML uses these options in addition to any you specify on the
+     command line. In the case of conflicting options, command-line
+     and PWB-set options take precedence (with the last option
+     specified taking highest precedence).
+
+     If, after specifying the above line in the ML environment
+     variable, you specify the ML command
+
+          ML myprog.asm /link /NOD /NOE
+
+     the effective command to ML is
+
+          ML /DDEBUG /DV100 /Zi myprog.asm /link /NOD /NOE
+
+     To reset the ML environment variable so that it contains nothing,
+     enter the following:
+
+          SET ML=
+.context H2INC
+.context H2INC.EXE
+.context @h2inc.contents
+..index H2INC
+..index .H files,, converting to .INC
+..index header files,, converting to include
+..index C header files,, converting to .INC
+..index .INC files,, converting from .H
+..index include files,, converting from header
+..index conversion,, .H to .INC
+.freeze 3
+.topic H2INC Reference
+                                             \i\p\aUp\v@ml.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄH2INC ContentsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC converts a C header file (.H) into a MASM include file (.INC).
+
+     \bCommand-Line Syntax\p
+
+     H2INC [options] filename.H ...
+
+     \i\p\aWhat Is H2INC?\v@H2WHAT\v\i\p
+          \i\p\aH2INC Constants\v@H2CONST\v\i\p
+          \i\p\aH2INC Type conversions\v@H2TYPE\v\i\p
+
+     \i\p\aH2INC Command-Line Syntax\v@H2SYN\v\i\p
+
+     \i\p\aH2INC Options\v@H2OPT\v\i\p
+.context @H2WHAT
+.freeze 3
+.topic What is H2INC?
+                                             \i\p\aUp\v@h2inc.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄWhat is H2INC?ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     The H2INC utility translates C header files into MASM-compatible
+     include files. C header files normally have the extension .H; MASM
+     include files normally have the extension .INC.
+
+     H2INC simplifies porting data structures from your C programs to
+     MASM programs. This is especially useful when you have a program
+     that mixes C code and MASM code with globally accessible data
+     structures or a program prototyped in C that you're translating
+     to MASM for compactness and fast execution.
+
+     The H2INC program translates data declarations, function prototypes,
+     and type definitions. H2INC does not convert C code into MASM code.
+     When H2INC encounters a C statement that would compile into executable
+     code, H2INC ignores the statement and issues a warning message to
+     the standard output.
+
+     H2INC accepts C source code compatible with Microsoft C 6.0 and
+     creates include files suitable for MASM 6.1. These include files
+     will not work with versions of MASM prior to 6.0.
+.context @H2CONST
+.freeze 3
+.topic H2INC Options
+                                             \i\p\aUp\v@h2inc.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄH2INC ConstantsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     You can make use of the following predefined constants in your C code
+     to conditionally generate the code in .INC files. The predefined
+     constants and the conditions under which they are defined are:
+
+     \bPredefined Constant\p       \bWhen Defined\p
+
+     _H2INC                    Always defined
+     M_I86                     Always defined
+     MSDOS                     Always defined
+     _MSC_VER                  Defined as 600 for this release
+     M_I8086                   Defined if /G0 is specified (default)
+     M_I286                    Defined if /G1, /G2, or /G3 is specified
+     NO_EXT_KEYS               Defined if /Za is specified
+     _CHAR_UNSIGNED            Defined if /J is specified
+     M_I86SM                   Defined if /AS is specified
+     M_I86MM                   Defined if /AM is specified
+     M_I86CM                   Defined if /AC is specified
+     M_I86LM                   Defined if /AL is specified
+     M_I86HM                   Defined if /AH is specified
+.context @H2TYPE
+.freeze 3
+.topic H2INC Type Conversions
+                                             \i\p\aUp\v@h2inc.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄH2INC Type ConversionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC converts C variable types to MASM types as follows:
+
+     \bC Type\p            \bMASM Type\p
+
+     char              BYTE (SBYTE with /J option)
+     signed char       SBYTE
+     unsigned char     BYTE
+     short             SWORD
+     unsigned short    WORD
+     int               SWORD (SDWORD with /G3 or /G4 option)
+     unsigned int      WORD (DWORD with /G3 or /G4 option)
+     long              SDWORD
+     unsigned long     DWORD
+     float             REAL4
+     double            REAL8
+     long double       REAL10
+.context @H2SYN
+.freeze 3
+.topic H2INC Command-Line Syntax
+                                             \i\p\aUp\v@h2inc.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄH2INC Command-Line SyntaxÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC [options] filename.H ...
+
+     The <filename> field is required. Filenames must be entered after
+     options.
+
+     \bSyntax\p                  \bDescription\p
+
+     <options>               Specifies options that modify H2INC
+                             actions. Precede each option with a / or
+                             a -. Separate options with spaces.
+                             See: \i\p\aH2INC Options\v@H2OPT\v\i\p
+
+     <filename>              The name of the C header file to be converted.
+                             By default, the  output filename will be
+                             <filename>.INC.
+.context @H2OPT
+.freeze 3
+.topic H2INC Options
+                                             \i\p\aUp\v@h2inc.contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄH2INC OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC options affect filenames that follow them. All options are
+     case sensitive. H2INC also uses many options from the C 6.0
+     compiler.
+     See: \i\p\aC 6.0 compatible options\v@H2C6\v\i\p
+          \i\p\aH2INC Syntax\v@H2SYN\v\i\p
+
+     \bOption\p           \bDescription\p
+
+     /C               Passes comments in the .H file to the .INC file.
+
+     /Fa [filename]   Specifies that the output file contain only
+                      equivalent MASM statements. This is the default.
+                      If specified, the filename overrides the default,
+                      keeping the base name of the C header files and
+                      adding the .INC extension.
+
+     /Fc [filename]   Specifies that the output file contain equivalent
+                      MASM statements plus original C statements
+                      converted to comment lines.
+
+     /Ht              Enables generation of text equates. By default,
+                      text equates are not translated.
+
+     /Mn              Assumes the .MODEL directive is not specified
+                      in the MASM source or the generated .INC files.
+                      Instructs H2INC to declare explicitly the distances
+                      for all pointers and functions.
+
+     /Ni              Suppresses the expansion of nested include files.
+
+     /Tc filename     Enables the processing of files whose name does not
+                      end in .H.
+
+     /Zn string       Adds <string> to all names generated by H2INC.
+                      Used to eliminate name conflicts with other H2INC-
+                      generated include files.
+
+     /Zu              Makes all structure and union tag names unique.
+.context @H2C6
+.freeze 3
+.topic H2INC C 6.0 Options
+                                             \i\p\aUp\v@h2opt\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄC 6.0-Compatible OptionsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     H2INC shares many options with the C 6.0 compiler. All C 6.0
+     compiler options are accepted, but some are ignored.  The following
+     table shows how they affect H2INC output.
+     See: \i\p\aH2INC-specific options\v@H2OPT\v\i\p
+          \i\p\aH2INC Syntax\v@H2SYN\v\i\p
+
+     \bOption\p           \bDescription\p
+
+     /AT              Specifies tiny memory model (.COM).
+
+     /AS              Specifies small memory model, the default.
+
+     /AC              Specifies compact memory model.
+
+     /AM              Specifies medium memory model.
+
+     /AL              Specifies large memory model.
+
+     /AH              Specifies huge memory model.
+
+     /D[const[=value]]Defines a constant or macro.
+
+     /G0              Enables 8086/8088 instructions (default).
+
+     /G1              Enables 80186/80188 instructions.
+
+     /G2              Enables 80286 instructions.
+
+     /G3              Enables 80386 instructions. Changes the default
+                      word size to DWORD.
+
+     /G4              Enables 80486 instructions. Changes the default
+                      word size to DWORD.
+
+     /Gc              Specifies Pascal as the default calling convention.
+
+     /Gd              Specifies C as the default calling convention for
+                      functions (default).
+
+     /Gr              Specifies the _fastcall calling convention for
+                      functions. Generates a warning since H2INC does not
+                      translate _fastcall functions and prototypes.
+
+     /Ht              Enables generation of text equates. By default,
+                      text items are not translated.
+
+     /Ipaths          Searches named paths for include files before
+                      searching the paths in the INCLUDE environment
+                      variable. Paths are separated with a semicolon (;).
+
+     /J               Changes default character type from signed char to
+                      unsigned char.
+
+     /nologo          Suppresses display of the sign-on banner.
+
+     /uident          "Undefines" one of the predefined identifiers.
+
+     /U               "Undefines" all predefined identifiers.
+
+     /w               Suppresses compiler warning messages; same as /W0.
+
+     /W0              Suppresses all warning messages.
+
+     /W1              Displays level 1 warning messages (default).
+
+     /W2              Displays level 1 and level 2 warning messages.
+
+     /W3              Displays level 1, 2, and 3 warning messages.
+
+     /W4              Displays all warning messages.
+
+     /X               Excludes search for include files in the standard
+                      places.
+
+     /Za              Disables language extensions (allows ANSI standard
+                      only).
+
+     /Zc              Causes functions declared as _pascal to be case
+                      insensitive.
+
+     /Ze              Enables language extensions (default).
+
+     /Zn string      Adds a string to all names generated by
+                      H2INC. Used to eliminate name conflicts with
+                      other H2INC-generated include files.
+
+     /Zp{1|2|4}       Packs structure on a 1-, 2-, or 4-byte boundary,
+                      following C packing rules. Default is /Zp2.

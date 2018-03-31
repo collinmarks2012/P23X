@@ -1,0 +1,1321 @@
+.context @dosbios
+.freeze 3
+.topic DOS and BIOS Macros
+                                             \i\p\aUp\v@Contents\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ÚÄÄDOS and BIOS MacrosÄÄÄÄÄÄÄÄÄ¿
+     ³                              ³
+     ³ \i\p\aUsing DOS and BIOS Macros\v@dbusing\v\i\p  ³
+     ³ \i\p\aDOS and BIOS Macro Summary\v@dbsum\v\i\p ³
+     ³ \i\p\aDOS.INC File\v$INCLUDE:DOS.INC!\v\i\p               ³
+     ³ \i\p\aBIOS.INC File\v$INCLUDE:BIOS.INC!\v\i\p              ³
+     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+     You can simplify calls to DOS systems services by using the DOS
+     and BIOS macros in DOS.INC and BIOS.INC.
+.context @dbsum
+.freeze 3
+.topic DOS and BIOS Macro Summary
+                                             \i\p\aUp\v@DosBios\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     ÚÄÄDOS and BIOS Macro SummaryÄÄÄÄÄ¿
+     ³                                 ³
+     ³ \i\p\aConsole Input and Output\v@dbconsole\v\i\p      ³
+     ³ \i\p\aDevice and File Control\v@dbdevfile\v\i\p       ³
+     ³ \i\p\aDirectory and Drive Control\v@dbdirdrv\v\i\p   ³
+     ³ \i\p\aMemory Control\v@dbmem\v\i\p                ³
+     ³ \i\p\aMiscellaneous DOS\v@dbmisc\v\i\p             ³
+     ³ \i\p\aMode, Page, and Color Control\v@dbmode\v\i\p ³
+     ³ \i\p\aCharacter and Cursor Control\v@dbchar\v\i\p  ³
+     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+.context @dbconsole
+.freeze 3
+.topic Console Input and Output
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p         \bDescription\p
+
+     \a@GetChar      Gets an ASCII character from the keyboard\v@GetChar\v
+     \a@GetStr       Gets a string from the keyboard\v@GetStr\v
+     \a@ShowChar     Displays one or more characters to the screen\v@ShowChar\v
+     \a@PrtChar      Prints one or more characters to LPT1\v@PrtChar\v
+     \a@ShowStr      Displays a $-terminated string\v@ShowStr\v
+.context @dbdevfile
+.freeze 3
+.topic Device and File Control
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p            \bDescription\p
+
+     \a@Read            Reads data from a file or device\v@Read\v
+     \a@Write           Writes data to a file or device\v@Write\v
+     \a@MakeFile        Creates a file\v@MakeFile\v
+     \a@OpenFile        Opens a file for input or output\v@OpenFile\v
+     \a@CloseFile       Closes an open file handle\v@CloseFile\v
+     \a@DelFile         Deletes a specified file\v@DelFile\v
+     \a@MoveFile        Moves or renames a file\v@MoveFile\v
+     \a@GetFirst        Gets first matching file\v@GetFirst\v
+     \a@GetNext         Gets additional matching files\v@GetFirst\v
+     \a@GetDTA          Gets the Disk Transfer Address (DTA)\v@GetDTA\v
+     \a@SetDTA          Sets the Disk Transfer Address (DTA)\v@GetDTA\v
+     \a@GetFileSize     Gets the file size\v@GetFileSize\v
+     \a@MovePtrAbs      Moves file pointer to absolute position\v@MovePtrAbs\v
+     \a@MovePtrRel      Moves file pointer to relative position\v@MovePtrAbs\v
+.context @dbdirdrv
+.freeze 3
+.topic Directory and Drive Control
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p       \bDescription\p
+
+     \a@MkDir      Creates a directory\v@MkDir\v
+     \a@RmDir      Deletes a directory\v@MkDir\v
+     \a@ChDir      Changes the current directory\v@MkDir\v
+     \a@GetDir     Gets the current directory of a specified drive\v@GetDir\v
+     \a@GetDrv     Gets the current drive\v@GetDrv\v
+     \a@SetDrv     Sets the current drive\v@GetDrv\v
+     \a@ChkDrv     Gets various data about a disk\v@ChkDrv\v
+.context @dbmem
+.freeze 3
+.topic Memory Control
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p          \bDescription\p
+
+     \a@FreeBlock     Frees a block of memory\v@FreeBlock\v
+     \a@GetBlock      Allocates a block of memory\v@GetBlock\v
+     \a@ModBlock      Modifies an allocated block of memory\v@ModBlock\v
+.context @dbmisc
+.freeze 3
+.topic Miscellaneous DOS
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p        \bDescription\p
+
+     \a@GetDate     Gets the system date\v@GetDate\v
+     \a@SetDate     Sets the system date\v@SetDate\v
+     \a@GetTime     Gets the system time\v@GetTime\v
+     \a@SetTime     Sets the system time\v@SetTime\v
+     \a@GetVer      Gets the DOS version\v@GetVer\v
+     \a@GetInt      Gets the vector for a specified interrupt\v@GetInt\v
+     \a@SetInt      Sets the vector for a specified interrupt\v@GetInt\v
+     \a@Exit        Exits to DOS with return code\v@Exit\v
+     \a@TSR         Terminates program, leaving it resident\v@TSR\v
+.context @dbmode
+.freeze 3
+.topic Mode, Page, and Color Control
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p           \bDescription\p
+
+     \a@GetMode        Gets the current video mode and page\v@GetMode\v
+     \a@SetMode        Sets the current video mode and page\v@SetMode\v
+     \a@SetColor       Sets the background color\v@SetColor\v
+     \a@SetPalette     Sets the color palette\v@SetPalette\v
+     \a@SetPage        Sets the video page\v@SetPage\v
+.context @dbchar
+.freeze 3
+.topic Character and Cursor Control
+                                             \i\p\aUp\v@dbsum\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     \bMacro\p           \bDescription\p
+
+     \a@GetCsr         Gets the cursor position and size\v@GetCsr\v
+     \a@SetCsrPos      Sets the cursor position\v@SetCsrPos\v
+     \a@SetCsrSize     Sets the cursor size and shape\v@SetCsrSize\v
+     \a@GetCharAtr     Gets the character and attribute at cursor\v@GetCharAtr\v
+     \a@PutCharAtr     Puts characters and attributes at cursor\v@PutChar\v
+     \a@PutChar        Puts characters at cursor\v@PutChar\v
+     \a@Scroll         Scrolls a specified window up or down\v@Scroll\v
+     \a@Cls            Clears the screen\v@Cls\v
+
+.context @dbusing
+.freeze 3
+.topic Using DOS and BIOS Macros
+                                             \i\p\aUp\v@DosBios\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     To use DOS macros \a(Int 21h)\v@21h\v, include \aDOS.INC\v$INCLUDE:DOS.INC!\v. To use BIOS macros
+     \a(Int 10h)\v@10h\v, include \aBIOS.INC\v$INCLUDE:BIOS.INC!\v.
+
+     When calling the macros, you are responsible for saving and
+     restoring registers used in macros. The "Uses" field in the macro
+     description identifies registers to save.
+
+     Symbols must be previously defined before they can be passed as
+     arguments to most of the DOS macros. Generally this means that
+     data must be declared before code in the source file.
+
+     Macros that accept address parameters use internal macros that
+     allow you to specify addresses in several ways. The macro
+     automatically identifies the type of the argument and handles it
+     appropriately. For example, assume the following declarations:
+
+       NPBYTE  TYPEDEF NEAR PTR BYTE
+       FPBYTE  TYPEDEF FAR  PTR BYTE
+
+       Msg     BYTE    "test$"
+       npMsg   NPBYTE  Msg
+       fpMsg   FPBYTE  Msg
+
+     Given these values, the macro @ShowStr (which displays the string
+     at DS:DX) has the following effects:
+
+     \bArgument Type\p            \bExample\p             \bValue Loaded\p
+
+     Label of byte variable   @ShowStr Msg        DS:OFFSET Msg
+     Near pointer variable    @ShowStr npMsg      DS:npMsg
+     Far pointer variable     @ShowStr fpMsg      fpMsg[2]:fpMsg[0]
+     Constant                 @ShowStr 0          DS:0
+     Pointer in register      @ShowStr si         DS:SI
+     Near pointer with        @ShowStr pMsg, es   ES:pMsg
+     segment
+     Constant with segment    @ShowStr 0, es      ES:0
+     Register with segment    @ShowStr di, es     ES:DI
+
+     NOTE: If a far pointer or a segment is given, DS must be saved
+           before the macro call and restored afterward. Segments may
+           be given as registers, constants, or word variables.
+.context GetChar
+.context @GetChar
+.context \@GetChar
+.freeze 3
+.topic @GetChar Macro
+                                             \i\p\aUp\v@dbconsole\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetChar [echo] [,[break] [,clearbuf]]
+
+  \bSummary:\p   Gets a keystroke from the keyboard
+
+  \bArguments:\p <echo>         Nonzero to echo keystroke; default yes.
+                            Must be a constant.
+
+             <break>        Nonzero to accept CTRL+C; default yes. Must
+                            be a constant.
+
+             <clearbuf>     Nonzero to clear keyboard buffer; default
+                            no. Must be a constant.
+
+             NOTE: Arguments can be omitted to get defaults.
+
+  \bReturns:\p   ASCII code of key in AL
+
+  \bModifies:\p  AX, else DL used if echo on and CTRL+C off
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 01h, 07h, 08h\v@21h.01h\v, and \a0Ch\v@21h.0ch\v, \a@GetStr\v@GetStr\v
+.context GetStr
+.context @GetStr
+.context \@GetStr
+.freeze 3
+.topic @GetStr Macro
+                                             \i\p\aUp\v@dbconsole\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetStr buffer [,[terminator] [,[limit] [,segment]]]
+
+  \bSummary:\p   Gets a string from the keyboard
+
+  \bArguments:\p <buffer>         Offset of buffer for string. Must be an
+                              offset address.
+
+                              Byte 1    Maximum length of string before
+                                        call.
+                              Byte 2    Actual length of string after
+                                        call.
+                              Byte 3+   Bytes of string.
+
+             <terminator>     Terminating byte: null (0) or $ (24h).
+                              May be a constant or register, but not memory.
+
+             <limit>          Maximum length of string. Must be a
+                              constant. If not given as an argument,
+                              must be in buffer before call.
+
+             <segment>        Segment of buffer; DS if not given.
+
+  \bReturns:\p   Pointer to string in SI, length of string in BX
+
+  \bModifies:\p  AX, DX, BX, SI
+
+  \bSee also:\p  \aInt 21h, Function 0Ah\v@21h.0ah\v, \a@GetChar\v@GetChar\v
+.context ShowChar
+.context @ShowChar
+.context \@ShowChar
+.freeze 3
+.topic @ShowChar Macro
+                                             \i\p\aUp\v@dbconsole\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @ShowChar char [,char]...
+
+  \bSummary:\p   Displays one or more characters to screen
+
+  \bArgument:\p  <char>     8-bit ASCII code
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, DL
+
+  \bSee also:\p  \aInt 21h Function 02h\v@21h.02h\v
+.context PrtChar
+.context @PrtChar
+.context \@PrtChar
+.freeze 3
+.topic @PrtChar Macro
+                                             \i\p\aUp\v@dbconsole\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @PrtChar char [,char]...
+
+  \bSummary:\p   Prints one or more characters to LPT1
+
+  \bArgument:\p  <char>     8-bit ASCII code
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, DL
+
+  \bSee also:\p  \aInt 21h Function 05h\v@21h.05h\v, \a@ShowStr\v@ShowStr\v, \a@PrtChar\v@PrtChar\v
+.context ShowStr
+.context @ShowStr
+.context \@ShowStr
+.freeze 3
+.topic @ShowStr Macro
+                                             \i\p\aUp\v@dbconsole\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @ShowStr address [,segment]
+
+  \bSummary:\p   Displays a $-terminated string
+
+  \bArguments:\p <address>     Address of string terminated by "$" (24h).
+                           Must be an offset address.
+
+             <segment>     Segment of address string; DS if not given.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, DX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h Function 09h\v@21h.09h\v
+.context Read
+.context @Read
+.context \@Read
+.freeze 3
+.topic @Read Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @Read buffer, length [,[handle] [,segment]]
+
+  \bSummary:\p   Reads data from a file or device
+
+  \bArguments:\p <buffer>      Offset of buffer where data will be stored.
+                           Must be an offset address.
+
+             <length>      Length of data in bytes.
+
+             <handle>      File or device handle; if none given,
+                           keyboard (handle 0) is assumed.
+
+             <segment>     Segment of address string; DS if not given.
+
+  \bReturns:\p   If carry: clear, bytes read in AX
+
+  \bModifies:\p  AX, DX, BX, CX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h Function 3Fh\v@21h.3Fh\v, \a@Write\v@Write\v
+.context Write
+.context @Write
+.context \@Write
+.freeze 3
+.topic @Write Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @Write buffer, length [,[handle] [,segment]]
+
+  \bSummary:\p   Writes data to a file or device
+
+  \bArguments:\p <buffer>      Offset of buffer where data is stored. Must
+                           be an offset address.
+
+             <length>      Length of data in bytes.
+
+             <handle>      File or device handle; if none given, screen
+                           (handle 1) is assumed.
+
+             <segment>     Segment of address string; DS if not given.
+
+  \bReturns:\p   If carry: clear, bytes written in AX
+
+  \bModifies:\p  AX, DX, BX, CX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h Function 40h\v@21h.40h\v, \a@Read\v@Read\v
+.context MakeFile
+.context @MakeFile
+.context \@MakeFile
+.freeze 3
+.topic @MakeFile Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @MakeFile path [,[attrib] [,[segment] [,kind]]]
+
+  \bSummary:\p   Creates a file
+
+  \bArguments:\p <path>        ASCIIZ string of file. Must be an offset
+                           address.
+
+             <attrib>      File attribute; 0 is default if none given.
+
+             <segment>     Segment of address string; DS if not given.
+
+             <kind>        If none given, a file is created even if one
+                           already exists. Under DOS 3.x, "tmp" can be
+                           given to create a unique file or "new" to
+                           create a file only if one doesn't already
+                           exist.
+
+  \bReturns:\p   If carry: clear, file handle in AX
+
+  \bModifies:\p  AX, DX, CX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 3Ch\v@21h.3Ch\v, \a5Ah\v@21h.5ah\v, \aand 5Bh\v@21h.5bh\v, \a@OpenFile\v@OpenFile\v, \a@CloseFile\v@CloseFile\v
+.context OpenFile
+.context @OpenFile
+.context \@OpenFile
+.freeze 3
+.topic @OpenFile Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @OpenFile path, access [,segment]
+
+  \bSummary:\p   Opens a file for input or output
+
+  \bArguments:\p <path>        ASCIIZ string of file. Must be an offset
+                           address.
+
+             <access>      File access code. Must be a constant. The
+                           default value is 0 (normal read/write file).
+
+             <segment>     Segment of address string; DS if not given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, DX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h Function 3Dh\v@21h.3dh\v, \a@MakeFile\v@MakeFile\v
+.context CloseFile
+.context @CloseFile
+.context \@CloseFile
+.freeze 3
+.topic @CloseFile Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @CloseFile handle
+
+  \bSummary:\p   Closes an open file handle
+
+  \bArgument:\p  <handle>     Previously opened file handle
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, BX
+
+  \bSee also:\p  \aInt 21h Function 3Eh\v@21h.3eh\v, \a@OpenFile\v@OpenFile\v, \a@MakeFile\v@MakeFile\v
+.context DelFile
+.context @DelFile
+.context \@DelFile
+.freeze 3
+.topic @DelFile Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @DelFile path [,segment]
+
+  \bSummary:\p   Deletes a specified file
+
+  \bArguments:\p <path>        Offset of ASCIIZ file specification. Must
+                           be an offset address.
+
+             <segment>     Segment of path; DS if none given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, DX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h Function 41h\v@21h.41h\v
+.context MoveFile
+.context @MoveFile
+.context \@MoveFile
+.freeze 3
+.topic @MoveFile Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @MoveFile old, new [,[segold] [,segnew]]
+
+  \bSummary:\p   Moves or renames a file by changing its path specification
+
+  \bArguments:\p <old>        Offset of file specification to be renamed.
+                          Must be an offset address.
+
+             <new>        Offset of new file specification. Must be an
+                          offset address.
+
+             <segold>     Segment of old name; DS if none given.
+
+             <segnew>     Segment of new name; ES if none given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, DX, DI; DS, ES if corresponding segments changed
+
+  \bSee also:\p  \aInt 21h Function 56h\v@21h.56h\v
+.context GetFirst
+.context @GetFirst
+.context \@GetFirst
+.context \@GetNext
+.context GetNext
+.freeze 3
+.topic @GetFirst and @GetNext Macros
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetFirst path [,[attribute] [,segment]]
+             @GetNext
+
+  \bSummary:\p   Converts file specifications (optionally including wild
+             cards) into filenames. These macros are usually used with
+             @GetDTA and @SetDTA. Use @SetDTA to set the address where
+             the data for each file will be stored.
+
+  \bArguments:\p <path>          Offset address of fully specified ASCIIZ
+                             file name; can have wild cards. Must be an
+                             offset address.
+
+             <attribute>     File attribute to search for; 0 for normal
+                             if none given.
+
+             <segment>       Segment of path; uses DS if none given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  For @GetFirst, AX, CX, DX; DS if segment changed;
+             for @GetNext, AX only
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 4Eh\v@21h.4Eh\v \aand 4Fh\v@21h.4fh\v, \a@SetDTA\v@GetDTA\v, \a@GetDTA\v@GetDTA\v, \aSHOW.ASM\v$ASMEX:\\SHOW\\SHOW.ASM!\v
+.context GetDTA
+.context @GetDTA
+.context \@GetDTA
+.context \@SetDTA
+.context SetDTA
+.freeze 3
+.topic @GetDTA and @SetDTA Macros
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetDTA
+
+             @SetDTA buffer [,segment]
+
+  \bSummary:\p   Gets or sets the Disk Transfer Address (DTA). These
+             macros are usually used to set the address for file
+             information data used by @GetFirst and @GetNext.
+
+  \bArguments:\p <buffer>      Offset of new DTA buffer. Must be an offset
+                           address.
+
+             <segment>     Segment of new DTA buffer; DS if none given.
+
+  \bReturns:\p
+   @GetDTA: ES:BX points to DTA
+             @SetDTA: No return value
+
+  \bModifies:\p  AX for both; ES, BX for @GetDTA; DS, DX for @SetDTA
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 2Fh\v@21h.2fh\v \aand 1Ah\v@21h.1ah\v, \a@SetNext\v@GetFirst\v, \a@GetNext\v@GetFirst\v, \aSHOW.ASM\v$ASMEX:\\SHOW\\SHOW.ASM!\v
+.context GetFileSize
+.context @GetFileSize
+.context \@GetFileSize
+.freeze 3
+.topic @GetFileSize Macro
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetFileSize handle
+
+  \bSummary:\p   Gets the file size by moving the file pointer to
+             end-of-file
+
+             NOTE: The file pointer is reset to zero. Thus this
+                   macro should not be called during operations that move
+                   the pointer.
+
+  \bArgument:\p  <handle>     Previously opened file handle.
+
+  \bReturns:\p   If carry: clear, file length in DX:AX
+
+  \bModifies:\p  AX, BX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 42h\v@21h.42h\v
+.context MovePtrAbs
+.context @MovePtrAbs
+.context \@MovePtrAbs
+.context \@MovePtrRel
+.context MovePtrRel
+.freeze 3
+.topic @MovePtrAbs and @MovPtrRel Macros
+                                             \i\p\aUp\v@dbdevfile\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @MovePtrAbs handle [,distance]
+
+             @MovePtrRel handle [,distance]
+
+  \bSummary:\p   Moves the file pointer in an open file. The pointer can be
+             moved to an absolute position, or relative to its current
+             position.
+
+  \bArguments:\p <handle>       Previously opened file handle.
+
+             <distance>     Distance to move pointer (16-bit) constant
+                            or a 16- or 32-bit variable; or leave
+                            blank and set distance in CX:DX before
+                            macro call.
+
+  \bReturns:\p   If carry: clear, file pointer position in DX:AX
+
+  \bModifies:\p  AX, BX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 42h\v@21h.42h\v
+.context MkDir
+.context @MkDir
+.context \@MkDir
+.context \@RmDir
+.context RmDir
+.context \@ChDir
+.context ChDir
+.freeze 3
+.topic @MkDir, @RmDir, and @ChDir Macros
+                                             \i\p\aUp\v@dbdirdrv\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @MkDir path [,segment]
+
+             @RmDir path [,segment]
+
+             @ChDir path [,segment]
+
+  \bSummary:\p   Creates, deletes, or changes to the specified directory
+
+  \bArguments:\p <path>        Offset of ASCIIZ string containing
+                           directory. Must be offset address.
+
+             <segment>     Segment of path; DS if none given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, DX; DS if segment changed
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 39h\v@21h.39h\v, \a3Ah\v@21h.3ah\v, \aand 3Bh\v@21h.3bh\v, \a@GetDir\v@GetDir\v
+.context GetDir
+.context @GetDir
+.context \@GetDir
+.freeze 3
+.topic @GetDir Macro
+                                             \i\p\aUp\v@dbdirdrv\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetDir buffer [,[drive] [,segment]]
+
+  \bSummary:\p   Returns the current directory of the specified drive
+
+  \bArguments:\p <buffer>      Offset of buffer to receive ASCIIZ
+                           directory. Must be an offset address.
+
+             <drive>       8-bit drive number (0 = current, 1 = A,
+                           2 = B, ...; 0 if none given).
+
+             <segment>     Segment of path; DS if none given.
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX, SI, DL; DS if segment changes
+
+  \bSee also:\p  \aInt 21h Function 47h\v@21h.47h\v, \a@ChDir\v@mkDir\v, \a@GetDrv\v@GetDrv\v
+.context GetDrv
+.context @GetDrv
+.context \@GetDrv
+.context SetDrv
+.context \@SetDrv
+.freeze 3
+.topic @GetDrv Macro
+                                             \i\p\aUp\v@dbdirdrv\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetDrv
+
+             @SetDrv drive
+
+  \bSummary:\p   Gets or sets the current drive
+
+  \bArgument:\p  <drive>     8-bit drive number (0 = A, 1 = B, ...)
+
+  \bReturns:\p   For @GetDrv, drive number in AL (0 = A, 1 = B, ...);
+             for @SetDrv, number of drives in AL
+
+  \bModifies:\p  AX for both; DL for @SetDrv
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 19h\v@21h.19h\v \aand 0Eh\v@21h.0eh\v, \a@GetDir\v@GetDir\v, \a@ChkDrv\v@ChkDrv\v
+.context ChkDrv
+.context @ChkDrv
+.context \@ChkDrv
+.freeze 3
+.topic @ChkDrv Macro
+                                             \i\p\aUp\v@dbdirdrv\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @ChkDrv [drive]
+
+  \bSummary:\p   Gets various data about a disk
+
+  \bArgument:\p  <drive>     8-bit drive number (0 = current, A = 1,
+                         B = 2, ...); if none given, current assumed
+
+  \bReturns:\p   AX     Sectors per cluster; -1 if drive invalid
+             BX     Available clusters
+             CX     Bytes per sector
+             DX     Clusters per drive
+
+  \bModifies:\p  AX, BX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 36h\v@21h.36h\v, \a@GetDrv\v@GetDrv\v
+.context @Exit
+.context \@Exit
+.freeze 3
+.topic @Exit Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @Exit [return]
+
+  \bSummary:\p   Exits to DOS with return code
+
+  \bArgument:\p  <return>     8-bit code to return to DOS; if none given,
+                          AL is used. If given, must be a constant.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX
+
+  \bSee also:\p  .EXIT, \aInt 21h Function 4Ch\v@21h.4ch\v
+.context TSR
+.context @TSR
+.context \@TSR
+.freeze 3
+.topic @TSR Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @TSR paragraphs [,return]
+
+  \bSummary:\p   Terminates a program, but leaves it resident in memory
+
+  \bArguments:\p <paragraphs>     Memory in paragraphs (16 bytes) to
+                              allocate for resident program.
+             <return>         Code to return to DOS; if none, AL used.
+                              Must be a constant.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, DX
+
+  \bSee also:\p  \aInt 21h Function 31h\v@21h.31h\v
+.context FreeBlock
+.context @FreeBlock
+.context \@FreeBlock
+.freeze 3
+.topic @FreeBlock Macro
+                                             \i\p\aUp\v@dbmem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @FreeBlock [segment]
+
+  \bSummary:\p   Frees a block of memory
+
+  \bArgument:\p  <segment>     Starting address of memory to be freed; if
+                           none given, ES address assumed
+
+  \bReturns:\p   If carry: set, error code in AX
+
+  \bModifies:\p  AX; ES if segment given
+
+  \bSee also:\p  \aInt 21h Function 49h\v@21h.49h\v, \a@GetBlock\v@GetBlock\v, \a@ModBlock\v@ModBlock\v
+.context GetBlock
+.context @GetBlock
+.context \@GetBlock
+.freeze 3
+.topic @GetBlock Macro
+                                             \i\p\aUp\v@dbmem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetBlock paragraphs [, retry]
+
+  \bSummary:\p   Allocates a block of memory
+
+  \bArgument:\p  <paragraphs>     Paragraphs (16 bytes) of memory wanted
+             <retry>          If nonzero, allocate largest block
+                              available
+
+  \bReturns:\p   AX     If carry: clear, the segment of the allocated
+                    memory. If carry: set, an error code
+             BX     Paragraphs actually allocated. If <retry> is not
+                    zero, it may be less than requested.
+
+  \bModifies:\p  AX, BX
+
+  \bSee also:\p  \aInt 21h Function 48h\v@21h.48h\v, \a@FreeBlock\v@FreeBlock\v, \a@ModBlock\v@ModBlock\v
+.context \@ModBlock
+.context @ModBlock
+.context ModBlock
+.freeze 3
+.topic @ModBlock Macro
+                                             \i\p\aUp\v@dbmem\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @ModBlock paragraphs [,segment]
+
+  \bSummary:\p   Modifies an allocated block of memory
+
+  \bArguments:\p <paragraphs>     Paragraphs (16 bytes) of memory wanted.
+
+             <segment>        Starting address of memory to be freed; if
+                              none given, ES address assumed.
+
+  \bReturns:\p   If carry is set, the error code is returned in AX;
+               otherwise, the ES register contains the segment address of
+               allocated memory. If carry is clear, the BX register contains
+               the number of paragraphs allocated.
+
+  \bModifies:\p  AX, BX; ES if segment given
+
+  \bSee also:\p  \aInt 21h Function 4Ah\v@21h.4Ah\v \a@GetBlock\v@GetBlock\v, \a@FreeBlock\v@FreeBlock\v
+.context GetDate
+.context @GetDate
+.context \@GetDate
+.freeze 3
+.topic @GetDate Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetDate
+
+  \bSummary:\p   Gets the system date
+
+  \bArguments:\p None
+
+  \bReturns:\p   AL     Day of week (0 = Sunday, 1 = Monday, ...)
+             CX     Year (1980-2099)
+             DH     Month (1-12)
+             DL     Day (1-31)
+
+  \bModifies:\p  AX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 2Ah\v@21h.2Ah\v, \a@SetDate\v@SetDate\v, \a@GetTime\v@GetTime\v
+.context SetDate
+.context @SetDate
+.context \@SetDate
+.freeze 3
+.topic @SetDate Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @SetDate month, day, year
+
+  \bSummary:\p   Sets the system date
+
+  \bArguments:\p <month>     8-bit month (1-12)
+
+             <day>       8-bit day (1-31)
+
+             <year>      16-bit year (1980-2099)
+
+  \bReturns:\p   AL     If date was valid 0, else -1
+
+  \bModifies:\p  AX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 2Bh\v@21h.2Bh\v, \a@GetDate\v@GetDate\v, \a@SetTime\v@SetTime\v
+.context GetTime
+.context @GetTime
+.context \@GetTime
+.freeze 3
+.topic @GetTime Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetTime
+
+  \bSummary:\p   Gets the system time
+
+  \bArguments:\p None
+
+  \bReturns:\p   CH     Hour (0-23)
+             CL     Minute (0-59)
+             DH     Second (0-59)
+             DL     Hundredth (0-99)
+
+  \bModifies:\p  AX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 2Ch\v@21h.2ch\v, \a@GetDate\v@GetDate\v, \a@SetTime\v@SetTime\v
+.context SetTime
+.context @SetTime
+.context \@SetTime
+.freeze 3
+.topic @SetTime Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @SetTime hour,minute,second,hundredth
+
+  \bSummary:\p   Sets the system time
+
+  \bArguments:\p <hour>          8-bit hours (0-23)
+
+             <minute>        8-bit minutes (0-59)
+
+             <second>        8-bit seconds (0-59)
+
+             <hundredth>     8-bit hundredth of seconds (0-99)
+
+  \bReturns:\p   AL     If time was valid 0, else -1
+
+  \bModifies:\p  AX, CX, DX
+
+  \bSee also:\p  \aInt 21h Function 2Dh\v@21h.2dh\v, \a@SetDate\v@SetDate\v, \a@GetTime\v@GetTime\v
+.context GetVer
+.context @GetVer
+.context \@GetVer
+.freeze 3
+.topic @GetVer Macro
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetVer
+
+  \bSummary:\p   Gets the DOS version
+
+  \bArguments:\p None
+
+  \bReturns:\p   AL        Major version (0 for versions prior to 2.0)
+             AH        Minor version
+             BH        OEM serial number
+             BL:CX     24-bit user number
+
+  \bModifies:\p  AX, BX, CX
+
+  \bSee also:\p  \aInt 21h Function 30h\v@21h.30h\v, \aSetDate\v@SetDate\v, \aGetTime\v@GetTime\v
+.context GetInt
+.context @GetInt
+.context \@GetInt
+.context \@SetInt
+.context SetInt
+.freeze 3
+.topic @GetInt and @SetInt Macros
+                                             \i\p\aUp\v@dbmisc\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   DOS.INC
+
+  \bSyntax:\p    @GetInt interrupt
+
+             @SetInt interrupt, vector [,segment]
+
+  \bSummary:\p   Gets or sets the vector for a specified interrupt
+             routine
+
+  \bArguments:\p <interrupt>     8-bit interrupt number. Must be a
+                             constant.
+
+             <vector>        Offset of interrupt routine.
+
+             <segment>       Segment of routine; if none given, DS
+                             assumed for data; segment ignored for
+                             code labels.
+
+  \bReturns:\p   For @GetInt, ES:BX points to interrupt routine;
+             for @SetInt, no return value
+
+  \bModifies:\p  AX for both; ES and BX for @GetInt; DS and DX for
+             @SetInt
+
+  \bSee also:\p  \aInt 21h\v@21h\v \aFunctions 35h\v@21h.35h\v, \a25h\v@21h.25h\v
+.context GetMode
+.context @GetMode
+.context \@GetMode
+.freeze 3
+.topic @GetMode Macro
+                                             \i\p\aUp\v@dbmode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bSyntax:\p    @GetMode
+
+  \bSummary:\p   Gets the current video mode and page
+
+  \bArguments:\p None
+
+  \bReturns:\p   AL     Mode
+             AH     Width in characters
+             BH     Page
+
+  \bModifies:\p  AX, BH
+
+  \bSee also:\p  \aInt 10h Function 0Fh\v@10h.0fh\v, \a@SetMode\v@SetMode\v
+.context SetMode
+.context @SetMode
+.context \@SetMode
+.freeze 3
+.topic @SetMode Macro
+                                             \i\p\aUp\v@dbmode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetMode mode
+
+  \bSummary:\p   Sets the current video mode and page
+
+  \bArgument:\p  <mode>     8-bit video mode.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX
+
+  \bSee also:\p  \aInt 10h Function 00h\v@10h.00h\v, \a@GetMode\v@GetMode\v
+.context SetColor
+.context @SetColor
+.context \@SetColor
+.freeze 3
+.topic @SetColor Macro
+                                             \i\p\aUp\v@dbmode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetColor color
+
+  \bSummary:\p   Sets the background color
+
+  \bArgument:\p  <color>     8-bit background color (0-15); border
+                         color in text modes
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, BX
+
+  \bSee also:\p  \aInt 10h Function 0Bh\v@10h.0bh\v
+.context SetPalette
+.context @SetPalette
+.context \@SetPalette
+.freeze 3
+.topic @SetPalette Macro
+                                             \i\p\aUp\v@dbmode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetPalette color
+
+  \bSummary:\p   Sets the color palette
+
+  \bArgument:\p  <color>     8-bit color palette; 0-1 for modes 5 and 6
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, BX
+
+  \bSee also:\p  \aInt 10h Function 0Bh\v@10h.0Bh\v
+.context SetPage
+.context @SetPage
+.context \@SetPage
+.freeze 3
+.topic @SetPage Macro
+                                             \i\p\aUp\v@dbmode\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetPage page
+
+  \bSummary:\p   Sets the video page
+
+  \bArgument:\p  <page>     8-bit page number; 0-3 for modes 2 and 3
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX
+
+  \bSee also:\p  \aInt 10h Function 05h\v@10h.05h\v
+.context GetCsr
+.context @GetCsr
+.context \@GetCsr
+.freeze 3
+.topic @GetCsr Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @GetCsr [page]
+
+  \bSummary:\p   Gets the cursor position and size
+
+  \bArgument:\p  <page>     8-bit page with cursor; if none given,
+                        0 assumed
+
+  \bReturns:\p   DL     Column
+             DH     Row
+             CL     Starting scan line
+             CH     Ending scan line
+
+  \bModifies:\p  AX, DX, CX, BH
+
+  \bSee also:\p  \aInt 10h Function 03h\v@10h.03h\v, \a@SetCsrPos\v@SetCsrPos\v, \a@SetCsrSize\v@SetCsrSize\v
+.context SetCsrPos
+.context @SetCsrPos
+.context \@SetCsrPos
+.freeze 3
+.topic @SetCsrPos Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetCsrPos [column] [,[row] [,page]]
+
+  \bSummary:\p   Sets the cursor position
+
+  \bArguments:\p <column>     8-bit column; if none given, DL used.
+
+             <row>        8-bit row; if none given, DH used.
+
+             <page>       8-bit page with cursor; if none given,
+                          0 assumed.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, DX, BH
+
+  \bSee also:\p  \aInt 10h Function 02h\v@10h.02h\v, \a@GetCsr\v@GetCsr\v
+.context SetCsrSize
+.context @SetCsrSize
+.context \@SetCsrSize
+.freeze 3
+.topic @SetCsrSize Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @SetCsrSize startline, endline
+
+  \bSummary:\p   Sets the cursor size and shape by specifying active scan
+             lines. For color adapters, the lines are 0-7. For the
+             monochrome adapter, the lines are 0-13.
+
+  \bArguments:\p <startline>     8-bit starting scan line (default CGA = 6;
+                             MA = 12)
+
+             <endline>       8-bit ending scan line (default CGA = 7;
+                             MA = 13)
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, CX
+
+  \bSee also:\p  \aInt 10h Function 01h\v@10h.01h\v, \a@GetCsr\v@GetCsr\v
+.context GetCharAtr
+.context @GetCharAtr
+.context \@GetCharAtr
+.freeze 3
+.topic @GetCharAtr Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @GetCharAtr [page]
+
+  \bSummary:\p   Gets the character and attribute at the cursor location
+
+  \bArgument:\p  <page>     8-bit page to check; if none given, 0 assumed
+
+  \bReturns:\p   AH     Attribute
+             AL     ASCII character
+
+  \bModifies:\p  AX, BH
+
+  \bSee also:\p  \aInt 10h Function 08h\v@10h.08h\v, \a@PutCharAtr\v@PutChar\v
+.context @PutChar
+.context \@PutCharAtr
+.context PutCharAtr
+.context PutChar
+.context \@PutChar
+.freeze 3
+.topic @PutCharAtr and @PutChar Macros
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @PutCharAtr [character] [,[attrib] [,[page] [,count]]]
+
+             @PutChar [character] [,[page] [,count]]
+
+  \bSummary:\p   Puts one or more characters and attributes at the current
+             cursor position. For @PutChar, the current attribute is
+             used in text modes and any specified attribute is ignored.
+
+  \bArguments:\p <character>     8-bit ASCII character to put; if none
+                             given, AL used.
+
+             <attrib>        8-bit attribute to put; if none given,
+                             BL used.
+
+             <page>          8-bit page to put on; if none given, 0
+                             assumed.
+
+             <count>         Number to put; if none given, 1 assumed.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, BX, CX
+
+  \bSee also:\p  \aInt 10h\v@10h\v \aFunctions 09h\v@10h.09h\v \aand 0Ah\v@10h.0ah\v, \a@GetCharAtr\v@GetCharAtr\v
+.context Scroll
+.context @Scroll
+.context \@Scroll
+.freeze 3
+.topic @Scroll Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @Scroll dist [,[attr][,[upcol [,[uprow [,[dncol][,dnrow]]]]]]]
+
+  \bSummary:\p   Scrolls a specified window up or down
+
+  \bArguments:\p <dist>      8-bit number of lines to scroll; positive
+                         scrolls down; negative scrolls up; 0 clears.
+
+             <attr>      8-bit attribute for blank lines; if none
+                         given, 07h (white on black).
+
+             <upcol>     Upper left column; if none given, CL used.
+
+             <uprow>     Upper left row; if none given, CH used.
+
+             <dncol>     Lower right column; if none given, DL used.
+
+             <dnrow>     Lower right row; if none given, DH used.
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, CX, DX, BH
+
+  \bSee also:\p  \aInt 10h\v@10h\v \aFunctions 06h and 07h\v@10h.06h\v
+.context Cls
+.context @Cls
+.context \@Cls
+.freeze 3
+.topic @Cls Macro
+                                             \i\p\aUp\v@dbchar\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  \bInclude:\p   BIOS.INC
+
+  \bSyntax:\p    @Cls [page]
+
+  \bSummary:\p   Clears the screen
+
+  \bArgument:\p  <page>     Video page (8-bit); if none given, 0 assumed
+
+  \bReturns:\p   No return value
+
+  \bModifies:\p  AX, BX, CX, DX
+
+  \bSee also:\p  \aInt 10h\v@10h\v \aFunctions 06h\v@10h.06h\v \aand 08h\v@10h.08h\v

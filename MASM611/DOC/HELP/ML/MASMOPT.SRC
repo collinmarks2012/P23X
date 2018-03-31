@@ -1,0 +1,449 @@
+..|MASMOPT.SRC
+..|PWB MASM 6.00 Extension help
+..|
+..|HISTORY (start)
+..| 89 10 16 created by c-phylli
+..| 90 02 27 OWNERSHIP marcim
+..| 90 04 26 Major revisions begun
+..| 90 05 18 Dialog and options changes
+..| 90 05 23 Entered pre-review comments from JonKa
+..|------------------------------------------------
+..|03-Oct-1990      PaulDe    OWNERSHIP PaulDe
+..|Dramatically revised: no more dialog pictures!
+..|08-Oct-1990      PaulDe
+..|(all)Change general h.hv/h.hvx links to PWB-specific (this is PWB help!)
+..|miscellaneous other bad links
+..|24-Oct-1990      PaulDe
+..|JonKa/LauraBen review comments
+..|11-Jan-1991 PaulDe    Final review comments
+..|HISTORY (end)
+..|
+.comment .
+.context @pwbmasm.global
+.context m.O.M
+.context d.6300
+..|hidMASMGlobalOpts
+..index global options,, assembly
+..index setting assembly options
+..index assembly options, setting
+.freeze 3
+.topic Assembler Global Options
+                                             \i\p\aUp\vpwb.hlp!m.O\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Use the Macro Assembler Global Options dialog box to set assembly
+     options for the project.
+
+     \bAssembly Option\p                         \bDescription\p
+
+     \i\p\aCase Sensitivity\v@pwbmasm.case\v\i\p                      Set symbol case handling
+     \i\p\aWarn Level\v@pwbmasm.wl\v\i\p                            Set warning threshold
+     \i\p\aWarnings Treated as Errors\v@pwbmasm.nonzero\v\i\p            Treat warnings as fatal
+     \i\p\aTiny Memory Model\v@pwbmasm.tiny\v\i\p                     Generate .COM file
+     \i\p\aMASM 5.1 Compatibility\v@pwbmasm.compat\v\i\p                Emulate MASM 5.1
+     \i\p\aEmulator Fixups for Floating Point\v@pwbmasm.flpt\v\i\p    Use 80x87 emulator library
+     \i\p\aDefines\v@pwbmasm.def\v\i\p                               Define symbols
+     \i\p\aInclude Paths\v@pwbmasm.incl\v\i\p                         Set include search paths
+     \i\p\aAdditional Options\v@pwbmasm.addl\v\i\p                    Set additional ML options
+     \i\p\aSet Debug/Release Options\v@pwbmasm.set\v\i\p             Set specific build options
+     \i\p\aShow Debug/Release Options\v@pwbmasm.show\v\i\p            Show ML command line
+
+     See also: \i\p\aML Command-Line Syntax\v@comline\v\i\p
+               \i\p\aML Command-Line Options\v@alphacommand\v\i\p
+
+.context @pwbmasm.case
+.freeze 3
+.topic Assembler Case Sensitivity Options
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Select an option to set case sensitivity when searching for
+     symbols, and the case of names placed in the object file.
+
+                                              \bCase in\p     \bCase in\p
+     \bOption\p                                   \bSearches\p    \bObject File\p
+
+     Preserve Case of All User Identifiers    Matched     Source
+     Preserve Case of Names in Object File    Ignored     Source
+     Map All Identifiers to Uppercase         Ignored     Uppercase
+
+     These options can be specified on the ML command line, or with the
+     OPTION CASEMAP: source directive.
+     See: \i\p\aML Case Sensitivity Options\v@caseopt\v\i\p
+          \i\p\aOPTION CASEMAP\vALANG.HLP!casemap\v\i\p
+
+.context @pwbmasm.wl
+.freeze 3
+.topic Assembler Warn Level Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/W<n>\v@mwarnings\v
+
+     The Warn Level option sets the threshold for errors and warnings.
+
+     \bWarn Level\p     \bAction\p
+
+     Level 0        Display only fatal and nonfatal errors
+     Level 1        Display all errors and A4xxx warnings
+     Level 2        Display all errors, A4xxx, and A5xxx warnings
+     Level 3        Display all errors and warnings
+
+     \bError Range\p    \bError Type\p     \bEffect\p
+
+     \i\p\aA1xxx\v@errA1xxx\v\i\p        Fatal error    Assembly stops at error
+     \i\p\aA2xxx\v@errA2xxx\v\i\p        Error          Assembly fails
+     \i\p\aA4xxx\v@errA4xxx\v\i\p        Warning        Assembly succeeds
+     \i\p\aA5xxx\v@errA4xxx\v\i\p        Warning        Assembly succeeds
+     \i\p\aA6xxx\v@errA4xxx\v\i\p        Warning        Assembly succeeds
+
+     See also: \i\p\aML Warning Level Options\v@mwarnings\v\i\p
+               \i\p\aWarnings Treated as Errors Option\v@pwbmasm.nonzero\v\i\p
+
+.context @pwbmasm.nonzero
+.freeze 3
+.topic Assembler Warnings Treated as Errors Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Wx\v@mwarnings\v
+
+     The Warnings Treated as Errors option causes warnings to suppress
+     the generation of the object file and subsequent linking.
+
+     Normally the assembler continues to assemble and link a file that
+     produces warnings (error codes A4xxx and above). When this option
+     is set, all warnings behave as nonfatal errors (error codes
+     A2xxx); assembly continues if possible, but an object file is not
+     produced.
+
+     See also: \i\p\aWarn Level Option\v@pwbmasm.wl\v\i\p
+               \i\p\aML Warning Level Options\v@mwarnings\v\i\p
+
+.context @pwbmasm.tiny
+.freeze 3
+.topic Assembler Tiny Memory Model Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/AT\v@tinyopt\v
+
+     Select the Tiny Memory Model option to create a program with the
+     .COM extension and executable file format. The source file must
+     contain the TINY memory model directive.
+
+     See also: \i\p\aML Tiny Memory-Model Option\v@tinyopt\v\i\p
+               \i\p\a.MODEL TINY\valang.hlp!tiny\v\i\p
+
+.context @pwbmasm.compat
+.freeze 3
+.topic Assembler 5.1 Compatibility Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Zm\v@510comp\v
+     \bSource Equivalent:\p OPTION M510
+
+     Select the MASM 5.1 Compatibility option to enable maximum MASM
+     5.10 compatibility. This option allows you to assemble code
+     written for MASM 5.10.
+
+     See also: \i\p\aML Compatibility Option\v@510comp\v\i\p
+               \i\p\aOPTION M510\vALANG.HLP!M510\v\i\p
+
+.context @pwbmasm.flpt
+.freeze 3
+.topic Assembler Emulator Fixups for Floating Point Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML Equivalent:\p \a/FPi\v@inlineem\v
+     \bSource Equivalent:\p \aOPTION FLOAT:EMULATOR\valang.hlp!EMULATOR\v
+
+     Select the Emulator Fixups for Floating Point option to instruct
+     the assembler to generate inline 80x87 processor instructions and
+     fixup information to use emulation if a math processor is not
+     available.
+
+     This option can only be used when you link with high-level
+     language modules and you use an emulator library.
+
+     See also: \i\p\aML Inline Math Emulation Option\v@inlineem\v\i\p
+               \i\p\aOPTION FLOAT:EMULATOR\valang.hlp!EMULATOR\v\i\p
+
+.context @pwbmasm.def
+.freeze 3
+.topic Assembler Defines Text Box
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/D<macro>[=<value>]\v@defmacro\v
+
+     Use the Defines text box to define macros in the source file.
+     Enter the macro identifier. You can also specify a value for the
+     macro by following the identifier with an '=' and the value.
+     Separate multiple definitions by spaces.
+
+     See also: \i\p\aML Define Macro Option\v@defmacro\v\i\p
+
+.context @pwbmasm.incl
+.freeze 3
+.topic Assembler Include Paths Option
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/I<pathname>\v@include\v
+
+     Use the Include Paths text box to specify the absolute or relative
+     path names of directories to search for include files. Separate
+     paths with semicolons.
+
+     See also: \i\p\aINCLUDE Directive\valang.hlp!INCLUDE\v\i\p
+               \i\p\aML Include File Path Option\v@include\v\i\p
+               \i\p\aML Remove INCLUDE Path Option\v@noinclude\v\i\p
+
+.context @pwbmasm.addl
+.freeze 3
+.topic Assembler Additional Options
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Use the Additional Options text box to set additional ML
+     command-line options that are not included in the Macro Assembler
+     Options dialog boxes.
+
+     See also: \i\p\aML Command-Line Syntax\v@comline\v\i\p
+               \i\p\aML Command-Line Options\v@alphacommand\v\i\p
+
+.context @pwbmasm.show
+.context d.6340
+.context d.6350
+..|hidMASMShowRelease
+..|hidMASMShowDebug
+.freeze 3
+.topic Assembler Show Debug/Release Options
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Select Show Debug Options or Show Release Options to see the
+     currently selected options as they appear on the ML command line.
+
+     NOTE: The displayed options do not include any options specified
+           in the ML environment variable.
+
+     See also: \i\p\aML Command-Line Syntax\v@comline\v\i\p
+               \i\p\aML Command-Line Options\v@alphacommand\v\i\p
+
+.context @pwbmasm.set
+.context d.6310
+.context d.6320
+.topic Assembler Debug/Release Options
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Use the Debug Options dialog box to set options for your program
+     during development, and use the Release Options dialog box to set
+     options for the final version of your program.
+
+     \bOption\p                        \bDescription\p
+
+     \i\p\aListing\v@pwbmasm.set.list\v\i\p                     Control listing file and contents
+     \i\p\aDebug Information\v@pwbmasm.set.dbug\v\i\p           Generate debugging information
+     \i\p\aMake All Symbols Public\v@pwbmasm.set.publ\v\i\p     Make all symbols public
+     \i\p\aDefines\v@pwbmasm.def\v\i\p                     Define Assembler Macros
+     \i\p\aAdditional Options\v@pwbmasm.addl\v\i\p          Specify additional ML options
+     \i\p\aShow Options\v@pwbmasm.set.show\v\i\p                Show options in command-line format
+
+     The set of options used for a particular build is determined by
+     the setting of the Build option in the Build Options dialog box.
+
+     See also: \i\p\aML Command-Line Syntax\v@comline\v\i\p
+               \i\p\aML Command-Line Options\v@alphacommand\v\i\p
+
+.context @pwbmasm.set.list
+.freeze 3
+.topic Assembler Generate Listing File Option
+                                             \i\p\aUp\v@pwbmasm.set\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Fl\v@outputfiles\v
+
+     Select the Generate Listing File option to create a listing file
+     from your program. After you set this option, other listing
+     options become active.
+
+     \bOther Listing Options\p
+
+     \i\p\aList Generated Instructions\v@pwbmasm.set.list.sg\v\i\p
+     \i\p\aList False Conditionals\v@pwbmasm.set.list.sx\v\i\p
+     \i\p\aGenerate Symbol Table\v@pwbmasm.set.list.sn\v\i\p
+     \i\p\aInclude All Source Lines\v@pwbmasm.set.list.sa\v\i\p
+
+     The listing file has the same base name as the source file, plus
+     the .LST extension.
+
+     See also: \i\p\aML Listing Options\v@listingfiles\v\i\p
+               \i\p\aML Output File Options\v@outputfiles\v\i\p
+               \i\p\aListing Control Directives\valang.hlp!ListCtrl\v\i\p
+
+.context @pwbmasm.set.list.sg
+.freeze 3
+.topic Assembler List Generated Instructions Option
+                                             \i\p\aUp\v@pwbmasm.set.list\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Sg\v@listingfiles\v
+
+     Select the List Generated Instructions option to list instructions
+     that are generated by the assembler. The assembler generates code
+     for directives such as .IF, .WHILE, .STARTUP, INVOKE and by
+     automatic conditional jump lengthening.
+
+     See also: \i\p\aML Listing Options\v@listingfiles\v\i\p
+               \i\p\aML Output File Options\v@outputfiles\v\i\p
+               \i\p\aListing Control Directives\valang.hlp!ListCtrl\v\i\p
+
+.context @pwbmasm.set.list.sx
+.freeze 3
+.topic Assembler List False Conditionals Option
+                                             \i\p\aUp\v@pwbmasm.set.list\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Sx\v@listingfiles\v
+
+     Select the List False Conditionals option to list code that is
+     controlled by conditions evaluated as false during assembly, or by
+     code in the inactive branch of a compound conditional directive.
+
+     See also: \i\p\aML Listing Options\v@listingfiles\v\i\p
+               \i\p\aML Output File Options\v@outputfiles\v\i\p
+               \i\p\aListing Control Directives\valang.hlp!ListCtrl\v\i\p
+
+.context @pwbmasm.set.list.sa
+.freeze 3
+.topic Assembler Include All Source Lines Option
+                                             \i\p\aUp\v@pwbmasm.set.list\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Sa\v@listingfiles\v
+
+     Select the Include All Source Lines option to list all lines of
+     code, including code suppressed by listing directives, false
+     conditionals, and any code generated by the assembler.
+
+     See also: \i\p\aML Listing Options\v@listingfiles\v\i\p
+               \i\p\aML Output File Options\v@outputfiles\v\i\p
+               \i\p\aListing Control Directives\valang.hlp!ListCtrl\v\i\p
+
+.context @pwbmasm.set.list.sn
+.freeze 3
+.topic Assembler Generate Symbol Table Option
+                                             \i\p\aUp\v@pwbmasm.set.list\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Sn\v@listingfiles\v (see note)
+
+     Select the Generate Symbol Table option to include the symbol
+     table containing macros, structures, records, segments, groups,
+     and symbols in the listing file.
+
+     See also: \i\p\aML Listing Options\v@listingfiles\v\i\p
+               \i\p\aML Output File Options\v@outputfiles\v\i\p
+               \i\p\aListing Control Directives\valang.hlp!ListCtrl\v\i\p
+
+     NOTE: The Generate Symbol Table option has the opposite sense of
+           the ML /Sn option. That is, when the Generate Symbol Table
+           option is on, /Sn is suppressed; when the option is off, the
+           ML /Sn option is generated.
+
+.context @pwbmasm.set.dbug
+.freeze 3
+.topic Assembler Debug Information Options
+                                             \i\p\aUp\v@pwbmasm.set\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Use the Debug Information options to set the type of symbolic
+     information included in the object files.
+
+     \bOptions\p              \bType\p            \bUse\p
+
+     None                 None            Use for a debugged program
+     (default)
+
+     Line Numbers Only    Line numbers    Use for limited debugging
+     \i\p\a/Zd\v@debugopt\v\i\p                only
+
+     CodeView             Full symbolic   Use for CodeView debugging
+     \i\p\a/Zi\v@debugopt\v\i\p                information
+
+
+.context @pwbmasm.set.publ
+.freeze 3
+.topic Assembler Make All Symbols Public Option
+                                             \i\p\aUp\v@pwbmasm.set\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     \bML equivalent:\p \a/Zf\v@sympub\v
+
+     Select the Make All Symbols Public option to make nonpublic
+     symbols public.
+
+     If two nonpublic symbols from different modules have the same name
+     and this option is used, a 'Symbol multiply defined' link error
+     occurs.
+
+     See also: \i\p\aML Make All Symbols Public Option\v@sympub\v\i\p
+
+.context @pwbmasm.set.show
+.context d.6330
+..|hidMASMEitherOpts
+.freeze 3
+.topic Assembler Show Options Button
+                                             \i\p\aUp\v@pwbmasm.set\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     Select the Show Options button to see the currently selected debug
+     or release options as they appear on the ML command line.
+
+     NOTE: The displayed options do not include any options specified
+           in the ML environment variable.
+
+     See also: \i\p\aML Command-Line Syntax\v@comline\v\i\p
+               \i\p\aML Command-Line Options\v@alphacommand\v\i\p
+
+.context d.6301
+..|hidMASMNoMenuAdded
+..|MESSAGE: "Failed to add Options menu item(s)"
+.freeze 3
+.topic Assembler Extension Error
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     The PWB Options menu is full. Load fewer extensions.
+
+.context d.6302
+..|hidMASMNotKnown
+..|MESSAGE: "Invalid MASM options will be ignored"
+.freeze 3
+.topic Assembler Extension Error
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     The program list (project .MAK file) contained an invalid form of
+     an ML command-line option.
+
+     Check the syntax of any additional ML options you have specified.
+
+     This error may also occur if you attempt to set a foreign makefile
+     as a PWB program list, or you manually edit a PWB program list.
+
+.context d.6304
+..|hidMASMNotParsed
+..|MESSAGE: "MESSAGE Failed to parse MASM options"
+.freeze 3
+.topic Assembler Extension Error
+                                             \i\p\aUp\v@pwbmasm.global\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+     There was not enough memory available to parse the options.
+

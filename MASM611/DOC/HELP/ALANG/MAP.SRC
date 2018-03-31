@@ -1,0 +1,158 @@
+.comment
+.comment
+..| when chkline is run on this file, the error "escaped character other
+..|   than "\" occurs. This is due to the presence of \\<FILENAME> in the file
+..|   due to the environment variable $ASMEX being equal to \MASM61\SAMPLES.
+..| Technically, the error shouldn't occur. Never could figure out why it does.
+..|    a-abird
+.context @MAPEX
+.context @MAPDEMO
+.freeze 3
+.topic MISCDEMO.ASM Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \b\aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v\pдддд© Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     Ё   \aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.ASM\v       Ё Ё Ё   \aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.asm!\v       Ё   Ё   \aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.asm!\v       Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё   Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     юдддддддддддддддддды Ё юдддддддддддддддддды   юдддддддддддддддддды
+                         Ё                                
+         MISCDEMO.EXE     Ё     FILEDEMO.EXE           MATHDEMO.EXE
+                          Ё
+        \bYou are here\p ддддды
+.context @MAPMISC
+.freeze 3
+.topic MISC.ASM Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v   Ё   Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \b\aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.ASM\v\p    дддд© Ё   \aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.asm!\v       Ё   Ё   \aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.asm!\v       Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё   Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     юдддддддддддддддддды Ё юдддддддддддддддддды   юдддддддддддддддддды
+                         Ё                                
+         MISCDEMO.EXE     Ё     FILEDEMO.EXE           MATHDEMO.EXE
+                          Ё
+        \bYou are here\p ддддды
+.context @MAPFILE
+.freeze 3
+.topic FILE.ASM Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v   Ё   Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.asm!\v       Ё   Ё   \b\aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.ASM\v\p    дддд© Ё   \aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.asm!\v       Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё   Ё                  Ё Ё Ё                  Ё
+     Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё   Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё   Ё                  Ё Ё Ё                  Ё
+     юдддддддддддддддддды   юдддддддддддддддддды Ё юдддддддддддддддддды
+                                               Ё          
+         MISCDEMO.EXE           FILEDEMO.EXE     Ё     MATHDEMO.EXE
+                                                 Ё
+                                \bYou are here\p дддды
+.context @MAPMATH
+.freeze 3
+.topic MATH.ASM Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v   Ё   Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.asm!\v       Ё   Ё   \aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.asm!\v       Ё   Ё   \b\aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.ASM\v\p     ддд©
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё Ё
+     Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё   Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё   Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё Ё
+     юдддддддддддддддддды   юдддддддддддддддддды   юдддддддддддддддддды Ё
+                                                                     Ё
+         MISCDEMO.EXE           FILEDEMO.EXE           MATHDEMO.EXE     Ё
+                                                                        Ё
+                                                       \bYou are here\p дддды
+.context @MAPDEMO.INC
+.freeze 3
+.topic DEMO.INC Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v   Ё   Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд© Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё Ё Ё                  Ё   Ё                  Ё
+     Ё   \aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.asm!\v       Ё Ё Ё   \aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.asm!\v       Ё   Ё   \aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.asm!\v       Ё
+     Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.INC\v\p ддд╢ Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд© Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд©
+     Ё                  Ё Ё Ё                  Ё Ё Ё                  Ё Ё
+     Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё Ё   \aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v     Ё Ё
+     Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд╢ Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд╢ Ё    юдд\b\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v\p ддд╢
+     Ё                  Ё Ё Ё                  Ё Ё Ё                  Ё Ё
+     юдддддддддддддддддды Ё юдддддддддддддддддды Ё юдддддддддддддддддды Ё
+                         Ё                     Ё                     Ё
+         MISCDEMO.EXE     Ё     FILEDEMO.EXE     Ё     MATHDEMO.EXE     Ё
+                          Ё                      Ё                      Ё
+        \bYou are here\p дддддаддддддддддддддддддддддадддддддддддддддддддддды
+.context @MAPCOMMON
+.freeze 3
+.topic COMMON.ASM Map
+                                             \i\p\aUp\v@prglist\v\i\p \i\p\aContents\vpwb.hlp!hv\v\i\p \i\p\aIndex\vpwb.hlp!vx\v\i\p \i\p\aBack\v!B\v\i\p
+дддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд
+
+     Select a file to view. To return to this screen, press ALT+F1 from
+     PWB and CodeView or press L from QuickHelp.
+
+     здд \aMISCDEMO.MAK\v$ASMEX:\\DEMOS\\MISCDEMO.mak!\v дд©   здд \aFILEDEMO.MAK\v$ASMEX:\\DEMOS\\FILEDEMO.mak!\v дд©   здд \aMATHDEMO.MAK\v$ASMEX:\\DEMOS\\MATHDEMO.mak!\v дд©
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISCDEMO.ASM\v$ASMEX:\\DEMOS\\MISCDEMO.asm!\v   Ё   Ё   \aFILEDEMO.C\v$ASMEX:\\DEMOS\\FILEDEMO.C!\v     Ё   Ё   \aMATHDEMO.C\v$ASMEX:\\DEMOS\\MATHDEMO.C!\v     Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё   Ё    юдд\aDEMO.H\v$ASMEX:\\DEMOS\\DEMO.H!\v     Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \aMISC.ASM\v$ASMEX:\\DEMOS\\MISC.asm!\v       Ё   Ё   \aFILE.ASM\v$ASMEX:\\DEMOS\\FILE.asm!\v       Ё   Ё   \aMATH.ASM\v$ASMEX:\\DEMOS\\MATH.asm!\v       Ё
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё   Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё
+     Ё                  Ё   Ё                  Ё   Ё                  Ё
+     Ё   \b\aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v\p   ддд© Ё   \b\aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v\p   ддд© Ё   \b\aCOMMON.ASM\v$ASMEX:\\DEMOS\\COMMON.ASM!\v\p   ддд©
+     Ё    юдд\aDEMO.INC\v$ASMEX:\\DEMOS\\DEMO.inc!\v   Ё Ё Ё    юдд\aDEMO.INC \v$ASMEX:\\DEMOS\\DEMO.inc!\v  Ё Ё Ё    юддD\aEMO.INC \v$ASMEX:\\DEMOS\\DEMO.inc!\v  Ё Ё
+     Ё                  Ё Ё Ё                  Ё Ё Ё                  Ё Ё
+     юдддддддддддддддддды Ё юдддддддддддддддддды Ё юдддддддддддддддддды Ё
+                         Ё                     Ё                     Ё
+         MISCDEMO.EXE     Ё     FILEDEMO.EXE     Ё     MATHDEMO.EXE     Ё
+                          Ё                      Ё                      Ё
+        \bYou are here\p дддддаддддддддддддддддддддддадддддддддддддддддддддды
